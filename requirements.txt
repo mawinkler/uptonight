@@ -1,0 +1,6 @@
+astroplan==0.8
+astropy==5.1
+matplotlib==3.5.2
+numpy==1.22.4
+pytz==2019.3
+certifi==2023.5.7
