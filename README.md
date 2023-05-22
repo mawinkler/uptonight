@@ -4,11 +4,11 @@
 
 UpTonight calculates the best astro photography targets for the night at a given location. The built in target list is a merge of Gary Imm's [My Top 100 Astrophotography Targets](https://www.astrobin.com/uc8p37/) and the top 200 taken from his incredible [Deep Sky Compendium](http://www.garyimm.com/compendium).
 
-UpTonight creates a plot of the sky in addition to a reports about todays targets. Below the example output for Munich in the night from the 18th to 19th of May:
+UpTonight creates a plot of the sky in addition to a report about todays targets. Below an example output for Munich in the night from the 18th to 19th of May:
 
 ![alt text](images/readme-plot.png "Latest")
 
-Alongside the plot a report like the following is created:
+Example report:
 
 ```txt
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,10 +67,10 @@ Whale & Hockey Stick Galaxy Duo (NGC 4631) 12h42m08s +32d32m29s           190.5 
 
 Logically, the calculation is done as follows:
 
-1. Specify your scope location based on the it's earth location, timezone and optionally environmental parameters temperature, rel. humidity and air pressure.
-2. Calculate nearest astronomical sunset and sunrise for this location. If you live at a latitude where the sun might not go below -18° UpTonight tries to use nautical and eventually civil darkness.
+1. Specify your scope location based on the it's earth location, timezone and optionally environmental parameters temperature, rel. humidity and air pressure. Environment parameters are required for refraction calculation.
+2. Calculate nearest astronomical sunset and sunrise for the location. If you are at a latitude where the sun might not go below -18° UpTonight tries to use nautical and eventually civil darkness.
 3. Calculate the oberservable objects while respecting your altitude and airmass constraints.  
-   To set your constraints configure them in `uptonight/const.py`:
+   You can modify the constraints by configuring them in `uptonight/const.py`:
       1. Maximum airmass (default 2): Airmass is a measure of the amount of air along the line of sight when observing a star or other celestial source from below Earth's atmosphere. There are many different ways to calculate this, in the current implementation the airmass is approximated by the secant of the zenith angle (max airmass set to 2 means 60° down from zenith, 2 = 1/cos(60))
       2. Minimal and maximal altitude.
       3. Size constraints in arc minutes.
