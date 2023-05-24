@@ -1,4 +1,4 @@
-name,common name,type,constellation,size,ra,dec
+name,description,type,constellation,size,ra,dec
 Abell 21,Medusa Nebula,Planetary Nebula,Gemini,10,07 29 03,+13 14 48
 Abell 33,Diamond Ring Nebula,Planetary Nebula,Hydra,4,09 39 09,-02 48 33
 Abell 35,Abell 35,Emission Nebula,Hydra,16,12 53 41,-22 51 42
@@ -15,7 +15,6 @@ Arp 242,Mice Galaxies,Galaxy,Coma Berenices,2.3,12 46 10,30 43 00
 Arp 244,Antennae Galaxy Duo,Galaxy,Corvus,2.6,12 01 53,-18 52 07
 Arp 269,Cocoon Galaxy,Galaxy,Canes Venatici,6,12 30 36,41 38 32
 Arp 273,The Rose Galaxies,Galaxy,Andromeda,1.5,02 21 32,+39 21 00
-Arp 281,Whale Galaxy,Galaxy,Canes Venatici,15,12 41 59,32 34 00
 Arp 316,Hickson 44 Galaxy Group,Galaxy,Leo,30,10 18 06,+21 49 00
 Arp 317,Leo Triplet,Galaxy Group,Leo,50,11 18 55,13 05 00
 Arp 319,Stephan's Quintet,Galaxy Group,Pegasus,5,22 36 04,33 56 00

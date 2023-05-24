@@ -2,7 +2,7 @@
 
 [![astropy](https://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat)](http://www.astropy.org/)
 
-UpTonight calculates the best astro photography targets for the night at a given location. The built in target list is a merge of Gary Imm's [My Top 100 Astrophotography Targets](https://www.astrobin.com/uc8p37/) and the top 200 taken from his incredible [Deep Sky Compendium](http://www.garyimm.com/compendium).
+UpTonight calculates the best astro photography targets for the night at a given location. The default built in target list is a merge of Gary Imm's [My Top 100 Astrophotography Targets](https://www.astrobin.com/uc8p37/) and the top 200 taken from his incredible [Deep Sky Compendium](http://www.garyimm.com/compendium).
 
 UpTonight creates a plot of the sky in addition to a report about todays targets. Below an example output for Munich in the night from the 18th to 19th of May:
 
@@ -58,7 +58,9 @@ Whale & Hockey Stick Galaxy Duo (NGC 4631) 12h42m08s +32d32m29s           190.5 
 
 - [How it Works](#how-it-works)
 - [How to Run](#how-to-run)
+  - [Configuration](#configuration)
   - [Constraints](#constraints)
+  - [Available Target lists](#available-target-lists)
   - [Python Script](#python-script)
   - [Container](#container)
 - [Adding Custom Objects](#adding-custom-objects)
@@ -101,6 +103,22 @@ The report contains the following information:
 
 There are two ways to run UpTonight. As a normal Python script or as a container.
 
+### Configuration
+
+Configuration is done by environment variables for now.
+
+Variable | Unit | Description | Example | Optional | Default
+-------- | ---- | ----------- | ------- | -------- | -------
+LONGITUDE | dms | Longitude in degrees minutes seconds | 11d34m51.50s
+LATITUDE | dms | Latitude in degrees minutes seconds | 48d08m10.77s
+ELEVATION | m | Height above sea level in meters | 519
+TIMEZONE | tz | TZ timezone | Europe/Berlin
+PRESSURE | bar | The ambient pressure | 1.022 | yes | 0
+RELATIVE_HUMIDITY | percentage | The ambient relative humidity | 0.8| yes | 0
+TEMPERATURE | degrees centigrade | The ambient temperature | 12| yes | 0
+OBSERVATION_DATE | %m/$d/%y | Day of observation | 10/01/23| yes | *Current day*
+TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Messier) | targets/Messier | yes | targets/GaryImm
+
 ### Constraints
 
 If you want to change constraints adapt the constants below to your needs in `uptonight/const.py`
@@ -109,28 +127,31 @@ If you want to change constraints adapt the constants below to your needs in `up
 ALTITUDE_CONSTRAINT_MIN = 20   # in deg above horizon
 ALTITUDE_CONSTRAINT_MAX = 80   # in deg above horizon
 AIRMASSS_CONSTRAINT = 2        # 30° to 90°
-SIZE_CONSTRAINT_MIN = 10       # in minutes
-SIZE_CONSTRAINT_MAX = 180      # in minutes
+SIZE_CONSTRAINT_MIN = 10       # in arc minutes
+SIZE_CONSTRAINT_MAX = 180      # in arc minutes
 
 # object needs to be within the constraints for at least 80% of darkness
 FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.80
 ```
 
+### Available Target lists
+
+List | Description | Objects
+---- | ----------- | -------
+GaryImm *(default)*| A merge of Gary Imm's [My Top 100 Astrophotography Targets](https://www.astrobin.com/uc8p37/) and the top 200 taken from his [Deep Sky Compendium](http://www.garyimm.com/compendium). | 208
+Messier | All 110 official Messier objects. | 110
+Herschel400 | The Herschel 400 - 400 of the best objects from the NGC list as selected by the Astronomical League. | 400
+
 ### Python Script
 
 To calculate your best targets for your location set the following environment variables:
 
-```python
+```sh
 # Here center of Munich
-export LONGITUDE="11d34m51.50s"
-export LATITUDE="48d08m10.77s"
+export LONGITUDE=11d34m51.50s
+export LATITUDE=48d08m10.77s
 export ELEVATION=519
-export TIMEZONE="Europe/Berlin"
-
-# Optionally with refraction calculations
-export PRESSURE=1.022
-export RELATIVE_HUMIDITY=0.8
-export TEMPERATURE=12
+export TIMEZONE=Europe/Berlin
 ```
 
 To run UpTonight simply do the following:
@@ -158,27 +179,17 @@ To run it
 ```sh
 # Without refraction calculations
 docker run --rm \
-  -e LONGITUDE="11d34m51.50s" \
-  -e LATITUDE="48d08m10.77s" \
+  -e LONGITUDE=11d34m51.50s \
+  -e LATITUDE=48d08m10.77s \
   -e ELEVATION=519 \
-  -e TIMEZONE="Europe/Berlin" \
-  -v ./out:/app/out \
-  uptonight
-
-# With refraction calculations
-docker run --rm \
-  -e LONGITUDE="11d34m51.50s" \
-  -e LATITUDE="48d08m10.77s" \
-  -e ELEVATION=519 \
-  -e TIMEZONE="Europe/Berlin" \
-  -e PRESSURE=1.022 \
-  -e RELATIVE_HUMIDITY=0.8 \
-  -e TEMPERATURE=12 \
+  -e TIMEZONE=Europe/Berlin \
   -v ./out:/app/out \
   uptonight
 ```
 
 The plot and the report will be located in the `out`-diretory.
+
+> ***Note:*** Running UpTonight as a container is my preferred way of using it.
 
 ## Adding Custom Objects
 

@@ -31,8 +31,8 @@ COPY --from=compile-image /etc/ssl /etc/ssl
 WORKDIR /app
 
 COPY uptonight uptonight
+COPY targets targets
 COPY main.py .
-COPY Gary_Imm_Best_Astrophotography_Objects.csv .
 
 ENV PATH=/root/local/bin:$PATH
 

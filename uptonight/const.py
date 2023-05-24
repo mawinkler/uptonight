@@ -12,11 +12,14 @@ FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.80
 # False: Show azimuth increasing clockwise (CW).
 NORTH_TO_EAST_CCW = False
 
+# Default target list to use
+DEFAULT_TARGETS = "targets/GaryImm"
+
 # Any custom target you want to include in the calculations
 CUSTOM_TARGETS = [
     {
         "name": "NGC 4395",
-        "common name": "NGC 4395",
+        "description": "NGC 4395",
         "type": "Galaxy",
         "constellation": "Canes Venatici",
         "size": 13,
@@ -25,7 +28,7 @@ CUSTOM_TARGETS = [
     },
     {
         "name": "NGC 3227",
-        "common name": "Galaxy duo NGC 3226",
+        "description": "Galaxy duo NGC 3226",
         "type": "Galaxy",
         "constellation": "Leo",
         "size": 4,

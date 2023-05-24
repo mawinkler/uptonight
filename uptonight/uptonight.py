@@ -32,6 +32,7 @@ from .const import (
     SIZE_CONSTRAINT_MAX,
     FRACTION_OF_TIME_OBSERVABLE_THRESHOLD,
     NORTH_TO_EAST_CCW,
+    DEFAULT_TARGETS,
     CUSTOM_TARGETS,
 )
 
@@ -41,7 +42,7 @@ download_IERS_A()
 # https://cds.unistra.fr/cgi-bin/Sesame
 
 
-def create_targets_list():
+def create_target_list(target_list):
     """
     Creates a table and list of targets in scope for the calculations.
 
@@ -60,7 +61,7 @@ def create_targets_list():
         Lookup table, list of targets to calculate
     """
 
-    input_targets = Table.read("Gary_Imm_Best_Astrophotography_Objects.csv", format="ascii.csv")
+    input_targets = Table.read(f"{target_list}.csv", format="ascii.csv")
 
     # Create astroplan.FixedTarget objects for each one in the table
     targets = [
@@ -74,13 +75,13 @@ def create_targets_list():
     # Add custom targets
     for custom_target in CUSTOM_TARGETS:
         name = custom_target.get("name")
-        cn = custom_target.get("common name")
+        desc = custom_target.get("description")
         ra = custom_target.get("ra")
         dec = custom_target.get("dec")
         input_targets.add_row(
             [
                 name,
-                cn,
+                desc,
                 custom_target.get("type"),
                 custom_target.get("constellation"),
                 custom_target.get("size"),
@@ -89,7 +90,7 @@ def create_targets_list():
             ]
         )
         targets.append(
-            FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=cn + f" ({name})"),
+            FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=desc + f" ({name})"),
         )
 
     # Lastly we add Polaris
@@ -199,7 +200,17 @@ def style_plot():
     plt.rcParams["text.color"] = "w"
 
 
-def calc(longitude, latitude, elevation, tz, pressure=0, relative_humidity=0, temperature=0):
+def calc(
+    longitude,
+    latitude,
+    elevation,
+    tz,
+    pressure=0,
+    relative_humidity=0,
+    temperature=0,
+    observation_date=None,
+    target_list=None,
+):
     """
     Calculates the deep sky objects for tonights sky and a given earth location.
 
@@ -238,7 +249,12 @@ def calc(longitude, latitude, elevation, tz, pressure=0, relative_humidity=0, te
     temperature      : float (optional)
         This is necessary for performing refraction corrections.
         Setting this to 0 (the default) will disable refraction calculations.
-
+    observation_date : string (optional)
+        Perform calculations for the day specified in the format %m/%d/%y.
+        If the value is omitted, the current date is used. 
+    target_list      : string (optional)
+        The target list to use. Defaults to Gary_Imm_Best_Astrophotography_Objects
+    
     Returns
     -------
     None
@@ -265,10 +281,27 @@ def calc(longitude, latitude, elevation, tz, pressure=0, relative_humidity=0, te
         description="My beloved Backyard Telescope",
     )
 
-    # Calculate tonights night
-    now = datetime.utcnow()
-    time = Time(now, scale="utc")
-    noon = Time(now.replace(hour=0, minute=0, second=0, microsecond=0), location=observer.location) + 12 * u.hour
+    # Calculate tonights night unless a date is given
+    if observation_date is None:
+        time = (
+            Time(
+                datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0),
+                scale="utc",
+                location=observer.location,
+            )
+            + 12 * u.hour
+        )
+    else:
+        time = (
+            Time(
+                datetime.strptime(observation_date, "%m/%d/%y").replace(hour=0, minute=0, second=0, microsecond=0),
+                scale="utc",
+                location=observer.location,
+            )
+            + 12 * u.hour
+        )
+    print("Calculating for: {0}".format(time.strftime("%m/%d/%Y")))
+
     sun_next_setting = None
     sun_next_rising = None
     darkness = ""
@@ -287,26 +320,25 @@ def calc(longitude, latitude, elevation, tz, pressure=0, relative_humidity=0, te
                         if len(w):
                             if issubclass(w[-1].category, TargetAlwaysUpWarning):
                                 print("Sun is not setting civically")
-                                sun_next_rising = noon + 1 * u.day
-                                sun_next_setting = noon
+                                sun_next_rising = time + 1 * u.day
+                                sun_next_setting = time
                         else:
                             darkness = "civil"
-                            sun_next_setting, sun_next_rising = observer.tonight(horizon=-6 * u.deg)
+                            sun_next_setting, sun_next_rising = observer.tonight(time=time, horizon=-6 * u.deg)
                 else:
                     darkness = "nautical"
-                    sun_next_setting, sun_next_rising = observer.tonight(horizon=-12 * u.deg)
+                    sun_next_setting, sun_next_rising = observer.tonight(time=time, horizon=-12 * u.deg)
         else:
             darkness = "astronomical"
-            sun_next_setting, sun_next_rising = observer.tonight(horizon=-18 * u.deg)
+            sun_next_setting, sun_next_rising = observer.tonight(time=time, horizon=-18 * u.deg)
         # TODO: Proper handling for sun never up
         if len(w):
             if issubclass(w[-1].category, TargetNeverUpWarning):
                 print("Sun is not rising astronomically")
-                sun_next_rising = noon + 1 * u.day
-                sun_next_setting = noon
+                sun_next_rising = time + 1 * u.day
+                sun_next_setting = time
             w.clear()
-    if sun_next_setting is None:
-        sun_next_setting, sun_next_rising = observer.tonight(horizon=-18 * u.deg)
+
     print("Sun set {0}: {1}".format(darkness, sun_next_setting.strftime("%m/%d/%Y %H:%M:%S")))
     print("Sun rise {0}: {1}".format(darkness, sun_next_rising.strftime("%m/%d/%Y %H:%M:%S")))
 
@@ -323,7 +355,9 @@ def calc(longitude, latitude, elevation, tz, pressure=0, relative_humidity=0, te
     # custom targets. We will iterate over the targets list and use the input_targets table for lookup
     # values while calculating the results
     print("Building targets list")
-    input_targets, targets = create_targets_list()
+    if target_list is None:
+        target_list = DEFAULT_TARGETS
+    input_targets, targets = create_target_list(target_list)
 
     # Create the observability table which weights the targets based on the given constraints to
     # calculate the fraction of time observable tonight

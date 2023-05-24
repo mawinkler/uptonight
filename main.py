@@ -10,10 +10,22 @@ timezone = os.getenv("TIMEZONE")
 pressure = float(os.getenv("PRESSURE", 0))
 relative_humidity = float(os.getenv("RELATIVE_HUMIDITY", 0))
 temperature = float(os.getenv("TEMPERATURE", 0))
+observation_date = os.getenv("OBSERVATION_DATE", None)
+target_list = os.getenv("TARGET_LIST", None)
 
 
 def main():
-    calc(longitude, latitude, elevation, timezone, pressure, relative_humidity, temperature)
+    calc(
+        longitude,
+        latitude,
+        elevation,
+        timezone,
+        pressure,
+        relative_humidity,
+        temperature,
+        observation_date,
+        target_list,
+    )
 
 
 if __name__ == "__main__":

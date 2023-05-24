@@ -1,0 +1,401 @@
+name,description,type,constellation,size,ra,dec
+NGC 40,PK 120+9.1,Planetary Nebula,Cepheus,0.6,0 13,+72 32
+NGC 129,OCL 294,Open Cluster,Cassiopeia,21.0,0 29.9,+60 14
+NGC 136,OCL 295,Open Cluster,Cassiopeia,1.0,0 31.5,+61 32
+NGC 157,MCG 2-2-56,Galaxy,Cetus,4.3,0 34.8,-8 24
+NGC 185,UGC 396,Galaxy,Cassiopeia,11.5,0 39,+48 20
+NGC 205,M 110,Galaxy,Andromeda,17.4,0 40.4,+41 41
+NGC 225,OCL 305,Open Cluster,Cassiopeia,12.0,0 43.4,+61 47
+NGC 246,PK 118-74.1,Planetary Nebula,Cetus,3.8,0 47,-11 53
+NGC 247,ESO 540-22,Galaxy,Cetus,20.0,0 47.1,-20 46
+NGC 253,ESO 474-29,Galaxy,Sculptor,25.1,0 47.6,-25 17
+NGC 278,UGC 528,Galaxy,Cassiopeia,2.2,0 52.1,+47 33
+NGC 288,ESO 474-SC37,Globular Cluster,Sculptor,13.8,0 52.8,-26 35
+NGC 381,OCL 317,Open Cluster,Cassiopeia,6.0,1 8.3,+61 35
+NGC 404,UGC 718,Galaxy,Andromeda,4.4,1 9.4,+35 43
+NGC 436,OCL 320,Open Cluster,Cassiopeia,6.0,1 15.6,+58 49
+NGC 457,OCL 321,Open Cluster,Cassiopeia,13.0,1 19.1,+58 20
+NGC 488,UGC 907,Galaxy,Pisces,5.2,1 21.8,+5 15
+NGC 524,UGC 968,Galaxy,Pisces,3.2,1 24.8,+9 32
+NGC 559,OCL 322,Open Cluster,Cassiopeia,4.0,1 29.5,+63 18
+NGC 584,IC 1712 or H I 100,Galaxy,Cetus,3.8,1 31.3,-6 52
+NGC 596,MCG 1-5-5,Galaxy,Cetus,3.5,1 32.9,-7 2
+NGC 598,M 33,Galaxy,Triangulum,62.0,1 33.9,+30 39
+NGC 613,ESO 413-11,Galaxy,Sculptor,5.8,1 34.3,-29 25
+NGC 615,MCG 1-5-8,Galaxy,Cetus,4.0,1 35.1,-7 20
+NGC 637,OCL 329,Open Cluster,Cassiopeia,4.0,1 42.9,+64 0
+NGC 651,M 76,Planetary Nebula,Perseus,,1 42.3,+51 35
+NGC 654,OCL 330,Open Cluster,Cassiopeia,5.0,1 44.1,+61 53
+NGC 659,OCL 332,Open Cluster,Cassiopeia,5.0,1 44.2,+60 42
+NGC 663,OCL 333,Open Cluster,Cassiopeia,16.0,1 46,+61 15
+NGC 720,MCG 2-5-68,Galaxy,Cetus,4.4,1 53,-13 44
+NGC 752,OCL 363,Open Cluster,Andromeda,50.0,1 57.8,+37 41
+NGC 772,UGC 1466,Galaxy,Aries,7.1,1 59.3,+19 1
+NGC 779,MCG 1-6-16,Galaxy,Cetus,4.1,1 59.7,-5 58
+NGC 869,OCL 350,Open Cluster,Perseus,30.0,2 19,+57 9
+NGC 884,OCL 353,Open Cluster,Perseus,30.0,2 22.4,+57 7
+NGC 891,UGC 1831,Galaxy,Andromeda,13.5,2 22.6,+42 21
+NGC 908,ESO 545-11,Galaxy,Cetus,5.5,2 23.1,-21 14
+NGC 936,UGC 1929,Galaxy,Cetus,5.2,2 27.6,-1 9
+NGC 1022,MCG 1-7-25,Galaxy,Cetus,2.5,2 38.5,-6 40
+NGC 1023,UGC 2154,Galaxy,Perseus,8.7,2 40.4,+39 4
+NGC 1027,OCL 357,Open Cluster,Cassiopeia,20.0,2 42.7,+61 33
+NGC 1052,MCG 1-7-34,Galaxy,Cetus,2.9,2 41.1,-8 15
+NGC 1055,UGC 2173,Galaxy,Cetus,7.6,2 41.8,+0 26
+NGC 1084,MCG 1-8-7,Galaxy,Eridanus,2.9,2 46,-7 35
+NGC 1245,OCL 389,Open Cluster,Perseus,10.0,3 14.7,+47 15
+NGC 1342,OCL 401,Open Cluster,Perseus,14.0,3 31.6,+37 20
+NGC 1407,ESO 548-67,Galaxy,Eridanus,2.5,3 40.2,-18 35
+NGC 1444,OCL 394,Open Cluster,Perseus,4.0,3 49.4,+52 40
+NGC 1501,PK 144+6.1,Planetary Nebula,Camelopardalis,0.9,4 7,+60 55
+NGC 1502,OCL 383,Open Cluster,Camelopardalis,8.0,4 7.7,+62 20
+NGC 1513,OCL 398,Open Cluster,Perseus,9.0,4 10,+49 31
+NGC 1528,OCL 397,Open Cluster,Perseus,24.0,4 15.4,+51 14
+NGC 1535,PK 206-40.1,Planetary Nebula,Eridanus,0.7,4 14.2,-12 44
+NGC 1545,OCL 399,Open Cluster,Perseus,18.0,4 20.9,+50 15
+NGC 1647,OCL 457,Open Cluster,Taurus,45.0,4 46,+19 4
+NGC 1664,OCL 411,Open Cluster,Auriga,18.0,4 51.1,+43 42
+NGC 1788,LBN 916,Nebula,Orion,8.,5 6.9,-3 21
+NGC 1817,OCL 463,Open Cluster,Taurus,16.0,5 12.1,+16 42
+NGC 1857,OCL 428,Open Cluster,Auriga,6.0,5 20.2,+39 21
+NGC 1907,OCL 434,Open Cluster,Auriga,7.0,5 28,+35 19
+NGC 1931,OCL 441,Cluster Nebulosity,Auriga,3.0,5 31.4,+34 15
+NGC 1961,IC 2133,Galaxy,Camelopardalis,4.3,5 42.1,+69 23
+NGC 1964,ESO 554-10,Galaxy,Lepus,6.2,5 33.4,-21 57
+NGC 1980,OCL 529,Nebula,Orion,14.0,5 35.4,-5 54
+NGC 1999,LBN 979,Nebula,Orion,16.0,5 36.5,-6 42
+NGC 2022,PK 196-10.1,Planetary Nebula,Orion,0.3,5 42.1,+9 5
+NGC 2024,CED 55P,Nebula,Orion,30.0,5 41.9,-1 51
+NGC 2126,OCL 418,Open Cluster,Auriga,6.0,6 3,+49 54
+NGC 2129,OCL 467,Open Cluster,Gemini,7.0,6 1,+23 18
+NGC 2158,OCL 468,Open Cluster,Gemini,5.0,6 7.5,+24 6
+NGC 2169,OCL 481,Open Cluster,Orion,7.0,6 8.4,+13 57
+NGC 2185,LBN 997,Nebula,Monoceros,3.0,6 11.1,-6 13
+NGC 2186,OCL 498,Open Cluster,Orion,4.0,6 12.2,+5 27
+NGC 2194,OCL 495,Open Cluster,Orion,10.0,6 13.8,+12 48
+NGC 2204,OCL 572,Open Cluster,Canis Major,13.0,6 15.7,-18 39
+NGC 2215,OCL 550,Open Cluster,Monoceros,11.0,6 21,-7 17
+NGC 2232,OCL 545,Open Cluster,Monoceros,30.0,6 26.6,-4 45
+NGC 2244,NGC 2239,Open Cluster,Monoceros,24.0,6 32.4,+4 52
+NGC 2251,OCL 499,Open Cluster,Monoceros,10.0,6 34.7,+8 22
+NGC 2264,OCL 495,Cluster Nebulosity,Monoceros,60.0,6 41.1,+9 53
+NGC 2266,OCL 471,Open Cluster,Gemini,7.0,6 43.2,+26 58
+NGC 2281,OCL 446,Open Cluster,Auriga,15.0,6 49.3,+41 4
+NGC 2286,OCL 548,Open Cluster,Monoceros,15.0,6 47.6,-3 10
+NGC 2301,OCL 540,Open Cluster,Monoceros,12.0,6 51.8,+0 28
+NGC 2304,OCL 484,Open Cluster,Gemini,5.0,6 55,+18 1
+NGC 2311,OCL 553,Open Cluster,Monoceros,7.0,6 57.8,-4 35
+NGC 2324,OCL 542,Open Cluster,Monoceros,8.0,7 4.2,+1 3
+NGC 2335,OCL 562,Open Cluster,Monoceros,12.0,7 6.6,-10 5
+NGC 2343,OCL 565,Open Cluster,Monoceros,7.0,7 8.3,-10 39
+NGC 2353,OCL 567,Open Cluster,Monoceros,20.0,7 14.6,-10 18
+NGC 2354,OCL 639,Open Cluster,Canis Major,20.0,7 14.3,-25 44
+NGC 2355,NGC 2356,Open Cluster,Gemini,9.0,7 16.9,+13 47
+NGC 2360,OCL 589,Open Cluster,Canis Major,13.0,7 17.8,-15 37
+NGC 2362,OCL 633,Cluster Nebulosity,Canis Major,8.0,7 18.8,-24 57
+NGC 2371,NGC 2372,Planetary Nebula,Gemini,0.9,7 25.6,+29 29
+NGC 2372,NGC 2371,Planetary Nebula,Gemini,,7 25.6,+29 30
+NGC 2392,PK 197+17.1,Planetary Nebula,Gemini,0.7,7 29.2,+20 55
+NGC 2395,OCL 502,Open Cluster,Gemini,12.0,7 27.1,+13 35
+NGC 2403,UGC 3918,Galaxy,Camelopardalis,17.8,7 36.9,+65 36
+NGC 2419,GCL 12,Globular Cluster,Lynx,4.1,7 38.1,+38 53
+NGC 2420,OCL 488,Open Cluster,Gemini,10.0,7 38.5,+21 34
+NGC 2421,OCL 626,Open Cluster,Puppis,10.0,7 36.3,-20 37
+NGC 2422,M 47,Open Cluster,Puppis,30.,7 36.6,-14 30
+NGC 2423,OCL 592,Open Cluster,Puppis,19.0,7 37.1,-13 52
+NGC 2438,PK 231+4.2,Planetary Nebula,Puppis,1.1,7 41.8,-14 44
+NGC 2440,PK 234+2.1,Planetary Nebula,Puppis,0.5,7 41.9,-18 13
+NGC 2479,OCL 623,Open Cluster,Puppis,7.0,7 55.1,-17 43
+NGC 2482,OCL 653,Open Cluster,Puppis,12.0,7 54.9,-24 18
+NGC 2489,OCL 690,Open Cluster,Puppis,8.0,7 56.2,-30 4
+NGC 2506,OCL 593,Open Cluster,Monoceros,7.0,8 0.2,-10 47
+NGC 2509,OCL 630,Open Cluster,Puppis,8.0,8 0.7,-19 4
+NGC 2527,NGC 2520,Open Cluster,Puppis,22.0,8 5.3,-28 10
+NGC 2539,OCL 611,Open Cluster,Puppis,22.0,8 10.7,-12 50
+NGC 2548,M 48,Open Cluster,Hydra,54.,8 13.8,-5 48
+NGC 2567,OCL 708,Open Cluster,Puppis,10.0,8 18.6,-30 38
+NGC 2571,OCL 701,Open Cluster,Puppis,13.0,8 18.9,-29 44
+NGC 2613,ESO 495-18,Galaxy,Pyxis,7.2,8 33.4,-22 58
+NGC 2627,OCL 714,Open Cluster,Pyxis,11.0,8 37.3,-29 57
+NGC 2655,UGC 4637,Galaxy,Camelopardalis,5.1,8 55.6,+78 13
+NGC 2681,UGC 4645,Galaxy,Ursa Major,3.8,8 53.5,+51 19
+NGC 2683,UGC 4641,Galaxy,Lynx,9.3,8 52.7,+33 25
+NGC 2742,NGC 2816,Galaxy,Ursa Major,3.1,9 7.6,+60 29
+NGC 2768,UGC 4821,Galaxy,Ursa Major,6.3,9 11.6,+60 2
+NGC 2775,UGC 4820,Galaxy,Cancer,4.5,9 10.3,+7 2
+NGC 2782,UGC 4862,Galaxy,Lynx,3.8,9 14.1,+40 7
+NGC 2787,UGC 4914,Galaxy,Ursa Major,3.4,9 19.3,+69 12
+NGC 2811,MCG 3-24-3,Galaxy,Hydra,2.7,9 16.2,-16 19
+NGC 2841,UGC 4966,Galaxy,Ursa Major,8.1,9 22,+50 58
+NGC 2859,UGC 5001,Galaxy,Leo Minor,4.8,9 24.3,+34 31
+NGC 2903,UGC 5079,Galaxy,Leo,12.6,9 32.2,+21 30
+NGC 2950,UGC 5176,Galaxy,Ursa Major,3.2,9 42.6,+58 51
+NGC 2964,UGC 5183,Galaxy,Leo,3.0,9 42.9,+31 51
+NGC 2974,MCG 0-25-8,Galaxy,Sextans,3.4,9 42.6,-3 42
+NGC 2976,UGC 5221,Galaxy,Ursa Major,4.9,9 47.3,+67 55
+NGC 2985,UGC 5253,Galaxy,Ursa Major,4.3,9 50.4,+72 17
+NGC 3034,M 82,Galaxy,Ursa Major,11.2,9 55.8,+69 41
+NGC 3077,UGC 5398,Galaxy,Ursa Major,4.6,10 3.3,+68 44
+NGC 3079,UGC 5387,Galaxy,Ursa Major,7.6,10 2,+55 41
+NGC 3115,MCG 1-26-18,Galaxy,Sextans,8.3,10 5.2,-7 43
+NGC 3147,UGC 5532,Galaxy,Draco,4.0,10 16.9,+73 24
+NGC 3166,UGC 5516,Galaxy,Sextans,5.2,10 13.8,+3 26
+NGC 3169,UGC 5525,Galaxy,Sextans,4.8,10 14.2,+3 28
+NGC 3184,UGC 5557,Galaxy,Ursa Major,6.9,10 18.3,+41 25
+NGC 3190,UGC 5559,Galaxy,Leo,4.6,10 18.1,+21 50
+NGC 3193,UGC 5562,Galaxy,Leo,2.8,10 18.4,+21 54
+NGC 3198,UGC 5572,Galaxy,Ursa Major,8.3,10 19.9,+45 33
+NGC 3226,UGC 5617,Galaxy,Leo,2.8,10 23.4,+19 54
+NGC 3227,UGC 5620,Galaxy,Leo,5.6,10 23.5,+19 52
+NGC 3242,PK 261+32.1,Planetary Nebula,Hydra,20.8,10 24.8,-18 38
+NGC 3245,UGC 5663,Galaxy,Leo Minor,3.2,10 27.3,+28 30
+NGC 3277,UGC 5731,Galaxy,Leo Minor,2.0,10 32.9,+28 31
+NGC 3294,UGC 5753,Galaxy,Leo Minor,3.3,10 36.3,+37 20
+NGC 3310,UGC 5786,Galaxy,Ursa Major,3.6,10 38.7,+53 30
+NGC 3344,UGC 5840,Galaxy,Leo Minor,6.9,10 43.5,+24 55
+NGC 3377,UGC 5899,Galaxy,Leo,4.4,10 47.7,+13 59
+NGC 3379,M 105,Galaxy,Leo,4.5,10 47.8,+12 35
+NGC 3384,NGC 3371,Galaxy,Leo,5.9,10 48.3,+12 38
+NGC 3395,UGC 5931,Galaxy,Leo Minor,1.9,10 49.8,+32 59
+NGC 3412,UGC 5952,Galaxy,Leo,3.6,10 50.9,+13 25
+NGC 3414,UGC 5959,Galaxy,Leo Minor,3.6,10 51.3,+27 59
+NGC 3432,UGC 5986,Galaxy,Leo Minor,6.2,10 52.5,+36 37
+NGC 3486,UGC 6079,Galaxy,Leo Minor,6.9,11 0.4,+28 58
+NGC 3489,UGC 6082,Galaxy,Leo,3.7,11 0.3,+13 54
+NGC 3504,UGC 6118,Galaxy,Leo Minor,2.7,11 3.2,+27 58
+NGC 3521,UGC 6150,Galaxy,Leo,9.5,11 5.8,-0 2
+NGC 3556,M 108,Galaxy,Ursa Major,8.3,11 11.5,+55 40
+NGC 3593,UGC 6272,Galaxy,Leo,5.8,11 14.6,+12 49
+NGC 3607,UGC 6297,Galaxy,Leo,3.7,11 16.9,+18 3
+NGC 3608,UGC 6299,Galaxy,Leo,3.0,11 17,+18 9
+NGC 3610,UGC 6319,Galaxy,Ursa Major,3.2,11 18.4,+58 47
+NGC 3613,UGC 6323,Galaxy,Ursa Major,3.6,11 18.6,+58 0
+NGC 3619,UGC 6330,Galaxy,Ursa Major,3.1,11 19.4,+57 46
+NGC 3621,ESO 377-37,Galaxy,Hydra,10.0,11 18.3,-32 49
+NGC 3626,NGC 3632,Galaxy,Leo,3.1,11 20.1,+18 21
+NGC 3628,UGC 6350,Galaxy,Leo,14.8,11 20.3,+13 36
+NGC 3631,UGC 6360,Galaxy,Ursa Major,4.6,11 21,+53 10
+NGC 3640,UGC 6368,Galaxy,Leo,4.1,11 21.1,+3 14
+NGC 3655,UGC 6396,Galaxy,Leo,1.6,11 22.9,+16 35
+NGC 3665,UGC 6426,Galaxy,Ursa Major,3.2,11 24.7,+38 46
+NGC 3675,UGC 6439,Galaxy,Ursa Major,5.9,11 26.1,+43 35
+NGC 3686,UGC 6460,Galaxy,Leo,3.3,11 27.7,+17 13
+NGC 3726,UGC 6537,Galaxy,Ursa Major,6.0,11 33.3,+47 2
+NGC 3729,UGC 6547,Galaxy,Ursa Major,3.1,11 33.8,+53 8
+NGC 3810,UGC 6644,Galaxy,Leo,4.3,11 41,+11 28
+NGC 3813,UGC 6651,Galaxy,Ursa Major,2.3,11 41.3,+36 33
+NGC 3877,UGC 6745,Galaxy,Ursa Major,5.4,11 46.1,+47 30
+NGC 3893,UGC 6778,Galaxy,Ursa Major,4.4,11 48.6,+48 43
+NGC 3898,UGC 6787,Galaxy,Ursa Major,4.4,11 49.2,+56 5
+NGC 3900,UGC 6786,Galaxy,Leo,3.5,11 49.2,+27 1
+NGC 3912,NGC 3899,Galaxy,Leo,1.7,11 50.1,+26 29
+NGC 3938,UGC 6856,Galaxy,Ursa Major,5.4,11 52.8,+44 7
+NGC 3941,UGC 6857,Galaxy,Ursa Major,3.8,11 52.9,+36 59
+NGC 3945,UGC 6860,Galaxy,Ursa Major,5.5,11 53.2,+60 41
+NGC 3949,UGC 6869,Galaxy,Ursa Major,3.0,11 53.7,+47 52
+NGC 3953,UGC 6870,Galaxy,Ursa Major,6.6,11 53.8,+52 20
+NGC 3962,MCG 2-30-40,Galaxy,Crater,2.9,11 54.7,-13 58
+NGC 3982,UGC 6918,Galaxy,Ursa Major,2.5,11 56.5,+55 8
+NGC 3992,M 109,Galaxy,Ursa Major,7.6,11 57.6,+53 23
+NGC 3998,UGC 6946,Galaxy,Ursa Major,3.1,11 57.9,+55 27
+NGC 4026,UGC 6985,Galaxy,Ursa Major,5.1,11 59.4,+50 58
+NGC 4027,ESO 572-37,Galaxy,Corvus,3.0,11 59.5,-19 16
+NGC 4030,UGC 6993,Galaxy,Virgo,4.3,12 0.4,-1 6
+NGC 4036,UGC 7005,Galaxy,Ursa Major,4.5,12 1.4,+61 54
+NGC 4038,ESO 572-47,Galaxy,Corvus,2.6,12 1.9,-18 52
+NGC 4041,UGC 7014,Galaxy,Ursa Major,2.8,12 2.2,+62 8
+NGC 4051,UGC 7030,Galaxy,Ursa Major,5.0,12 3.2,+44 32
+NGC 4085,UGC 7075,Galaxy,Ursa Major,2.8,12 5.4,+50 21
+NGC 4088,UGC 7081,Galaxy,Ursa Major,5.8,12 5.6,+50 33
+NGC 4102,UGC 7096,Galaxy,Ursa Major,3.2,12 6.4,+52 43
+NGC 4111,UGC 7103,Galaxy,Canes Venatici,4.8,12 7.1,+43 4
+NGC 4143,UGC 7142,Galaxy,Canes Venatici,2.9,12 9.6,+42 32
+NGC 4147,NGC 4153,Globular Cluster,Coma Berenices,4.0,12 10.1,+18 33
+NGC 4150,UGC 7165,Galaxy,Coma Berenices,2.5,12 10.6,+30 24
+NGC 4151,UGC 7166,Galaxy,Canes Venatici,5.9,12 10.5,+39 24
+NGC 4179,UGC 7214,Galaxy,Virgo,4.2,12 12.9,+1 18
+NGC 4203,UGC 7256,Galaxy,Coma Berenices,3.6,12 15.1,+33 12
+NGC 4214,NGC 4228,Galaxy,Canes Venatici,7.9,12 15.6,+36 20
+NGC 4216,UGC 7284,Galaxy,Virgo,8.3,12 15.9,+13 9
+NGC 4245,UGC 7328,Galaxy,Coma Berenices,3.3,12 17.6,+29 36
+NGC 4251,UGC 7338,Galaxy,Coma Berenices,4.2,12 18.1,+28 10
+NGC 4258,M 106,Galaxy,Canes Venatici,18.2,12 19,+47 18
+NGC 4261,UGC 7360,Galaxy,Virgo,3.9,12 19.4,+5 49
+NGC 4273,UGC 7380,Galaxy,Virgo,2.3,12 19.9,+5 21
+NGC 4274,UGC 7377,Galaxy,Coma Berenices,6.9,12 19.8,+29 37
+NGC 4278,UGC 7386,Galaxy,Coma Berenices,3.6,12 20.1,+29 17
+NGC 4281,UGC 7389,Galaxy,Virgo,3.1,12 20.4,+5 23
+NGC 4293,UGC 7405,Galaxy,Coma Berenices,6.0,12 21.2,+18 23
+NGC 4303,M 61,Galaxy,Virgo,6.0,12 21.9,+4 28
+NGC 4314,UGC 7443,Galaxy,Coma Berenices,4.8,12 22.6,+29 53
+NGC 4346,UGC 7463,Galaxy,Canes Venatici,3.5,12 23.5,+47 0
+NGC 4350,UGC 7473,Galaxy,Coma Berenices,3.2,12 24,+16 42
+NGC 4361,ESO 573-PN19,Planetary Nebula,Corvus,1.8,12 24.5,-18 48
+NGC 4365,UGC 7488,Galaxy,Virgo,6.2,12 24.5,+7 19
+NGC 4371,UGC 7493,Galaxy,Virgo,3.9,12 24.9,+11 42
+NGC 4394,UGC 7523,Galaxy,Coma Berenices,3.9,12 25.9,+18 13
+NGC 4414,UGC 7539,Galaxy,Coma Berenices,3.6,12 26.4,+31 13
+NGC 4419,UGC 7551,Galaxy,Coma Berenices,3.4,12 26.9,+15 3
+NGC 4429,UGC 7568,Galaxy,Virgo,5.5,12 27.4,+11 7
+NGC 4435,UGC 7575,Galaxy,Virgo,3.0,12 27.7,+13 5
+NGC 4438,UGC 7574,Galaxy,Virgo,9.3,12 27.8,+13 1
+NGC 4442,UGC 7583,Galaxy,Virgo,4.6,12 28.1,+9 48
+NGC 4448,UGC 7591,Galaxy,Coma Berenices,4.0,12 28.2,+28 37
+NGC 4449,UGC 7592,Galaxy,Canes Venatici,5.1,12 28.2,+44 6
+NGC 4450,UGC 7594,Galaxy,Coma Berenices,4.8,12 28.5,+17 5
+NGC 4459,UGC 7614,Galaxy,Coma Berenices,3.8,12 29,+13 59
+NGC 4473,UGC 7631,Galaxy,Coma Berenices,4.5,12 29.8,+13 26
+NGC 4477,UGC 7638,Galaxy,Coma Berenices,4.0,12 30,+13 38
+NGC 4478,UGC 7645,Galaxy,Virgo,2.0,12 30.3,+12 20
+NGC 4485,UGC 7648,Galaxy,Canes Venatici,2.4,12 30.5,+41 42
+NGC 4490,UGC 7651,Galaxy,Canes Venatici,5.9,12 30.6,+41 38
+NGC 4494,UGC 7662,Galaxy,Coma Berenices,4.8,12 31.4,+25 47
+NGC 4526,NGC 4560,Galaxy,Virgo,7.2,12 34,+7 42
+NGC 4527,UGC 7721,Galaxy,Virgo,6.3,12 34.1,+2 39
+NGC 4535,UGC 7727,Galaxy,Virgo,6.8,12 34.3,+8 12
+NGC 4536,UGC 7732,Galaxy,Virgo,7.4,12 34.5,+2 11
+NGC 4546,MCG 1-32-27,Galaxy,Virgo,3.5,12 35.5,-3 48
+NGC 4548,M 91,Galaxy,Coma Berenices,5.4,12 35.4,+14 30
+NGC 4550,UGC 7757,Galaxy,Virgo,3.5,12 35.5,+12 13
+NGC 4559,UGC 7766,Galaxy,Coma Berenices,10.5,12 36,+27 58
+NGC 4565,UGC 7772,Galaxy,Coma Berenices,16.2,12 36.3,+25 59
+NGC 4570,UGC 7785,Galaxy,Virgo,4.1,12 36.9,+7 15
+NGC 4594,M 104,Galaxy,Virgo,8.9,12 40,-11 37
+NGC 4596,UGC 7828,Galaxy,Virgo,3.9,12 39.9,+10 11
+NGC 4618,IC 3667,Galaxy,Canes Venatici,4.4,12 41.5,+41 9
+NGC 4631,UGC 7865,Galaxy,Canes Venatici,15.1,12 42.1,+32 32
+NGC 4636,NGC 4624?,Galaxy,Virgo,6.2,12 42.8,+2 41
+NGC 4643,UGC 7895,Galaxy,Virgo,3.4,12 43.3,+1 59
+NGC 4654,IC 3708,Galaxy,Virgo,4.7,12 44,+13 8
+NGC 4656,UGC 7907,Galaxy,Canes Venatici,13.8,12 44,+32 10
+NGC 4660,UGC 7914,Galaxy,Virgo,2.8,12 44.5,+11 11
+NGC 4665,NGC 4624,Galaxy,Virgo,4.2,12 45.1,+3 3
+NGC 4666,UGC 7926,Galaxy,Virgo,4.5,12 45.1,-0 28
+NGC 4689,UGC 7965,Galaxy,Coma Berenices,4.0,12 47.8,+13 46
+NGC 4697,MCG 1-33-10,Galaxy,Virgo,6.0,12 48.6,-5 48
+NGC 4698,UGC 7970,Galaxy,Virgo,4.3,12 48.4,+8 29
+NGC 4699,MCG 1-33-13,Galaxy,Virgo,3.5,12 49,-8 40
+NGC 4725,UGC 7989,Galaxy,Coma Berenices,11.0,12 50.4,+25 30
+NGC 4753,UGC 8009,Galaxy,Virgo,5.4,12 52.4,-1 12
+NGC 4754,UGC 8010,Galaxy,Virgo,4.7,12 52.3,+11 19
+NGC 4762,UGC 8016,Galaxy,Virgo,8.7,12 52.9,+11 14
+NGC 4781,MCG 2-33-49,Galaxy,Virgo,3.5,12 54.4,-10 32
+NGC 4800,UGC 8035,Galaxy,Canes Venatici,1.8,12 54.6,+46 32
+NGC 4845,UGC 8078,Galaxy,Virgo,5.0,12 58,+1 35
+NGC 4856,MCG 2-33-78,Galaxy,Virgo,4.6,12 59.3,-15 2
+NGC 4866,UGC 8102,Galaxy,Virgo,6.5,12 59.5,+14 10
+NGC 4900,UGC 8116,Galaxy,Virgo,2.3,13 0.6,+2 30
+NGC 4958,MCG 1-33-84,Galaxy,Virgo,4.1,13 5.8,-8 1
+NGC 4995,MCG 1-34-7,Galaxy,Virgo,2.5,13 9.7,-7 50
+NGC 5005,UGC 8256,Galaxy,Canes Venatici,5.4,13 10.9,+37 3
+NGC 5033,UGC 8307,Galaxy,Canes Venatici,10.5,13 13.4,+36 36
+NGC 5054,MCG 3-34-39,Galaxy,Virgo,5.0,13 17,-16 38
+NGC 5195,UGC 8494,Galaxy,Canes Venatici,5.4,13 30,+47 16
+NGC 5248,UGC 8616,Galaxy,Boötes,6.5,13 37.5,+8 53
+NGC 5273,UGC 8675,Galaxy,Canes Venatici,3.1,13 42.1,+35 39
+NGC 5322,UGC 8745,Galaxy,Ursa Major,5.5,13 49.3,+60 12
+NGC 5363,UGC 8847,Galaxy,Virgo,4.2,13 56.1,+5 15
+NGC 5364,NGC 5317,Galaxy,Virgo,7.1,13 56.2,+5 1
+NGC 5466,GCL 27,Globular Cluster,Boötes,11.0,14 5.5,+28 32
+NGC 5473,UGC 9011,Galaxy,Ursa Major,2.6,14 4.7,+54 54
+NGC 5474,UGC 9013,Galaxy,Ursa Major,4.5,14 5,+53 40
+NGC 5557,UGC 9161,Galaxy,Boötes,2.4,14 18.4,+36 30
+NGC 5566,UGC 9175,Galaxy,Virgo,6.5,14 20.3,+3 56
+NGC 5576,UGC 9183,Galaxy,Virgo,3.2,14 21.1,+3 16
+NGC 5631,UGC 9261,Galaxy,Ursa Major,2.2,14 26.6,+56 35
+NGC 5634,GCL 28,Globular Cluster,Virgo,4.9,14 29.6,-5 59
+NGC 5676,UGC 9366,Galaxy,Boötes,3.9,14 32.8,+49 28
+NGC 5689,UGC 9399,Galaxy,Boötes,3.7,14 35.5,+48 45
+NGC 5694,GCL 29,Globular Cluster,Hydra,3.6,14 39.6,-26 32
+NGC 5746,UGC 9499,Galaxy,Virgo,7.9,14 44.9,+1 57
+NGC 5846,UGC 9706,Galaxy,Virgo,3.4,15 6.4,+1 36
+NGC 5866,M 102?,Galaxy,Draco,5.2,15 6.5,+55 46
+NGC 5897,GCL 33,Globular Cluster,Lib,12.6,15 17.4,-21 1
+NGC 5907,NGC 5906,Galaxy,Draco,12.3,15 15.9,+56 19
+NGC 5982,UGC 9961,Galaxy,Draco,2.9,15 38.7,+59 21
+NGC 6118,UGC 10350,Galaxy,Serpens,4.7,16 21.8,-2 17
+NGC 6144,GCL 42,Globular Cluster,Scorpius,9.3,16 27.3,-26 2
+NGC 6171,M 107,Globular Cluster,Ophiuchus,10.0,16 32.5,-13 3
+NGC 6207,UGC 10521,Galaxy,Hercules,3.0,16 43.1,+36 50
+NGC 6217,UGC 10470,Galaxy,Ursa Minor,3.1,16 32.6,+78 12
+NGC 6229,GCL 47,Globular Cluster,Hercules,4.5,16 47,+47 32
+NGC 6235,GCL 48,Globular Cluster,Ophiuchus,5.0,16 53.4,-22 11
+NGC 6284,GCL 53,Globular Cluster,Ophiuchus,5.6,17 4.5,-24 46
+NGC 6287,GCL 54,Globular Cluster,Ophiuchus,5.1,17 5.2,-22 42
+NGC 6293,GCL 55,Globular Cluster,Ophiuchus,7.9,17 10.2,-26 35
+NGC 6304,GCL 56,Globular Cluster,Ophiuchus,6.8,17 14.5,-29 28
+NGC 6316,GCL 57,Globular Cluster,Ophiuchus,4.9,17 16.6,-28 8
+NGC 6342,GCL 61,Globular Cluster,Ophiuchus,3.0,17 21.2,-19 35
+NGC 6355,GCL 63,Globular Cluster,Ophiuchus,5.0,17 24,-26 21
+NGC 6356,GCL 62,Globular Cluster,Ophiuchus,7.2,17 23.6,-17 49
+NGC 6369,PK 2+5.1 or H IV 11,Planetary Nebula,Ophiuchus,1.1,17 29.3,-23 46
+NGC 6401,GCL 73,Globular Cluster,Ophiuchus,5.6,17 38.6,-23 55
+NGC 6426,GCL 76,Globular Cluster,Ophiuchus,3.2,17 44.9,+3 0
+NGC 6440,GCL 77,Globular Cluster,Sagittarius,5.4,17 48.9,-20 22
+NGC 6445,PK 8+3.1 or H II 586,Planetary Nebula,Sagittarius,0.6,17 49.2,-20 1
+NGC 6451,OCL 1035,Open Cluster,Scorpius,8.0,17 50.7,-30 13
+NGC 6514,M 20,Cluster Nebulosity,Sagittarius,29.0,18 2.3,-23 2
+NGC 6517,GCL 81,Globular Cluster,Ophiuchus,4.3,18 1.8,-8 58
+NGC 6520,OCL 10,Open Cluster,Sagittarius,6.0,18 3.4,-27 54
+NGC 6522,GCL 82,Globular Cluster,Sagittarius,5.6,18 3.6,-30 2
+NGC 6528,GCL 84,Globular Cluster,Sagittarius,3.7,18 4.8,-30 3
+NGC 6540,NGC 6540,Open Cluster,Sagittarius,1.0,18 6.3,-27 49
+NGC 6543,PK 96+29.1,Planetary Nebula,Draco,5.8,17 58.6,+66 38
+NGC 6544,GCL 87,Globular Cluster,Sagittarius,8.9,18 7.3,-25 0
+NGC 6553,GCL 88,Globular Cluster,Sagittarius,8.1,18 9.3,-25 54
+NGC 6568,OCL 28,Open Cluster,Sagittarius,13.0,18 12.8,-21 36
+NGC 6569,GCL 91,Globular Cluster,Sagittarius,5.8,18 13.6,-31 50
+NGC 6583,OCL 27,Open Cluster,Sagittarius,3.0,18 15.8,-22 8
+NGC 6624,GCL 93,Globular Cluster,Sagittarius,5.9,18 23.7,-30 22
+NGC 6629,PK 9-5.1 or H II 204,Planetary Nebula,Sagittarius,0.3,18 25.7,-23 12
+NGC 6633,OCL 90,Open Cluster,Ophiuchus,27.0,18 27.7,+6 34
+NGC 6638,GCL 95,Globular Cluster,Sagittarius,5.0,18 30.9,-25 30
+NGC 6642,GCL 97,Globular Cluster,Sagittarius,4.5,18 31.9,-23 29
+NGC 6645,OCL 48,Open Cluster,Sagittarius,10.0,18 32.6,-16 54
+NGC 6664,OCL 68,Open Cluster,Scutum,16.0,18 36.7,-8 13
+NGC 6712,GCL 103,Globular Cluster,Scutum,7.2,18 53.1,-8 42
+NGC 6755,OCL 96,Open Cluster,Aquila,15.0,19 7.8,+4 14
+NGC 6756,OCL 99,Open Cluster,Aquila,4.0,19 8.7,+4 41
+NGC 6781,PK 41-2.1,Planetary Nebula,Aquila,1.8,19 18.4,+6 33
+NGC 6802,OCL 114,Open Cluster,Vulpecula,3.0,19 30.6,+20 16
+NGC 6818,PK 25-17.1,Planetary Nebula,Sagittarius,0.3,19 44,-14 9
+NGC 6823,OCL 124,Open Cluster,Vulpecula,12.0,19 43.1,+23 18
+NGC 6826,PK 83+12.1,Planetary Nebula,Cygnus,2.3,19 44.8,+50 31
+NGC 6830,OCL 125,Open Cluster,Vulpecula,12.0,19 51,+23 4
+NGC 6834,OCL 134,Open Cluster,Cygnus,5.0,19 52.2,+29 25
+NGC 6866,OCL 183,Open Cluster,Cygnus,7.0,20 3.7,+44 0
+NGC 6882,NGC 6882,Open Cluster,Vulpecula,18.0,20 11.7,+26 33
+NGC 6885,OCL 152,Open Cluster,Vulpecula,7.0,20 12,+26 29
+NGC 6905,PK 61-9.1 or H IV 16,Planetary Nebula,Delphinus,1.7,20 22.4,+20 7
+NGC 6910,OCL 181,Open Cluster,Cygnus,8.0,20 23.1,+40 47
+NGC 6934,GCL 117,Globular Cluster,Delphinus,5.9,20 34.2,+7 24
+NGC 6939,OCL 217,Open Cluster,Cepheus,8.0,20 31.4,+60 38
+NGC 6940,OCL 141,Open Cluster,Vulpecula,31.0,20 34.6,+28 18
+NGC 6946,UGC 11597,Galaxy,Cepheus,11.0,20 34.8,+60 9
+NGC 7000,LBN 373,Nebula,Cygnus,120.0,20 58.8,+44 20
+NGC 7006,GCL 119,Globular Cluster,Delphinus,2.8,21 1.5,+16 11
+NGC 7008,PK 93+5.2,Planetary Nebula,Cygnus,1.4,21 0.6,+54 33
+NGC 7009,PK 37-34.1,Planetary Nebula,Aquarius,1.7,21 4.2,-11 22
+NGC 7044,OCL 198,Open Cluster,Cygnus,,21 12.9,+42 29
+NGC 7062,OCL 205,Open Cluster,Cygnus,7.0,21 23.2,+46 23
+NGC 7086,OCL 214,Open Cluster,Cygnus,9.0,21 30.5,+51 35
+NGC 7128,OCL 218,Open Cluster,Cygnus,3.0,21 44,+53 43
+NGC 7142,OCL 241,Open Cluster,Cepheus,4.0,21 45.9,+65 48
+NGC 7160,OCL 236,Open Cluster,Cepheus,7.0,21 53.7,+62 36
+NGC 7209,OCL 215,Open Cluster,Lacerta,25.0,22 5.2,+46 30
+NGC 7217,UGC 11914,Galaxy,Pegasus,3.7,22 7.9,+31 22
+NGC 7243,OCL 221,Open Cluster,Lacerta,21.0,22 15.3,+49 53
+NGC 7296,OCL 228,Open Cluster,Lacerta,4.0,22 28.2,+52 17
+NGC 7331,UGC 12113,Galaxy,Pegasus,10.7,22 37.1,+34 25
+NGC 7380,OCL 244,Cluster Nebulosity,Cepheus,25.0,22 47,+58 6
+NGC 7448,UGC 12294,Galaxy,Pegasus,2.7,23 0.1,+15 59
+NGC 7479,UGC 12343,Galaxy,Pegasus,4.1,23 4.9,+12 19
+NGC 7510,OCL 256,Open Cluster,Cepheus,4.0,23 11.5,+60 34
+NGC 7606,MCG 2-59-12,Galaxy,Aquarius,5.8,23 19.1,-8 29
+NGC 7662,PK 106-17.1,Planetary Nebula,Andromeda,2.2,23 25.9,+42 33
+NGC 7686,OCL 251,Open Cluster,Andromeda,15.0,23 30.2,+49 8
+NGC 7723,MCG 2-60-5,Galaxy,Aquarius,3.6,23 38.9,-12 58
+NGC 7727,MCG 2-60-8,Galaxy,Aquarius,4.2,23 39.9,-12 18
+NGC 7789,OCL 269,Open Cluster,Cassiopeia,16.0,23 57,+56 44
+NGC 7790,OCL 276,Open Cluster,Cassiopeia,17.0,23 58.4,+61 13
+NGC 7814,UGC 8,Galaxy,Pegasus,6.3,0 3.3,+16 9
