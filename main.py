@@ -12,7 +12,7 @@ relative_humidity = float(os.getenv("RELATIVE_HUMIDITY", 0))
 temperature = float(os.getenv("TEMPERATURE", 0))
 observation_date = os.getenv("OBSERVATION_DATE", None)
 target_list = os.getenv("TARGET_LIST", None)
-
+type_filter = os.getenv("TYPE_FILTER", "")
 
 def main():
     calc(
@@ -25,6 +25,7 @@ def main():
         temperature,
         observation_date,
         target_list,
+        type_filter,
     )
 
 

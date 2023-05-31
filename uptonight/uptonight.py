@@ -62,7 +62,6 @@ def create_target_list(target_list):
     """
 
     input_targets = Table.read(f"{target_list}.csv", format="ascii.csv")
-
     # Create astroplan.FixedTarget objects for each one in the table
     targets = [
         FixedTarget(
@@ -210,6 +209,7 @@ def calc(
     temperature=0,
     observation_date=None,
     target_list=None,
+    type_filter="",
 ):
     """
     Calculates the deep sky objects for tonights sky and a given earth location.
@@ -254,6 +254,8 @@ def calc(
         If the value is omitted, the current date is used. 
     target_list      : string (optional)
         The target list to use. Defaults to Gary_Imm_Best_Astrophotography_Objects
+    type_filter      : string (optional)
+        Filter on an object type. Examples: Nebula, Galaxy, Nova, ...
     
     Returns
     -------
@@ -406,6 +408,10 @@ def calc(
             # Add target to final table, leave out Polaris
             if i < (len(targets) - 1):
 
+                # If an object type is set we filter out everything else
+                if type_filter != "" and type_filter.lower() not in input_targets[i]["type"].lower():
+                    continue
+
                 size = input_targets[i]["size"]
                 if size >= SIZE_CONSTRAINT_MIN and size <= SIZE_CONSTRAINT_MAX:
                     meridian_transit_time = observer.target_meridian_transit_time(
@@ -495,13 +501,16 @@ def calc(
     # Save plot
     plt.tight_layout()
     current_day = observer.astropy_time_to_datetime(observing_start_time).strftime("%Y%m%d")
-    plt.savefig(f"out/plot-{current_day}.png")
-    plt.savefig("out/plot.png")
+    filter_ext = ""
+    if type_filter != "":
+        filter_ext = f"-{type_filter}"
+    plt.savefig(f"out/plot-{current_day}{filter_ext}.png")
+    plt.savefig(f"out/plot{filter_ext}.png")
 
     # Create report
-    uptonight_targets.write(f"report-{current_day}.txt", overwrite=True, format="ascii.fixed_width_two_line")
+    uptonight_targets.write(f"out/report-{current_day}{filter_ext}.txt", overwrite=True, format="ascii.fixed_width_two_line")
 
-    with open(f"report-{current_day}.txt", "r") as report:
+    with open(f"out/report-{current_day}{filter_ext}.txt", "r") as report:
         contents = report.readlines()
     contents.insert(0, "-" * 163)
     contents.insert(1, "\n")
@@ -530,8 +539,8 @@ def calc(
     contents.insert(17, "\n")
     contents.insert(18, "\n")
 
-    with open(f"out/report-{current_day}.txt", "w") as report:
+    with open(f"out/report-{current_day}{filter_ext}.txt", "w") as report:
         contents = "".join(contents)
         report.write(contents)
-    with open("out/report.txt", "w") as report:
+    with open(f"out/report{filter_ext}.txt", "w") as report:
         report.write(contents)

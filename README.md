@@ -118,7 +118,7 @@ RELATIVE_HUMIDITY | percentage | The ambient relative humidity | 0.8| yes | 0
 TEMPERATURE | degrees centigrade | The ambient temperature | 12| yes | 0
 OBSERVATION_DATE | %m/$d/%y | Day of observation | 10/01/23| yes | *Current day*
 TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Messier) | targets/Messier | yes | targets/GaryImm
-
+TYPE_FILTER | string | Filter on an object type | yes | Nebula | ""
 ### Constraints
 
 If you want to change constraints adapt the constants below to your needs in `uptonight/const.py`
