@@ -119,6 +119,7 @@ TEMPERATURE | degrees centigrade | The ambient temperature | 12| yes | 0
 OBSERVATION_DATE | %m/$d/%y | Day of observation | 10/01/23| yes | *Current day*
 TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Messier) | targets/Messier | yes | targets/GaryImm
 TYPE_FILTER | string | Filter on an object type | yes | Nebula | ""
+
 ### Constraints
 
 If you want to change constraints adapt the constants below to your needs in `uptonight/const.py`
@@ -129,6 +130,7 @@ ALTITUDE_CONSTRAINT_MAX = 80   # in deg above horizon
 AIRMASSS_CONSTRAINT = 2        # 30° to 90°
 SIZE_CONSTRAINT_MIN = 10       # in arc minutes
 SIZE_CONSTRAINT_MAX = 180      # in arc minutes
+MOON_SEPARATION_MIN = 90       # in degrees
 
 # object needs to be within the constraints for at least 80% of darkness
 FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.80

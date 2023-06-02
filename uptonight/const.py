@@ -1,8 +1,9 @@
 ALTITUDE_CONSTRAINT_MIN = 30  # in deg above horizon
 ALTITUDE_CONSTRAINT_MAX = 80  # in deg above horizon
-AIRMASSS_CONSTRAINT = 2  # 30° to 90°
+AIRMASS_CONSTRAINT = 2  # 30° to 90°
 SIZE_CONSTRAINT_MIN = 10  # in arc minutes
 SIZE_CONSTRAINT_MAX = 180  # in arc minutes
+MOON_SEPARATION_MIN = 90  # in degrees
 
 # object needs to be within the constraints for at least 80% of darkness
 FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.80
