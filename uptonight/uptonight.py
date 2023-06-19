@@ -67,7 +67,7 @@ def create_target_list(target_list):
     targets = [
         FixedTarget(
             coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)),
-            name=common_name + f" ({name})",
+            name=common_name + f" ({name}, {size}\')",
         )
         for name, common_name, type, constellation, size, ra, dec in input_targets
     ]
@@ -78,19 +78,20 @@ def create_target_list(target_list):
         desc = custom_target.get("description")
         ra = custom_target.get("ra")
         dec = custom_target.get("dec")
+        size = custom_target.get("size")
         input_targets.add_row(
             [
                 name,
                 desc,
                 custom_target.get("type"),
                 custom_target.get("constellation"),
-                custom_target.get("size"),
+                size,
                 ra,
                 dec,
             ]
         )
         targets.append(
-            FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=desc + f" ({name})"),
+            FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=desc + f" ({name}, {size}\')"),
         )
 
     # Lastly we add Polaris

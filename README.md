@@ -77,6 +77,7 @@ Logically, the calculation is done as follows:
       2. Minimal and maximal altitude.
       3. Size constraints in arc minutes.
       4. Minimal fraction of time observable for the object. The default value of 0.8 means, that the given objects needs to be in your constraints for at least 80% of astronomical darkness.
+      5. Moon separation in degrees.
 4. Filter the remaining objects to fit in the size and fraction of time observability limits.
 5. Create plot and report.
 
@@ -118,7 +119,7 @@ RELATIVE_HUMIDITY | percentage | The ambient relative humidity | 0.8| yes | 0
 TEMPERATURE | degrees centigrade | The ambient temperature | 12| yes | 0
 OBSERVATION_DATE | %m/$d/%y | Day of observation | 10/01/23| yes | *Current day*
 TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Messier) | targets/Messier | yes | targets/GaryImm
-TYPE_FILTER | string | Filter on an object type | yes | Nebula | ""
+TYPE_FILTER | string | Filter on an object type | Nebula | yes | ""
 
 ### Constraints
 
