@@ -11,7 +11,9 @@ from datetime import datetime
 
 from astropy import units as u
 from astropy.coordinates import SkyCoord
+from astropy.coordinates import AltAz
 from astropy.coordinates import EarthLocation
+from astropy.coordinates import get_body
 from astropy.table import Table
 from astropy.time import Time
 
@@ -212,6 +214,7 @@ def calc(
     observation_date=None,
     target_list=None,
     type_filter="",
+    output_dir="",
 ):
     """
     Calculates the deep sky objects for tonights sky and a given earth location.
@@ -416,6 +419,13 @@ def calc(
                 if type_filter != "" and type_filter.lower() not in input_targets[i]["type"].lower():
                     continue
 
+                # Choose marker
+                marker = 's'
+                if "galaxy" in input_targets[i]["type"].lower():
+                    marker = 'o'
+                if "nebula" in input_targets[i]["type"].lower():
+                    marker = 'D'
+
                 size = input_targets[i]["size"]
                 if size >= SIZE_CONSTRAINT_MIN and size <= SIZE_CONSTRAINT_MAX:
                     meridian_transit_time = observer.target_meridian_transit_time(observing_start_time, target, which="next")
@@ -453,7 +463,7 @@ def calc(
                         target,
                         observer,
                         time_grid,
-                        style_kwargs=dict(color=cmap(target_no / within_threshold), label=target.name),
+                        style_kwargs=dict(color=cmap(target_no / within_threshold), label=target.name, marker=marker),
                         north_to_east_ccw=NORTH_TO_EAST_CCW,
                     )
 
@@ -462,11 +472,22 @@ def calc(
                     target,
                     observer,
                     time_grid,
-                    style_kwargs=dict(color=cmap(target_no / within_threshold), label=target.name),
+                    style_kwargs=dict(color='w', label=target.name, marker='*'),
                     north_to_east_ccw=NORTH_TO_EAST_CCW,
                 )
             target_no = target_no + 1
 
+    moon_frame = AltAz(obstime=time_grid, location=observer.location)
+    moon_body = get_body("moon", time_grid)
+    moon_altaz = moon_body.transform_to(moon_frame)
+    ax = plot_sky(
+                    moon_altaz,
+                    observer,
+                    time_grid,
+                    style_kwargs=dict(color='w', label="Moon", marker='X', s=100),
+                    north_to_east_ccw=NORTH_TO_EAST_CCW,
+                )
+    
     astronight_from = observer.astropy_time_to_datetime(observing_start_time).strftime("%m/%d %H:%M")
     astronight_to = observer.astropy_time_to_datetime(observing_end_time).strftime("%m/%d %H:%M")
     sun_set = observer.astropy_time_to_datetime(observer.sun_set_time(time, which="next", horizon=-6 * u.deg)).strftime("%m/%d %H:%M")
@@ -521,13 +542,13 @@ def calc(
     filter_ext = ""
     if type_filter != "":
         filter_ext = f"-{type_filter}"
-    plt.savefig(f"out/plot-{current_day}{filter_ext}.png")
-    plt.savefig(f"out/plot{filter_ext}.png")
+    plt.savefig(f"{output_dir}/plot-{current_day}{filter_ext}.png")
+    plt.savefig(f"{output_dir}/plot{filter_ext}.png")
 
     # Create report
-    uptonight_targets.write(f"out/report-{current_day}{filter_ext}.txt", overwrite=True, format="ascii.fixed_width_two_line")
+    uptonight_targets.write(f"{output_dir}/report-{current_day}{filter_ext}.txt", overwrite=True, format="ascii.fixed_width_two_line")
 
-    with open(f"out/report-{current_day}{filter_ext}.txt", "r") as report:
+    with open(f"{output_dir}/report-{current_day}{filter_ext}.txt", "r") as report:
         contents = report.readlines()
     contents.insert(0, "-" * 163)
     contents.insert(1, "\n")
@@ -554,8 +575,8 @@ def calc(
     contents.insert(17, "\n")
     contents.insert(18, "\n")
 
-    with open(f"out/report-{current_day}{filter_ext}.txt", "w") as report:
+    with open(f"{output_dir}/report-{current_day}{filter_ext}.txt", "w") as report:
         contents = "".join(contents)
         report.write(contents)
-    with open(f"out/report{filter_ext}.txt", "w") as report:
+    with open(f"{output_dir}/report{filter_ext}.txt", "w") as report:
         report.write(contents)

@@ -13,6 +13,7 @@ temperature = float(os.getenv("TEMPERATURE", 0))
 observation_date = os.getenv("OBSERVATION_DATE", None)
 target_list = os.getenv("TARGET_LIST", None)
 type_filter = os.getenv("TYPE_FILTER", "")
+output_dir = os.getenv("OUTPUT_DIR", "out")
 
 def main():
     calc(
@@ -26,6 +27,7 @@ def main():
         observation_date,
         target_list,
         type_filter,
+        output_dir,
     )
 
 
