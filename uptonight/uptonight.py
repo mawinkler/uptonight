@@ -69,7 +69,7 @@ def create_target_list(target_list):
     targets = [
         FixedTarget(
             coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)),
-            name=common_name + f" ({name}, {size}\')",
+            name=common_name + f" ({name}, {size}')",
         )
         for name, common_name, type, constellation, size, ra, dec in input_targets
     ]
@@ -93,7 +93,7 @@ def create_target_list(target_list):
             ]
         )
         targets.append(
-            FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=desc + f" ({name}, {size}\')"),
+            FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=desc + f" ({name}, {size}')"),
         )
 
     # Lastly we add Polaris
@@ -405,36 +405,39 @@ def calc(
     target_no = 0
     ax = None
     for i, target in enumerate(targets):
-
         fraction_of_time_observable = observability_targets[i]["fraction of time observable"]
         if fraction_of_time_observable >= FRACTION_OF_TIME_OBSERVABLE_THRESHOLD:
-
             azimuth = observer.altaz(observing_start_time, target).az
             altitude = observer.altaz(observing_start_time, target).alt
 
             # Add target to final table, leave out Polaris
             if i < (len(targets) - 1):
-
                 # If an object type is set we filter out everything else
                 if type_filter != "" and type_filter.lower() not in input_targets[i]["type"].lower():
                     continue
 
                 # Choose marker
-                marker = 's'
+                marker = "s"
                 if "galaxy" in input_targets[i]["type"].lower():
-                    marker = 'o'
+                    marker = "o"
                 if "nebula" in input_targets[i]["type"].lower():
-                    marker = 'D'
+                    marker = "D"
 
                 size = input_targets[i]["size"]
                 if size >= SIZE_CONSTRAINT_MIN and size <= SIZE_CONSTRAINT_MAX:
-                    meridian_transit_time = observer.target_meridian_transit_time(observing_start_time, target, which="next")
+                    meridian_transit_time = observer.target_meridian_transit_time(
+                        observing_start_time, target, which="next"
+                    )
                     if meridian_transit_time < observing_end_time:
-                        meridian_transit = str(observer.astropy_time_to_datetime(meridian_transit_time).strftime("%m/%d/%Y %H:%M:%S"))
+                        meridian_transit = str(
+                            observer.astropy_time_to_datetime(meridian_transit_time).strftime("%m/%d/%Y %H:%M:%S")
+                        )
                     else:
                         meridian_transit = ""
 
-                    meridian_antitransit_time = observer.target_meridian_antitransit_time(observing_start_time, target, which="next")
+                    meridian_antitransit_time = observer.target_meridian_antitransit_time(
+                        observing_start_time, target, which="next"
+                    )
                     if meridian_antitransit_time < observing_end_time:
                         meridian_antitransit = str(
                             observer.astropy_time_to_datetime(meridian_antitransit_time).strftime("%m/%d/%Y %H:%M:%S")
@@ -472,7 +475,7 @@ def calc(
                     target,
                     observer,
                     time_grid,
-                    style_kwargs=dict(color='w', label=target.name, marker='*'),
+                    style_kwargs=dict(color="w", label=target.name, marker="*"),
                     north_to_east_ccw=NORTH_TO_EAST_CCW,
                 )
             target_no = target_no + 1
@@ -481,19 +484,27 @@ def calc(
     moon_body = get_body("moon", time_grid)
     moon_altaz = moon_body.transform_to(moon_frame)
     ax = plot_sky(
-                    moon_altaz,
-                    observer,
-                    time_grid,
-                    style_kwargs=dict(color='w', label="Moon", marker='X', s=100),
-                    north_to_east_ccw=NORTH_TO_EAST_CCW,
-                )
-    
+        moon_altaz,
+        observer,
+        time_grid,
+        style_kwargs=dict(color="w", label="Moon", marker="X", s=100),
+        north_to_east_ccw=NORTH_TO_EAST_CCW,
+    )
+
     astronight_from = observer.astropy_time_to_datetime(observing_start_time).strftime("%m/%d %H:%M")
     astronight_to = observer.astropy_time_to_datetime(observing_end_time).strftime("%m/%d %H:%M")
-    sun_set = observer.astropy_time_to_datetime(observer.sun_set_time(time, which="next", horizon=-6 * u.deg)).strftime("%m/%d %H:%M")
-    sun_rise = observer.astropy_time_to_datetime(observer.sun_rise_time(time, which="next", horizon=-6 * u.deg)).strftime("%m/%d %H:%M")
-    moon_set = observer.astropy_time_to_datetime(observer.moon_set_time(time, which="next", horizon=0 * u.deg)).strftime("%m/%d %H:%M")
-    moon_rise = observer.astropy_time_to_datetime(observer.moon_rise_time(time, which="next", horizon=0 * u.deg)).strftime("%m/%d %H:%M")
+    sun_set = observer.astropy_time_to_datetime(observer.sun_set_time(time, which="next", horizon=-6 * u.deg)).strftime(
+        "%m/%d %H:%M"
+    )
+    sun_rise = observer.astropy_time_to_datetime(
+        observer.sun_rise_time(time, which="next", horizon=-6 * u.deg)
+    ).strftime("%m/%d %H:%M")
+    moon_set = observer.astropy_time_to_datetime(
+        observer.moon_set_time(time, which="next", horizon=0 * u.deg)
+    ).strftime("%m/%d %H:%M")
+    moon_rise = observer.astropy_time_to_datetime(
+        observer.moon_rise_time(time, which="next", horizon=0 * u.deg)
+    ).strftime("%m/%d %H:%M")
     # moon_illumination = observer.moon_illumination(time)
 
     if ax is not None:
@@ -510,8 +521,12 @@ def calc(
             size=12,
         )
         plt.figtext(0.02, 0.835, "Airmass constraint: {}".format(AIRMASS_CONSTRAINT), size=12)
-        plt.figtext(0.02, 0.815, "Size constraint min/max: {}' / {}'".format(SIZE_CONSTRAINT_MIN, SIZE_CONSTRAINT_MAX), size=12)
-        plt.figtext(0.02, 0.795, "Fraction of time: {:.0f}%".format(FRACTION_OF_TIME_OBSERVABLE_THRESHOLD * 100), size=12)
+        plt.figtext(
+            0.02, 0.815, "Size constraint min/max: {}' / {}'".format(SIZE_CONSTRAINT_MIN, SIZE_CONSTRAINT_MAX), size=12
+        )
+        plt.figtext(
+            0.02, 0.795, "Fraction of time: {:.0f}%".format(FRACTION_OF_TIME_OBSERVABLE_THRESHOLD * 100), size=12
+        )
         plt.figtext(0.02, 0.775, "Moon separation: {}°".format(MOON_SEPARATION_MIN), size=12)
 
     uptonight_targets.sort("foto")
@@ -530,7 +545,7 @@ def calc(
     print(
         f"Contraints: Altitude constraint minimum: {ALTITUDE_CONSTRAINT_MIN}°, maximum: {ALTITUDE_CONSTRAINT_MAX}°, "
         + f"Airmass constraint: {AIRMASS_CONSTRAINT}, Moon separation constraint: {MOON_SEPARATION_MIN}°, "
-        + f"Size constraint minimum: {SIZE_CONSTRAINT_MIN}\', maximum: {SIZE_CONSTRAINT_MAX}\'"
+        + f"Size constraint minimum: {SIZE_CONSTRAINT_MIN}', maximum: {SIZE_CONSTRAINT_MAX}'"
     )
     print(f"Altitude and Azimuth calculated for {astronight_from}")
     print()
@@ -546,7 +561,9 @@ def calc(
     plt.savefig(f"{output_dir}/plot{filter_ext}.png")
 
     # Create report
-    uptonight_targets.write(f"{output_dir}/report-{current_day}{filter_ext}.txt", overwrite=True, format="ascii.fixed_width_two_line")
+    uptonight_targets.write(
+        f"{output_dir}/report-{current_day}{filter_ext}.txt", overwrite=True, format="ascii.fixed_width_two_line"
+    )
 
     with open(f"{output_dir}/report-{current_day}{filter_ext}.txt", "r") as report:
         contents = report.readlines()
@@ -558,7 +575,9 @@ def calc(
     contents.insert(5, "\n")
     contents.insert(6, "\n")
     contents.insert(7, f"Observatory: {observer.name}\n")
-    contents.insert(8, f" - Location: {observer.location.lon:.2f}, {observer.location.lat:.2f}, {observer.location.height:.2f}\n")
+    contents.insert(
+        8, f" - Location: {observer.location.lon:.2f}, {observer.location.lat:.2f}, {observer.location.height:.2f}\n"
+    )
     contents.insert(9, "\n")
     contents.insert(10, f"Observation timespan: {astronight_from} to {astronight_to} in {darkness} darkness")
     contents.insert(11, "\n")
@@ -568,7 +587,7 @@ def calc(
         14,
         f"Contraints: Altitude constraint minimum: {ALTITUDE_CONSTRAINT_MIN}°, maximum: {ALTITUDE_CONSTRAINT_MAX}°, "
         + f"Airmass constraint: {AIRMASS_CONSTRAINT}, Moon separation constraint: {MOON_SEPARATION_MIN}°, "
-        + f"Size constraint minimum: {SIZE_CONSTRAINT_MIN}\', maximum: {SIZE_CONSTRAINT_MAX}\'",
+        + f"Size constraint minimum: {SIZE_CONSTRAINT_MIN}', maximum: {SIZE_CONSTRAINT_MAX}'",
     )
     contents.insert(15, "\n")
     contents.insert(16, f"Altitude and Azimuth calculated for {astronight_from}")
