@@ -120,6 +120,7 @@ TEMPERATURE | degrees centigrade | The ambient temperature | 12| yes | 0
 OBSERVATION_DATE | %m/$d/%y | Day of observation | 10/01/23| yes | *Current day*
 TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Messier) | targets/Messier | yes | targets/GaryImm
 TYPE_FILTER | string | Filter on an object type | Nebula | yes | ""
+OUTPUT_DIR | string | Output directory for reports and the plot | "/tmp" | yes | "."
 
 ### Constraints
 
@@ -190,9 +191,30 @@ docker run --rm \
   uptonight
 ```
 
-The plot and the report will be located in the `out`-diretory.
+The plot and the report will be located in the `./out`-diretory.
 
 > ***Note:*** Running UpTonight as a container is my preferred way of using it.
+
+Alternative example for docker-compose, here writing to the `www`-directory of Home Assistant and using my published image on Docker Hub:
+
+```yaml
+version: "3.2"
+services:
+  uptonight:
+    image: mawinkler/uptonight:latest
+    container_name: uptonight
+    environment:
+      - LONGITUDE=11d34m51.50s
+      - LATITUDE=48d08m10.77s
+      - ELEVATION=519
+      - TIMEZONE=Europe/Berlin
+      - PRESSURE=1.022
+      - TEMPERATURE=18
+      - RELATIVE_HUMIDITY=0.7
+      # - TYPE_FILTER=Nebula
+    volumes:
+      - /home/smarthome/homeassistant/www:/app/out
+```
 
 ## Adding Custom Objects
 

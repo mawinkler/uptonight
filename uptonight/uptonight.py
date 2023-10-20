@@ -1,5 +1,7 @@
 """Uptonight - calculate the best objects for tonight"""
+import sys
 import warnings
+import logging
 
 import numpy as np
 
@@ -39,10 +41,22 @@ from .const import (
     CUSTOM_TARGETS,
 )
 
-# download_IERS_A()
+download_IERS_A()
 
 # CDS Name Resolver:
 # https://cds.unistra.fr/cgi-bin/Sesame
+
+# Add date to filenames
+OUTPUT_DATESTAMP = True
+
+_LOGGER = logging.getLogger(__name__)
+logging.basicConfig(
+    stream=sys.stdout,
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s (%(threadName)s) [%(funcName)s] %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+logging.getLogger("matplotlib").setLevel(logging.INFO)
 
 
 def create_target_list(target_list):
@@ -203,6 +217,51 @@ def style_plot():
     plt.rcParams["text.color"] = "w"
 
 
+def report_add_info(observer, astronight_from, astronight_to, darkness, moon_illumination, contents):
+    """
+    Add observatory information to report
+
+    Parameters
+    ----------
+    contents
+
+    Returns
+    -------
+    contents
+    """
+
+    contents.insert(0, "-" * 163)
+    contents.insert(1, "\n")
+    contents.insert(2, "UpTonight")
+    contents.insert(3, "\n")
+    contents.insert(4, "-" * 163)
+    contents.insert(5, "\n")
+    contents.insert(6, "\n")
+    contents.insert(7, f"Observatory: {observer.name}\n")
+    contents.insert(
+        8, f" - Location: {observer.location.lon:.2f}, {observer.location.lat:.2f}, {observer.location.height:.2f}\n"
+    )
+    contents.insert(9, "\n")
+    contents.insert(10, f"Observation timespan: {astronight_from} to {astronight_to} in {darkness} darkness")
+    contents.insert(11, "\n")
+    contents.insert(12, "Moon illumination: {:.0f}%".format(moon_illumination))
+    contents.insert(13, "\n")
+    contents.insert(
+        14,
+        f"Contraints: Altitude constraint minimum: {ALTITUDE_CONSTRAINT_MIN}°, maximum: {ALTITUDE_CONSTRAINT_MAX}°, "
+        + f"Airmass constraint: {AIRMASS_CONSTRAINT}, Moon separation constraint: {MOON_SEPARATION_MIN}°, "
+        + f"Size constraint minimum: {SIZE_CONSTRAINT_MIN}', maximum: {SIZE_CONSTRAINT_MAX}'",
+    )
+    contents.insert(15, "\n")
+    contents.insert(16, f"Altitude and Azimuth calculated for {astronight_from}")
+    contents.insert(17, "\n")
+    contents.insert(18, "\n")
+
+    contents = "".join(contents)
+
+    return contents
+
+
 def calc(
     longitude,
     latitude,
@@ -214,7 +273,7 @@ def calc(
     observation_date=None,
     target_list=None,
     type_filter="",
-    output_dir="",
+    output_dir=".",
 ):
     """
     Calculates the deep sky objects for tonights sky and a given earth location.
@@ -262,6 +321,8 @@ def calc(
         The target list to use. Defaults to Gary_Imm_Best_Astrophotography_Objects
     type_filter      : string (optional)
         Filter on an object type. Examples: Nebula, Galaxy, Nova, ...
+    output_dir       : string (optional)
+        Output directory. Default current directory
 
     Returns
     -------
@@ -308,7 +369,7 @@ def calc(
             )
             + 12 * u.hour
         )
-    print("Calculating for: {0}".format(time.strftime("%m/%d/%Y")))
+    _LOGGER.info("Calculating for: {0}".format(time.strftime("%m/%d/%Y")))
 
     sun_next_setting = None
     sun_next_rising = None
@@ -317,17 +378,17 @@ def calc(
         sun_next_setting = observer.sun_set_time(time, which="next", horizon=-18 * u.deg)
         if len(w):
             if issubclass(w[-1].category, TargetAlwaysUpWarning):
-                print("Sun is not setting astronomically")
+                _LOGGER.warning("Sun is not setting astronomically")
                 w.clear()
                 sun_next_setting = observer.sun_set_time(time, which="next", horizon=-12 * u.deg)
                 if len(w):
                     if issubclass(w[-1].category, TargetAlwaysUpWarning):
-                        print("Sun is not setting nautically")
+                        _LOGGER.warning("Sun is not setting nautically")
                         w.clear()
                         sun_next_setting = observer.sun_set_time(time, which="next", horizon=-6 * u.deg)
                         if len(w):
                             if issubclass(w[-1].category, TargetAlwaysUpWarning):
-                                print("Sun is not setting civically")
+                                _LOGGER.warning("Sun is not setting civically")
                                 sun_next_rising = time + 1 * u.day
                                 sun_next_setting = time
                         else:
@@ -342,18 +403,18 @@ def calc(
         # TODO: Proper handling for sun never up
         if len(w):
             if issubclass(w[-1].category, TargetNeverUpWarning):
-                print("Sun is not rising astronomically")
+                _LOGGER.warning("Sun is not rising astronomically")
                 sun_next_rising = time + 1 * u.day
                 sun_next_setting = time
             w.clear()
 
-    print("Sun set {0}: {1}".format(darkness, sun_next_setting.strftime("%m/%d/%Y %H:%M:%S")))
-    print("Sun rise {0}: {1}".format(darkness, sun_next_rising.strftime("%m/%d/%Y %H:%M:%S")))
+    _LOGGER.info("Sun set {0}: {1}".format(darkness, sun_next_setting.strftime("%m/%d/%Y %H:%M:%S")))
+    _LOGGER.info("Sun rise {0}: {1}".format(darkness, sun_next_rising.strftime("%m/%d/%Y %H:%M:%S")))
 
     moon_illumination = observer.moon_illumination(sun_next_setting) * 100
     # moon_phase = observer.moon_phase(sun_next_setting)
-    # print("Moon illumination: {0}, Moon phase: {1}".format(moon_illumination, moon_phase))
-    print("Moon illumination: {:.0f}%".format(moon_illumination))
+    # _LOGGER.info("Moon illumination: {0}, Moon phase: {1}".format(moon_illumination, moon_phase))
+    _LOGGER.info("Moon illumination: {:.0f}%".format(moon_illumination))
 
     # Define oberserving time range
     observing_start_time = sun_next_setting
@@ -362,25 +423,25 @@ def calc(
     # Create the targets table and targets list containing the targets of the csv file plus user defined
     # custom targets. We will iterate over the targets list and use the input_targets table for lookup
     # values while calculating the results
-    print("Building targets list")
+    _LOGGER.debug("Building targets list")
     if target_list is None:
         target_list = DEFAULT_TARGETS
     input_targets, targets = create_target_list(target_list)
 
     # Create the observability table which weights the targets based on the given constraints to
     # calculate the fraction of time observable tonight
-    print("Setting constraints")
+    _LOGGER.debug("Setting constraints")
     constraints = [
         AltitudeConstraint(ALTITUDE_CONSTRAINT_MIN * u.deg, ALTITUDE_CONSTRAINT_MAX * u.deg),
         AirmassConstraint(AIRMASS_CONSTRAINT),
         MoonSeparationConstraint(min=MOON_SEPARATION_MIN * u.deg),
     ]
 
-    print("Creating observability table")
+    _LOGGER.info("Creating observability table")
     time_range = Time([observing_start_time, observing_end_time], scale="utc")
     observability_targets = observability_table(constraints, observer, targets, time_range=time_range)
     observability_targets["fraction of time observable"].info.format = ".3f"
-    print(observability_targets)
+    # print(observability_targets)
 
     # This will be our result table
     uptonight_targets = create_uptonight_targets_table()
@@ -401,7 +462,7 @@ def calc(
     time_resolution = 15 * u.minute
     time_grid = time_grid_from_range([observing_start_time, observing_end_time], time_resolution=time_resolution)
 
-    print("Creating plot and table of targets for tonight")
+    _LOGGER.info("Creating plot and table of targets for tonight")
     target_no = 0
     ax = None
     for i, target in enumerate(targets):
@@ -505,7 +566,6 @@ def calc(
     moon_rise = observer.astropy_time_to_datetime(
         observer.moon_rise_time(time, which="next", horizon=0 * u.deg)
     ).strftime("%m/%d %H:%M")
-    # moon_illumination = observer.moon_illumination(time)
 
     if ax is not None:
         legend = ax.legend(loc="upper right", bbox_to_anchor=(1.4, 1))
@@ -531,76 +591,39 @@ def calc(
 
     uptonight_targets.sort("foto")
 
-    # Create output
-    print()
-    print("-" * 160)
-    print("UpTonight")
-    print("-" * 160)
-    print()
-    print(f"Observatory: {observer.name}")
-    print(f" - Location: {observer.location.lon:.2f}, {observer.location.lat:.2f}, {observer.location.height:.2f}")
-    print()
-    print(f"Observation timespan: {astronight_from} to {astronight_to} in {darkness} darkness")
-    print("Moon illumination: {:.0f}%".format(moon_illumination))
-    print(
-        f"Contraints: Altitude constraint minimum: {ALTITUDE_CONSTRAINT_MIN}°, maximum: {ALTITUDE_CONSTRAINT_MAX}°, "
-        + f"Airmass constraint: {AIRMASS_CONSTRAINT}, Moon separation constraint: {MOON_SEPARATION_MIN}°, "
-        + f"Size constraint minimum: {SIZE_CONSTRAINT_MIN}', maximum: {SIZE_CONSTRAINT_MAX}'"
-    )
-    print(f"Altitude and Azimuth calculated for {astronight_from}")
-    print()
-    print(uptonight_targets)
-
     # Save plot
+    _LOGGER.debug("Saving plot")
     plt.tight_layout()
     current_day = observer.astropy_time_to_datetime(observing_start_time).strftime("%Y%m%d")
     filter_ext = ""
+
     if type_filter != "":
         filter_ext = f"-{type_filter}"
-    plt.savefig(f"{output_dir}/plot-{current_day}{filter_ext}.png")
-    plt.savefig(f"{output_dir}/plot{filter_ext}.png")
 
-    # Create report
+    # Save plot
+    if OUTPUT_DATESTAMP:
+        plt.savefig(f"{output_dir}/uptonight-plot-{current_day}{filter_ext}.png")
+    plt.savefig(f"{output_dir}/uptonight-plot{filter_ext}.png")
+
+    # Save report as txt
+    _LOGGER.debug("Saving report")
     uptonight_targets.write(
-        f"{output_dir}/report-{current_day}{filter_ext}.txt", overwrite=True, format="ascii.fixed_width_two_line"
+        f"{output_dir}/uptonight-report{filter_ext}.txt", overwrite=True, format="ascii.fixed_width_two_line"
     )
-
-    with open(f"{output_dir}/report-{current_day}{filter_ext}.txt", "r") as report:
+    with open(f"{output_dir}/uptonight-report{filter_ext}.txt", "r") as report:
         contents = report.readlines()
-    contents.insert(0, "-" * 163)
-    contents.insert(1, "\n")
-    contents.insert(2, "UpTonight")
-    contents.insert(3, "\n")
-    contents.insert(4, "-" * 163)
-    contents.insert(5, "\n")
-    contents.insert(6, "\n")
-    contents.insert(7, f"Observatory: {observer.name}\n")
-    contents.insert(
-        8, f" - Location: {observer.location.lon:.2f}, {observer.location.lat:.2f}, {observer.location.height:.2f}\n"
-    )
-    contents.insert(9, "\n")
-    contents.insert(10, f"Observation timespan: {astronight_from} to {astronight_to} in {darkness} darkness")
-    contents.insert(11, "\n")
-    contents.insert(12, "Moon illumination: {:.0f}%".format(moon_illumination))
-    contents.insert(13, "\n")
-    contents.insert(
-        14,
-        f"Contraints: Altitude constraint minimum: {ALTITUDE_CONSTRAINT_MIN}°, maximum: {ALTITUDE_CONSTRAINT_MAX}°, "
-        + f"Airmass constraint: {AIRMASS_CONSTRAINT}, Moon separation constraint: {MOON_SEPARATION_MIN}°, "
-        + f"Size constraint minimum: {SIZE_CONSTRAINT_MIN}', maximum: {SIZE_CONSTRAINT_MAX}'",
-    )
-    contents.insert(15, "\n")
-    contents.insert(16, f"Altitude and Azimuth calculated for {astronight_from}")
-    contents.insert(17, "\n")
-    contents.insert(18, "\n")
+    contents = report_add_info(observer, astronight_from, astronight_to, darkness, moon_illumination, contents)
+    if OUTPUT_DATESTAMP:
+        with open(f"{output_dir}/uptonight-report-{current_day}{filter_ext}.txt", "w") as report:
+            report.write(contents)
+    with open(f"{output_dir}/uptonight-report{filter_ext}.txt", "w") as report:
+        report.write(contents)
 
-    with open(f"{output_dir}/report-{current_day}{filter_ext}.txt", "w") as report:
-        contents = "".join(contents)
-        report.write(contents)
-    with open(f"{output_dir}/report{filter_ext}.txt", "w") as report:
-        report.write(contents)
-    
     # Write JSON for Home Assistant
-    uptonight_targets.write(
-        f"{output_dir}/report-{current_day}{filter_ext}.json", overwrite=True, format="pandas.json"
-    )
+    if OUTPUT_DATESTAMP:
+        uptonight_targets.write(
+            f"{output_dir}/uptonight-report-{current_day}.json", overwrite=True, format="pandas.json"
+        )
+    uptonight_targets.write(f"{output_dir}/uptonight-report.json", overwrite=True, format="pandas.json")
+
+    print(uptonight_targets)
