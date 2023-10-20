@@ -599,3 +599,8 @@ def calc(
         report.write(contents)
     with open(f"{output_dir}/report{filter_ext}.txt", "w") as report:
         report.write(contents)
+    
+    # Write JSON for Home Assistant
+    uptonight_targets.write(
+        f"{output_dir}/report-{current_day}{filter_ext}.json", overwrite=True, format="pandas.json"
+    )

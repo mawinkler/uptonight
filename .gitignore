@@ -181,9 +181,11 @@ cython_debug/
 .vscode
 archive
 report*.txt
+report*.json
 plot*.png
 run.sh
 publish.sh
 runp.sh
 targets/convert_csv_dict.py
 targets/convert_csv_list.py
+outdev
