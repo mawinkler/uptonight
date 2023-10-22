@@ -527,7 +527,7 @@ def calc(
                         target,
                         observer,
                         time_grid,
-                        style_kwargs=dict(color=cmap(target_no / within_threshold), label=target.name, marker=marker),
+                        style_kwargs=dict(color=cmap(target_no / within_threshold), label=target.name, marker=marker, s=2),
                         north_to_east_ccw=NORTH_TO_EAST_CCW,
                     )
 
