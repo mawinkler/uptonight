@@ -199,16 +199,18 @@ def style_plot():
     # Axes
     plt.rcParams["axes.titlesize"] = 14
     plt.rcParams["axes.labelcolor"] = "w"
-    plt.rcParams["axes.facecolor"] = "#000000"
+    plt.rcParams["axes.facecolor"] = "#262626"
     plt.rcParams["axes.edgecolor"] = "#F2F2F2"
 
     # Legend
+    plt.rcParams["legend.facecolor"] = "#262626"
+    plt.rcParams["legend.edgecolor"] = "#262626"
     plt.rcParams["legend.fontsize"] = 8
-    plt.rcParams["legend.framealpha"] = 0.2
+    # plt.rcParams["legend.framealpha"] = 0.2
 
     # Figure
-    plt.rcParams["figure.facecolor"] = "k"
-    plt.rcParams["figure.edgecolor"] = "k"
+    plt.rcParams["figure.facecolor"] = "#1C1C1C"
+    plt.rcParams["figure.edgecolor"] = "#1C1C1C"
     plt.rcParams["figure.figsize"] = (15, 10)
     plt.rcParams["figure.dpi"] = 300
 
@@ -569,7 +571,7 @@ def calc(
 
     if ax is not None:
         legend = ax.legend(loc="upper right", bbox_to_anchor=(1.4, 1))
-        legend.get_frame().set_facecolor("w")
+        # legend.get_frame().set_facecolor("w")
         ax.set_title(f"{darkness.capitalize()} night: {astronight_from} to {astronight_to}")
         plt.figtext(0.02, 0.915, "Sunset/rise: {} / {}".format(sun_set, sun_rise), size=12)
         plt.figtext(0.02, 0.895, "Moonrise/set: {} / {}".format(moon_rise, moon_set), size=12)
