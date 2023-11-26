@@ -1,5 +1,5 @@
 # Compile image
-FROM ubuntu:jammy AS compile-image
+FROM ubuntu:mantic-20231011 AS compile-image
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -18,7 +18,7 @@ RUN pip3 install --upgrade pip setuptools && \
     pip list
 
 # Run image
-FROM ubuntu:jammy AS runtime-image
+FROM ubuntu:mantic-20231011 AS runtime-image
 
 RUN apt-get update \
     && apt-get install -y python3 \
