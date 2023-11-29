@@ -1,3 +1,5 @@
 astroplan==0.9.1
 astropy[all]==5.3.4
 PyYAML==6.0.1
+
+pillow>=10.0.1

@@ -16,6 +16,19 @@ NORTH_TO_EAST_CCW = False
 # Default target list to use
 DEFAULT_TARGETS = "targets/GaryImm"
 
+# Solar System
+BODIES = [
+    ("Sun", "sun", "gold", 250),
+    ("Moon", "moon", "lightgrey", 150),
+    ("Mercury", "mercury", "pink", 20),
+    ("Venus", "venus", "rosybrown", 30),
+    ("Mars", "mars", "red", 30),
+    ("Jupiter", "jupiter", "chocolate", 50),
+    ("Saturn", "saturn", "khaki", 45),
+    ("Uranus", "uranus", "lightsteelblue", 20),
+    ("Neptune", "neptune", "royalblue", 15),
+]
+
 # Any custom target you want to include in the calculations
 CUSTOM_TARGETS = [
     {
