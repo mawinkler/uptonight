@@ -5,8 +5,11 @@ SIZE_CONSTRAINT_MIN = 10  # in arc minutes
 SIZE_CONSTRAINT_MAX = 300  # in arc minutes
 MOON_SEPARATION_MIN = 45  # in degrees
 
-# object needs to be within the constraints for at least 80% of darkness
-FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.80
+# Object needs to be within the constraints for at least 50% of darkness
+FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.5
+
+# Maximum number of targets to calculate
+MAX_NUMBER_WITHIN_THRESHOLD = 60
 
 # True : meaning that azimuth is shown increasing counter-clockwise (CCW), or with North
 #        at top, East at left, etc.

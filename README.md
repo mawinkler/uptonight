@@ -122,20 +122,25 @@ TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Me
 TYPE_FILTER | string | Filter on an object type | Nebula | yes | ""
 OUTPUT_DIR | string | Output directory for reports and the plot | "/tmp" | yes | "."
 
+UpTonight does support a ***live*** mode as well. Contrary to the normal mode where the calculations are done and output is created for the upcoming night you'll get a live plot. To activate this mode set `MODE=live`. In this mode, UpTonight will create a file called `uptonight-liveplot.png` every five minutes but no `txt`-reports.
+
 ### Constraints
 
 If you want to change constraints adapt the constants below to your needs in `uptonight/const.py`
 
 ```py
-ALTITUDE_CONSTRAINT_MIN = 20   # in deg above horizon
-ALTITUDE_CONSTRAINT_MAX = 80   # in deg above horizon
-AIRMASSS_CONSTRAINT = 2        # 30° to 90°
-SIZE_CONSTRAINT_MIN = 10       # in arc minutes
-SIZE_CONSTRAINT_MAX = 180      # in arc minutes
-MOON_SEPARATION_MIN = 90       # in degrees
+ALTITUDE_CONSTRAINT_MIN = 30  # in deg above horizon
+ALTITUDE_CONSTRAINT_MAX = 80  # in deg above horizon
+AIRMASS_CONSTRAINT = 2  # 30° to 90°
+SIZE_CONSTRAINT_MIN = 10  # in arc minutes
+SIZE_CONSTRAINT_MAX = 300  # in arc minutes
+MOON_SEPARATION_MIN = 45  # in degrees
 
-# object needs to be within the constraints for at least 80% of darkness
-FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.80
+# Object needs to be within the constraints for at least 50% of darkness
+FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.5
+
+# Maximum number of targets to calculate
+MAX_NUMBER_WITHIN_THRESHOLD = 60
 ```
 
 ### Available Target lists
