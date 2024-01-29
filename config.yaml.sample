@@ -1,0 +1,40 @@
+observation_date: # 01/27/24
+target_list: targets/GaryImm
+type_filter: # e.g. Galaxy, Nebula 
+output_dir: out
+live_mode: false
+
+location:
+  longitude: 11d34m51.50s
+  latitude: 48d08m10.77s
+  elevation: 519
+  timezone: Europe/Berlin
+
+environment:
+  pressure: 1.022
+  temperature: 18
+  relative_humidity: 0.7
+
+constraints:
+  altitude_constraint_min: 30  # in deg above horizon
+  altitude_constraint_max: 80  # in deg above horizon
+  airmass_constraint: 2  # 30° to 90°, 2 = 1/cos(60) 
+  size_constraint_min: 10  # in arc minutes
+  size_constraint_max: 300  # in arc minutes
+
+  moon_separation_min: 45  # in degrees
+
+  # if set to true, moon_separation_min is derived from the moon illumination
+  # percentage and overwrites moon_separation_min. 1% corresponds 1°.
+  moon_separation_use_illumination: true
+
+  # object needs to be within the constraints for at least 50% of darkness
+  fraction_of_time_observable_threshold: 0.5
+
+  # maximum number of targets to calculate
+  max_number_within_threshold: 60
+
+  # true : meaning that azimuth is shown increasing counter-clockwise (ccw), or with north
+  #        at top, east at left, etc.
+  # false: show azimuth increasing clockwise (cw).
+  north_to_east_ccw: false

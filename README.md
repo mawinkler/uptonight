@@ -59,7 +59,6 @@ Whale & Hockey Stick Galaxy Duo (NGC 4631) 12h42m08s +32d32m29s           190.5 
 - [How it Works](#how-it-works)
 - [How to Run](#how-to-run)
   - [Configuration](#configuration)
-  - [Constraints](#constraints)
   - [Available Target lists](#available-target-lists)
   - [Python Script](#python-script)
   - [Container](#container)
@@ -106,7 +105,28 @@ There are two ways to run UpTonight. As a normal Python script or as a container
 
 ### Configuration
 
-Configuration is done by environment variables for now.
+Configuration is done by a yaml based config file and/or environment variables.
+
+> ***Note:*** An environment variable overwrites the setting in the config file.
+
+> ***Note:*** All settings are optional. If not set default values are used. The only mandatory settings are the longitute and latitude of your location. Either set them via environment variables or within the config file.
+
+Examples for a minimal configuration:
+
+```sh
+export LONGITUDE="11d34m51.50s"
+export LATITUDE="48d08m10.77s"
+```
+
+or in `config.yaml`
+
+```yaml
+location:
+  longitude: 11d34m51.50s
+  latitude: 48d08m10.77s
+```
+
+***Environment variables***
 
 Variable | Unit | Description | Example | Optional | Default
 -------- | ---- | ----------- | ------- | -------- | -------
@@ -117,30 +137,59 @@ TIMEZONE | tz | TZ timezone | Europe/Berlin
 PRESSURE | bar | The ambient pressure | 1.022 | yes | 0
 RELATIVE_HUMIDITY | percentage | The ambient relative humidity | 0.8| yes | 0
 TEMPERATURE | degrees centigrade | The ambient temperature | 12| yes | 0
-OBSERVATION_DATE | %m/$d/%y | Day of observation | 10/01/23| yes | *Current day*
+OBSERVATION_DATE | %m/$d/%y | Day of observation | 10/01/23 | yes | *Current day*
 TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Messier) | targets/Messier | yes | targets/GaryImm
 TYPE_FILTER | string | Filter on an object type | Nebula | yes | ""
 OUTPUT_DIR | string | Output directory for reports and the plot | "/tmp" | yes | "."
+LIVE_MODE | *bool* | Run in live mode, generate plot every five minutes.<br>Bash doesn't support boolean variables, but the code checks for the word 'true'. | true | yes | false
 
-UpTonight does support a ***live*** mode as well. Contrary to the normal mode where the calculations are done and output is created for the upcoming night you'll get a live plot. To activate this mode set `MODE=live`. In this mode, UpTonight will create a file called `uptonight-liveplot.png` every five minutes but no `txt`-reports.
+UpTonight does support a ***live*** mode as well. Contrary to the normal mode where the calculations are done and output is created for the upcoming night you'll get a live plot. To activate this mode set `LIVE_MODE=true`. In this mode, UpTonight will create a file called `uptonight-liveplot.png` every five minutes but no `txt`-reports.
 
-### Constraints
+***Config file `config.yaml`***
 
-If you want to change constraints adapt the constants below to your needs in `uptonight/const.py`
+You can adapt the constraints within the config file now and don't need to change the `const.py` anymore.
 
-```py
-ALTITUDE_CONSTRAINT_MIN = 30  # in deg above horizon
-ALTITUDE_CONSTRAINT_MAX = 80  # in deg above horizon
-AIRMASS_CONSTRAINT = 2  # 30° to 90°
-SIZE_CONSTRAINT_MIN = 10  # in arc minutes
-SIZE_CONSTRAINT_MAX = 300  # in arc minutes
-MOON_SEPARATION_MIN = 45  # in degrees
+```yaml
+# observation_date: 03/28/24
+target_list: targets/GaryImm
+type_filter:  # e.g. Galaxy, Nebula 
+output_dir: out
+live_mode: false
 
-# Object needs to be within the constraints for at least 50% of darkness
-FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.5
+location:
+  longitude: 11d34m51.50s
+  latitude: 48d08m10.77s
+  elevation: 519
+  timezone: Europe/Berlin
 
-# Maximum number of targets to calculate
-MAX_NUMBER_WITHIN_THRESHOLD = 60
+environment:
+  pressure: 1.022
+  temperature: 18
+  relative_humidity: 0.7
+
+constraints:
+  altitude_constraint_min: 30  # in deg above horizon
+  altitude_constraint_max: 80  # in deg above horizon
+  airmass_constraint: 2  # 30° to 90°, 2 = 1/cos(60) 
+  size_constraint_min: 10  # in arc minutes
+  size_constraint_max: 300  # in arc minutes
+
+  moon_separation_min: 45  # in degrees
+
+  # if set to true, moon_separation_min is derived from the moon illumination
+  # percentage and overwrites moon_separation_min. 1% corresponds 1°.
+  moon_separation_use_illumination: true
+
+  # object needs to be within the constraints for at least 50% of darkness
+  fraction_of_time_observable_threshold: 0.5
+
+  # maximum number of targets to calculate
+  max_number_within_threshold: 60
+
+  # true : meaning that azimuth is shown increasing counter-clockwise (ccw),
+  #        or with north at top, east at left, etc.
+  # false: show azimuth increasing clockwise (cw).
+  north_to_east_ccw: false
 ```
 
 ### Available Target lists
@@ -219,6 +268,34 @@ services:
       # - TYPE_FILTER=Nebula
     volumes:
       - /home/smarthome/homeassistant/www:/app/out
+```
+
+Alternative using the `config.yaml`:
+
+```yaml
+version: "3.2"
+services:
+  uptonight:
+    image: mawinkler/uptonight:latest
+    container_name: uptonight
+    volumes:
+      - /home/smarthome/uptonight/config.yaml:/app/config.yaml
+      - /home/smarthome/homeassistant/www:/app/out
+```
+
+Simultaneously create live plots with the same config file:
+
+```yaml
+...
+  uptonightlive:
+    image: mawinkler/uptonight:latest
+    container_name: uptonightlive
+    environment:
+      - LIVE_MODE=true
+    volumes:
+      - /home/smarthome/uptonight/config.yaml:/app/config.yaml
+      - /home/smarthome/homeassistant/www:/app/out
+    restart: always
 ```
 
 ## Adding Custom Objects

@@ -1,20 +1,22 @@
-ALTITUDE_CONSTRAINT_MIN = 30  # in deg above horizon
-ALTITUDE_CONSTRAINT_MAX = 80  # in deg above horizon
-AIRMASS_CONSTRAINT = 2  # 30° to 90°
-SIZE_CONSTRAINT_MIN = 10  # in arc minutes
-SIZE_CONSTRAINT_MAX = 300  # in arc minutes
-MOON_SEPARATION_MIN = 45  # in degrees
+DEFAULT_ALTITUDE_CONSTRAINT_MIN = 30  # in deg above horizon
+DEFAULT_ALTITUDE_CONSTRAINT_MAX = 80  # in deg above horizon
+DEFAULT_AIRMASS_CONSTRAINT = 2  # 30° to 90°
+DEFAULT_SIZE_CONSTRAINT_MIN = 10  # in arc minutes
+DEFAULT_SIZE_CONSTRAINT_MAX = 300  # in arc minutes
+
+DEFAULT_MOON_SEPARATION_MIN = 45  # in degrees
+DEFAULT_MOON_SEPARATION_USE_ILLUMINATION = True
 
 # Object needs to be within the constraints for at least 50% of darkness
-FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.5
+DEFAULT_FRACTION_OF_TIME_OBSERVABLE_THRESHOLD = 0.5
 
 # Maximum number of targets to calculate
-MAX_NUMBER_WITHIN_THRESHOLD = 60
+DEFAULT_MAX_NUMBER_WITHIN_THRESHOLD = 60
 
 # True : meaning that azimuth is shown increasing counter-clockwise (CCW), or with North
 #        at top, East at left, etc.
 # False: Show azimuth increasing clockwise (CW).
-NORTH_TO_EAST_CCW = False
+DEFAULT_NORTH_TO_EAST_CCW = False
 
 # Default target list to use
 DEFAULT_TARGETS = "targets/GaryImm"
