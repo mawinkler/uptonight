@@ -4,54 +4,48 @@
 
 UpTonight calculates the best astro photography targets for the night at a given location. The default built in target list is a merge of Gary Imm's [My Top 100 Astrophotography Targets](https://www.astrobin.com/uc8p37/) and the top 200 taken from his incredible [Deep Sky Compendium](http://www.garyimm.com/compendium).
 
-UpTonight creates a plot of the sky in addition to a report about todays targets. Below an example output for Munich in the night from the 18th to 19th of May:
+UpTonight creates a plot of the sky in addition to a report about todays targets. Below the year 2024 for Munich:
 
-![alt text](images/readme-plot.png "Latest")
+![alt text](images/uptonight-video.gif "2024")
 
-Example report:
+Example plot for 01/31/24:
+
+![alt text](images/uptonight-plot.png "31/01/24")
+
+Example report for 01/31/24:
 
 ```txt
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Up tonight
+UpTonight
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Observatory: Backyard
  - Location: 11.58 deg, 48.14 deg, 519.00 m
 
-Observation timespan: 05/18/2023 23:23:42 to 05/19/2023 02:56:09
-Moon illumination: 1%
-Contraints: Altitude constraint minimum: 30, maximum: 80, Airmass constraint: 2, Size constraint minimum: 10, maximum: 180
-Altitude and Azimuth calculated for 05/18/2023 23:23:42
+Observation timespan: 01/31 18:59 to 02/01 05:54 in astronomical darkness
+Moon illumination: 71%
+Contraints: Altitude constraint minimum: 30°, maximum: 80°, Airmass constraint: 2, Moon separation constraint: 71°, Size constraint minimum: 10', maximum: 300'
+Altitude and Azimuth calculated for 01/31 18:59
 
-                               target name               hmsdms right ascension declination altitude azimuth    meridian transit antimeridian transit              type  constellation  size foto
------------------------------------------- -------------------- --------------- ----------- -------- ------- ------------------- -------------------- ----------------- -------------- ----- ----
-                Elephant's Trunk (IC 1396) 21h38m58s +57d29m21s           324.8        57.5     28.1    33.1                                                Dark Nebula        Cepheus  60.0  0.9
-              Propeller Nebula (Simeis 57) 20h16m10s +43d40m11s           304.0        43.7     28.0    54.5                                            Emission Nebula         Cygnus  20.0  0.9
-                     Hermit Crab (Sh2-112) 20h33m49s +45d38m00s           308.5        45.6     27.0    50.5                                            Emission Nebula         Cygnus  15.0  0.9
-                   Sunflower Galaxy (M 63) 13h15m49s +42d01m46s           199.0        42.0     80.8   230.9                                                     Galaxy Canes Venatici  13.0  0.9
-                    Whale Galaxy (Arp 281) 12h41m59s +32d34m00s           190.5        32.6     69.2   227.5                                                     Galaxy Canes Venatici  15.0  1.0
-                    Shark Nebula (VdB 150) 22h09m40s +73d23m25s           332.5        73.4     37.5    17.3                                          Reflection Nebula        Cepheus  11.0  1.0
-                    Ghost Nebula (vdB 141) 21h16m27s +68d15m52s           319.0        68.2     37.3    25.8                                          Reflection Nebula        Cepheus  20.0  1.0
-           Valentine Rose Nebula (Sh2-174) 23h47m08s +80d49m22s           356.8        80.8     40.3     6.2                                           Planetary Nebula        Cepheus  10.0  1.0
-         Squid Nebula or Flying Bat (OU 4) 21h11m47s +59d57m01s           318.0        59.9     32.4    33.9                                            Emission Nebula        Cepheus  60.0  1.0
-                    Iris Nebula (NGC 7023) 21h01m36s +68d10m10s           315.5        68.2     38.4    26.9                                          Reflection Nebula        Cepheus  60.0  1.0
-               Fireworks Galaxy (NGC 6946) 20h34m52s +60d09m14s           308.8        60.2     36.1    37.2                                                     Galaxy         Cygnus  11.0  1.0
-                    Crab Galaxy (NGC 5033) 13h13m28s +36d35m38s           198.4        36.6     76.1   216.4                                                     Galaxy Canes Venatici  11.0  1.0
-                  Ringed Galaxy (NGC 4725) 12h50m27s +25d30m03s           192.6        25.5     64.1   214.5                                                     Galaxy Coma Berenices  11.0  1.0
-Whale & Hockey Stick Galaxy Duo (NGC 4631) 12h42m08s +32d32m29s           190.5        32.5     69.2   227.4                                                     Galaxy Canes Venatici  40.0  1.0
-     Croc's Eye or Cat's Eye Galaxy (M 94) 12h50m53s +41d07m12s           192.8        41.1     76.7   243.4                                                     Galaxy Canes Venatici  11.0  1.0
-                       Cigar Galaxy (M 82) 09h55m53s +69d40m50s           149.0        69.7     54.8   328.8                                                     Galaxy     Ursa Major  10.0  1.0
-                      Bode's Galaxy (M 81) 09h55m33s +69d03m56s           148.9        69.1     54.8   327.5                                                     Galaxy     Ursa Major  27.0  1.0
-                   Black Eye Galaxy (M 64) 12h56m44s +21d40m58s           194.1        21.7     61.1   208.4                                                     Galaxy Coma Berenices  10.0  1.0
-                        Rose Cluster (M 5) 15h18m33s +02d04m57s           229.6         2.1     40.4   151.8 05/19/2023 00:47:59                       Globular Cluster        Serpens  17.0  1.0
-      Globular Cluster also NGC 5272 (M 3) 13h42m11s +28d22m35s           205.5        28.4     70.0   187.8                                           Globular Cluster Canes Venatici  16.0  1.0
-             Great Hercules Cluster (M 13) 16h41m41s +36d27m35s           250.4        36.5     57.4    95.4 05/19/2023 02:10:32                       Globular Cluster       Hercules  32.0  1.0
-                      M 106 Galaxy (M 106) 12h18m58s +47d18m16s           184.8        47.3     74.0   275.5                                                     Galaxy Canes Venatici  17.0  1.0
-                       LDN 1251 (LDN 1251) 22h36m03s +75d15m35s           339.0        75.2     37.7    14.1                                                Dark Nebula        Cepheus  90.0  1.0
-                    Shark Nebula (LBN 535) 22h14m55s +73d25m00s           333.8        73.4     37.3    17.0                                          Reflection Nebula        Cepheus  15.0  1.0
-                         LBN 468 (LBN 468) 20h42m29s +67d51m00s           310.5        67.9     39.7    28.5                                            Molecular Cloud        Cepheus 120.0  1.0
-                     Wolf's Cave (vdB 152) 22h14m02s +69d56m00s           333.5        69.9     34.8    19.9                                          Reflection Nebula        Cepheus  60.0  1.0
-                       NGC 4395 (NGC 4395) 12h25m48s +33d32m48s           186.5        33.5     67.9   236.4                                                     Galaxy Canes Venatici  13.0  1.0
+                                     target name               hmsdms right ascension declination altitude azimuth    meridian transit antimeridian transit              type constellation  size foto
+------------------------------------------------ -------------------- --------------- ----------- -------- ------- ------------------- -------------------- ----------------- ------------- ----- ----
+          Valentine Rose Nebula (Sh2-174, 10.0') 23h47m08s +80d49m22s           356.8        80.8     52.8   347.8                      02/01/2024 03:18:30  Planetary Nebula       Cepheus  10.0  1.0
+                      Cigar Galaxy (M 82, 10.0') 09h55m53s +69d40m50s           149.0        69.7     41.8    27.7 02/01/2024 01:28:42                                 Galaxy    Ursa Major  10.0  1.0
+                     Bode's Galaxy (M 81, 27.0') 09h55m33s +69d03m56s           148.9        69.1     41.6    28.4 02/01/2024 01:28:20                                 Galaxy    Ursa Major  27.0  1.0
+            Angler Fish Nebula (LDN 1251, 90.0') 22h36m03s +75d15m35s           339.0        75.2     50.4   337.8                      02/01/2024 02:07:06       Dark Nebula       Cepheus  90.0  1.0
+                   Shark Nebula (vdB 150, 11.0') 22h09m40s +73d23m25s           332.5        73.4     48.5   335.0                      02/01/2024 01:40:42 Reflection Nebula       Cepheus  11.0  1.0
+                   Shark Nebula (LBN 535, 15.0') 22h14m55s +73d25m00s           333.8        73.4     48.9   335.0                      02/01/2024 01:45:58 Reflection Nebula       Cepheus  15.0  1.0
+                Jellyfish Nebula (IC 443, 60.0') 06h16m36s +22d31m00s            94.1        22.5     47.6   111.8 01/31/2024 21:49:26                      Supernova Remnant        Gemini  60.0  0.7
+              Spider and the Fly (IC 417, 50.0') 05h28m06s +34d25m24s            82.0        34.4     63.5   109.8 01/31/2024 21:01:13                        Emission Nebula        Auriga  50.0  0.7
+         Tadpole Emission Nebula (IC 410, 40.0') 05h22m44s +33d25m00s            80.7        33.4     63.7   113.2 01/31/2024 20:55:50                        Emission Nebula        Auriga  40.0  0.7
+             Flaming Star Nebula (IC 405, 60.0') 05h16m29s +34d21m24s            79.1        34.3     65.3   113.6 01/31/2024 20:49:37                        Emission Nebula        Auriga  60.0  0.7
+            Monkey Head Nebula (NGC 2174, 40.0') 06h09m24s +20d39m34s            92.4        20.7     47.3   115.5 01/31/2024 21:42:14                        Emission Nebula         Orion  40.0  0.7
+                  Heart Nebula (IC 1805, 120.0') 02h32m47s +61d28m30s            38.2        61.5     74.6   335.8                                            Emission Nebula    Cassiopeia 120.0  0.7
+                Fishhead Nebula (IC 1795, 30.0') 02h26m32s +62d02m39s            36.6        62.0     73.8   334.8                                            Emission Nebula    Cassiopeia  30.0  0.7
+                 Medusa Nebula (Abell 21, 10.0') 07h29m03s +13d14m48s           112.2        13.2     29.2   103.4 01/31/2024 23:01:35                       Planetary Nebula        Gemini  10.0  0.7
+                Mushroom Nebula (Sh2-254, 20.0') 06h11m59s +18d03m18s            93.0        18.1     44.9   117.2 01/31/2024 21:44:47                        Emission Nebula         Orion  20.0  0.7
+Simeis 147 or Spaghetti Nebula (Sh2-240, 180.0') 05h41m06s +28d05m00s            85.2        28.1     57.2   115.2 01/31/2024 21:14:06                      Supernova Remnant        Taurus 180.0  0.7
+
 ```
 
 ## Table of Content<!-- omit in toc -->
@@ -78,7 +72,8 @@ Logically, the calculation is done as follows:
       4. Minimal fraction of time observable for the object. The default value of 0.8 means, that the given objects needs to be in your constraints for at least 80% of astronomical darkness.
       5. Moon separation in degrees.
 4. Filter the remaining objects to fit in the size and fraction of time observability limits.
-5. Create plot and report.
+5. Add the Sun, Moon and the planets, if observable.
+6. Create plot and report.
 
 The plot contains all objects within the given constraints during your possible observation timespan. The distance in between the points represent 15 minutes of time.
 
@@ -143,7 +138,7 @@ TYPE_FILTER | string | Filter on an object type | Nebula | yes | ""
 OUTPUT_DIR | string | Output directory for reports and the plot | "/tmp" | yes | "."
 LIVE_MODE | *bool* | Run in live mode, generate plot every five minutes.<br>Bash doesn't support boolean variables, but the code checks for the word 'true'. | true | yes | false
 
-UpTonight does support a ***live*** mode as well. Contrary to the normal mode where the calculations are done and output is created for the upcoming night you'll get a live plot. To activate this mode set `LIVE_MODE=true`. In this mode, UpTonight will create a file called `uptonight-liveplot.png` every five minutes but no `txt`-reports.
+UpTonight does support a ***live*** mode as well. Contrary to the normal mode where the calculations are done and output is created for the upcoming night you'll get a live plot. To activate this mode set `LIVE_MODE=true`. In this mode, UpTonight will create a file called `uptonight-liveplot.png` every five minutes but no `txt`, or `json`-reports.
 
 ***Config file `config.yaml`***
 
@@ -170,7 +165,7 @@ environment:
 constraints:
   altitude_constraint_min: 30  # in deg above horizon
   altitude_constraint_max: 80  # in deg above horizon
-  airmass_constraint: 2  # 30° to 90°, 2 = 1/cos(60) 
+  airmass_constraint: 2  # 30° to 90°, 2 = 1/cos(60)
   size_constraint_min: 10  # in arc minutes
   size_constraint_max: 300  # in arc minutes
 
@@ -181,13 +176,13 @@ constraints:
   moon_separation_use_illumination: true
 
   # object needs to be within the constraints for at least 50% of darkness
-  fraction_of_time_observable_threshold: 0.5
+  fraction_of_time_observable_threshold: 0.75
 
   # maximum number of targets to calculate
   max_number_within_threshold: 60
 
-  # true : meaning that azimuth is shown increasing counter-clockwise (ccw),
-  #        or with north at top, east at left, etc.
+  # true : meaning that azimuth is shown increasing counter-clockwise (ccw), or 
+  #        with north at top, east at left, etc.
   # false: show azimuth increasing clockwise (cw).
   north_to_east_ccw: false
 ```

@@ -190,3 +190,4 @@ targets/convert_csv_dict.py
 targets/convert_csv_list.py
 outdev
 config.yaml
+runv.sh

@@ -911,12 +911,19 @@ def calc(
     # Bodies
     object_frame = AltAz(obstime=time_grid, location=observer.location)
 
-    # No constraints for planets and moon
-    observability_constraints = [
-        AltitudeConstraint(0 * u.deg, 90 * u.deg)
-    ]
     for name, planet_label, color, size in BODIES:
         if planet_label != "sun":
+            if planet_label != "moon":
+                # No altitude constraints for the planets
+                observability_constraints = [
+                    AltitudeConstraint(0 * u.deg, 90 * u.deg),
+                    MoonSeparationConstraint(min=moon_separation * u.deg)
+                ]
+            else:
+                # No constraints for the moon
+                observability_constraints = [
+                    AltitudeConstraint(0 * u.deg, 90 * u.deg),
+                ]
             observable = is_observable(observability_constraints, observer, get_body(planet_label, time_range), time_range=time_range)
             if True in observable:
                 _LOGGER.debug(f"%s is observable", planet_label.capitalize())
