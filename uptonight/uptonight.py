@@ -910,41 +910,25 @@ def calc(
 
     # Bodies
     object_frame = AltAz(obstime=time_grid, location=observer.location)
-    if live:
-        for name, planet_label, color, size in BODIES:
-            if planet_label != "sun":
-                planet = FixedTarget.from_name(planet_label)
-                if observer.target_is_up(observing_start_time, planet):
-                    _LOGGER.debug(f"%s is observable", planet_label.capitalize())
-                    object_body = get_body(planet_label, time_grid)
-                    object_altaz = object_body.transform_to(object_frame)
-                    ax = plot_sky(
-                        object_altaz,
-                        observer,
-                        time_grid,
-                        style_kwargs=dict(color=color, label=name, linewidth=3, alpha=0.5, s=size),
-                        north_to_east_ccw=constraints["north_to_east_ccw"],
-                    )
-    else:
-        # No constraints for planets and moon
-        observability_constraints = [
-            AltitudeConstraint(0 * u.deg, 90 * u.deg)
-        ]
-        for name, planet_label, color, size in BODIES:
-            if planet_label != "sun":
-                observable = is_observable(observability_constraints, observer, get_body(planet_label, time_range), time_range=time_range)
-                observable = [True]
-                if True in observable:
-                    _LOGGER.debug(f"%s is observable", planet_label.capitalize())
-                    object_body = get_body(planet_label, time_grid)
-                    object_altaz = object_body.transform_to(object_frame)
-                    ax = plot_sky(
-                        object_altaz,
-                        observer,
-                        time_grid,
-                        style_kwargs=dict(color=color, label=name, linewidth=3, alpha=0.5, s=size),
-                        north_to_east_ccw=constraints["north_to_east_ccw"],
-                    )
+
+    # No constraints for planets and moon
+    observability_constraints = [
+        AltitudeConstraint(0 * u.deg, 90 * u.deg)
+    ]
+    for name, planet_label, color, size in BODIES:
+        if planet_label != "sun":
+            observable = is_observable(observability_constraints, observer, get_body(planet_label, time_range), time_range=time_range)
+            if True in observable:
+                _LOGGER.debug(f"%s is observable", planet_label.capitalize())
+                object_body = get_body(planet_label, time_grid)
+                object_altaz = object_body.transform_to(object_frame)
+                ax = plot_sky(
+                    object_altaz,
+                    observer,
+                    time_grid,
+                    style_kwargs=dict(color=color, label=name, linewidth=3, alpha=0.5, s=size),
+                    north_to_east_ccw=constraints["north_to_east_ccw"],
+                )
 
     # Sun
     if live and sun_moon.sun_altitude() > 0:
