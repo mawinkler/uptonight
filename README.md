@@ -163,28 +163,34 @@ environment:
   relative_humidity: 0.7
 
 constraints:
-  altitude_constraint_min: 30  # in deg above horizon
-  altitude_constraint_max: 80  # in deg above horizon
+  altitude_constraint_min: 30  # In deg above horizon
+  altitude_constraint_max: 80  # In deg above horizon
   airmass_constraint: 2  # 30° to 90°, 2 = 1/cos(60)
-  size_constraint_min: 10  # in arc minutes
-  size_constraint_max: 300  # in arc minutes
+  size_constraint_min: 10  # In arc minutes
+  size_constraint_max: 300  # In arc minutes
 
-  moon_separation_min: 45  # in degrees
+  moon_separation_min: 45  # In degrees
 
-  # if set to true, moon_separation_min is derived from the moon illumination
+  # If set to true, moon_separation_min is derived from the moon illumination
   # percentage and overwrites moon_separation_min. 1% corresponds 1°.
   moon_separation_use_illumination: true
 
-  # object needs to be within the constraints for at least 50% of darkness
+  # Object needs to be within the constraints for at least 50% of darkness.
   fraction_of_time_observable_threshold: 0.75
 
-  # maximum number of targets to calculate
+  # Maximum number of targets to calculate.
   max_number_within_threshold: 60
 
-  # true : meaning that azimuth is shown increasing counter-clockwise (ccw), or 
+  # true : Meaning that azimuth is shown increasing counter-clockwise (ccw), or 
   #        with north at top, east at left, etc.
-  # false: show azimuth increasing clockwise (cw).
+  # false: Show azimuth increasing clockwise (cw).
   north_to_east_ccw: false
+
+# Personal bucket list to always include.
+# Constraints are ignored for these targets.
+bucket_list:
+  - IC 434
+  - NGC 2359
 ```
 
 ### Available Target lists

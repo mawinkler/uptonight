@@ -618,6 +618,7 @@ def calc(
     environment,
     constraints,
     target_list,
+    bucket_list,
     observation_date=None,
     type_filter="",
     output_dir=".",
@@ -777,7 +778,7 @@ def calc(
     observability_constraints = [
         AltitudeConstraint(constraints["altitude_constraint_min"] * u.deg, constraints["altitude_constraint_max"] * u.deg),
         AirmassConstraint(constraints["airmass_constraint"]),
-        MoonSeparationConstraint(min=moon_separation * u.deg)
+        MoonSeparationConstraint(min=moon_separation * u.deg),
     ]
 
     _LOGGER.info("Creating observability table")
@@ -825,10 +826,13 @@ def calc(
     _LOGGER.info("Creating plot and table of targets")
     target_no = 0
     ax = None
-
     for index, target_row in enumerate(input_targets):
         fraction_of_time_observable = target_row["fraction of time observable"]
-        if fraction_of_time_observable >= constraints["fraction_of_time_observable_threshold"] and target_no < constraints["max_number_within_threshold"]:
+        if (
+            fraction_of_time_observable >= constraints["fraction_of_time_observable_threshold"]
+            and target_no < constraints["max_number_within_threshold"]
+            or target_row["name"] in bucket_list
+        ):
             target = FixedTarget(
                 coord=SkyCoord(f"{target_row['ra']} {target_row['dec']}", unit=(u.hourangle, u.deg)),
                 name=target_row["description"] + f" ({target_row['name']}, {target_row['size']}')",
@@ -852,7 +856,7 @@ def calc(
                 marker = "D"
 
             size = input_targets[index]["size"]
-            if size >= constraints["size_constraint_min"] and size <= constraints["size_constraint_max"]:
+            if size >= constraints["size_constraint_min"] and size <= constraints["size_constraint_max"] or target_row["name"] in bucket_list:
                 # Calculate meridian transit and antitransit
                 meridian_transit_time = observer.target_meridian_transit_time(observing_start_time, target, which="next")
                 if meridian_transit_time < observing_end_time:
@@ -915,10 +919,7 @@ def calc(
         if planet_label != "sun":
             if planet_label != "moon":
                 # No altitude constraints for the planets
-                observability_constraints = [
-                    AltitudeConstraint(0 * u.deg, 90 * u.deg),
-                    MoonSeparationConstraint(min=moon_separation * u.deg)
-                ]
+                observability_constraints = [AltitudeConstraint(0 * u.deg, 90 * u.deg), MoonSeparationConstraint(min=moon_separation * u.deg)]
             else:
                 # No constraints for the moon
                 observability_constraints = [
@@ -953,7 +954,7 @@ def calc(
     # Title, legend, and config
     astronight_from = observer.astropy_time_to_datetime(observing_start_time).strftime("%m/%d %H:%M")
     astronight_to = observer.astropy_time_to_datetime(observing_end_time).strftime("%m/%d %H:%M")
-    duration = str(observer.astropy_time_to_datetime(observing_end_time) - observer.astropy_time_to_datetime(observing_start_time)).split(':')
+    duration = str(observer.astropy_time_to_datetime(observing_end_time) - observer.astropy_time_to_datetime(observing_start_time)).split(":")
     if ax is not None:
         ax.legend(loc="upper right", bbox_to_anchor=(1.4, 1))
         if not live:

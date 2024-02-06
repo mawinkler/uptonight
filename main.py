@@ -44,7 +44,7 @@ def main():
         "moon_separation_use_illumination": DEFAULT_MOON_SEPARATION_USE_ILLUMINATION,
         "fraction_of_time_observable_threshold": DEFAULT_FRACTION_OF_TIME_OBSERVABLE_THRESHOLD,
         "max_number_within_threshold": DEFAULT_MAX_NUMBER_WITHIN_THRESHOLD,
-        "north_to_east_ccw": DEFAULT_NORTH_TO_EAST_CCW
+        "north_to_east_ccw": DEFAULT_NORTH_TO_EAST_CCW,
     }
 
     observation_date = None
@@ -52,6 +52,7 @@ def main():
     type_filter = ""
     output_dir = "out"
     live_mode = False
+    bucket_list = []
 
     if os.path.isfile("config.yaml"):
         with open("config.yaml", "r", encoding="utf-8") as ymlfile:
@@ -84,7 +85,9 @@ def main():
         output_dir = cfg["output_dir"]
     if cfg is not None and "live_mode" in cfg.keys() and cfg["live_mode"] is not None:
         live_mode = bool(cfg["live_mode"])
-        
+    if cfg is not None and "bucket_list" in cfg.keys() and cfg["bucket_list"] is not None:
+        bucket_list = cfg["bucket_list"]
+
     if os.getenv("LONGITUDE") is not None:
         location["longitude"] = os.getenv("LONGITUDE")
     if os.getenv("LATITUDE") is not None:
@@ -152,6 +155,7 @@ def main():
                 environment,
                 constraints,
                 target_list,
+                bucket_list,
                 observation_date,
                 type_filter,
                 output_dir,
@@ -165,6 +169,7 @@ def main():
             environment,
             constraints,
             target_list,
+            bucket_list,
             observation_date,
             type_filter,
             output_dir,
