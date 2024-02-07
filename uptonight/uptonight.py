@@ -39,7 +39,7 @@ download_IERS_A()
 # https://cds.unistra.fr/cgi-bin/Sesame
 
 # Add date to filenames
-OUTPUT_DATESTAMP = True
+OUTPUT_DATESTAMP = False
 
 _LOGGER = logging.getLogger(__name__)
 logging.getLogger("matplotlib").setLevel(logging.INFO)
