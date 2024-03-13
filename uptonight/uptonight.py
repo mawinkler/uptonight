@@ -1,6 +1,8 @@
 """Uptonight - calculate the best objects for tonight"""
+
 import warnings
 import logging
+import pytz
 
 import numpy as np
 
@@ -204,6 +206,7 @@ class SunMoon:
         self,
         observer,
         observation_date=None,
+        utcoffset=0,
     ):
         self._observer = observer
         self._darkness = None
@@ -224,6 +227,7 @@ class SunMoon:
                     location=self._observer.location,
                 )
                 + 12 * u.hour
+                - utcoffset * u.hour
             )
         else:
             time = (
@@ -233,8 +237,10 @@ class SunMoon:
                     location=self._observer.location,
                 )
                 + 12 * u.hour
+                - utcoffset * u.hour
             )
-        _LOGGER.info("Calculating for: {0}".format(time.strftime("%m/%d/%Y")))
+        _LOGGER.info("Calculating for: {0}".format(time.strftime("%m/%d/%Y %H:%M:%S")))
+        _LOGGER.info("UTC offset: {0}".format(utcoffset))
 
         self._sun(time)
         self._moon(time, self._sun_next_setting)
@@ -729,7 +735,8 @@ def calc(
     )
 
     # Define oberserving time range
-    sun_moon = SunMoon(observer, observation_date)
+    utcoffset = datetime.now(pytz.timezone(location["timezone"])).utcoffset().total_seconds() / 3600
+    sun_moon = SunMoon(observer, observation_date, utcoffset)
     observing_start_time = None
     observing_end_time = None
     if live:
@@ -919,7 +926,10 @@ def calc(
         if planet_label != "sun":
             if planet_label != "moon":
                 # No altitude constraints for the planets
-                observability_constraints = [AltitudeConstraint(0 * u.deg, 90 * u.deg), MoonSeparationConstraint(min=moon_separation * u.deg)]
+                observability_constraints = [
+                    AltitudeConstraint(0 * u.deg, 90 * u.deg),
+                    MoonSeparationConstraint(min=moon_separation * u.deg),
+                ]
             else:
                 # No constraints for the moon
                 observability_constraints = [
@@ -981,8 +991,18 @@ def calc(
             size=12,
         )
         plt.figtext(0.02, 0.835, "Airmass constraint: {}".format(constraints["airmass_constraint"]), size=12)
-        plt.figtext(0.02, 0.815, "Size constraint min/max: {}' / {}'".format(constraints["size_constraint_min"], constraints["size_constraint_max"]), size=12)
-        plt.figtext(0.02, 0.795, "Fraction of time: {:.0f}%".format(constraints["fraction_of_time_observable_threshold"] * 100), size=12)
+        plt.figtext(
+            0.02,
+            0.815,
+            "Size constraint min/max: {}' / {}'".format(constraints["size_constraint_min"], constraints["size_constraint_max"]),
+            size=12,
+        )
+        plt.figtext(
+            0.02,
+            0.795,
+            "Fraction of time: {:.0f}%".format(constraints["fraction_of_time_observable_threshold"] * 100),
+            size=12,
+        )
         plt.figtext(0.02, 0.775, "Moon separation: {:.0f}°".format(moon_separation), size=12)
         plt.tight_layout()
 
@@ -996,7 +1016,17 @@ def calc(
     if not live:
         # Save reports
         _LOGGER.debug("Saving reports")
-        report = Report(observer, uptonight_targets, astronight_from, astronight_to, sun_moon, output_dir, current_day, filter_ext, constraints)
+        report = Report(
+            observer,
+            uptonight_targets,
+            astronight_from,
+            astronight_to,
+            sun_moon,
+            output_dir,
+            current_day,
+            filter_ext,
+            constraints,
+        )
         report.save_txt()
         report.save_json()
 
