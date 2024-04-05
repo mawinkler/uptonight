@@ -53,6 +53,7 @@ def main():
     output_dir = "out"
     live_mode = False
     bucket_list = []
+    done_list = []
 
     if os.path.isfile("config.yaml"):
         with open("config.yaml", "r", encoding="utf-8") as ymlfile:
@@ -87,6 +88,8 @@ def main():
         live_mode = bool(cfg["live_mode"])
     if cfg is not None and "bucket_list" in cfg.keys() and cfg["bucket_list"] is not None:
         bucket_list = cfg["bucket_list"]
+    if cfg is not None and "done_list" in cfg.keys() and cfg["done_list"] is not None:
+        done_list = cfg["done_list"]
 
     if os.getenv("LONGITUDE") is not None:
         location["longitude"] = os.getenv("LONGITUDE")
@@ -156,6 +159,7 @@ def main():
                 constraints,
                 target_list,
                 bucket_list,
+                done_list,
                 observation_date,
                 type_filter,
                 output_dir,
@@ -170,6 +174,7 @@ def main():
             constraints,
             target_list,
             bucket_list,
+            done_list,
             observation_date,
             type_filter,
             output_dir,

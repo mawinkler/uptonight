@@ -38,3 +38,11 @@ constraints:
   #        at top, east at left, etc.
   # false: show azimuth increasing clockwise (cw).
   north_to_east_ccw: false
+
+# personal bucket list to always include
+bucket_list:
+  - Object nane
+  - Object nane
+
+done_list:
+  - Object nane

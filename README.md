@@ -191,6 +191,10 @@ constraints:
 bucket_list:
   - IC 434
   - NGC 2359
+
+# Personal done list to always ignore.
+done_list:
+  - IC 1795
 ```
 
 ### Available Target lists

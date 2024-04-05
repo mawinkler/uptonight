@@ -625,6 +625,7 @@ def calc(
     constraints,
     target_list,
     bucket_list,
+    done_list,
     observation_date=None,
     type_filter="",
     output_dir=".",
@@ -863,7 +864,12 @@ def calc(
                 marker = "D"
 
             size = input_targets[index]["size"]
-            if size >= constraints["size_constraint_min"] and size <= constraints["size_constraint_max"] or target_row["name"] in bucket_list:
+            if (
+                size >= constraints["size_constraint_min"]
+                and size <= constraints["size_constraint_max"]
+                and target_row["name"] not in done_list
+                or target_row["name"] in bucket_list
+            ):
                 # Calculate meridian transit and antitransit
                 meridian_transit_time = observer.target_meridian_transit_time(observing_start_time, target, which="next")
                 if meridian_transit_time < observing_end_time:
