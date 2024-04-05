@@ -857,10 +857,13 @@ def calc(
                 continue
 
             # Choose marker
+            # Square
             marker = "s"
             if "galaxy" in input_targets[index]["type"].lower():
+                # Circle
                 marker = "o"
             if "nebula" in input_targets[index]["type"].lower():
+                # Diamond
                 marker = "D"
 
             size = input_targets[index]["size"]
@@ -906,10 +909,16 @@ def calc(
                     target,
                     observer,
                     time_grid,
-                    style_kwargs=dict(color=cmap(target_no / within_threshold * 0.75), label=target.name, marker=marker, s=5),
+                    style_kwargs=dict(color=cmap(target_no / within_threshold * 0.75), label='_Hidden', marker=marker, s=3),
                     north_to_east_ccw=constraints["north_to_east_ccw"],
                 )
-
+                ax = plot_sky(
+                    target,
+                    observer,
+                    observing_start_time,
+                    style_kwargs=dict(color=cmap(target_no / within_threshold * 0.75), label=target.name, marker=marker, s=30),
+                    north_to_east_ccw=constraints["north_to_east_ccw"],
+                )
                 target_no = target_no + 1
 
         if target_row["name"] == "Polaris" or target_row["name"] in CUSTOM_TARGETS:
@@ -1010,6 +1019,12 @@ def calc(
             size=12,
         )
         plt.figtext(0.02, 0.775, "Moon separation: {:.0f}°".format(moon_separation), size=12)
+
+        plt.figtext(0.02, 0.750, "Solar System: Big circle", size=8)
+        plt.figtext(0.02, 0.735, "Nebula: Diamond", size=8)
+        plt.figtext(0.02, 0.720, "Galaxy: Circle", size=8)
+        plt.figtext(0.02, 0.705, "Rest: Square", size=8)
+
         plt.tight_layout()
 
     # Save plot
