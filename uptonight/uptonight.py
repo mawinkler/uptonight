@@ -29,6 +29,8 @@ from astroplan import time_grid_from_range
 from astroplan.exceptions import TargetAlwaysUpWarning, TargetNeverUpWarning
 from astroplan.plots import plot_sky
 
+from astroquery.simbad import Simbad
+
 from .const import (
     DEFAULT_TARGETS,
     CUSTOM_TARGETS,
@@ -94,15 +96,29 @@ class Targets:
         """
 
         input_targets = Table.read(f"{target_list}.csv", format="ascii.csv")
+        # Adding visual magnitude to target csvs without magnitude by
+        # querying Simbad
+        # Simbad.add_votable_fields('flux(V)')
+        # Simbad.ROW_LIMIT = 1
+        # input_targets['mag'] = input_targets['mag'].astype(float)
+        # input_targets["mag"].info.format = ".1f"
+
+        # for index, name in enumerate(input_targets['name']):
+        #     simbad = Simbad.query_object(name)
+        #     if simbad:
+        #         if simbad[0]['FLUX_V'] != '--':
+        #             simbad_mag = float(simbad[0]['FLUX_V'])
+        #             print(f"name: {name}, mag: {simbad_mag}")
+        #             input_targets[index]['mag'] = simbad_mag
 
         # Create astroplan.FixedTarget objects for each one in the table
         # Used to calculate the fraction of time observable
         fixed_targets = [
             FixedTarget(
                 coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)),
-                name=common_name + f" ({name}, {size}')",
+                name=name,
             )
-            for name, common_name, type, constellation, size, ra, dec in input_targets
+            for name, common_name, type, constellation, size, ra, dec, mag in input_targets
         ]
 
         # Add custom targets
@@ -112,6 +128,7 @@ class Targets:
             ra = custom_target.get("ra")
             dec = custom_target.get("dec")
             size = custom_target.get("size")
+            mag = custom_target.get("mag")
             input_targets.add_row(
                 [
                     name,
@@ -121,10 +138,11 @@ class Targets:
                     size,
                     ra,
                     dec,
+                    mag,
                 ]
             )
             fixed_targets.append(
-                FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=desc + f" ({name}, {size}')"),
+                FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=name),
             )
 
         # Lastly we add Polaris
@@ -134,13 +152,16 @@ class Targets:
                 "North star",
                 "Star",
                 "Ursa Minor",
-                0,
+                0.0,
                 "02 31 49",
                 "89 15 51",
+                1.98,
             ]
         )
         # We need to add Polaris here as well to have the same number of objects as in the input_targets table
         fixed_targets.append(FixedTarget.from_name("Polaris"))
+
+        # input_targets.write(f"{target_list}-mag.csv", format="ascii.csv")
 
         return input_targets, fixed_targets
 
@@ -173,6 +194,7 @@ class Targets:
                 "type",
                 "constellation",
                 "size",
+                "mag",
                 "foto",
             ),
             dtype=(
@@ -188,12 +210,15 @@ class Targets:
                 str,
                 np.float16,
                 np.float16,
+                np.float16,
             ),
         )
         uptonight_targets["right ascension"].info.format = ".1f"
         uptonight_targets["declination"].info.format = ".1f"
         uptonight_targets["altitude"].info.format = ".1f"
         uptonight_targets["azimuth"].info.format = ".1f"
+        uptonight_targets["size"].info.format = ".1f"
+        uptonight_targets["mag"].info.format = ".1f"
         uptonight_targets["foto"].info.format = ".1f"
 
         return uptonight_targets
@@ -841,17 +866,17 @@ def calc(
             and target_no < constraints["max_number_within_threshold"]
             or target_row["name"] in bucket_list
         ):
+            if str(target_row['description']) == "--":
+                target_row['description'] = target_row['name']
+                target_row['name'] = '--'
             target = FixedTarget(
                 coord=SkyCoord(f"{target_row['ra']} {target_row['dec']}", unit=(u.hourangle, u.deg)),
-                name=target_row["description"] + f" ({target_row['name']}, {target_row['size']}')",
+                name=str(target_row['description']) + str(f" ({target_row['name']}, {target_row['size']}', {target_row['mag']})"),
             )
-            _LOGGER.debug(f"%s", target)
 
             azimuth = observer.altaz(observing_start_time, target).az
             altitude = observer.altaz(observing_start_time, target).alt
 
-            # Add target to final table, leave out Polaris
-            # if i < (len(fixed_targets) - 1):
             # If an object type is set we filter out everything else
             if type_filter != "" and type_filter.lower() not in input_targets[index]["type"].lower():
                 continue
@@ -900,6 +925,7 @@ def calc(
                         input_targets[index]["type"],
                         input_targets[index]["constellation"],
                         input_targets[index]["size"],
+                        input_targets[index]["mag"],
                         fraction_of_time_observable,
                     )
                 )
@@ -924,7 +950,7 @@ def calc(
         if target_row["name"] == "Polaris" or target_row["name"] in CUSTOM_TARGETS:
             target = FixedTarget(
                 coord=SkyCoord(f"{target_row['ra']} {target_row['dec']}", unit=(u.hourangle, u.deg)),
-                name=target_row["description"] + f" ({target_row['name']}, {target_row['size']}')",
+                name=target_row["description"] + f" ({target_row['name']}, {target_row['size']}', {target_row['mag']})",
             )
             ax = plot_sky(
                 target,

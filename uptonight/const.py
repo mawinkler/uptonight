@@ -44,6 +44,7 @@ CUSTOM_TARGETS = [
         "size": 13,
         "ra": "12 25 48",
         "dec": "+33 32 48",
+        "mag": 10.0,
     },
     {
         "name": "NGC 3227",
@@ -53,5 +54,6 @@ CUSTOM_TARGETS = [
         "size": 4,
         "ra": "10 23 30",
         "dec": "+19 51 54",
+        "mag": 10.4,
     },
 ]
