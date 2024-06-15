@@ -21,6 +21,8 @@ DEFAULT_NORTH_TO_EAST_CCW = False
 # Default target list to use
 DEFAULT_TARGETS = "targets/GaryImm"
 
+OUTPUT_DATESTAMP = False
+
 # Solar System
 BODIES = [
     ("Sun", "sun", "gold", 250),

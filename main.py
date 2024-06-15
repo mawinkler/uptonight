@@ -1,26 +1,25 @@
 #!/usr/bin/env python3
-import os
 import logging
+import os
 import sys
-import yaml
-import pprint as pp
-
 from time import sleep
 
-from uptonight.uptonight import calc
+import yaml
+
 from uptonight.const import (
-    DEFAULT_ALTITUDE_CONSTRAINT_MIN,
-    DEFAULT_ALTITUDE_CONSTRAINT_MAX,
     DEFAULT_AIRMASS_CONSTRAINT,
-    DEFAULT_SIZE_CONSTRAINT_MIN,
-    DEFAULT_SIZE_CONSTRAINT_MAX,
-    DEFAULT_MOON_SEPARATION_MIN,
-    DEFAULT_MOON_SEPARATION_USE_ILLUMINATION,
+    DEFAULT_ALTITUDE_CONSTRAINT_MAX,
+    DEFAULT_ALTITUDE_CONSTRAINT_MIN,
     DEFAULT_FRACTION_OF_TIME_OBSERVABLE_THRESHOLD,
     DEFAULT_MAX_NUMBER_WITHIN_THRESHOLD,
+    DEFAULT_MOON_SEPARATION_MIN,
+    DEFAULT_MOON_SEPARATION_USE_ILLUMINATION,
     DEFAULT_NORTH_TO_EAST_CCW,
+    DEFAULT_SIZE_CONSTRAINT_MAX,
+    DEFAULT_SIZE_CONSTRAINT_MIN,
     DEFAULT_TARGETS,
 )
+from uptonight.uptonight import calc
 
 _LOGGER = logging.getLogger(__name__)
 logging.basicConfig(
@@ -154,31 +153,31 @@ def main():
         _LOGGER.info("UpTonight live mode")
         while True:
             calc(
-                location,
-                environment,
-                constraints,
-                target_list,
-                bucket_list,
-                done_list,
-                observation_date,
-                type_filter,
-                output_dir,
-                True,
+                location=location,
+                environment=environment,
+                constraints=constraints,
+                target_list=target_list,
+                bucket_list=bucket_list,
+                done_list=done_list,
+                observation_date=observation_date,
+                type_filter=type_filter,
+                output_dir=output_dir,
+                live=True,
             )
             sleep(300)
     else:
         _LOGGER.info("UpTonight one-time calculation mode")
         calc(
-            location,
-            environment,
-            constraints,
-            target_list,
-            bucket_list,
-            done_list,
-            observation_date,
-            type_filter,
-            output_dir,
-            False,
+            location=location,
+            environment=environment,
+            constraints=constraints,
+            target_list=target_list,
+            bucket_list=bucket_list,
+            done_list=done_list,
+            observation_date=observation_date,
+            type_filter=type_filter,
+            output_dir=output_dir,
+            live=False,
         )
 
 

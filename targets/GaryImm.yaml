@@ -1,0 +1,1648 @@
+- constellation: Gemini
+  dec: +13 14 48
+  description: Medusa Nebula
+  mag: -9999
+  name: Abell 21
+  ra: 07 29 03
+  size: 10.0
+  type: Planetary Nebula
+- constellation: Hydra
+  dec: -02 48 33
+  description: Diamond Ring Nebula
+  mag: -9999
+  name: Abell 33
+  ra: 09 39 09
+  size: 4.0
+  type: Planetary Nebula
+- constellation: Perseus
+  dec: +41 30 54
+  description: Perseus Galaxy Cluster
+  mag: -9999
+  name: Abell 426
+  ra: 03 18 36
+  size: 150.0
+  type: Galaxy Cluster
+- constellation: Cassiopeia
+  dec: 62 26 51
+  description: CTB 1 or Garlic Nebula
+  mag: -9999
+  name: Abell 85
+  ra: 23 59 54
+  size: 35.0
+  type: Supernova Remnant
+- constellation: Hydra
+  dec: 02 44 00
+  description: Penguin and Egg Galaxy
+  mag: -9999
+  name: Arp 142
+  ra: 09 37 45
+  size: 2.0
+  type: Galaxy Duo
+- constellation: Draco
+  dec: 55 25 32
+  description: Tadpole Galaxy
+  mag: -9999
+  name: Arp 188
+  ra: 16 06 04
+  size: 3.6
+  type: Galaxy
+- constellation: Aquila
+  dec: -24 40 00
+  description: Atom For Peace Galaxy
+  mag: '12.1'
+  name: Arp 226
+  ra: 22 20 44
+  size: 2.0
+  type: Galaxy
+- constellation: Coma Berenices
+  dec: 30 43 00
+  description: Mice Galaxies
+  mag: -9999
+  name: Arp 242
+  ra: 12 46 10
+  size: 2.3
+  type: Galaxy
+- constellation: Corvus
+  dec: -18 52 07
+  description: Antennae Galaxy Duo
+  mag: -9999
+  name: Arp 244
+  ra: 12 01 53
+  size: 2.6
+  type: Galaxy
+- constellation: Canes Venatici
+  dec: 41 38 32
+  description: Cocoon Galaxy
+  mag: '9.8'
+  name: Arp 269
+  ra: 12 30 36
+  size: 6.0
+  type: Galaxy
+- constellation: Andromeda
+  dec: +39 21 00
+  description: The Rose Galaxies
+  mag: '12.9'
+  name: Arp 273
+  ra: 02 21 32
+  size: 1.5
+  type: Galaxy
+- constellation: Leo
+  dec: +21 49 00
+  description: Hickson 44 Galaxy Group
+  mag: '11.1'
+  name: Arp 316
+  ra: 10 18 06
+  size: 30.0
+  type: Galaxy
+- constellation: Leo
+  dec: 13 05 00
+  description: Leo Triplet
+  mag: -9999
+  name: Arp 317
+  ra: 11 18 55
+  size: 50.0
+  type: Galaxy Group
+- constellation: Pegasus
+  dec: 33 56 00
+  description: Stephan's Quintet
+  mag: '13.6'
+  name: Arp 319
+  ra: 22 36 04
+  size: 5.0
+  type: Galaxy Group
+- constellation: Hydra
+  dec: -04 51 00
+  description: Arp 321
+  mag: -9999
+  name: Arp 321
+  ra: 09 38 53
+  size: 4.0
+  type: Galaxy Group
+- constellation: Ursa Major
+  dec: 58 44 02
+  description: Helix Galaxy
+  mag: '12.7'
+  name: Arp 336
+  ra: 08 55 35
+  size: 5.2
+  type: Galaxy
+- constellation: Canes Venatici
+  dec: +37 25 30
+  description: Heron Galaxies
+  mag: -9999
+  name: Arp 84
+  ra: 13 58 38
+  size: 3.0
+  type: Galaxy
+- constellation: Scutum
+  dec: -04 33 00
+  description: Dark Checkmark
+  mag: -9999
+  name: Barnard 104
+  ra: 18 47 20
+  size: 16.0
+  type: Dark Nebula
+- constellation: Scorpius
+  dec: -32 10 00
+  description: Dolphin Dark Nebula
+  mag: -9999
+  name: Barnard 252
+  ra: 17 15 18
+  size: 20.0
+  type: Dark Nebula
+- constellation: Orion
+  dec: 09 04 00
+  description: Barnard 35
+  mag: -9999
+  name: Barnard 35
+  ra: 05 45 31
+  size: 20.0
+  type: Dark Nebula
+- constellation: Taurus
+  dec: 28 34 00
+  description: Barnard 7
+  mag: -9999
+  name: Barnard 7
+  ra: 04 17 24
+  size: 50.0
+  type: Dark Nebula
+- constellation: Ophiuchus
+  dec: -23 38 00
+  description: Snake Nebula
+  mag: -9999
+  name: Barnard 72
+  ra: 17 23 36
+  size: 37.0
+  type: Dark Nebula
+- constellation: Scorpius
+  dec: -39 03 00
+  description: Lupus 3 Cloud
+  mag: -9999
+  name: Bernes 149
+  ra: 16 09 36
+  size: 50.0
+  type: Dark Nebula
+- constellation: Aquila
+  dec: -15 16 43
+  description: R Aquarii
+  mag: -9999
+  name: Cederblad 211
+  ra: 23 43 46
+  size: 1.5
+  type: Nova
+- constellation: Cygnus
+  dec: 36 42 00
+  description: Egg Nebula
+  mag: -9999
+  name: CRL 2688
+  ra: 21 02 18
+  size: 0.5
+  type: Preplanetary Nebula
+- constellation: Cepheus
+  dec: 58 59 00
+  description: PM 1-333
+  mag: -9999
+  name: G100.4+04.6
+  ra: 21 40 00
+  size: 1.0
+  type: Planetary Nebula
+- constellation: Coma Berenices
+  dec: 29 10 40
+  description: The Box
+  mag: -9999
+  name: Hickson 61
+  ra: 12 12 24
+  size: 3.8
+  type: Galaxy Group
+- constellation: Taurus
+  dec: 22 54 14
+  description: V1025 Tau
+  mag: '14.9'
+  name: HP Tau
+  ra: 04 35 54
+  size: 3.0
+  type: Variable Star
+- constellation: Cygnus
+  dec: 40 15 24
+  description: Gamma Cygni Nebula
+  mag: -9999
+  name: IC 1318
+  ra: 20 23 14
+  size: 240.0
+  type: Emission Nebula
+- constellation: Cepheus
+  dec: +57 29 21
+  description: Elephant's Trunk
+  mag: -9999
+  name: IC 1396
+  ra: 21 38 58
+  size: 60.0
+  type: Dark Nebula
+- constellation: Cassiopeia
+  dec: 62 02 39
+  description: Fishhead Nebula
+  mag: -9999
+  name: IC 1795
+  ra: 02 26 32
+  size: 30.0
+  type: Emission Nebula
+- constellation: Cassiopeia
+  dec: 61 28 30
+  description: Heart Nebula
+  mag: -9999
+  name: IC 1805
+  ra: 02 32 47
+  size: 120.0
+  type: Emission Nebula
+- constellation: Cassiopeia
+  dec: 60 24 30
+  description: Soul Nebula
+  mag: '6.5'
+  name: IC 1848
+  ra: 02 51 18
+  size: 1.8
+  type: Emission Nebula
+- constellation: Eridanus
+  dec: -07 15 00
+  description: Witch Head Nebula
+  mag: -9999
+  name: IC 2118
+  ra: 05 04 54
+  size: 240.0
+  type: Reflection Nebula
+- constellation: Cetus
+  dec: 01 18 00
+  description: Arp 147 Interacting Galaxies
+  mag: -9999
+  name: IC 298
+  ra: 03 11 18
+  size: 0.7
+  type: Galaxy
+- constellation: Auriga
+  dec: 34 21 24
+  description: Flaming Star Nebula
+  mag: -9999
+  name: IC 405
+  ra: 05 16 29
+  size: 60.0
+  type: Emission Nebula
+- constellation: Auriga
+  dec: 33 25 00
+  description: Tadpole Emission Nebula
+  mag: -9999
+  name: IC 410
+  ra: 05 22 44
+  size: 40.0
+  type: Emission Nebula
+- constellation: Auriga
+  dec: +34 25 24
+  description: Spider and the Fly
+  mag: -9999
+  name: IC 417
+  ra: 05 28 06
+  size: 50.0
+  type: Emission Nebula
+- constellation: Orion
+  dec: -02 27 12
+  description: Horsehead and Flame Nebula
+  mag: -9999
+  name: IC 434
+  ra: 05 41 00
+  size: 30.0
+  type: Dark Nebula
+- constellation: Gemini
+  dec: +22 31 00
+  description: Jellyfish Nebula
+  mag: -9999
+  name: IC 443
+  ra: 06 16 36
+  size: 60.0
+  type: Supernova Remnant
+- constellation: Scorpius
+  dec: -19 27 24
+  description: Blue Horsehead Nebula. Jabbah
+  mag: -9999
+  name: IC 4592
+  ra: 16 11 59
+  size: 120.0
+  type: Reflection Nebula
+- constellation: Scorpius
+  dec: -40 27 24
+  description: Prawn Nebula
+  mag: '7.1'
+  name: IC 4628
+  ra: 16 56 58
+  size: 30.0
+  type: Emission Nebula
+- constellation: Cygnus
+  dec: 44 24 05
+  description: Pelican Nebula
+  mag: -9999
+  name: IC 5070
+  ra: 20 51 01
+  size: 80.0
+  type: Emission Nebula
+- constellation: Cygnus
+  dec: +47 16 01
+  description: Cocoon Nebula
+  mag: -9999
+  name: IC 5146
+  ra: 21 53 29
+  size: 12.0
+  type: Emission Nebula
+- constellation: Grus
+  dec: -39 23 09
+  description: Spare Tire Nebula
+  mag: '16.5'
+  name: IC 5148
+  ra: 21 59 35
+  size: 2.0
+  type: Planetary Nebula
+- constellation: Cassiopeia
+  dec: 60 54 42
+  description: Gamma Cassiopeia Nebula
+  mag: -9999
+  name: IC 63
+  ra: 00 59 29
+  size: 20.0
+  type: Emission Nebula
+- constellation: Lynx
+  dec: +53 25 00
+  description: Headphone Nebula
+  mag: -9999
+  name: Jones-Emberson 1
+  ra: 07 57 54
+  size: 6.0
+  type: Planetary Nebula
+- constellation: Lacerta
+  dec: 41 05 24
+  description: Gecko Nebula
+  mag: -9999
+  name: LBN 437
+  ra: 22 38 13
+  size: 120.0
+  type: Molecular Cloud
+- constellation: Lacerta
+  dec: 37 45 36
+  description: Reaching Hand Nebula
+  mag: -9999
+  name: LBN 438
+  ra: 22 41 17
+  size: 30.0
+  type: Molecular Cloud
+- constellation: Cepheus
+  dec: 67 51 00
+  description: Loop of Darkness
+  mag: -9999
+  name: LBN 468
+  ra: 20 42 29
+  size: 120.0
+  type: Molecular Cloud
+- constellation: Cepheus
+  dec: 73 25 00
+  description: Shark Nebula
+  mag: -9999
+  name: LBN 535
+  ra: 22 14 55
+  size: 15.0
+  type: Reflection Nebula
+- constellation: Taurus
+  dec: 26 23 24
+  description: Baby Eagle Nebula
+  mag: -9999
+  name: LBN 777
+  ra: 04 05 02
+  size: 60.0
+  type: Molecular Cloud
+- constellation: Cepheus
+  dec: 75 15 35
+  description: Angler Fish Nebula
+  mag: -9999
+  name: LDN 1251
+  ra: 22 36 03
+  size: 90.0
+  type: Dark Nebula
+- constellation: Taurus
+  dec: 27 37 17
+  description: Taurus Dark Nebulae Region
+  mag: -9999
+  name: LDN 1495
+  ra: 04 18 05
+  size: 40.0
+  type: Dark Nebula
+- constellation: Orion
+  dec: 01 40 15
+  description: Bogeyman Nebula
+  mag: -9999
+  name: LDN 1622
+  ra: 05 54 02
+  size: 40.0
+  type: Dark Nebula
+- constellation: Taurus
+  dec: +22 00 52
+  description: Crab Nebula
+  mag: -9999
+  name: M 1
+  ra: 05 34 32
+  size: 6.0
+  type: Supernova Remnant
+- constellation: Ursa Major
+  dec: +54 20 56
+  description: Pinwheel Galaxy
+  mag: '7.9'
+  name: M 101
+  ra: 14 03 13
+  size: 29.0
+  type: Galaxy
+- constellation: Virgo
+  dec: -11 37 23
+  description: Sombrero Galaxy
+  mag: '8.0'
+  name: M 104
+  ra: 12 39 59
+  size: 9.0
+  type: Galaxy
+- constellation: Canes Venatici
+  dec: +47 18 16
+  description: M 106 Galaxy
+  mag: '8.4'
+  name: M 106
+  ra: 12 18 58
+  size: 17.0
+  type: Galaxy
+- constellation: Ursa Major
+  dec: 55 40 26
+  description: Surfboard Galaxy
+  mag: -9999
+  name: M 108
+  ra: 11 11 31
+  size: 9.0
+  type: Galaxy
+- constellation: Scutum
+  dec: -06 16 12
+  description: Wild Duck Cluster
+  mag: '5.8'
+  name: M 11
+  ra: 18 51 05
+  size: 14.0
+  type: Open Cluster
+- constellation: Hercules
+  dec: 36 27 35
+  description: Great Hercules Cluster
+  mag: '5.8'
+  name: M 13
+  ra: 16 41 41
+  size: 32.0
+  type: Globular Cluster
+- constellation: Serpens
+  dec: -13 48 24
+  description: Eagle Nebula
+  mag: -9999
+  name: M 16
+  ra: 18 18 48
+  size: 35.0
+  type: Emission Nebula
+- constellation: Sagittarius
+  dec: -16 10 18
+  description: Omega Swan Horseshoe Checkmark Nebula
+  mag: -9999
+  name: M 17
+  ra: 18 20 47
+  size: 46.0
+  type: Emission Nebula
+- constellation: Sagittarius
+  dec: -22 58 18
+  description: Trifid Nebula
+  mag: -9999
+  name: M 20
+  ra: 18 02 42
+  size: 29.0
+  type: Emission Nebula
+- constellation: Sagittarius
+  dec: -23 54 17
+  description: Great Sagittarius Cluster
+  mag: -9999
+  name: M 22
+  ra: 18 36 24
+  size: 24.0
+  type: Globular Cluster
+- constellation: Vulpecula
+  dec: 22 43 15
+  description: Dumbbell or Apple Core Nebula
+  mag: '14.1'
+  name: M 27
+  ra: 19 59 36
+  size: 6.0
+  type: Planetary Nebula
+- constellation: Canes Venatici
+  dec: 28 22 35
+  description: Globular Cluster also NGC 5272
+  mag: '6.4'
+  name: M 3
+  ra: 13 42 11
+  size: 16.0
+  type: Globular Cluster
+- constellation: Andromeda
+  dec: 41 16 08
+  description: Andromeda Galaxy
+  mag: '3.4'
+  name: M 31
+  ra: 00 42 44
+  size: 189.0
+  type: Galaxy
+- constellation: Tri
+  dec: 30 39 37
+  description: Triangulum Galaxy
+  mag: '5.7'
+  name: M 33
+  ra: 01 33 51
+  size: 70.0
+  type: Galaxy
+- constellation: Orion
+  dec: -05 23 25
+  description: Orion Nebula
+  mag: -9999
+  name: M 42
+  ra: 05 35 16
+  size: 66.0
+  type: Emission Nebula
+- constellation: Taurus
+  dec: 24 07 00
+  description: Pleiades or Seven Sisters or Subaru
+  mag: -9999
+  name: M 45
+  ra: 03 47 30
+  size: 120.0
+  type: Open Cluster
+- constellation: Serpens
+  dec: 02 04 57
+  description: Rose Cluster
+  mag: '5.9'
+  name: M 5
+  ra: 15 18 33
+  size: 17.0
+  type: Globular Cluster
+- constellation: Canes Venatici
+  dec: 47 11 45
+  description: Whirlpool Galaxy
+  mag: '8.4'
+  name: M 51
+  ra: 13 29 52
+  size: 11.0
+  type: Galaxy
+- constellation: Sagittarius
+  dec: -30 57 44
+  description: Specter Cluster
+  mag: '6.5'
+  name: M 55
+  ra: 19 40 00
+  size: 19.0
+  type: Globular Cluster
+- constellation: Lyr
+  dec: +33 01 44
+  description: Ring Nebula
+  mag: '15.8'
+  name: M 57
+  ra: 18 53 35
+  size: 2.5
+  type: Planetary Nebula
+- constellation: Canes Venatici
+  dec: 42 01 46
+  description: Sunflower Galaxy
+  mag: '8.6'
+  name: M 63
+  ra: 13 15 49
+  size: 13.0
+  type: Galaxy
+- constellation: Coma Berenices
+  dec: 21 40 58
+  description: Black Eye Galaxy
+  mag: '8.5'
+  name: M 64
+  ra: 12 56 44
+  size: 10.0
+  type: Galaxy
+- constellation: Leo
+  dec: +13 05 31
+  description: Leo Galaxy Duo
+  mag: -9999
+  name: M 65
+  ra: 11 18 56
+  size: 35.0
+  type: Galaxy
+- constellation: Perseus
+  dec: +51 34 15
+  description: Little Dumbbell Nebula
+  mag: '17.5'
+  name: M 76
+  ra: 01 42 18
+  size: 2.0
+  type: Planetary Nebula
+- constellation: Orion
+  dec: 00 04 48
+  description: Casper Nebula
+  mag: -9999
+  name: M 78
+  ra: 05 46 45
+  size: 8.0
+  type: Reflection Nebula
+- constellation: Sagittarius
+  dec: -24 22 48
+  description: Lagoon Nebula
+  mag: -9999
+  name: M 8
+  ra: 18 03 41
+  size: 100.0
+  type: Emission Nebula
+- constellation: Ursa Major
+  dec: 69 03 56
+  description: Bode's Galaxy
+  mag: '6.9'
+  name: M 81
+  ra: 09 55 33
+  size: 27.0
+  type: Galaxy
+- constellation: Ursa Major
+  dec: 69 40 50
+  description: Cigar Galaxy
+  mag: '8.4'
+  name: M 82
+  ra: 09 55 53
+  size: 10.0
+  type: Galaxy
+- constellation: Hydra
+  dec: -29 51 51
+  description: Southern Pinwheel Galaxy
+  mag: '7.5'
+  name: M 83
+  ra: 13 37 00
+  size: 13.0
+  type: Galaxy
+- constellation: Virgo
+  dec: +12 56 46
+  description: Markarian's Chain
+  mag: '8.9'
+  name: M 86
+  ra: 12 26 12
+  size: 60.0
+  type: Galaxy
+- constellation: Canes Venatici
+  dec: 41 07 12
+  description: Croc's Eye or Cat's Eye Galaxy
+  mag: '8.2'
+  name: M 94
+  ra: 12 50 53
+  size: 11.0
+  type: Galaxy
+- constellation: Ursa Major
+  dec: +55 01 08
+  description: Owl Nebula
+  mag: '15.8'
+  name: M 97
+  ra: 11 14 48
+  size: 3.0
+  type: Planetary Nebula
+- constellation: Coma Berenices
+  dec: 14 25 01
+  description: St. Catherine's Wheel Galaxy
+  mag: '9.9'
+  name: M 99
+  ra: 12 18 50
+  size: 5.0
+  type: Galaxy
+- constellation: Virgo
+  dec: 12 56 46
+  description: M 86 or M 84
+  mag: -9999
+  name: Markarian's Chain
+  ra: 12 26 13
+  size: 90.0
+  type: Galaxy
+- constellation: Fornax
+  dec: -30 16 29
+  description: NGC 1097
+  mag: '9.5'
+  name: NGC 1097
+  ra: 02 46 19
+  size: 9.3
+  type: Galaxy
+- constellation: Perseus
+  dec: 31 24 56
+  description: Embryo Nebula
+  mag: -9999
+  name: NGC 1333
+  ra: 03 29 20
+  size: 100.0
+  type: Reflection Nebula
+- constellation: Fornax
+  dec: -25 52 19
+  description: Robins Egg Nebula
+  mag: '11.2'
+  name: NGC 1360
+  ra: 03 33 15
+  size: 6.0
+  type: Planetary Nebula
+- constellation: Perseus
+  dec: 51 18 57
+  description: Fossil Footprint Nebula
+  mag: -9999
+  name: NGC 1491
+  ra: 04 03 14
+  size: 12.0
+  type: Emission Nebula
+- constellation: Perseus
+  dec: +36 22 00
+  description: California Nebula
+  mag: -9999
+  name: NGC 1499
+  ra: 04 03 14
+  size: 145.0
+  type: Emission Nebula
+- constellation: Camelopardalis
+  dec: 60 55 14
+  description: Oyster Nebula
+  mag: '13.0'
+  name: NGC 1501
+  ra: 04 06 59
+  size: 0.9
+  type: Planetary Nebula
+- constellation: Taurus
+  dec: +30 46 33
+  description: Crystal Ball Nebula
+  mag: '9.5'
+  name: NGC 1514
+  ra: 04 09 17
+  size: 2.0
+  type: Planetary Nebula
+- constellation: Eridanus
+  dec: -32 52 26
+  description: Eridanus Interacting Galaxy Duo
+  mag: -9999
+  name: NGC 1532
+  ra: 04 12 04
+  size: 6.0
+  type: Galaxy
+- constellation: Taurus
+  dec: 19 32 03
+  description: Hinds Variable Nebula
+  mag: -9999
+  name: NGC 1555
+  ra: 04 21 57
+  size: 60.0
+  type: Reflection Nebula
+- constellation: Eridanus
+  dec: -11 07 08
+  description: NGC 1721
+  mag: -9999
+  name: NGC 1721
+  ra: 04 59 17
+  size: 30.0
+  type: Galaxy Group
+- constellation: Orion
+  dec: -03 20 27
+  description: Cosmic Bat or Foxface Nebula
+  mag: -9999
+  name: NGC 1788
+  ra: 05 06 53
+  size: 8.0
+  type: Emission Nebula
+- constellation: Orion
+  dec: -04 49 15
+  description: Running Man Nebula
+  mag: -9999
+  name: NGC 1977
+  ra: 05 35 16
+  size: 20.0
+  type: Emission Nebula
+- constellation: Orion
+  dec: -06 42 57
+  description: Rubber Stamp or Keyhole Nebula
+  mag: -9999
+  name: NGC 1999
+  ra: 05 36 25
+  size: 2.0
+  type: Reflection Nebula
+- constellation: Orion
+  dec: -01 51 24
+  description: Flame Nebula
+  mag: -9999
+  name: NGC 2024
+  ra: 05 41 42
+  size: 30.0
+  type: Dark Nebula
+- constellation: Cetus
+  dec: -13 52 24
+  description: NGC 210
+  mag: -9999
+  name: NGC 210
+  ra: 00 40 35
+  size: 5.4
+  type: Galaxy
+- constellation: Camelopardalis
+  dec: 78 21 22
+  description: NGC 2146
+  mag: '10.6'
+  name: NGC 2146
+  ra: 06 18 38
+  size: 6.0
+  type: Galaxy
+- constellation: Orion
+  dec: 13 57 54
+  description: Shopping Cart Cluster
+  mag: '5.9'
+  name: NGC 2169
+  ra: 06 08 24
+  size: 7.0
+  type: Asterism
+- constellation: Monoceros
+  dec: -06 23 57
+  description: Angel Nebula
+  mag: -9999
+  name: NGC 2170
+  ra: 06 07 32
+  size: 110.0
+  type: Reflection Nebula
+- constellation: Orion
+  dec: 20 39 34
+  description: Monkey Head Nebula
+  mag: -9999
+  name: NGC 2174
+  ra: 06 09 24
+  size: 40.0
+  type: Emission Nebula
+- constellation: Monoceros
+  dec: 05 03 00
+  description: Rosette Nebula
+  mag: -9999
+  name: NGC 2237
+  ra: 06 30 54
+  size: 80.0
+  type: Emission Nebula
+- constellation: Monoceros
+  dec: 10 09 24
+  description: Ced80 Nebula
+  mag: -9999
+  name: NGC 2245
+  ra: 06 32 41
+  size: 40.0
+  type: Reflection Nebula
+- constellation: Monoceros
+  dec: 08 44 40
+  description: Hubble's Variable Nebula
+  mag: '11.9'
+  name: NGC 2261
+  ra: 06 39 10
+  size: 2.0
+  type: Reflection Nebula
+- constellation: Monoceros
+  dec: 09 53 42
+  description: Christmas Tree Cluster or Cone Nebula
+  mag: -9999
+  name: NGC 2264
+  ra: 06 40 58
+  size: 120.0
+  type: Emission Nebula
+- constellation: Canis Major
+  dec: -11 18 50
+  description: Seagull Nebula
+  mag: -9999
+  name: NGC 2327
+  ra: 07 04 07
+  size: 170.0
+  type: Emission Nebula
+- constellation: Canis Major
+  dec: -13 13 36
+  description: "Thor\u2019s Helmet or Duck Nebula"
+  mag: -9999
+  name: NGC 2359
+  ra: 07 18 30
+  size: 10.0
+  type: Wolf-Rayet Nebula
+- constellation: Gemini
+  dec: 29 29 17
+  description: Double Bubble
+  mag: '13.5'
+  name: NGC 2371
+  ra: 07 25 34
+  size: 2.1
+  type: Planetary Nebula
+- constellation: Gemini
+  dec: 20 54 42
+  description: Eskimo or Clown Nebula
+  mag: '9.7'
+  name: NGC 2392
+  ra: 07 29 11
+  size: 0.8
+  type: Planetary Nebula
+- constellation: Cetus
+  dec: -11 52 19
+  description: Skull Nebula
+  mag: '11.8'
+  name: NGC 246
+  ra: 00 47 03
+  size: 4.0
+  type: Planetary Nebula
+- constellation: Puppis
+  dec: -26 26 12
+  description: Skull and Crossbones Nebula
+  mag: -9999
+  name: NGC 2467
+  ra: 07 52 26
+  size: 50.0
+  type: Emission Nebula
+- constellation: Sculptor
+  dec: -25 17 18
+  description: Sculptor Galaxy
+  mag: -9999
+  name: NGC 253
+  ra: 00 47 33
+  size: 25.0
+  type: Galaxy
+- constellation: Vela
+  dec: -45 56 54
+  description: Herschel's Ray or Pencil Nebula
+  mag: -9999
+  name: NGC 2736
+  ra: 09 00 16
+  size: 40.0
+  type: Supernova Remnant
+- constellation: Cassiopeia
+  dec: 56 37 29
+  description: PacMan Nebula
+  mag: -9999
+  name: NGC 281
+  ra: 00 52 54
+  size: 35.0
+  type: Emission Nebula
+- constellation: Vela
+  dec: -40 26 11
+  description: Eight Burst Nebula
+  mag: '10.0'
+  name: NGC 3132
+  ra: 10 07 02
+  size: 0.8
+  type: Planetary Nebula
+- constellation: Hydra
+  dec: -18 38 34
+  description: Ghost of Jupiter or CBS Eye Nebula
+  mag: '12.1'
+  name: NGC 3242
+  ra: 10 24 46
+  size: 0.75
+  type: Planetary Nebula
+- constellation: Leo
+  dec: -00 02 10
+  description: Bubble Galaxy
+  mag: '9.0'
+  name: NGC 3521
+  ra: 11 05 49
+  size: 11.0
+  type: Galaxy
+- constellation: Leo
+  dec: +13 35 19
+  description: Hamburger Galaxy
+  mag: '9.5'
+  name: NGC 3628
+  ra: 11 20 17
+  size: 15.0
+  type: Galaxy
+- constellation: Ursa Major
+  dec: 53 04 04
+  description: Arp 214
+  mag: '10.6'
+  name: NGC 3718
+  ra: 11 32 35
+  size: 8.7
+  type: Galaxy
+- constellation: Cepheus
+  dec: 72 31 19
+  description: BowTie Nebula
+  mag: '11.5'
+  name: NGC 40
+  ra: 00 13 01
+  size: 1.0
+  type: Planetary Nebula
+- constellation: Cassiopeia
+  dec: 58 17 12
+  description: ET or Owl or Dragonfly Cluster
+  mag: '6.4'
+  name: NGC 457
+  ra: 01 19 35
+  size: 13.0
+  type: Open Cluster
+- constellation: Canes Venatici
+  dec: +32 32 29
+  description: Whale & Hockey Stick Galaxy Duo
+  mag: '9.2'
+  name: NGC 4631
+  ra: 12 42 08
+  size: 40.0
+  type: Galaxy
+- constellation: Coma Berenices
+  dec: +25 30 03
+  description: Ringed Galaxy
+  mag: '12.4'
+  name: NGC 4725
+  ra: 12 50 27
+  size: 11.0
+  type: Galaxy
+- constellation: Canes Venatici
+  dec: 36 35 38
+  description: Crab Galaxy
+  mag: '12.0'
+  name: NGC 5033
+  ra: 13 13 28
+  size: 11.0
+  type: Galaxy
+- constellation: Centaurus
+  dec: -43 01 08
+  description: Centaurus A
+  mag: '6.8'
+  name: NGC 5128
+  ra: 13 25 28
+  size: 18.0
+  type: Galaxy
+- constellation: Centaurus
+  dec: -47 28 53
+  description: Omega Centauri Cluster
+  mag: -9999
+  name: NGC 5139
+  ra: 13 26 47
+  size: 36.0
+  type: Globular Cluster
+- constellation: Pisces
+  dec: 03 47 00
+  description: Arp 157 Colliding Galaxies
+  mag: '11.4'
+  name: NGC 520
+  ra: 01 24 35
+  size: 4.0
+  type: Galaxy
+- constellation: Draco
+  dec: 56 19 45
+  description: Splinter Galaxy
+  mag: -9999
+  name: NGC 5907
+  ra: 15 15 54
+  size: 12.0
+  type: Galaxy
+- constellation: Draco
+  dec: 59 21 21
+  description: Draco Galaxy Trio
+  mag: -9999
+  name: NGC 5982
+  ra: 15 38 40
+  size: 2.9
+  type: Galaxy
+- constellation: Ara
+  dec: -48 39 42
+  description: Dragons of Ara or Rim Nebula
+  mag: -9999
+  name: NGC 6188
+  ra: 16 40 05
+  size: 30.0
+  type: Emission Nebula
+- constellation: Scorpius
+  dec: -37 06 12
+  description: Butterfly Nebula
+  mag: -9999
+  name: NGC 6302
+  ra: 17 13 44
+  size: 3.0
+  type: Planetary Nebula
+- constellation: Scorpius
+  dec: -36 06 12
+  description: Cat's Paw Nebula
+  mag: -9999
+  name: NGC 6334
+  ra: 17 20 49
+  size: 60.0
+  type: Emission Nebula
+- constellation: Scorpius
+  dec: -38 29 00
+  description: Cheerio
+  mag: '12.0'
+  name: NGC 6337
+  ra: 17 22 16
+  size: 2.0
+  type: Planetary Nebula
+- constellation: Scorpius
+  dec: -34 12 06
+  description: Lobster or War and Peace Nebula
+  mag: -9999
+  name: NGC 6357
+  ra: 17 24 43
+  size: 50.0
+  type: Wolf-Rayet Nebula
+- constellation: Sagittarius
+  dec: -27 53 18
+  description: NGC 6520
+  mag: '7.6'
+  name: NGC 6520
+  ra: 18 03 24
+  size: 6.0
+  type: Open Cluster
+- constellation: Draco
+  dec: +66 37 59
+  description: Cat's Eye Nebula
+  mag: '11.3'
+  name: NGC 6543
+  ra: 17 58 33
+  size: 8.0
+  type: Planetary Nebula
+- constellation: Pisces
+  dec: 13 38 39
+  description: Polar Ring Galaxy
+  mag: '11.2'
+  name: NGC 660
+  ra: 01 43 02
+  size: 9.1
+  type: Galaxy
+- constellation: Corona Australis
+  dec: -36 53 30
+  description: Anteater Neb. or Bernes 157
+  mag: -9999
+  name: NGC 6726
+  ra: 19 01 38
+  size: 9.0
+  type: Reflection Nebula
+- constellation: Aquila
+  dec: 06 32 20
+  description: Snowglobe Nebula or Ghost of the Moon
+  mag: '11.8'
+  name: NGC 6781
+  ra: 19 18 28
+  size: 2.0
+  type: Planetary Nebula
+- constellation: Vulpecula
+  dec: 23 05 10
+  description: Ced170
+  mag: -9999
+  name: NGC 6820
+  ra: 19 42 28
+  size: 40.0
+  type: Emission Nebula
+- constellation: Cygnus
+  dec: +50 31 30
+  description: The Blinking Eye
+  mag: '9.4'
+  name: NGC 6826
+  ra: 19 44 48
+  size: 2.3
+  type: Planetary Nebula
+- constellation: Cygnus
+  dec: 38 21 17
+  description: Crescent Nebula
+  mag: '10.0'
+  name: NGC 6888
+  ra: 20 12 06
+  size: 20.0
+  type: Wolf-Rayet Nebula
+- constellation: Cygnus
+  dec: 40 46 42
+  description: Inchworm Cluster
+  mag: '7.4'
+  name: NGC 6910
+  ra: 20 23 12
+  size: 8.0
+  type: Open Cluster
+- constellation: Cygnus
+  dec: 60 09 14
+  description: Fireworks Galaxy
+  mag: '9.0'
+  name: NGC 6946
+  ra: 20 34 52
+  size: 11.0
+  type: Galaxy
+- constellation: Cygnus
+  dec: 30 35 42
+  description: Western Veil or Witch's Broom
+  mag: -9999
+  name: NGC 6960
+  ra: 20 45 58
+  size: 70.0
+  type: Supernova Remnant
+- constellation: Cygnus
+  dec: 32 01 36
+  description: Pickering`s Triangle
+  mag: -9999
+  name: NGC 6979
+  ra: 20 50 28
+  size: 60.0
+  type: Supernova Remnant
+- constellation: Cygnus
+  dec: 31 44 36
+  description: Eastern Veil Nebula
+  mag: -9999
+  name: NGC 6992
+  ra: 20 56 19
+  size: 60.0
+  type: Supernova Remnant
+- constellation: Cygnus
+  dec: 44 31 00
+  description: North America Nebula
+  mag: -9999
+  name: NGC 7000
+  ra: 20 59 17
+  size: 120.0
+  type: Emission Nebula
+- constellation: Cygnus
+  dec: +54 32 35
+  description: Fetus Nebula
+  mag: -9999
+  name: NGC 7008
+  ra: 21 00 33
+  size: 1.4
+  type: Planetary Nebula
+- constellation: Aquarius
+  dec: -11 21 50
+  description: Saturn Nebula
+  mag: '12.1'
+  name: NGC 7009
+  ra: 21 04 11
+  size: 1.7
+  type: Planetary Nebula
+- constellation: Cepheus
+  dec: 68 10 10
+  description: Iris Nebula
+  mag: '7.1'
+  name: NGC 7023
+  ra: 21 01 36
+  size: 60.0
+  type: Reflection Nebula
+- constellation: Aquarius
+  dec: -20 50 13
+  description: Helix Nebula
+  mag: '13.5'
+  name: NGC 7293
+  ra: 22 29 38
+  size: 13.0
+  type: Planetary Nebula
+- constellation: Pegasus
+  dec: +34 24 57
+  description: Deer Lick Galaxy Group
+  mag: '9.5'
+  name: NGC 7331
+  ra: 22 37 04
+  size: 25.0
+  type: Galaxy
+- constellation: Cepheus
+  dec: 58 07 54
+  description: Wizard Nebula
+  mag: -9999
+  name: NGC 7380
+  ra: 22 47 21
+  size: 25.0
+  type: Emission Nebula
+- constellation: Aquila
+  dec: -08 29 09
+  description: Cyclops Galaxy
+  mag: -9999
+  name: NGC 7606
+  ra: 23 19 05
+  size: 5.8
+  type: Galaxy
+- constellation: Cassiopeia
+  dec: 61 12 42
+  description: Bubble Nebula
+  mag: -9999
+  name: NGC 7635
+  ra: 23 20 45
+  size: 15.0
+  type: Emission Nebula
+- constellation: Aries
+  dec: 19 00 29
+  description: Fiddlehead or Nautilus Galaxy
+  mag: '10.3'
+  name: NGC 772
+  ra: 01 59 20
+  size: 7.0
+  type: Galaxy
+- constellation: Cassiopeia
+  dec: 56 42 30
+  description: Caroline's Rose
+  mag: '6.7'
+  name: NGC 7789
+  ra: 23 57 24
+  size: 25.0
+  type: Open Cluster
+- constellation: Cepheus
+  dec: 67 09 00
+  description: Ced214
+  mag: -9999
+  name: NGC 7822
+  ra: 00 03 36
+  size: 60.0
+  type: Emission Nebula
+- constellation: Perseus
+  dec: +57 07 42
+  description: Double Cluster Duo
+  mag: -9999
+  name: NGC 869
+  ra: 02 19 00
+  size: 60.0
+  type: Open Cluster
+- constellation: Andromeda
+  dec: 42 20 54
+  description: Outer Limits Galaxy
+  mag: '9.9'
+  name: NGC 891
+  ra: 02 22 33
+  size: 14.0
+  type: Galaxy
+- constellation: Cepheus
+  dec: 59 57 01
+  description: Squid Nebula or Flying Bat (SH2-129)
+  mag: -9999
+  name: OU 4
+  ra: 21 11 47
+  size: 60.0
+  type: Emission Nebula
+- constellation: Monoceros
+  dec: -10 38 15
+  description: HD 44179
+  mag: '9.0'
+  name: Red Rectangle
+  ra: 06 19 58
+  size: 0.2
+  type: Preplanetary Nebula
+- constellation: Ophiuchus
+  dec: -23 26 50
+  description: "\u03C1 Ophiuchi"
+  mag: '4.6'
+  name: Rho Ophiuchi
+  ra: 16 25 35
+  size: 300.0
+  type: Emission Nebula
+- constellation: Scorpius
+  dec: -38 27 34
+  description: Sh2-3
+  mag: -9999
+  name: Sh2-003
+  ra: 17 12 25
+  size: 6.0
+  type: Emission Nebula
+- constellation: Serpens
+  dec: -11 40 58
+  description: Nest Nebula
+  mag: -9999
+  name: Sh2-054
+  ra: 18 17 52
+  size: 120.0
+  type: Emission Nebula
+- constellation: Cygnus
+  dec: 35 16 36
+  description: Tulip Nebula
+  mag: -9999
+  name: Sh2-101
+  ra: 19 59 55
+  size: 20.0
+  type: Emission Nebula
+- constellation: Cygnus
+  dec: 31 10 00
+  description: Cygnus Loop
+  mag: -9999
+  name: Sh2-103
+  ra: 20 51 21
+  size: 180.0
+  type: Supernova Remnant
+- constellation: Cygnus
+  dec: 37 22 49
+  description: Hourglass Nebula
+  mag: -9999
+  name: Sh2-106
+  ra: 20 27 27
+  size: 3.0
+  type: Emission Nebula
+- constellation: Cygnus
+  dec: 45 38 00
+  description: Hermit Crab
+  mag: -9999
+  name: Sh2-112
+  ra: 20 33 49
+  size: 15.0
+  type: Emission Nebula
+- constellation: Cygnus
+  dec: 38 42 00
+  description: Flying Dragon Nebula
+  mag: -9999
+  name: Sh2-114
+  ra: 21 21 12
+  size: 60.0
+  type: Emission Nebula
+- constellation: Cepheus
+  dec: 56 04 45
+  description: Lion Nebula
+  mag: -9999
+  name: Sh2-132
+  ra: 22 19 09
+  size: 60.0
+  type: Wolf-Rayet Nebula
+- constellation: Cepheus
+  dec: 62 31 06
+  description: Cave Nebula
+  mag: -9999
+  name: Sh2-155
+  ra: 22 57 54
+  size: 40.0
+  type: Dark Nebula
+- constellation: Cassiopeia
+  dec: 60 02 06
+  description: Lobster Claw Nebula
+  mag: -9999
+  name: Sh2-157
+  ra: 23 16 04
+  size: 70.0
+  type: Wolf-Rayet Nebula
+- constellation: Cepheus
+  dec: 61 30 00
+  description: Northern Lagoon Nebula
+  mag: -9999
+  name: Sh2-158
+  ra: 23 13 37
+  size: 8.0
+  type: Emission Nebula
+- constellation: Cassiopeia
+  dec: 61 43 30
+  description: Phantom of the Opera Nebula
+  mag: -9999
+  name: Sh2-173
+  ra: 00 21 16
+  size: 25.0
+  type: Emission Nebula
+- constellation: Cepheus
+  dec: 80 49 22
+  description: Valentine Rose Nebula
+  mag: '14.7'
+  name: Sh2-174
+  ra: 23 47 08
+  size: 10.0
+  type: Planetary Nebula
+- constellation: Cassiopeia
+  dec: 58 24 51
+  description: Dolphin Nebula
+  mag: '17.4'
+  name: Sh2-188
+  ra: 01 30 33
+  size: 9.0
+  type: Planetary Nebula
+- constellation: Cassiopeia
+  dec: 62 47 45
+  description: HDW 2
+  mag: -9999
+  name: Sh2-200
+  ra: 03 11 01
+  size: 6.0
+  type: Planetary Nebula
+- constellation: Auriga
+  dec: 42 12 00
+  description: Sh2-223
+  mag: -9999
+  name: Sh2-223
+  ra: 05 17 18
+  size: 90.0
+  type: Emission Nebula
+- constellation: Auriga
+  dec: 42 55 00
+  description: Sh2-224
+  mag: -9999
+  name: Sh2-224
+  ra: 05 26 36
+  size: 60.0
+  type: Supernova Remnant
+- constellation: Taurus
+  dec: 28 05 00
+  description: Simeis 147 or Spaghetti Nebula
+  mag: -9999
+  name: Sh2-240
+  ra: 05 41 06
+  size: 180.0
+  type: Supernova Remnant
+- constellation: Orion
+  dec: 18 03 18
+  description: Mushroom Nebula
+  mag: -9999
+  name: Sh2-254
+  ra: 06 11 59
+  size: 20.0
+  type: Emission Nebula
+- constellation: Orion
+  dec: 15 47 00
+  description: Lower's Nebula
+  mag: -9999
+  name: Sh2-261
+  ra: 06 08 36
+  size: 45.0
+  type: Emission Nebula
+- constellation: Canis Major
+  dec: -18 29 53
+  description: Teapot Nebula
+  mag: -9999
+  name: Sh2-301
+  ra: 07 09 54
+  size: 9.0
+  type: Emission Nebula
+- constellation: Puppis
+  dec: -16 59 10
+  description: Snowman Nebula
+  mag: -9999
+  name: Sh2-302
+  ra: 07 31 32
+  size: 30.0
+  type: Emission Nebula
+- constellation: Canis Major
+  dec: -23 56 00
+  description: Gourd Nebula
+  mag: '6.9'
+  name: Sh2-308
+  ra: 06 54 00
+  size: 60.0
+  type: Emission Nebula
+- constellation: Hydra
+  dec: -22 51 42
+  description: Abell 35
+  mag: '9.7'
+  name: Sh2-313
+  ra: 12 53 41
+  size: 16.0
+  type: Planetary Nebula
+- constellation: Cygnus
+  dec: 43 40 11
+  description: Propeller Nebula
+  mag: -9999
+  name: Simeis 57
+  ra: 20 16 10
+  size: 20.0
+  type: Emission Nebula
+- constellation: Vulpecula
+  dec: 22 45 17
+  description: Loch Ness Nebula
+  mag: '8.7'
+  name: vdB 126
+  ra: 19 26 11
+  size: 100.0
+  type: Reflection Nebula
+- constellation: Cepheus
+  dec: 68 15 52
+  description: Ghost Nebula
+  mag: '10.8'
+  name: vdB 141
+  ra: 21 16 27
+  size: 20.0
+  type: Reflection Nebula
+- constellation: Cepheus
+  dec: +73 23 25
+  description: Shark Nebula
+  mag: '8.4'
+  name: vdB 150
+  ra: 22 09 40
+  size: 11.0
+  type: Reflection Nebula
+- constellation: Cepheus
+  dec: 69 56 00
+  description: Wolf's Cave
+  mag: '9.3'
+  name: vdB 152
+  ra: 22 14 02
+  size: 60.0
+  type: Reflection Nebula
+- constellation: Auriga
+  dec: 30 33 38
+  description: Blackbird Nebula
+  mag: '7.1'
+  name: vdB 31
+  ra: 04 55 46
+  size: 40.0
+  type: Reflection Nebula
+- constellation: Vela
+  dec: -42 59 21
+  description: Vela Bridge Nebula
+  mag: -9999
+  name: Vela Bridge
+  ra: 08 37 39
+  size: 60.0
+  type: Supernova Remnant
+- constellation: Vela
+  dec: -45 56 30
+  description: Vela Pencil Nebula
+  mag: -9999
+  name: Vela Pencil
+  ra: 09 00 16
+  size: 30.0
+  type: Supernova Remnant
+- constellation: Vela
+  dec: -43 50 43
+  description: Vela SNR
+  mag: -9999
+  name: Vela Spiral Flame
+  ra: 08 54 21
+  size: 60.0
+  type: Supernova Remnant
+- constellation: Cygnus
+  dec: 36 11 00
+  description: WR 134
+  mag: '8.1'
+  name: WR 134
+  ra: 20 10 00
+  size: 25.0
+  type: Wolf-Rayet Nebula

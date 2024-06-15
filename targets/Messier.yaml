@@ -1,0 +1,880 @@
+- constellation: Taurus
+  dec: +22 1 0
+  description: NGC 1952 Crab Nebula
+  mag: -9999
+  name: M 1
+  ra: 5 34 30
+  size: 6.0
+  type: Supernova Remnant
+- constellation: Aquarius
+  dec: -0 49 0
+  description: NGC 7089
+  mag: 6.2
+  name: M 2
+  ra: 21 33 30
+  size: 12.9
+  type: Globular Cluster
+- constellation: Canes Venatici
+  dec: +28 23 0
+  description: NGC 5272
+  mag: 6.4
+  name: M 3
+  ra: 13 42 12
+  size: 16.2
+  type: Globular Cluster
+- constellation: Scorpius
+  dec: -26 32 0
+  description: NGC 6121
+  mag: -9999
+  name: M 4
+  ra: 16 23 36
+  size: 26.3
+  type: Globular Cluster
+- constellation: Serpens Caput
+  dec: +2 5 0
+  description: NGC 5904
+  mag: 5.9
+  name: M 5
+  ra: 15 18 36
+  size: 17.4
+  type: Globular Cluster
+- constellation: Scorpius
+  dec: -32 13 0
+  description: NGC 6405 Butterfly Cluster
+  mag: -9999
+  name: M 6
+  ra: 17 40 6
+  size: 25.0
+  type: Open Cluster
+- constellation: Scorpius
+  dec: -34 49 0
+  description: "NGC 6475 Ptolemy\xB9s Cluster"
+  mag: -9999
+  name: M 7
+  ra: 17 53 54
+  size: 80.0
+  type: Open Cluster
+- constellation: Sagittarius
+  dec: -24 23 0
+  description: NGC 6523 Lagoon Nebula
+  mag: -9999
+  name: M 8
+  ra: 18 3 48
+  size: 90.0
+  type: Diffuse Nebula
+- constellation: Ophiucus
+  dec: -18 31 0
+  description: NGC 6333
+  mag: 8.4
+  name: M 9
+  ra: 17 19 12
+  size: 9.3
+  type: Globular Cluster
+- constellation: Ophiucus
+  dec: -4 6 0
+  description: NGC 6254
+  mag: 5.0
+  name: M 10
+  ra: 16 57 6
+  size: 15.1
+  type: Globular Cluster
+- constellation: Scutum
+  dec: -6 16 0
+  description: NGC 6705 Wild Duck Cluster
+  mag: 5.8
+  name: M 11
+  ra: 18 51 6
+  size: 14.0
+  type: Open Cluster
+- constellation: Ophiucus
+  dec: -1 57 0
+  description: NGC 6218
+  mag: 6.1
+  name: M 12
+  ra: 16 47 12
+  size: 14.5
+  type: Globular Cluster
+- constellation: Hercules
+  dec: +36 28 0
+  description: NGC 6205 Hercules Globular Cluster
+  mag: 5.8
+  name: M 13
+  ra: 16 41 42
+  size: 16.6
+  type: Globular Cluster
+- constellation: Ophiucus
+  dec: -3 15 0
+  description: NGC 6402
+  mag: 5.7
+  name: M 14
+  ra: 17 37 36
+  size: 11.7
+  type: Globular Cluster
+- constellation: Pegasus
+  dec: +12 10 0
+  description: NGC 7078
+  mag: -9999
+  name: M 15
+  ra: 21 30 0
+  size: 12.3
+  type: Globular Cluster
+- constellation: Serpens Claudia
+  dec: -13 47 0
+  description: NGC 6611 Eagle Nebula Cluster
+  mag: -9999
+  name: M 16
+  ra: 18 18 48
+  size: 7.0
+  type: Open Cluster
+- constellation: Sagittarius
+  dec: -16 11 0
+  description: NGC 6618 Omega or Swan or Horseshoe Nebula
+  mag: -9999
+  name: M 17
+  ra: 18 20 48
+  size: 11.0
+  type: Diffuse Nebula
+- constellation: Sagittarius
+  dec: -17 8 0
+  description: NGC 6613
+  mag: -9999
+  name: M 18
+  ra: 18 19 54
+  size: 9.0
+  type: Open Cluster
+- constellation: Ophiucus
+  dec: -26 16 0
+  description: NGC 6273
+  mag: 5.6
+  name: M 19
+  ra: 17 2 36
+  size: 13.5
+  type: Globular Cluster
+- constellation: Sagittarius
+  dec: -23 2 0
+  description: NGC 6514 Trifid Nebula
+  mag: -9999
+  name: M 20
+  ra: 18 2 18
+  size: 28.0
+  type: Diffuse Nebula
+- constellation: Sagittarius
+  dec: -22 30 0
+  description: NGC 6531
+  mag: -9999
+  name: M 21
+  ra: 18 4 36
+  size: 13.0
+  type: Open Cluster
+- constellation: Sagittarius
+  dec: -23 54 0
+  description: NGC 6656
+  mag: -9999
+  name: M 22
+  ra: 18 36 24
+  size: 24.0
+  type: Globular Cluster
+- constellation: Sagittarius
+  dec: -19 1 0
+  description: NGC 6494
+  mag: -9999
+  name: M 23
+  ra: 17 56 48
+  size: 27.0
+  type: Open Cluster
+- constellation: Sagittarius
+  dec: -18 25 0
+  description: NGC 6603 Milky Way Patch
+  mag: -9999
+  name: M 24
+  ra: 18 18 24
+  size: 90.0
+  type: Star Cloud
+- constellation: Sagittarius
+  dec: -19 14 0
+  description: IC 4725
+  mag: -9999
+  name: M 25
+  ra: 18 31 42
+  size: 40.0
+  type: Open Cluster
+- constellation: Scutum
+  dec: -9 24 0
+  description: NGC 6694
+  mag: 8.9
+  name: M 26
+  ra: 18 45 12
+  size: 15.0
+  type: Open Cluster
+- constellation: Vulpecula
+  dec: +22 43 0
+  description: NGC 6853 Dumbbell Nebula
+  mag: 14.1
+  name: M 27
+  ra: 19 59 36
+  size: 8.0
+  type: Planetary Nebula
+- constellation: Sagittarius
+  dec: -24 52 0
+  description: NGC 6626
+  mag: -9999
+  name: M 28
+  ra: 18 24 30
+  size: 11.2
+  type: Globular Cluster
+- constellation: Cygnus
+  dec: +38 32 0
+  description: NGC 6913
+  mag: 6.6
+  name: M 29
+  ra: 20 23 54
+  size: 7.0
+  type: Open Cluster
+- constellation: Capricornus
+  dec: -23 11 0
+  description: NGC 7099
+  mag: 7.1
+  name: M 30
+  ra: 21 40 24
+  size: 11.0
+  type: Globular Cluster
+- constellation: Andromeda
+  dec: +41 16 0
+  description: NGC 224 Andromeda Galaxy
+  mag: 3.4
+  name: M 31
+  ra: 0 42 42
+  size: 178.0
+  type: Spiral Galaxy
+- constellation: Andromeda
+  dec: +40 52 0
+  description: NGC 221 Satellite of M31
+  mag: 8.1
+  name: M 32
+  ra: 0 42 42
+  size: 8.0
+  type: Elliptical Galaxy
+- constellation: Triangulum
+  dec: +30 39 0
+  description: NGC 598 Triangulum/Pinwheel Galaxy
+  mag: 5.7
+  name: M 33
+  ra: 1 33 54
+  size: 73.0
+  type: Spiral Galaxy
+- constellation: Perseus
+  dec: +42 47 0
+  description: NGC 1039
+  mag: -9999
+  name: M 34
+  ra: 2 42 0
+  size: 35.0
+  type: Open Cluster
+- constellation: Gemini
+  dec: +24 20 0
+  description: NGC 2168
+  mag: -9999
+  name: M 35
+  ra: 6 8 54
+  size: 28.0
+  type: Open Cluster
+- constellation: Auriga
+  dec: +34 8 0
+  description: NGC 1960
+  mag: 6.0
+  name: M 36
+  ra: 5 36 6
+  size: 12.0
+  type: Open Cluster
+- constellation: Auriga
+  dec: +32 33 0
+  description: NGC 2099
+  mag: 5.6
+  name: M 37
+  ra: 5 52 24
+  size: 24.0
+  type: Open Cluster
+- constellation: Auriga
+  dec: +35 50 0
+  description: NGC 1912
+  mag: 6.4
+  name: M 38
+  ra: 5 28 42
+  size: 21.0
+  type: Open Cluster
+- constellation: Cygnus
+  dec: +48 26 0
+  description: NGC 7092
+  mag: -9999
+  name: M 39
+  ra: 21 32 12
+  size: 32.0
+  type: Open Cluster
+- constellation: Ursa Major
+  dec: +58 5 0
+  description: Winecke 4
+  mag: -9999
+  name: M 40
+  ra: 12 22 12
+  size: 0.82
+  type: Double Star
+- constellation: Canis Major
+  dec: -20 44 0
+  description: NGC 2287
+  mag: 4.5
+  name: M 41
+  ra: 6 47 0
+  size: 38.0
+  type: Open Cluster
+- constellation: Orion
+  dec: -5 27 0
+  description: NGC 1976 Great Orion Nebula
+  mag: -9999
+  name: M 42
+  ra: 5 35 24
+  size: 85.0
+  type: Diffuse Nebula
+- constellation: Orion
+  dec: -5 16 0
+  description: "NGC 1982 de Mairan\xB9s Nebula"
+  mag: -9999
+  name: M 43
+  ra: 5 35 36
+  size: 20.0
+  type: Diffuse Nebula
+- constellation: Cancer
+  dec: +19 59 0
+  description: NGC 2632 Beehive Cluster (Praesepe)
+  mag: -9999
+  name: M 44
+  ra: 8 40 6
+  size: 95.0
+  type: Open Cluster
+- constellation: Taurus
+  dec: +24 7 12
+  description: Pleiades or Subaru or Seven Sisters
+  mag: -9999
+  name: M 45
+  ra: 3 47 0
+  size: 110.0
+  type: Open Cluster
+- constellation: Puppis
+  dec: -14 49 0
+  description: NGC 2437
+  mag: -9999
+  name: M 46
+  ra: 7 41 48
+  size: 27.0
+  type: Open Cluster
+- constellation: Puppis
+  dec: -14 30 0
+  description: NGC 2422
+  mag: -9999
+  name: M 47
+  ra: 7 36 36
+  size: 30.0
+  type: Open Cluster
+- constellation: Hydra
+  dec: -5 48 0
+  description: NGC 2548
+  mag: -9999
+  name: M 48
+  ra: 8 13 48
+  size: 54.0
+  type: Open Cluster
+- constellation: Virgo
+  dec: +8 0 0
+  description: NGC 4472
+  mag: 12.2
+  name: M 49
+  ra: 12 29 48
+  size: 9.0
+  type: Elliptical Galaxy
+- constellation: Monocerus
+  dec: -8 20 0
+  description: NGC 2323
+  mag: -9999
+  name: M 50
+  ra: 7 3 12
+  size: 16.0
+  type: Open Cluster
+- constellation: Canes Venatici
+  dec: +47 12 0
+  description: NGC 5194 Whirlpool Galaxy
+  mag: 8.4
+  name: M 51
+  ra: 13 29 54
+  size: 11.0
+  type: Spiral Galaxy
+- constellation: Cassiopeia
+  dec: +61 35 0
+  description: NGC 7654
+  mag: -9999
+  name: M 52
+  ra: 23 24 12
+  size: 13.0
+  type: Open Cluster
+- constellation: Coma Berenices
+  dec: +18 10 0
+  description: NGC 5024
+  mag: 7.8
+  name: M 53
+  ra: 13 12 54
+  size: 12.6
+  type: Globular Cluster
+- constellation: Sagittarius
+  dec: -30 29 0
+  description: NGC 6715
+  mag: -9999
+  name: M 54
+  ra: 18 55 6
+  size: 9.1
+  type: Globular Cluster
+- constellation: Sagittarius
+  dec: -30 58 0
+  description: NGC 6809
+  mag: 6.5
+  name: M 55
+  ra: 19 40 0
+  size: 19.0
+  type: Globular Cluster
+- constellation: Lyra
+  dec: +30 11 0
+  description: NGC 6779
+  mag: -9999
+  name: M 56
+  ra: 19 16 36
+  size: 7.1
+  type: Globular Cluster
+- constellation: Lyra
+  dec: +33 2 0
+  description: NGC 6720 Ring Nebula
+  mag: 15.8
+  name: M 57
+  ra: 18 53 36
+  size: 1.4
+  type: Planetary Nebula
+- constellation: Virgo
+  dec: +11 49 0
+  description: NGC 4579
+  mag: 9.7
+  name: M 58
+  ra: 12 37 42
+  size: 5.5
+  type: Spiral Galaxy
+- constellation: Virgo
+  dec: +11 39 0
+  description: NGC 4621
+  mag: -9999
+  name: M 59
+  ra: 12 42 0
+  size: 5.0
+  type: Elliptical Galaxy
+- constellation: Virgo
+  dec: +11 33 0
+  description: NGC 4649
+  mag: -9999
+  name: M 60
+  ra: 12 43 42
+  size: 7.0
+  type: Elliptical Galaxy
+- constellation: Virgo
+  dec: +4 28 0
+  description: NGC 4303
+  mag: 9.6
+  name: M 61
+  ra: 12 21 54
+  size: 6.0
+  type: Spiral Galaxy
+- constellation: Ophiucus
+  dec: -30 7 0
+  description: NGC 6266
+  mag: -9999
+  name: M 62
+  ra: 17 1 12
+  size: 14.1
+  type: Globular Cluster
+- constellation: Canes Venatici
+  dec: +42 2 0
+  description: NGC 5055 Sunflower Galaxy
+  mag: 8.6
+  name: M 63
+  ra: 13 15 48
+  size: 10.0
+  type: Spiral Galaxy
+- constellation: Coma Berenices
+  dec: +21 41 0
+  description: NGC 4826 Blackeye Galaxy
+  mag: 8.5
+  name: M 64
+  ra: 12 56 42
+  size: 9.3
+  type: Spiral Galaxy
+- constellation: Leo
+  dec: +13 5 0
+  description: NGC 3623
+  mag: -9999
+  name: M 65
+  ra: 11 18 54
+  size: 8.0
+  type: Spiral Galaxy
+- constellation: Leo
+  dec: +12 59 0
+  description: NGC 3627
+  mag: 8.9
+  name: M 66
+  ra: 11 20 12
+  size: 8.0
+  type: Spiral Galaxy
+- constellation: Cancer
+  dec: +11 49 0
+  description: NGC 2682
+  mag: -9999
+  name: M 67
+  ra: 8 50 24
+  size: 30.0
+  type: Open Cluster
+- constellation: Hydra
+  dec: -26 45 0
+  description: NGC 4590
+  mag: 8.0
+  name: M 68
+  ra: 12 39 30
+  size: 12.0
+  type: Globular Cluster
+- constellation: Sagittarius
+  dec: -32 21 0
+  description: NGC 6637
+  mag: -9999
+  name: M 69
+  ra: 18 31 24
+  size: 7.1
+  type: Globular Cluster
+- constellation: Sagittarius
+  dec: -32 18 0
+  description: NGC 6681
+  mag: -9999
+  name: M 70
+  ra: 18 43 12
+  size: 7.8
+  type: Globular Cluster
+- constellation: Sagitta
+  dec: +18 47 0
+  description: NGC 6838
+  mag: -9999
+  name: M 71
+  ra: 19 53 48
+  size: 7.2
+  type: Globular Cluster
+- constellation: Aquarius
+  dec: -12 32 0
+  description: NGC 6981
+  mag: 9.0
+  name: M 72
+  ra: 20 53 30
+  size: 5.9
+  type: Globular Cluster
+- constellation: Aquarius
+  dec: -12 38 0
+  description: NGC 6994  Group of 4 stars
+  mag: -9999
+  name: M 73
+  ra: 20 59 0
+  size: 2.8
+  type: Group/Asterism
+- constellation: Pisces
+  dec: +15 47 0
+  description: NGC 628
+  mag: 9.5
+  name: M 74
+  ra: 1 36 42
+  size: 10.2
+  type: Spiral Galaxy
+- constellation: Sagittarius
+  dec: -21 55 0
+  description: NGC 6864
+  mag: 8.3
+  name: M 75
+  ra: 20 6 6
+  size: 6.0
+  type: Globular Cluster
+- constellation: Perseus
+  dec: +51 34 0
+  description: NGC 650 Little Dumbell or Cork or Butterfly Nebula
+  mag: 17.5
+  name: M 76
+  ra: 1 42 18
+  size: 2.7
+  type: Planetary Nebula
+- constellation: Cetus
+  dec: +0 1 0
+  description: NGC 1068 Cetus A
+  mag: 8.9
+  name: M 77
+  ra: 2 42 42
+  size: 7.0
+  type: Spiral Galaxy
+- constellation: Orion
+  dec: +0 3 0
+  description: NGC 2068
+  mag: -9999
+  name: M 78
+  ra: 5 46 42
+  size: 8.0
+  type: Diffuse Nebula
+- constellation: Lepus
+  dec: -24 33 0
+  description: NGC 1904
+  mag: 8.2
+  name: M 79
+  ra: 5 24 30
+  size: 8.7
+  type: Globular Cluster
+- constellation: Scorpius
+  dec: -22 59 0
+  description: NGC 6093
+  mag: -9999
+  name: M 80
+  ra: 16 17 0
+  size: 8.9
+  type: Globular Cluster
+- constellation: Ursa Major
+  dec: +69 4 0
+  description: "NGC 3031 Bode\xB9s Galaxy"
+  mag: 6.9
+  name: M 81
+  ra: 9 55 36
+  size: 21.0
+  type: Spiral Galaxy
+- constellation: Ursa Major
+  dec: +69 41 0
+  description: NGC 3034 Cigar Galaxy
+  mag: 8.4
+  name: M 82
+  ra: 9 55 48
+  size: 9.0
+  type: Irregular Galaxy
+- constellation: Hydra
+  dec: -29 52 0
+  description: NGC 5236 Southern Pinwheel Galaxy
+  mag: 7.5
+  name: M 83
+  ra: 13 37 0
+  size: 11.0
+  type: Spiral Galaxy
+- constellation: Virgo
+  dec: +12 53 0
+  description: NGC 4374
+  mag: 10.5
+  name: M 84
+  ra: 12 25 6
+  size: 5.0
+  type: Lenticular (S0) Galaxy
+- constellation: Coma Berenices
+  dec: +18 11 0
+  description: NGC 4382
+  mag: -9999
+  name: M 85
+  ra: 12 25 24
+  size: 7.1
+  type: Lenticular (S0) Galaxy
+- constellation: Virgo
+  dec: +12 57 0
+  description: NGC 4406
+  mag: 8.9
+  name: M 86
+  ra: 12 26 12
+  size: 7.5
+  type: Lenticular (S0) Galaxy
+- constellation: Virgo
+  dec: +12 24 0
+  description: NGC 4486 Virgo A
+  mag: 8.6
+  name: M 87
+  ra: 12 30 48
+  size: 7.0
+  type: Elliptical Galaxy
+- constellation: Coma Berenices
+  dec: +14 25 0
+  description: NGC 4501
+  mag: 13.2
+  name: M 88
+  ra: 12 32 0
+  size: 7.0
+  type: Spiral Galaxy
+- constellation: Virgo
+  dec: +12 33 0
+  description: NGC 4552
+  mag: 9.8
+  name: M 89
+  ra: 12 35 42
+  size: 4.0
+  type: Elliptical Galaxy
+- constellation: Virgo
+  dec: +13 10 0
+  description: NGC 4569
+  mag: 9.5
+  name: M 90
+  ra: 12 36 48
+  size: 9.5
+  type: Spiral Galaxy
+- constellation: Coma Berenices
+  dec: +14 30 0
+  description: NGC 4548
+  mag: 13.6
+  name: M 91
+  ra: 12 35 24
+  size: 5.4
+  type: Spiral Galaxy
+- constellation: Hercules
+  dec: +43 8 0
+  description: NGC 6341
+  mag: 6.5
+  name: M 92
+  ra: 17 17 6
+  size: 11.2
+  type: Globular Cluster
+- constellation: Puppis
+  dec: -23 52 0
+  description: NGC 2447
+  mag: -9999
+  name: M 93
+  ra: 7 44 36
+  size: 22.0
+  type: Open Cluster
+- constellation: Canes Venatici
+  dec: +41 7 0
+  description: NGC 4736
+  mag: 8.2
+  name: M 94
+  ra: 12 50 54
+  size: 7.0
+  type: Spiral Galaxy
+- constellation: Leo
+  dec: +11 42 0
+  description: NGC 3351
+  mag: 9.7
+  name: M 95
+  ra: 10 44 0
+  size: 4.4
+  type: Spiral Galaxy
+- constellation: Leo
+  dec: +11 49 0
+  description: NGC 3368
+  mag: 9.2
+  name: M 96
+  ra: 10 46 48
+  size: 6.0
+  type: Spiral Galaxy
+- constellation: Ursa Major
+  dec: +55 1 0
+  description: NGC 3587 Owl Nebula
+  mag: 15.8
+  name: M 97
+  ra: 11 14 48
+  size: 3.4
+  type: Planetary Nebula
+- constellation: Coma Berenices
+  dec: +14 54 0
+  description: NGC 4192
+  mag: 10.1
+  name: M 98
+  ra: 12 13 48
+  size: 9.5
+  type: Spiral Galaxy
+- constellation: Coma Berenices
+  dec: +14 25 0
+  description: NGC 4254
+  mag: 9.9
+  name: M 99
+  ra: 12 18 48
+  size: 5.4
+  type: Spiral Galaxy
+- constellation: Coma Berenices
+  dec: +15 49 0
+  description: NGC 4321
+  mag: 9.4
+  name: M 100
+  ra: 12 22 54
+  size: 7.0
+  type: Spiral Galaxy
+- constellation: Ursa Major
+  dec: +54 21 0
+  description: NGC 5457 Pinwheel Galaxy
+  mag: 7.9
+  name: M 101
+  ra: 14 3 12
+  size: 22.0
+  type: Spiral Galaxy
+- constellation: Draco
+  dec: +55 46 0
+  description: NGC 5866 Spindle Galaxy
+  mag: 9.9
+  name: M 102
+  ra: 15 6 30
+  size: 5.2
+  type: Lenticular (S0) Galaxy
+- constellation: Cassiopeia
+  dec: +60 42 0
+  description: NGC 581
+  mag: 7.4
+  name: M 103
+  ra: 1 33 12
+  size: 6.0
+  type: Open Cluster
+- constellation: Virgo
+  dec: -11 37 0
+  description: NGC 4594 Sombrero Galaxy
+  mag: 8.0
+  name: M 104
+  ra: 12 40 0
+  size: 9.0
+  type: Spiral Galaxy
+- constellation: Leo
+  dec: +12 35 0
+  description: NGC 3379
+  mag: 9.8
+  name: M 105
+  ra: 10 47 48
+  size: 2.0
+  type: Elliptical Galaxy
+- constellation: Canes Venatici
+  dec: +47 18 0
+  description: NGC 4258
+  mag: 8.4
+  name: M 106
+  ra: 12 19 0
+  size: 19.0
+  type: Spiral Galaxy
+- constellation: Ophiucus
+  dec: -13 3 0
+  description: NGC 6171
+  mag: -9999
+  name: M 107
+  ra: 16 32 30
+  size: 10.0
+  type: Globular Cluster
+- constellation: Ursa Major
+  dec: +55 40 0
+  description: NGC 3556
+  mag: -9999
+  name: M 108
+  ra: 11 11 30
+  size: 8.0
+  type: Spiral Galaxy
+- constellation: Ursa Major
+  dec: +53 23 0
+  description: NGC 3992
+  mag: -9999
+  name: M 109
+  ra: 11 57 36
+  size: 7.0
+  type: Spiral Galaxy
+- constellation: Andromeda
+  dec: +41 41 0
+  description: NGC 205 Satellite of M31
+  mag: 8.1
+  name: M 110
+  ra: 0 40 24
+  size: 17.0
+  type: Elliptical Galaxy
