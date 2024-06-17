@@ -2,6 +2,7 @@
 import logging
 import os
 import sys
+import time
 from time import sleep
 
 import yaml
@@ -19,7 +20,7 @@ from uptonight.const import (
     DEFAULT_SIZE_CONSTRAINT_MIN,
     DEFAULT_TARGETS,
 )
-from uptonight.uptonight import calc
+from uptonight.uptonight import UpTonight
 
 _LOGGER = logging.getLogger(__name__)
 logging.basicConfig(
@@ -31,6 +32,8 @@ logging.basicConfig(
 
 
 def main():
+    
+    # Defaults
     location = {"longitude": "", "latitude": "", "elevation": 0, "timezone": "UTC"}
     environment = {"pressure": 0, "temperature": 0, "relative_humidity": 0}
     constraints = {
@@ -45,7 +48,6 @@ def main():
         "max_number_within_threshold": DEFAULT_MAX_NUMBER_WITHIN_THRESHOLD,
         "north_to_east_ccw": DEFAULT_NORTH_TO_EAST_CCW,
     }
-
     observation_date = None
     target_list = DEFAULT_TARGETS
     type_filter = ""
@@ -54,6 +56,7 @@ def main():
     bucket_list = []
     done_list = []
 
+    # Read config.yaml
     if os.path.isfile("config.yaml"):
         with open("config.yaml", "r", encoding="utf-8") as ymlfile:
             cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
@@ -149,36 +152,42 @@ def main():
     _LOGGER.debug(f"Output directory: {output_dir}")
     _LOGGER.debug(f"Mode: {live_mode}")
 
+    start = time.time()
+    
+    # Initialize UpTonight
+    uptonight = UpTonight(
+        location=location,
+        environment=environment,
+        constraints=constraints,
+        target_list=target_list,
+        bucket_list=bucket_list,
+        done_list=done_list,
+        observation_date=observation_date,
+        type_filter=type_filter,
+        output_dir=output_dir,
+        live=live_mode,
+    )
+    
+    # Do the math
     if live_mode:
         _LOGGER.info("UpTonight live mode")
         while True:
-            calc(
-                location=location,
-                environment=environment,
-                constraints=constraints,
-                target_list=target_list,
+            uptonight.calc(
                 bucket_list=bucket_list,
                 done_list=done_list,
-                observation_date=observation_date,
                 type_filter=type_filter,
-                output_dir=output_dir,
-                live=True,
             )
             sleep(300)
     else:
         _LOGGER.info("UpTonight one-time calculation mode")
-        calc(
-            location=location,
-            environment=environment,
-            constraints=constraints,
-            target_list=target_list,
+        uptonight.calc(
             bucket_list=bucket_list,
             done_list=done_list,
-            observation_date=observation_date,
             type_filter=type_filter,
-            output_dir=output_dir,
-            live=False,
         )
+        
+    end = time.time()
+    _LOGGER.info(f"Execution time: %s seconds", end - start)
 
 
 if __name__ == "__main__":

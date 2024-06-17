@@ -1,9 +1,10 @@
 import os
-
+import logging
 import numpy as np
 import yaml
 from astroplan import (
     FixedTarget,
+    observability_table,
 )
 from astropy import units as u
 from astropy.coordinates import SkyCoord
@@ -15,6 +16,8 @@ from uptonight.const import (
 
 # from astroquery.simbad import Simbad
 
+_LOGGER = logging.getLogger(__name__)
+
 
 class Targets:
     """UpTonight Target Generation"""
@@ -23,9 +26,7 @@ class Targets:
         self,
         target_list=None,
     ):
-        self._input_targets, self._fixed_targets = self._create_target_list(
-            target_list=target_list
-        )
+        self._input_targets, self._fixed_targets = self._create_target_list(target_list=target_list)
         self._targets_table = self._create_uptonight_targets_table()
 
         return None
@@ -73,7 +74,6 @@ class Targets:
         if os.path.isfile(f"{target_list}.yaml"):
             with open(f"{target_list}.yaml", "r", encoding="utf-8") as ymlfile:
                 targets = yaml.load(ymlfile, Loader=yaml.FullLoader)
-                print("yaml")
                 input_targets = Table(
                     names=(
                         "name",
@@ -169,9 +169,7 @@ class Targets:
                 ]
             )
             fixed_targets.append(
-                FixedTarget(
-                    coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=name
-                ),
+                FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=name),
             )
 
         # Lastly we add Polaris
@@ -194,9 +192,41 @@ class Targets:
 
         return input_targets, fixed_targets
 
-    def _create_uptonight_targets_table(self):
+    def input_targets_add_foto(
+        self, constraints, observability_constraints, observation_timeframe, observer, fixed_targets
+    ):
+        """_summary_
+
+        Args:
+            constraints (_type_): _description_
+            observability_constraints (_type_): _description_
+            observation_timeframe (_type_): _description_
+            observer (_type_): _description_
+            fixed_targets (_type_): _description_
+
+        Returns:
+            _type_: _description_
         """
-        Creates the result table.
+
+        _LOGGER.debug("Adding fraction of time observable to input targets")
+        observability_targets = observability_table(
+            observability_constraints,
+            observer,
+            fixed_targets,
+            time_range=observation_timeframe["time_range"],
+        )
+        observability_targets["fraction of time observable"].info.format = ".3f"
+        # self._fixed_targets = None  # We don't need this list anymore
+
+        # Merge fraction of time observable with input_targets and reverse sort the table
+        self._input_targets["fraction of time observable"] = observability_targets["fraction of time observable"]
+        self._input_targets.sort("fraction of time observable")
+        self._input_targets.reverse()
+
+        return self._input_targets
+
+    def _create_uptonight_targets_table(self):
+        """Creates the result table.
 
         Rows will be added while objects are calculated
 
@@ -206,8 +236,7 @@ class Targets:
 
         Returns
         -------
-        astropy.Table
-            Result table
+        astropy.Table: Result table
         """
 
         uptonight_targets = Table(
