@@ -422,7 +422,7 @@ class UpTonight:
                         + str(f" ({target_row['name']}, {target_row['size']}', {target_row['mag']})"),
                     )
 
-                    # Objecz start azimuth and altitude
+                    # Object start azimuth and altitude
                     azimuth = self._observer.altaz(self._observation_timeframe["observing_start_time"], target).az
                     altitude = self._observer.altaz(self._observation_timeframe["observing_start_time"], target).alt
 

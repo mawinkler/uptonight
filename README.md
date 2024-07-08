@@ -243,6 +243,8 @@ python3 main.py
 
 The plot and the report will be located in the `out`-diretory.
 
+> ***Note:*** You need to use UTF-8 mode with Python on Windows! Enable it by setting the environment variable `PYTHONUTF8=1` before running UpTonight.
+
 ### Container
 
 You can run uptonight as a container as well. To build the image run
