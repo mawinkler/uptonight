@@ -1,10 +1,12 @@
 # UpTonight<!-- omit in toc -->
 
+![GitHub release](https://img.shields.io/badge/Release-1.0-blue)
+![Docker](https://img.shields.io/docker/pulls/mawinkler/uptonight)
 [![astropy](https://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat)](http://www.astropy.org/)
 
-UpTonight calculates the best astro photography targets for the night at a given location. The default built in target list is a merge of Gary Imm's [My Top 100 Astrophotography Targets](https://www.astrobin.com/uc8p37/) and the top 200 taken from his incredible [Deep Sky Compendium](http://www.garyimm.com/compendium).
+UpTonight calculates the best astrophotography targets for the night at a given location. The default target list is a merge of Gary Imm's [My Top 100 Astrophotography Targets](https://www.astrobin.com/uc8p37/) and the top 200 from his incredible [Deep Sky Compendium](http://www.garyimm.com/compendium).
 
-UpTonight creates a plot of the sky in addition to a report about todays targets. Below the year 2024 for Munich:
+UpTonight generates a plot of the sky in addition to a report on today's destinations. Below is the year 2024 for Munich::
 
 ![alt text](images/uptonight-video.gif "2024")
 
@@ -73,27 +75,27 @@ Simeis 147 or Spaghetti Nebula (Sh2-240, 180.0', --) 05h41m06s +28d05m00s       
 
 Logically, the calculation is done as follows:
 
-1. Specify your scope location based on the it's earth location, timezone and optionally environmental parameters temperature, rel. humidity and air pressure. Environment parameters are required for refraction calculation.
-2. Calculate nearest astronomical sunset and sunrise for the location. If you are at a latitude where the sun might not go below -18° UpTonight tries to use nautical and eventually civil darkness.
-3. Calculate the oberservable objects while respecting your altitude and airmass constraints.  
-   You can modify the constraints by configuring them in `uptonight/const.py`:
-      1. Maximum airmass (default 2): Airmass is a measure of the amount of air along the line of sight when observing a star or other celestial source from below Earth's atmosphere. There are many different ways to calculate this, in the current implementation the airmass is approximated by the secant of the zenith angle (max airmass set to 2 means 60° down from zenith, 2 = 1/cos(60))
-      2. Minimal and maximal altitude.
+1. Specify your scope location based on it's Earth location, time zone, and optional environmental parameters of temperature, relative humidity, and air pressure. The environmental parameters are required for the refraction calculation.
+2. Calculate the nearest astronomical sunset and sunrise for the location. If you are at a latitude where the sun may not go below -18°, UpTonight will try to use nautical and possibly civil darkness.
+3. Calculate observable objects within your altitude and air mass constraints.
+   You can change the constraints by configuring them in `uptonight/const.py`:
+      1. Maximum Airmass (default 2): Airmass is a measure of the amount of air along the line of sight when observing a star or other celestial source from below Earth's atmosphere. There are many different ways to calculate this, in the current implementation the airmass is approximated by the secant of the zenith angle (max airmass set to 2 means 60° below the zenith, 2 = 1/cos(60))
+      2. Minimum and maximum altitude.
       3. Size constraints in arc minutes.
-      4. Minimal fraction of time observable for the object. The default value of 0.8 means, that the given objects needs to be in your constraints for at least 80% of astronomical darkness.
+      4. Minimum fraction of time observable for the object. The default value of 0.8 means that the given objects must be within your constraints for at least 80% of astronomical darkness.
       5. Moon separation in degrees.
-4. Filter the remaining objects to fit in the size and fraction of time observability limits.
-5. Add the Sun, Moon and the planets, if observable.
+4. Filter the remaining objects to fit within the size and fraction of time observability limits.
+5. Add the Sun, Moon, and planets if observable.
 6. Create plot and report.
 
-The plot contains all objects within the given constraints during your possible observation timespan. The distance in between the points represent 15 minutes of time.
+The plot contains all objects within the given constraints during your possible observation period. The distance between the points represents 15 minutes of time.
 
-The report contains the following information:
+The report includes the following information:
 
 - Your configured observatory location
-- The observation timespan for this night during astronomical darkness
-- The Moon illumination in percentage
-- The defined constraints for the calculation
+- The observation period for this night of astronomical darkness
+- The percentage of moon illumination
+- The constraints defined for the calculation
 - The objects table:
   - Target name
   - Location in hms dms
@@ -108,17 +110,17 @@ The report contains the following information:
 
 ## How to Run
 
-There are two ways to run UpTonight. As a normal Python script or as a container.
+There are two ways to run UpTonight. As a regular Python script or as a container.
 
 ### Configuration
 
-Configuration is done by a yaml based config file and/or environment variables.
+Configuration is done via a yaml-based configuration file and/or environment variables.
 
-> ***Note:*** An environment variable overwrites the setting in the config file.
+> ***Note:*** An environment variable overrides the config file setting.
 
-> ***Note:*** All settings are optional. If not set default values are used. The only mandatory settings are the longitute and latitude of your location. Either set them via environment variables or within the config file.
+> ***Note:*** All settings are optional. If not set, defaults will be used. The only mandatory settings are the longitude and latitude of your location. Set them either via environment variables or in the config file.
 
-Examples for a minimal configuration:
+Examples of minimal configuration:
 
 ```sh
 export LONGITUDE="11d34m51.50s"
@@ -150,11 +152,11 @@ TYPE_FILTER | string | Filter on an object type | Nebula | yes | ""
 OUTPUT_DIR | string | Output directory for reports and the plot | "/tmp" | yes | "."
 LIVE_MODE | *bool* | Run in live mode, generate plot every five minutes.<br>Bash doesn't support boolean variables, but the code checks for the word 'true'. | true | yes | false
 
-UpTonight does support a ***live*** mode as well. Contrary to the normal mode where the calculations are done and output is created for the upcoming night you'll get a live plot. To activate this mode set `LIVE_MODE=true`. In this mode, UpTonight will create a file called `uptonight-liveplot.png` every five minutes but no `txt`, or `json`-reports.
+UpTonight also supports a ***live*** mode as well. Contrary to the normal mode where the calculations are done and the output is generated for the upcoming night you'll get a live plot. To enable this mode set `LIVE_MODE=true`. In this mode, UpTonight will create a file called `uptonight-liveplot.png` every five minutes but no `txt`, or `json`-reports.
 
 ***Config file `config.yaml`***
 
-You can adapt the constraints within the config file now and don't need to change the `const.py` anymore.
+Example:
 
 ```yaml
 # observation_date: 03/28/24
@@ -221,7 +223,7 @@ OpenNGC | The New General Catalogue (NGC) based on [OpenNGC](https://github.com/
 
 ### Python Script
 
-To calculate your best targets for your location set the following environment variables:
+To calculate the best targets for your location set the following environment variables:
 
 ```sh
 # Here center of Munich
@@ -243,11 +245,11 @@ python3 main.py
 
 The plot and the report will be located in the `out`-diretory.
 
-> ***Note:*** You need to use UTF-8 mode with Python on Windows! Enable it by setting the environment variable `PYTHONUTF8=1` before running UpTonight.
+> ***Note:*** You must use UTF-8 mode with Python on Windows! Enable it by setting the environment variable `PYTHONUTF8=1` before running UpTonight.
 
 ### Container
 
-You can run uptonight as a container as well. To build the image run
+You can also run uptonight as a container. To build the image, run
 
 ```sh
 docker build -t uptonight .
@@ -304,7 +306,7 @@ services:
       - /home/smarthome/homeassistant/www:/app/out
 ```
 
-Simultaneously create live plots with the same config file:
+Simultaneously create live plots using the same config file:
 
 ```yaml
 ...
@@ -321,7 +323,7 @@ Simultaneously create live plots with the same config file:
 
 ## Adding Custom Objects
 
-If you want to add your own objects to the calculation, simply add them to the list `CUSTOM_TARGETS` defined in `uptonight/const.py`. Example:
+If you want to add your own objects to the calculation, just add them to the list `CUSTOM_TARGETS` defined in `uptonight/const.py`. Example:
 
 ```py
     {
