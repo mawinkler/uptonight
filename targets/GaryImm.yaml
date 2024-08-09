@@ -49,7 +49,7 @@
 - constellation: Aquila
   dec: -24 40 00
   description: Atom For Peace Galaxy
-  mag: '12.1'
+  mag: 12.1
   name: Arp 226
   ra: 22 20 44
   size: 2.0
@@ -73,7 +73,7 @@
 - constellation: Canes Venatici
   dec: 41 38 32
   description: Cocoon Galaxy
-  mag: '9.8'
+  mag: 9.8
   name: Arp 269
   ra: 12 30 36
   size: 6.0
@@ -81,7 +81,7 @@
 - constellation: Andromeda
   dec: +39 21 00
   description: The Rose Galaxies
-  mag: '12.9'
+  mag: 12.9
   name: Arp 273
   ra: 02 21 32
   size: 1.5
@@ -89,7 +89,7 @@
 - constellation: Leo
   dec: +21 49 00
   description: Hickson 44 Galaxy Group
-  mag: '11.1'
+  mag: 11.1
   name: Arp 316
   ra: 10 18 06
   size: 30.0
@@ -105,7 +105,7 @@
 - constellation: Pegasus
   dec: 33 56 00
   description: Stephan's Quintet
-  mag: '13.6'
+  mag: 13.6
   name: Arp 319
   ra: 22 36 04
   size: 5.0
@@ -121,7 +121,7 @@
 - constellation: Ursa Major
   dec: 58 44 02
   description: Helix Galaxy
-  mag: '12.7'
+  mag: 12.7
   name: Arp 336
   ra: 08 55 35
   size: 5.2
@@ -217,7 +217,7 @@
 - constellation: Taurus
   dec: 22 54 14
   description: V1025 Tau
-  mag: '14.9'
+  mag: 14.9
   name: HP Tau
   ra: 04 35 54
   size: 3.0
@@ -257,7 +257,7 @@
 - constellation: Cassiopeia
   dec: 60 24 30
   description: Soul Nebula
-  mag: '6.5'
+  mag: 6.5
   name: IC 1848
   ra: 02 51 18
   size: 1.8
@@ -329,7 +329,7 @@
 - constellation: Scorpius
   dec: -40 27 24
   description: Prawn Nebula
-  mag: '7.1'
+  mag: 7.1
   name: IC 4628
   ra: 16 56 58
   size: 30.0
@@ -353,7 +353,7 @@
 - constellation: Grus
   dec: -39 23 09
   description: Spare Tire Nebula
-  mag: '16.5'
+  mag: 16.5
   name: IC 5148
   ra: 21 59 35
   size: 2.0
@@ -449,7 +449,7 @@
 - constellation: Ursa Major
   dec: +54 20 56
   description: Pinwheel Galaxy
-  mag: '7.9'
+  mag: 7.9
   name: M 101
   ra: 14 03 13
   size: 29.0
@@ -457,7 +457,7 @@
 - constellation: Virgo
   dec: -11 37 23
   description: Sombrero Galaxy
-  mag: '8.0'
+  mag: 8.0
   name: M 104
   ra: 12 39 59
   size: 9.0
@@ -465,7 +465,7 @@
 - constellation: Canes Venatici
   dec: +47 18 16
   description: M 106 Galaxy
-  mag: '8.4'
+  mag: 8.4
   name: M 106
   ra: 12 18 58
   size: 17.0
@@ -481,7 +481,7 @@
 - constellation: Scutum
   dec: -06 16 12
   description: Wild Duck Cluster
-  mag: '5.8'
+  mag: 5.8
   name: M 11
   ra: 18 51 05
   size: 14.0
@@ -489,7 +489,7 @@
 - constellation: Hercules
   dec: 36 27 35
   description: Great Hercules Cluster
-  mag: '5.8'
+  mag: 5.8
   name: M 13
   ra: 16 41 41
   size: 32.0
@@ -529,7 +529,7 @@
 - constellation: Vulpecula
   dec: 22 43 15
   description: Dumbbell or Apple Core Nebula
-  mag: '14.1'
+  mag: 14.1
   name: M 27
   ra: 19 59 36
   size: 6.0
@@ -537,7 +537,7 @@
 - constellation: Canes Venatici
   dec: 28 22 35
   description: Globular Cluster also NGC 5272
-  mag: '6.4'
+  mag: 6.4
   name: M 3
   ra: 13 42 11
   size: 16.0
@@ -545,7 +545,7 @@
 - constellation: Andromeda
   dec: 41 16 08
   description: Andromeda Galaxy
-  mag: '3.4'
+  mag: 3.4
   name: M 31
   ra: 00 42 44
   size: 189.0
@@ -553,7 +553,7 @@
 - constellation: Tri
   dec: 30 39 37
   description: Triangulum Galaxy
-  mag: '5.7'
+  mag: 5.7
   name: M 33
   ra: 01 33 51
   size: 70.0
@@ -577,7 +577,7 @@
 - constellation: Serpens
   dec: 02 04 57
   description: Rose Cluster
-  mag: '5.9'
+  mag: 5.9
   name: M 5
   ra: 15 18 33
   size: 17.0
@@ -585,7 +585,7 @@
 - constellation: Canes Venatici
   dec: 47 11 45
   description: Whirlpool Galaxy
-  mag: '8.4'
+  mag: 8.4
   name: M 51
   ra: 13 29 52
   size: 11.0
@@ -593,7 +593,7 @@
 - constellation: Sagittarius
   dec: -30 57 44
   description: Specter Cluster
-  mag: '6.5'
+  mag: 6.5
   name: M 55
   ra: 19 40 00
   size: 19.0
@@ -601,7 +601,7 @@
 - constellation: Lyr
   dec: +33 01 44
   description: Ring Nebula
-  mag: '15.8'
+  mag: 15.8
   name: M 57
   ra: 18 53 35
   size: 2.5
@@ -609,7 +609,7 @@
 - constellation: Canes Venatici
   dec: 42 01 46
   description: Sunflower Galaxy
-  mag: '8.6'
+  mag: 8.6
   name: M 63
   ra: 13 15 49
   size: 13.0
@@ -617,7 +617,7 @@
 - constellation: Coma Berenices
   dec: 21 40 58
   description: Black Eye Galaxy
-  mag: '8.5'
+  mag: 8.5
   name: M 64
   ra: 12 56 44
   size: 10.0
@@ -633,7 +633,7 @@
 - constellation: Perseus
   dec: +51 34 15
   description: Little Dumbbell Nebula
-  mag: '17.5'
+  mag: 17.5
   name: M 76
   ra: 01 42 18
   size: 2.0
@@ -657,7 +657,7 @@
 - constellation: Ursa Major
   dec: 69 03 56
   description: Bode's Galaxy
-  mag: '6.9'
+  mag: 6.9
   name: M 81
   ra: 09 55 33
   size: 27.0
@@ -665,7 +665,7 @@
 - constellation: Ursa Major
   dec: 69 40 50
   description: Cigar Galaxy
-  mag: '8.4'
+  mag: 8.4
   name: M 82
   ra: 09 55 53
   size: 10.0
@@ -673,7 +673,7 @@
 - constellation: Hydra
   dec: -29 51 51
   description: Southern Pinwheel Galaxy
-  mag: '7.5'
+  mag: 7.5
   name: M 83
   ra: 13 37 00
   size: 13.0
@@ -681,7 +681,7 @@
 - constellation: Virgo
   dec: +12 56 46
   description: Markarian's Chain
-  mag: '8.9'
+  mag: 8.9
   name: M 86
   ra: 12 26 12
   size: 60.0
@@ -689,7 +689,7 @@
 - constellation: Canes Venatici
   dec: 41 07 12
   description: Croc's Eye or Cat's Eye Galaxy
-  mag: '8.2'
+  mag: 8.2
   name: M 94
   ra: 12 50 53
   size: 11.0
@@ -697,7 +697,7 @@
 - constellation: Ursa Major
   dec: +55 01 08
   description: Owl Nebula
-  mag: '15.8'
+  mag: 15.8
   name: M 97
   ra: 11 14 48
   size: 3.0
@@ -705,7 +705,7 @@
 - constellation: Coma Berenices
   dec: 14 25 01
   description: St. Catherine's Wheel Galaxy
-  mag: '9.9'
+  mag: 9.9
   name: M 99
   ra: 12 18 50
   size: 5.0
@@ -721,7 +721,7 @@
 - constellation: Fornax
   dec: -30 16 29
   description: NGC 1097
-  mag: '9.5'
+  mag: 9.5
   name: NGC 1097
   ra: 02 46 19
   size: 9.3
@@ -737,7 +737,7 @@
 - constellation: Fornax
   dec: -25 52 19
   description: Robins Egg Nebula
-  mag: '11.2'
+  mag: 11.2
   name: NGC 1360
   ra: 03 33 15
   size: 6.0
@@ -761,7 +761,7 @@
 - constellation: Camelopardalis
   dec: 60 55 14
   description: Oyster Nebula
-  mag: '13.0'
+  mag: 13.0
   name: NGC 1501
   ra: 04 06 59
   size: 0.9
@@ -769,7 +769,7 @@
 - constellation: Taurus
   dec: +30 46 33
   description: Crystal Ball Nebula
-  mag: '9.5'
+  mag: 9.5
   name: NGC 1514
   ra: 04 09 17
   size: 2.0
@@ -841,7 +841,7 @@
 - constellation: Camelopardalis
   dec: 78 21 22
   description: NGC 2146
-  mag: '10.6'
+  mag: 10.6
   name: NGC 2146
   ra: 06 18 38
   size: 6.0
@@ -849,7 +849,7 @@
 - constellation: Orion
   dec: 13 57 54
   description: Shopping Cart Cluster
-  mag: '5.9'
+  mag: 5.9
   name: NGC 2169
   ra: 06 08 24
   size: 7.0
@@ -889,7 +889,7 @@
 - constellation: Monoceros
   dec: 08 44 40
   description: Hubble's Variable Nebula
-  mag: '11.9'
+  mag: 11.9
   name: NGC 2261
   ra: 06 39 10
   size: 2.0
@@ -912,7 +912,7 @@
   type: Emission Nebula
 - constellation: Canis Major
   dec: -13 13 36
-  description: "Thor\u2019s Helmet or Duck Nebula"
+  description: "Thor's Helmet or Duck Nebula"
   mag: -9999
   name: NGC 2359
   ra: 07 18 30
@@ -921,7 +921,7 @@
 - constellation: Gemini
   dec: 29 29 17
   description: Double Bubble
-  mag: '13.5'
+  mag: 13.5
   name: NGC 2371
   ra: 07 25 34
   size: 2.1
@@ -929,7 +929,7 @@
 - constellation: Gemini
   dec: 20 54 42
   description: Eskimo or Clown Nebula
-  mag: '9.7'
+  mag: 9.7
   name: NGC 2392
   ra: 07 29 11
   size: 0.8
@@ -937,7 +937,7 @@
 - constellation: Cetus
   dec: -11 52 19
   description: Skull Nebula
-  mag: '11.8'
+  mag: 11.8
   name: NGC 246
   ra: 00 47 03
   size: 4.0
@@ -977,7 +977,7 @@
 - constellation: Vela
   dec: -40 26 11
   description: Eight Burst Nebula
-  mag: '10.0'
+  mag: 10.0
   name: NGC 3132
   ra: 10 07 02
   size: 0.8
@@ -985,7 +985,7 @@
 - constellation: Hydra
   dec: -18 38 34
   description: Ghost of Jupiter or CBS Eye Nebula
-  mag: '12.1'
+  mag: 12.1
   name: NGC 3242
   ra: 10 24 46
   size: 0.75
@@ -993,7 +993,7 @@
 - constellation: Leo
   dec: -00 02 10
   description: Bubble Galaxy
-  mag: '9.0'
+  mag: 9.0
   name: NGC 3521
   ra: 11 05 49
   size: 11.0
@@ -1001,7 +1001,7 @@
 - constellation: Leo
   dec: +13 35 19
   description: Hamburger Galaxy
-  mag: '9.5'
+  mag: 9.5
   name: NGC 3628
   ra: 11 20 17
   size: 15.0
@@ -1009,7 +1009,7 @@
 - constellation: Ursa Major
   dec: 53 04 04
   description: Arp 214
-  mag: '10.6'
+  mag: 10.6
   name: NGC 3718
   ra: 11 32 35
   size: 8.7
@@ -1017,7 +1017,7 @@
 - constellation: Cepheus
   dec: 72 31 19
   description: BowTie Nebula
-  mag: '11.5'
+  mag: 11.5
   name: NGC 40
   ra: 00 13 01
   size: 1.0
@@ -1025,7 +1025,7 @@
 - constellation: Cassiopeia
   dec: 58 17 12
   description: ET or Owl or Dragonfly Cluster
-  mag: '6.4'
+  mag: 6.4
   name: NGC 457
   ra: 01 19 35
   size: 13.0
@@ -1033,7 +1033,7 @@
 - constellation: Canes Venatici
   dec: +32 32 29
   description: Whale & Hockey Stick Galaxy Duo
-  mag: '9.2'
+  mag: 9.2
   name: NGC 4631
   ra: 12 42 08
   size: 40.0
@@ -1041,7 +1041,7 @@
 - constellation: Coma Berenices
   dec: +25 30 03
   description: Ringed Galaxy
-  mag: '12.4'
+  mag: 12.4
   name: NGC 4725
   ra: 12 50 27
   size: 11.0
@@ -1049,7 +1049,7 @@
 - constellation: Canes Venatici
   dec: 36 35 38
   description: Crab Galaxy
-  mag: '12.0'
+  mag: 12.0
   name: NGC 5033
   ra: 13 13 28
   size: 11.0
@@ -1057,7 +1057,7 @@
 - constellation: Centaurus
   dec: -43 01 08
   description: Centaurus A
-  mag: '6.8'
+  mag: 6.8
   name: NGC 5128
   ra: 13 25 28
   size: 18.0
@@ -1073,7 +1073,7 @@
 - constellation: Pisces
   dec: 03 47 00
   description: Arp 157 Colliding Galaxies
-  mag: '11.4'
+  mag: 11.4
   name: NGC 520
   ra: 01 24 35
   size: 4.0
@@ -1121,7 +1121,7 @@
 - constellation: Scorpius
   dec: -38 29 00
   description: Cheerio
-  mag: '12.0'
+  mag: 12.0
   name: NGC 6337
   ra: 17 22 16
   size: 2.0
@@ -1137,7 +1137,7 @@
 - constellation: Sagittarius
   dec: -27 53 18
   description: NGC 6520
-  mag: '7.6'
+  mag: 7.6
   name: NGC 6520
   ra: 18 03 24
   size: 6.0
@@ -1145,7 +1145,7 @@
 - constellation: Draco
   dec: +66 37 59
   description: Cat's Eye Nebula
-  mag: '11.3'
+  mag: 11.3
   name: NGC 6543
   ra: 17 58 33
   size: 8.0
@@ -1153,7 +1153,7 @@
 - constellation: Pisces
   dec: 13 38 39
   description: Polar Ring Galaxy
-  mag: '11.2'
+  mag: 11.2
   name: NGC 660
   ra: 01 43 02
   size: 9.1
@@ -1169,7 +1169,7 @@
 - constellation: Aquila
   dec: 06 32 20
   description: Snowglobe Nebula or Ghost of the Moon
-  mag: '11.8'
+  mag: 11.8
   name: NGC 6781
   ra: 19 18 28
   size: 2.0
@@ -1185,7 +1185,7 @@
 - constellation: Cygnus
   dec: +50 31 30
   description: The Blinking Eye
-  mag: '9.4'
+  mag: 9.4
   name: NGC 6826
   ra: 19 44 48
   size: 2.3
@@ -1193,7 +1193,7 @@
 - constellation: Cygnus
   dec: 38 21 17
   description: Crescent Nebula
-  mag: '10.0'
+  mag: 10.0
   name: NGC 6888
   ra: 20 12 06
   size: 20.0
@@ -1201,7 +1201,7 @@
 - constellation: Cygnus
   dec: 40 46 42
   description: Inchworm Cluster
-  mag: '7.4'
+  mag: 7.4
   name: NGC 6910
   ra: 20 23 12
   size: 8.0
@@ -1209,7 +1209,7 @@
 - constellation: Cygnus
   dec: 60 09 14
   description: Fireworks Galaxy
-  mag: '9.0'
+  mag: 9.0
   name: NGC 6946
   ra: 20 34 52
   size: 11.0
@@ -1257,7 +1257,7 @@
 - constellation: Aquarius
   dec: -11 21 50
   description: Saturn Nebula
-  mag: '12.1'
+  mag: 12.1
   name: NGC 7009
   ra: 21 04 11
   size: 1.7
@@ -1265,7 +1265,7 @@
 - constellation: Cepheus
   dec: 68 10 10
   description: Iris Nebula
-  mag: '7.1'
+  mag: 7.1
   name: NGC 7023
   ra: 21 01 36
   size: 60.0
@@ -1273,7 +1273,7 @@
 - constellation: Aquarius
   dec: -20 50 13
   description: Helix Nebula
-  mag: '13.5'
+  mag: 13.5
   name: NGC 7293
   ra: 22 29 38
   size: 13.0
@@ -1281,7 +1281,7 @@
 - constellation: Pegasus
   dec: +34 24 57
   description: Deer Lick Galaxy Group
-  mag: '9.5'
+  mag: 9.5
   name: NGC 7331
   ra: 22 37 04
   size: 25.0
@@ -1313,7 +1313,7 @@
 - constellation: Aries
   dec: 19 00 29
   description: Fiddlehead or Nautilus Galaxy
-  mag: '10.3'
+  mag: 10.3
   name: NGC 772
   ra: 01 59 20
   size: 7.0
@@ -1321,7 +1321,7 @@
 - constellation: Cassiopeia
   dec: 56 42 30
   description: Caroline's Rose
-  mag: '6.7'
+  mag: 6.7
   name: NGC 7789
   ra: 23 57 24
   size: 25.0
@@ -1345,7 +1345,7 @@
 - constellation: Andromeda
   dec: 42 20 54
   description: Outer Limits Galaxy
-  mag: '9.9'
+  mag: 9.9
   name: NGC 891
   ra: 02 22 33
   size: 14.0
@@ -1361,7 +1361,7 @@
 - constellation: Monoceros
   dec: -10 38 15
   description: HD 44179
-  mag: '9.0'
+  mag: 9.0
   name: Red Rectangle
   ra: 06 19 58
   size: 0.2
@@ -1369,7 +1369,7 @@
 - constellation: Ophiuchus
   dec: -23 26 50
   description: "\u03C1 Ophiuchi"
-  mag: '4.6'
+  mag: 4.6
   name: Rho Ophiuchi
   ra: 16 25 35
   size: 300.0
@@ -1473,7 +1473,7 @@
 - constellation: Cepheus
   dec: 80 49 22
   description: Valentine Rose Nebula
-  mag: '14.7'
+  mag: 14.7
   name: Sh2-174
   ra: 23 47 08
   size: 10.0
@@ -1481,7 +1481,7 @@
 - constellation: Cassiopeia
   dec: 58 24 51
   description: Dolphin Nebula
-  mag: '17.4'
+  mag: 17.4
   name: Sh2-188
   ra: 01 30 33
   size: 9.0
@@ -1553,7 +1553,7 @@
 - constellation: Canis Major
   dec: -23 56 00
   description: Gourd Nebula
-  mag: '6.9'
+  mag: 6.9
   name: Sh2-308
   ra: 06 54 00
   size: 60.0
@@ -1561,7 +1561,7 @@
 - constellation: Hydra
   dec: -22 51 42
   description: Abell 35
-  mag: '9.7'
+  mag: 9.7
   name: Sh2-313
   ra: 12 53 41
   size: 16.0
@@ -1577,7 +1577,7 @@
 - constellation: Vulpecula
   dec: 22 45 17
   description: Loch Ness Nebula
-  mag: '8.7'
+  mag: 8.7
   name: vdB 126
   ra: 19 26 11
   size: 100.0
@@ -1585,7 +1585,7 @@
 - constellation: Cepheus
   dec: 68 15 52
   description: Ghost Nebula
-  mag: '10.8'
+  mag: 10.8
   name: vdB 141
   ra: 21 16 27
   size: 20.0
@@ -1593,7 +1593,7 @@
 - constellation: Cepheus
   dec: +73 23 25
   description: Shark Nebula
-  mag: '8.4'
+  mag: 8.4
   name: vdB 150
   ra: 22 09 40
   size: 11.0
@@ -1601,7 +1601,7 @@
 - constellation: Cepheus
   dec: 69 56 00
   description: Wolf's Cave
-  mag: '9.3'
+  mag: 9.3
   name: vdB 152
   ra: 22 14 02
   size: 60.0
@@ -1609,7 +1609,7 @@
 - constellation: Auriga
   dec: 30 33 38
   description: Blackbird Nebula
-  mag: '7.1'
+  mag: 7.1
   name: vdB 31
   ra: 04 55 46
   size: 40.0
@@ -1641,7 +1641,7 @@
 - constellation: Cygnus
   dec: 36 11 00
   description: WR 134
-  mag: '8.1'
+  mag: 8.1
   name: WR 134
   ra: 20 10 00
   size: 25.0

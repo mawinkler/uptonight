@@ -419,7 +419,7 @@ class UpTonight:
                             unit=(u.hourangle, u.deg),
                         ),
                         name=str(target_row["description"])
-                        + str(f" ({target_row['name']}, {target_row['size']}', {target_row['mag']})"),
+                        + str(f" ({target_row['name']}, {target_row['size']}', {str(int(round(self._input_targets[index]['mag'] * 10, 0)) / 10)})"),
                     )
 
                     # Object start azimuth and altitude
@@ -517,7 +517,7 @@ class UpTonight:
                         unit=(u.hourangle, u.deg),
                     ),
                     name=target_row["description"]
-                    + f" ({target_row['name']}, {target_row['size']}', {target_row['mag']})",
+                    + f" ({target_row['name']}, {target_row['size']}', {str(int(round(self._input_targets[index]['mag'] * 10, 0)) / 10)})",
                 )
                 ax = plot_sky(
                     target,
