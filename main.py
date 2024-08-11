@@ -32,7 +32,6 @@ logging.basicConfig(
 
 
 def main():
-    
     # Defaults
     location = {"longitude": "", "latitude": "", "elevation": 0, "timezone": "UTC"}
     environment = {"pressure": 0, "temperature": 0, "relative_humidity": 0}
@@ -153,25 +152,25 @@ def main():
     _LOGGER.debug(f"Mode: {live_mode}")
 
     start = time.time()
-    
-    # Initialize UpTonight
-    uptonight = UpTonight(
-        location=location,
-        environment=environment,
-        constraints=constraints,
-        target_list=target_list,
-        bucket_list=bucket_list,
-        done_list=done_list,
-        observation_date=observation_date,
-        type_filter=type_filter,
-        output_dir=output_dir,
-        live=live_mode,
-    )
-    
+
     # Do the math
     if live_mode:
         _LOGGER.info("UpTonight live mode")
         while True:
+            # Initialize UpTonight
+            uptonight = UpTonight(
+                location=location,
+                environment=environment,
+                constraints=constraints,
+                target_list=target_list,
+                bucket_list=bucket_list,
+                done_list=done_list,
+                observation_date=observation_date,
+                type_filter=type_filter,
+                output_dir=output_dir,
+                live=live_mode,
+            )
+
             uptonight.calc(
                 bucket_list=bucket_list,
                 done_list=done_list,
@@ -180,12 +179,27 @@ def main():
             sleep(300)
     else:
         _LOGGER.info("UpTonight one-time calculation mode")
+
+        # Initialize UpTonight
+        uptonight = UpTonight(
+            location=location,
+            environment=environment,
+            constraints=constraints,
+            target_list=target_list,
+            bucket_list=bucket_list,
+            done_list=done_list,
+            observation_date=observation_date,
+            type_filter=type_filter,
+            output_dir=output_dir,
+            live=live_mode,
+        )
+
         uptonight.calc(
             bucket_list=bucket_list,
             done_list=done_list,
             type_filter=type_filter,
         )
-        
+
     end = time.time()
     _LOGGER.info(f"Execution time: %s seconds", end - start)
 
