@@ -2,9 +2,10 @@
 import logging
 import os
 import sys
+import math
+import pathlib
 import time
 from time import sleep
-
 import yaml
 
 from uptonight.const import (
@@ -32,6 +33,9 @@ logging.basicConfig(
 
 
 def main():
+    app_directory = pathlib.Path(__file__).parent.resolve()
+    print(app_directory)
+
     # Defaults
     location = {"longitude": "", "latitude": "", "elevation": 0, "timezone": "UTC"}
     environment = {"pressure": 0, "temperature": 0, "relative_humidity": 0}
@@ -48,16 +52,18 @@ def main():
         "north_to_east_ccw": DEFAULT_NORTH_TO_EAST_CCW,
     }
     observation_date = None
-    target_list = DEFAULT_TARGETS
+    target_list = f"{app_directory}/{DEFAULT_TARGETS}"
     type_filter = ""
-    output_dir = "out"
+    output_dir = f"{app_directory}/out"
     live_mode = False
     bucket_list = []
     done_list = []
+    horizon = None
+    horizon_filled = None
 
     # Read config.yaml
-    if os.path.isfile("config.yaml"):
-        with open("config.yaml", "r", encoding="utf-8") as ymlfile:
+    if os.path.isfile(f"{app_directory}/config.yaml"):
+        with open(f"{app_directory}/config.yaml", "r", encoding="utf-8") as ymlfile:
             cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
     else:
         cfg = None
@@ -84,13 +90,34 @@ def main():
     if cfg is not None and "type_filter" in cfg.keys() and cfg["type_filter"] is not None:
         type_filter = cfg["type_filter"]
     if cfg is not None and "output_dir" in cfg.keys() and cfg["output_dir"] is not None:
-        output_dir = cfg["output_dir"]
+        output_dir = f"{app_directory}/{cfg['output_dir']}"
     if cfg is not None and "live_mode" in cfg.keys() and cfg["live_mode"] is not None:
         live_mode = bool(cfg["live_mode"])
     if cfg is not None and "bucket_list" in cfg.keys() and cfg["bucket_list"] is not None:
         bucket_list = cfg["bucket_list"]
     if cfg is not None and "done_list" in cfg.keys() and cfg["done_list"] is not None:
         done_list = cfg["done_list"]
+    if cfg is not None and "horizon" in cfg.keys() and cfg["horizon"] is not None:
+        horizon = cfg["horizon"]
+
+    if horizon is not None:
+        horizon_filled = []
+        for index, horizon_direction in enumerate(horizon):
+            az_start = horizon_direction.get("az")
+            alt_start = horizon_direction.get("alt")
+            az_stop = horizon[index + 1].get("az")
+            alt_stop = horizon[index + 1].get("alt")
+
+            distance = math.sqrt((alt_stop - alt_start) ** 2 + (az_stop - az_start) ** 2)
+            steps = round(distance / 4, 0)
+            inc_alt = (alt_stop - alt_start) / steps
+            inc_az = (az_stop - az_start) / steps
+
+            for step in range(0, int(steps)):
+                horizon_filled.append({"alt": alt_start + inc_alt * step, "az": az_start + inc_az * step})
+
+            if index == len(horizon) - 2:
+                break
 
     if os.getenv("LONGITUDE") is not None:
         location["longitude"] = os.getenv("LONGITUDE")
@@ -175,6 +202,7 @@ def main():
                 bucket_list=bucket_list,
                 done_list=done_list,
                 type_filter=type_filter,
+                horizon=horizon_filled,
             )
             sleep(300)
     else:
@@ -198,6 +226,7 @@ def main():
             bucket_list=bucket_list,
             done_list=done_list,
             type_filter=type_filter,
+            horizon=horizon_filled,
         )
 
     end = time.time()

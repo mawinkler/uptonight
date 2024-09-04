@@ -175,7 +175,8 @@ class UpTonight:
         self._output_dir = output_dir
         self._live = live
 
-        self._observer = self._get_observer()
+        self._observer_location = self._get_observer_location()
+        self._observer = self._get_observer(self._observer_location)
         self._sun_moon = self._get_sun_moon()
         self._observation_timeframe = self._get_observation_timeframe()
         self._moon_separation = 0
@@ -211,11 +212,11 @@ class UpTonight:
 
         return None
 
-    def _get_observer(self) -> Observer:
-        """Create an observer on the planet with given environmental conditions
+    def _get_observer_location(self) -> EarthLocation:
+        """Create an earth locaton with given longitude, latitude, and elevation
 
         Returns:
-            astroplan.Observer: A container class for information about an observer’s location and environment.
+            astroplan.EarthLocation: A container class for information about an observer’s location.
         """
 
         observer_location = EarthLocation.from_geodetic(
@@ -223,6 +224,15 @@ class UpTonight:
             self._location["latitude"],
             self._location["elevation"] * u.m,
         )
+
+        return observer_location
+
+    def _get_observer(self, observer_location) -> Observer:
+        """Create an observer on the planet with given environmental conditions
+
+        Returns:
+            astroplan.Observer: A container class for information about an observer’s location and environment.
+        """
 
         observer = Observer(
             name="Backyard",
@@ -261,7 +271,6 @@ class UpTonight:
                     "time_range": Time()
                     "current_day": current_day, }
         """
-        # 
 
         observing_start_time = None
         observing_end_time = None
@@ -324,11 +333,79 @@ class UpTonight:
 
         return observability_constraints
 
+    def _altaz_to_radec(self, alt, az, time_str, observer_location):
+        """
+        Convert altitude-azimuth coordinates to right ascension and declination.
+
+        Parameters:
+            alt (float): Altitude in degrees.
+            az (float): Azimuth in degrees.
+            time_str (str): Observation time in ISO format (e.g., '2024-04-01T22:30:00').
+            observer_location (EarthLocation): Observer's Earth location.
+
+        Returns:
+            tuple: (RA in degrees, Dec in degrees)
+        """
+
+        # Define the observation time
+        time = Time(time_str)
+
+        # Create AltAz frame for the given time and location
+        altaz_frame = AltAz(obstime=time, location=observer_location)
+
+        # Create a SkyCoord object in AltAz frame
+        altaz = SkyCoord(alt=alt * u.deg, az=az * u.deg, frame=altaz_frame)
+
+        # Transform to ICRS (equatorial) frame to get RA and Dec
+        radec = altaz.transform_to("icrs")
+
+        return radec.ra.degree, radec.dec.degree
+
+    def _horizon(self, horizon):
+        """
+        Adds the horizon to the plot.
+        """
+
+        _LOGGER.info("Creating plot of horizon")
+
+        observation_time = self._observation_timeframe["observing_start_time"]
+
+        for horizon_direction in horizon:
+            # Perform the conversion
+            ra_deg, dec_deg = self._altaz_to_radec(
+                horizon_direction.get("alt"),
+                horizon_direction.get("az"),
+                observation_time,
+                self._observer_location,
+            )
+
+            # Convert RA from degrees to hours, minutes, seconds
+            ra = SkyCoord(ra=ra_deg * u.deg, dec=dec_deg * u.deg, frame="icrs").ra.to_string(
+                unit=u.hour, sep=":", precision=2
+            )
+            dec = SkyCoord(ra=ra_deg * u.deg, dec=dec_deg * u.deg, frame="icrs").dec.to_string(sep=":", precision=2)
+
+            target = FixedTarget(
+                coord=SkyCoord(
+                    f"{ra} {dec}",
+                    unit=(u.hourangle, u.deg),
+                ),
+                name="_horizon",
+            )
+            plot_sky(
+                target,
+                self._observer,
+                observation_time,
+                style_kwargs=dict(color="w", label=target.name, marker="o", s=30),
+                north_to_east_ccw=self._constraints["north_to_east_ccw"],
+            )
+
     def calc(
         self,
         bucket_list=[],
         done_list=[],
         type_filter="",
+        horizon=None,
     ):
         """Do the math.
 
@@ -378,10 +455,15 @@ class UpTonight:
         )
         cmap = cm.hsv
 
+        ax = None
+
+        if horizon is not None:
+            # Plot the horizon
+            self._horizon(horizon)
+
         # Creating plot and table of targets
         _LOGGER.info("Creating plot and table of targets")
         target_no = 0
-        ax = None
         for index, target_row in enumerate(self._input_targets):
             fraction_of_time_observable = target_row["fraction of time observable"]
 
@@ -419,7 +501,9 @@ class UpTonight:
                             unit=(u.hourangle, u.deg),
                         ),
                         name=str(target_row["description"])
-                        + str(f" ({target_row['name']}, {target_row['size']}', {str(int(round(self._input_targets[index]['mag'] * 10, 0)) / 10)})"),
+                        + str(
+                            f" ({target_row['name']}, {target_row['size']}', {str(int(round(self._input_targets[index]['mag'] * 10, 0)) / 10)})"
+                        ),
                     )
 
                     # Object start azimuth and altitude
@@ -530,19 +614,13 @@ class UpTonight:
         # Bodies
         object_frame = AltAz(obstime=time_grid, location=self._observer.location)
 
+        # No altitude and moon separation constraints for the bodies
+        observability_constraints = [
+            AltitudeConstraint(0 * u.deg, 90 * u.deg),
+        ]
+
         for name, planet_label, color, size in BODIES:
             if planet_label != "sun":
-                if planet_label != "moon":
-                    # No altitude constraints for the planets
-                    observability_constraints = [
-                        AltitudeConstraint(0 * u.deg, 90 * u.deg),
-                        MoonSeparationConstraint(min=self._moon_separation * u.deg),
-                    ]
-                else:
-                    # No constraints for the moon
-                    observability_constraints = [
-                        AltitudeConstraint(0 * u.deg, 90 * u.deg),
-                    ]
                 observable = is_observable(
                     observability_constraints,
                     self._observer,

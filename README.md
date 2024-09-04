@@ -156,6 +156,8 @@ UpTonight also supports a ***live*** mode as well. Contrary to the normal mode w
 
 ***Config file `config.yaml`***
 
+All keys besides `location.longitude` and `location.latitude` are optional.
+
 Example:
 
 ```yaml
@@ -209,6 +211,40 @@ bucket_list:
 # Personal done list to always ignore.
 done_list:
   - IC 1795
+
+# Horizon
+# Minimum altitudes from north (0), east (90), south (180), west (270), to north (360)
+horizon:
+  - alt: 30
+    az: 0
+  - alt: 30
+    az: 20
+  - alt: 15
+    az: 25
+  - alt: 15
+    az: 90
+  - alt: 60
+    az: 100
+  - alt: 60
+    az: 150
+  - alt: 50
+    az: 160
+  - alt: 20
+    az: 170
+  - alt: 20
+    az: 220
+  - alt: 30
+    az: 230
+  - alt: 30
+    az: 260
+  - alt: 15
+    az: 270
+  - alt: 15
+    az: 340
+  - alt: 30
+    az: 350
+  - alt: 30
+    az: 360
 ```
 
 ### Available Target lists
