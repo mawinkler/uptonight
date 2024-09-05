@@ -29,6 +29,8 @@ class Targets:
         self._input_targets, self._fixed_targets = self._create_target_list(target_list=target_list)
         self._targets_table = self._create_uptonight_targets_table()
 
+        self._bodies_table = self._create_uptonight_bodies_table()
+
         return None
 
     def input_targets(self):
@@ -46,6 +48,11 @@ class Targets:
             return self._targets_table
         return None
 
+    def bodies_table(self):
+        if self._bodies_table is not None:
+            return self._bodies_table
+        return None
+    
     def _create_target_list(self, target_list=None):
         """
         Creates a table and list of targets in scope for the calculations.
@@ -280,3 +287,53 @@ class Targets:
         uptonight_targets["foto"].info.format = ".1f"
 
         return uptonight_targets
+
+    def _create_uptonight_bodies_table(self):
+        """Creates the result table for the bodies.
+
+        Rows will be added while objects are calculated
+
+        Parameters
+        ----------
+        none
+
+        Returns
+        -------
+        astropy.Table: Result table
+        """
+
+        uptonight_bodies = Table(
+            names=(
+                "target name",
+                "hmsdms",
+                "right ascension",
+                "declination",
+                "max altitude",
+                "azimuth",
+                "max altitude time",
+                "meridian transit",
+                "antimeridian transit",
+                "type",
+                "foto",
+            ),
+            dtype=(
+                str,
+                str,
+                np.float16,
+                np.float16,
+                np.float16,
+                np.float16,
+                str,
+                str,
+                str,
+                str,
+                np.float16,
+            ),
+        )
+        uptonight_bodies["right ascension"].info.format = ".1f"
+        uptonight_bodies["declination"].info.format = ".1f"
+        uptonight_bodies["max altitude"].info.format = ".1f"
+        uptonight_bodies["azimuth"].info.format = ".1f"
+        uptonight_bodies["foto"].info.format = ".1f"
+
+        return uptonight_bodies

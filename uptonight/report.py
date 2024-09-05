@@ -9,7 +9,6 @@ class Report:
     def __init__(
         self,
         observer,
-        uptonight_targets,
         astronight_from,
         astronight_to,
         sun_moon,
@@ -19,7 +18,6 @@ class Report:
         constraints,
     ):
         self._observer = observer
-        self._uptonight_targets = uptonight_targets
         self._astronight_from = astronight_from
         self._astronight_to = astronight_to
         self._sun_moon = sun_moon
@@ -30,7 +28,7 @@ class Report:
 
         return None
 
-    def save_txt(self):
+    def save_txt(self, uptonight_result, result_type):
         """
         Save report as txt
 
@@ -43,22 +41,22 @@ class Report:
         contents
         """
 
-        if len(self._uptonight_targets) > 0:
-            self._uptonight_targets.write(
-                f"{self._output_dir}/uptonight-report{self._filter_ext}.txt",
+        if len(uptonight_result) > 0:
+            uptonight_result.write(
+                f"{self._output_dir}/uptonight{result_type}-report{self._filter_ext}.txt",
                 overwrite=True,
                 format="ascii.fixed_width_two_line",
             )
         else:
             with open(
-                f"{self._output_dir}/uptonight-report{self._filter_ext}.txt",
+                f"{self._output_dir}/uptonight{result_type}-report{self._filter_ext}.txt",
                 "w",
                 encoding="utf-8",
             ) as report:
                 report.writelines("")
 
         with open(
-            f"{self._output_dir}/uptonight-report{self._filter_ext}.txt",
+            f"{self._output_dir}/uptonight{result_type}-report{self._filter_ext}.txt",
             "r",
             encoding="utf-8",
         ) as report:
@@ -68,19 +66,19 @@ class Report:
 
         if OUTPUT_DATESTAMP:
             with open(
-                f"{self._output_dir}/uptonight-report-{self._current_day}{self._filter_ext}.txt",
+                f"{self._output_dir}/uptonight{result_type}-report-{self._current_day}{self._filter_ext}.txt",
                 "w",
                 encoding="utf-8",
             ) as report:
                 report.write(contents)
         with open(
-            f"{self._output_dir}/uptonight-report{self._filter_ext}.txt",
+            f"{self._output_dir}/uptonight{result_type}-report{self._filter_ext}.txt",
             "w",
             encoding="utf-8",
         ) as report:
             report.write(contents)
 
-    def save_json(self):
+    def save_json(self, uptonight_result, result_type):
         """
         Write JSON for Home Assistant
 
@@ -94,13 +92,13 @@ class Report:
         """
 
         if OUTPUT_DATESTAMP:
-            self._uptonight_targets.write(
-                f"{self._output_dir}/uptonight-report-{self._current_day}.json",
+            uptonight_result.write(
+                f"{self._output_dir}/uptonight{result_type}-report-{self._current_day}.json",
                 overwrite=True,
                 format="pandas.json",
             )
-        self._uptonight_targets.write(
-            f"{self._output_dir}/uptonight-report.json",
+        uptonight_result.write(
+            f"{self._output_dir}/uptonight{result_type}-report.json",
             overwrite=True,
             format="pandas.json",
         )
