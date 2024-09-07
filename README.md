@@ -1,6 +1,6 @@
 # UpTonight<!-- omit in toc -->
 
-![GitHub release](https://img.shields.io/badge/Release-1.0-blue)
+![GitHub release](https://img.shields.io/badge/Release-1.5-blue)
 ![Docker](https://img.shields.io/docker/pulls/mawinkler/uptonight)
 [![astropy](https://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat)](http://www.astropy.org/)
 
