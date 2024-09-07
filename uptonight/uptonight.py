@@ -696,18 +696,18 @@ class UpTonight:
                         meridian_antitransit = ""
 
                     # Max altitude
-                    _LOGGER.debug(
-                        f"observing_start_time: {self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_start_time"]).strftime("%m/%d/%Y %H:%M:%S")}"
-                    )
-                    _LOGGER.debug(
-                        f"observing_end_time: {self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_end_time"]).strftime("%m/%d/%Y %H:%M:%S")}"
-                    )
-                    _LOGGER.debug(
-                        f"meridian_transit_time: {self._observer.astropy_time_to_datetime(meridian_transit_time).strftime("%m/%d/%Y %H:%M:%S")}"
-                    )
-                    _LOGGER.debug(
-                        f"meridian_antitransit_time: {self._observer.astropy_time_to_datetime(meridian_antitransit_time).strftime("%m/%d/%Y %H:%M:%S")}"
-                    )
+                    # _LOGGER.debug(
+                    #     f"observing_start_time: {self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_start_time"]).strftime("%m/%d/%Y %H:%M:%S")}"
+                    # )
+                    # _LOGGER.debug(
+                    #     f"observing_end_time: {self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_end_time"]).strftime("%m/%d/%Y %H:%M:%S")}"
+                    # )
+                    # _LOGGER.debug(
+                    #     f"meridian_transit_time: {self._observer.astropy_time_to_datetime(meridian_transit_time).strftime("%m/%d/%Y %H:%M:%S")}"
+                    # )
+                    # _LOGGER.debug(
+                    #     f"meridian_antitransit_time: {self._observer.astropy_time_to_datetime(meridian_antitransit_time).strftime("%m/%d/%Y %H:%M:%S")}"
+                    # )
 
                     max_altitude = 0
                     # Meridian transmit during astronomical night
@@ -716,7 +716,6 @@ class UpTonight:
                         and self._observation_timeframe["observing_end_time"] > meridian_transit_time
                     ):
                         # It's within astronomical darkness
-                        _LOGGER.debug(f"It's within astronomical darkness for {name}")
                         object_body = get_body(planet_label, meridian_transit_time)
                         object_altaz = AltAz(obstime=meridian_transit_time, location=self._observer.location)
                         body_altaz = object_body.transform_to(object_altaz)
@@ -727,11 +726,6 @@ class UpTonight:
                         azimuth = body_altaz.az
                     else:
                         if meridian_transit_time > self._observation_timeframe["observing_end_time"]:
-
-                            # if (self._observation_timeframe["observing_start_time"] > meridian_transit_time
-                            #     or self._observation_timeframe["observing_end_time"] < meridian_transit_time):
-
-                            _LOGGER.debug(f"It's before astronomical darkness for {name}")
                             object_body = get_body(planet_label, self._observation_timeframe["observing_start_time"])
                             object_altaz = AltAz(
                                 obstime=self._observation_timeframe["observing_start_time"],
