@@ -28,9 +28,7 @@ class Plot:
     def save_png(self, plt):
         if not self._live:
             if OUTPUT_DATESTAMP:
-                plt.savefig(
-                    f"{self._output_dir}/uptonight-plot-{self._current_day}{self._filter_ext}.png"
-                )
+                plt.savefig(f"{self._output_dir}/uptonight-plot-{self._current_day}{self._filter_ext}.png")
             plt.savefig(f"{self._output_dir}/uptonight-plot{self._filter_ext}.png")
         else:
             plt.savefig(f"{self._output_dir}/uptonight-liveplot{self._filter_ext}.png")

@@ -140,9 +140,7 @@ class Report:
             f"Observation timespan: {self._astronight_from} to {self._astronight_to} in {self._sun_moon.darkness()} darkness",
         )
         contents.insert(11, "\n")
-        contents.insert(
-            12, "Moon illumination: {:.0f}%".format(self._sun_moon.moon_illumination())
-        )
+        contents.insert(12, "Moon illumination: {:.0f}%".format(self._sun_moon.moon_illumination()))
         contents.insert(13, "\n")
         contents.insert(
             14,
@@ -151,9 +149,7 @@ class Report:
             + f"Size constraint minimum: {self._constraints['size_constraint_min']}', maximum: {self._constraints['size_constraint_max']}'",
         )
         contents.insert(15, "\n")
-        contents.insert(
-            16, f"Altitude and Azimuth calculated for {self._astronight_from}"
-        )
+        contents.insert(16, f"Altitude and Azimuth calculated for {self._astronight_from}")
         contents.insert(17, "\n")
         contents.insert(18, "\n")
 

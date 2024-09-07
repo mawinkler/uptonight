@@ -32,9 +32,7 @@ class SunMoon:
         if observation_date is None:
             time = (
                 Time(
-                    datetime.utcnow().replace(
-                        hour=0, minute=0, second=0, microsecond=0
-                    ),
+                    datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0),
                     scale="utc",
                     location=self._observer.location,
                 )
@@ -44,9 +42,7 @@ class SunMoon:
         else:
             time = (
                 Time(
-                    datetime.strptime(observation_date, "%m/%d/%y").replace(
-                        hour=0, minute=0, second=0, microsecond=0
-                    ),
+                    datetime.strptime(observation_date, "%m/%d/%y").replace(hour=0, minute=0, second=0, microsecond=0),
                     scale="utc",
                     location=self._observer.location,
                 )
@@ -59,16 +55,8 @@ class SunMoon:
         self._sun(time)
         self._moon(time, self._sun_next_setting)
 
-        _LOGGER.info(
-            "Sun set {0}: {1}".format(
-                self._darkness, self._sun_next_setting.strftime("%m/%d/%Y %H:%M:%S")
-            )
-        )
-        _LOGGER.info(
-            "Sun rise {0}: {1}".format(
-                self._darkness, self._sun_next_rising.strftime("%m/%d/%Y %H:%M:%S")
-            )
-        )
+        _LOGGER.info("Sun set {0}: {1}".format(self._darkness, self._sun_next_setting.strftime("%m/%d/%Y %H:%M:%S")))
+        _LOGGER.info("Sun rise {0}: {1}".format(self._darkness, self._sun_next_rising.strftime("%m/%d/%Y %H:%M:%S")))
         _LOGGER.info("Moon illumination: {:.0f}%".format(self._moon_illumination))
 
         return None
@@ -133,23 +121,17 @@ class SunMoon:
 
         darkness = ""
         with warnings.catch_warnings(record=True) as w:
-            sun_next_setting = self._observer.sun_set_time(
-                time, which="next", horizon=-18 * u.deg
-            )
+            sun_next_setting = self._observer.sun_set_time(time, which="next", horizon=-18 * u.deg)
             if len(w):
                 if issubclass(w[-1].category, TargetAlwaysUpWarning):
                     _LOGGER.warning("Sun is not setting astronomically")
                     w.clear()
-                    sun_next_setting = self._observer.sun_set_time(
-                        time, which="next", horizon=-12 * u.deg
-                    )
+                    sun_next_setting = self._observer.sun_set_time(time, which="next", horizon=-12 * u.deg)
                     if len(w):
                         if issubclass(w[-1].category, TargetAlwaysUpWarning):
                             _LOGGER.warning("Sun is not setting nautically")
                             w.clear()
-                            sun_next_setting = self._observer.sun_set_time(
-                                time, which="next", horizon=-6 * u.deg
-                            )
+                            sun_next_setting = self._observer.sun_set_time(time, which="next", horizon=-6 * u.deg)
                             if len(w):
                                 if issubclass(w[-1].category, TargetAlwaysUpWarning):
                                     _LOGGER.warning("Sun is not setting civically")
@@ -157,21 +139,15 @@ class SunMoon:
                                     sun_next_setting = time
                             else:
                                 darkness = "civil"
-                                sun_next_setting, sun_next_rising = (
-                                    self._observer.tonight(
-                                        time=time, horizon=-6 * u.deg
-                                    )
+                                sun_next_setting, sun_next_rising = self._observer.tonight(
+                                    time=time, horizon=-6 * u.deg
                                 )
                     else:
                         darkness = "nautical"
-                        sun_next_setting, sun_next_rising = self._observer.tonight(
-                            time=time, horizon=-12 * u.deg
-                        )
+                        sun_next_setting, sun_next_rising = self._observer.tonight(time=time, horizon=-12 * u.deg)
             else:
                 darkness = "astronomical"
-                sun_next_setting, sun_next_rising = self._observer.tonight(
-                    time=time, horizon=-18 * u.deg
-                )
+                sun_next_setting, sun_next_rising = self._observer.tonight(time=time, horizon=-18 * u.deg)
             # TODO: Proper handling for sun never up
             if len(w):
                 if issubclass(w[-1].category, TargetNeverUpWarning):
@@ -215,39 +191,27 @@ class SunMoon:
         calctime = time
         with warnings.catch_warnings(record=True) as w:
             for i in range(0, 2):
-                moon_set_time = self._observer.moon_set_time(
-                    calctime, which="next", horizon=0 * u.deg
-                )
+                moon_set_time = self._observer.moon_set_time(calctime, which="next", horizon=0 * u.deg)
                 if len(w):
                     if issubclass(w[-1].category, TargetNeverUpWarning):
-                        _LOGGER.warning(
-                            "Moon does not cross horizon=0.0 deg within 24 hours"
-                        )
+                        _LOGGER.warning("Moon does not cross horizon=0.0 deg within 24 hours")
                         calctime = calctime + 1 * u.day
                     w.clear()
                 else:
-                    moon_next_setting = self._observer.astropy_time_to_datetime(
-                        moon_set_time
-                    ).strftime("%m/%d %H:%M")
+                    moon_next_setting = self._observer.astropy_time_to_datetime(moon_set_time).strftime("%m/%d %H:%M")
                     break
 
         calctime = time
         with warnings.catch_warnings(record=True) as w:
             for i in range(0, 2):
-                moon_rise_time = self._observer.moon_rise_time(
-                    calctime, which="next", horizon=0 * u.deg
-                )
+                moon_rise_time = self._observer.moon_rise_time(calctime, which="next", horizon=0 * u.deg)
                 if len(w):
                     if issubclass(w[-1].category, TargetAlwaysUpWarning):
-                        _LOGGER.warning(
-                            "Moon does not cross horizon=0.0 deg within 24 hours"
-                        )
+                        _LOGGER.warning("Moon does not cross horizon=0.0 deg within 24 hours")
                         calctime = calctime + 1 * u.day
                     w.clear()
                 else:
-                    moon_next_rising = self._observer.astropy_time_to_datetime(
-                        moon_rise_time
-                    ).strftime("%m/%d %H:%M")
+                    moon_next_rising = self._observer.astropy_time_to_datetime(moon_rise_time).strftime("%m/%d %H:%M")
                     break
 
         moon_illumination = self._observer.moon_illumination(sun_next_setting) * 100

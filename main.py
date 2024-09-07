@@ -101,22 +101,28 @@ def main():
         horizon = cfg["horizon"]
 
     if horizon is not None:
+        # Fill space in between anchor points
+        step_size = horizon.get("step_size", 4)
+        anchor_points = horizon.get("anchor_points", [])
+
         horizon_filled = []
-        for index, horizon_direction in enumerate(horizon):
+        for index, horizon_direction in enumerate(anchor_points):
             az_start = horizon_direction.get("az")
             alt_start = horizon_direction.get("alt")
-            az_stop = horizon[index + 1].get("az")
-            alt_stop = horizon[index + 1].get("alt")
+            az_stop = anchor_points[index + 1].get("az")
+            alt_stop = anchor_points[index + 1].get("alt")
 
             distance = math.sqrt((alt_stop - alt_start) ** 2 + (az_stop - az_start) ** 2)
-            steps = round(distance / 4, 0)
+            steps = round(distance / step_size, 0)
+            if steps == 0:
+                steps = 1
             inc_alt = (alt_stop - alt_start) / steps
             inc_az = (az_stop - az_start) / steps
 
             for step in range(0, int(steps)):
                 horizon_filled.append({"alt": alt_start + inc_alt * step, "az": az_start + inc_az * step})
 
-            if index == len(horizon) - 2:
+            if index == len(anchor_points) - 2:
                 break
 
     if os.getenv("LONGITUDE") is not None:

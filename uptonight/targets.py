@@ -52,7 +52,7 @@ class Targets:
         if self._bodies_table is not None:
             return self._bodies_table
         return None
-    
+
     def _create_target_list(self, target_list=None):
         """
         Creates a table and list of targets in scope for the calculations.
