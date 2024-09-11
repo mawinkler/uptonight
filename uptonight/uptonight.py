@@ -44,7 +44,9 @@ logging.getLogger("matplotlib").setLevel(logging.INFO)
 # Debug: enable/disable functionality
 calc_horizon = True
 calc_targets = True
+plot_objects = True
 calc_bodies = True
+plot_bodies = True
 
 
 class UpTonight:
@@ -543,31 +545,32 @@ class UpTonight:
                         )
                     )
 
-                    # Plot target
-                    ax = plot_sky(
-                        target,
-                        self._observer,
-                        time_grid,
-                        style_kwargs=dict(
-                            color=cmap(target_no / within_threshold * 0.75),
-                            label="_Hidden",
-                            marker=marker,
-                            s=3,
-                        ),
-                        north_to_east_ccw=self._constraints["north_to_east_ccw"],
-                    )
-                    ax = plot_sky(
-                        target,
-                        self._observer,
-                        self._observation_timeframe["observing_start_time"],
-                        style_kwargs=dict(
-                            color=cmap(target_no / within_threshold * 0.75),
-                            label=target.name,
-                            marker=marker,
-                            s=30,
-                        ),
-                        north_to_east_ccw=self._constraints["north_to_east_ccw"],
-                    )
+                    if plot_objects:
+                        # Plot target
+                        ax = plot_sky(
+                            target,
+                            self._observer,
+                            time_grid,
+                            style_kwargs=dict(
+                                color=cmap(target_no / within_threshold * 0.75),
+                                label="_Hidden",
+                                marker=marker,
+                                s=3,
+                            ),
+                            north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                        )
+                        ax = plot_sky(
+                            target,
+                            self._observer,
+                            self._observation_timeframe["observing_start_time"],
+                            style_kwargs=dict(
+                                color=cmap(target_no / within_threshold * 0.75),
+                                label=target.name,
+                                marker=marker,
+                                s=30,
+                            ),
+                            north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                        )
                     target_no = target_no + 1
 
             # Always add Polaris
@@ -610,38 +613,39 @@ class UpTonight:
             AltitudeConstraint(0 * u.deg, 90 * u.deg),
         ]
 
-        for name, planet_label, color, size in BODIES:
-            if planet_label != "sun":
-                observable = is_observable(
-                    observability_constraints,
-                    self._observer,
-                    get_body(planet_label, self._observation_timeframe["time_range"]),
-                    time_range=self._observation_timeframe["time_range"],
-                )
-                if True in observable:
-                    _LOGGER.info(f"%s is observable", planet_label.capitalize())
-                    object_body = get_body(planet_label, time_grid)
-                    object_altaz = object_body.transform_to(object_frame)
-                    ax = plot_sky(
-                        object_altaz,
+        if plot_bodies:
+            for name, planet_label, color, size in BODIES:
+                if planet_label != "sun":
+                    observable = is_observable(
+                        observability_constraints,
                         self._observer,
-                        time_grid,
-                        style_kwargs=dict(color=color, label=name, linewidth=3, alpha=0.5, s=size),
-                        north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                        get_body(planet_label, self._observation_timeframe["time_range"]),
+                        time_range=self._observation_timeframe["time_range"],
                     )
+                    if True in observable:
+                        _LOGGER.info(f"%s is observable", planet_label.capitalize())
+                        object_body = get_body(planet_label, time_grid)
+                        object_altaz = object_body.transform_to(object_frame)
+                        ax = plot_sky(
+                            object_altaz,
+                            self._observer,
+                            time_grid,
+                            style_kwargs=dict(color=color, label=name, linewidth=3, alpha=0.5, s=size),
+                            north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                        )
 
-        # Sun
-        if self._live and self._sun_moon.sun_altitude() > 0:
-            name, planet_label, color, size = BODIES[0]
-            object_body = get_body(planet_label, time_grid)
-            object_altaz = object_body.transform_to(object_frame)
-            ax = plot_sky(
-                object_altaz,
-                self._observer,
-                time_grid,
-                style_kwargs=dict(color=color, label=name, linewidth=3, alpha=0.5, s=size),
-                north_to_east_ccw=self._constraints["north_to_east_ccw"],
-            )
+            # Sun
+            if self._live and self._sun_moon.sun_altitude() > 0:
+                name, planet_label, color, size = BODIES[0]
+                object_body = get_body(planet_label, time_grid)
+                object_altaz = object_body.transform_to(object_frame)
+                ax = plot_sky(
+                    object_altaz,
+                    self._observer,
+                    time_grid,
+                    style_kwargs=dict(color=color, label=name, linewidth=3, alpha=0.5, s=size),
+                    north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                )
 
         _LOGGER.info("Creating result table of bodies")
         for name, planet_label, color, size in BODIES:

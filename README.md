@@ -6,13 +6,13 @@
 
 UpTonight calculates the best astrophotography targets for the night at a given location. The default target list is a merge of Gary Imm's [My Top 100 Astrophotography Targets](https://www.astrobin.com/uc8p37/) and the top 200 from his incredible [Deep Sky Compendium](http://www.garyimm.com/compendium).
 
-UpTonight generates a plot of the sky in addition to a report on today's destinations. Below is the year 2024 for Munich::
+UpTonight generates a plot of the sky in addition to a report on today's destinations. Below is the year 2024 starting with September for Munich:
 
-![alt text](images/uptonight-video.gif "2024")
+![alt text](images/uptonight-video.gif "202409")
 
-Example plot for 01/31/24:
+Example plot for 09/07/24:
 
-![alt text](images/uptonight-plot.png "31/01/24")
+![alt text](images/uptonight-plot.png "09/07/24")
 
 Example report for 09/07/24:
 
@@ -128,12 +128,14 @@ Logically, the calculation is done as follows:
       4. Minimum fraction of time observable for the object. The default value of 0.8 means that the given objects must be within your constraints for at least 80% of astronomical darkness.
       5. Moon separation in degrees.
 4. Filter the remaining objects to fit within the size and fraction of time observability limits.
-5. Add the Sun, Moon, and planets if observable.
+5. Add the Sun, Moon, and planets (bodies) if observable.
 6. Create plot and report.
+7. Calculate the maximum altitude for the bodies.
+8. Report the bodies separately.
 
 The plot contains all objects within the given constraints during your possible observation period. The distance between the points represents 15 minutes of time.
 
-The report includes the following information:
+The report for the objects includes the following information:
 
 - Your configured observatory location
 - The observation period for this night of astronomical darkness
@@ -149,6 +151,17 @@ The report includes the following information:
   - Constellation
   - Object size in arc minutes
   - Visual magnitude of the object when available
+  - Fraction of time observable
+
+Similar for the bodies:
+
+- The objects table:
+  - Target name
+  - Location in hms dms
+  - Right ascension and declination in degree
+  - Altitude (max) and azimuth at maximum altitude time in degree
+  - The date and time of an eventual meridian or antimeridian transit
+  - Object type
   - Fraction of time observable
 
 ## How to Run
@@ -199,15 +212,13 @@ UpTonight also supports a ***live*** mode as well. Contrary to the normal mode w
 
 You can create a bucket list of objects which will allways show (if visible) ignoring the constraints. Similar is the done list, but in the opposite way. These targets are ignored.
 
-Optionally, you can plot a custom horizon for your location (white dotted line).
-
-![alt text](images/uptonight-plot-horizon.png "09/06/24")
-
-Simply define the altitude / azimuth pairs as shown in the config example below.
-
 ***Config file `config.yaml`***
 
 All keys besides `location.longitude` and `location.latitude` are optional.
+
+Optionally, you can plot a custom horizon for your location (white dotted line). For this, define the altitude / azimuth pairs as shown in the config example below.
+
+![alt text](images/uptonight-plot-horizon.png "09/07/24")
 
 Example:
 
@@ -271,35 +282,31 @@ horizon:
   # Anchor points of the horizon
   # Should start with an azimuth of 0 and end with 360 degrees
   anchor_points:
-    - alt: 30
+    - alt: 20
       az: 0
+    - alt: 20
+      az: 52
     - alt: 30
-      az: 20
-    - alt: 15
-      az: 25
-    - alt: 15
+      az: 60
+    - alt: 49
       az: 90
-    - alt: 60
-      az: 100
-    - alt: 60
+    - alt: 52
+      az: 135
+    - alt: 21
       az: 150
-    - alt: 50
-      az: 160
+    - alt: 16
+      az: 176
+    - alt: 14
+      az: 222
+    - alt: 34
+      az: 241
     - alt: 20
-      az: 170
+      az: 267
+    - alt: 28
+      az: 330
+    - alt: 31
+      az: 343
     - alt: 20
-      az: 220
-    - alt: 30
-      az: 230
-    - alt: 30
-      az: 260
-    - alt: 15
-      az: 270
-    - alt: 15
-      az: 340
-    - alt: 30
-      az: 350
-    - alt: 30
       az: 360
 ```
 
