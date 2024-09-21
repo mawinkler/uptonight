@@ -208,8 +208,8 @@ class UpTonightComets:
                     row.visual_magnitude,
                     row.alt,
                     row.az,
-                    str(row.rise_time),
-                    str(row.set_time),
+                    str(row.rise_time.strftime("%m/%d/%Y %H:%M:%S")),
+                    str(row.set_time.strftime("%m/%d/%Y %H:%M:%S")),
                 )
             )
 
