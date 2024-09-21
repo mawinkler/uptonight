@@ -39,10 +39,55 @@ constraints:
   # false: show azimuth increasing clockwise (cw).
   north_to_east_ccw: false
 
+output_datestamp: false
+
 # personal bucket list to always include
 bucket_list:
-  - Object nane
-  - Object nane
+  - IC 434
+  - NGC 2359
+  - M 16
 
 done_list:
-  - Object nane
+  - IC 1795
+  - LBN 535
+
+# Horizon
+horizon:
+  # Step size in degrees
+  step_size: 5
+  # Anchor points of the horizon
+  # Should start with an azimuth of 0 and end with 360 degrees
+  anchor_points:
+    - alt: 20
+      az: 0
+    - alt: 20
+      az: 52
+    - alt: 30
+      az: 60
+    - alt: 49
+      az: 90
+    - alt: 52
+      az: 135
+    - alt: 21
+      az: 150
+    - alt: 16
+      az: 176
+    - alt: 14
+      az: 222
+    - alt: 34
+      az: 241
+    - alt: 20
+      az: 267
+    - alt: 28
+      az: 330
+    - alt: 31
+      az: 343
+    - alt: 20
+      az: 360
+
+features:
+  # Enable or disable festures
+  horizon: true
+  objects: true
+  bodies: false
+  comets: false

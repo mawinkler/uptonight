@@ -1,5 +1,6 @@
-import os
 import logging
+import os
+
 import numpy as np
 import yaml
 from astroplan import (
@@ -28,8 +29,8 @@ class Targets:
     ):
         self._input_targets, self._fixed_targets = self._create_target_list(target_list=target_list)
         self._targets_table = self._create_uptonight_targets_table()
-
         self._bodies_table = self._create_uptonight_bodies_table()
+        self._comets_table = self._create_uptonight_comets_table()
 
         return None
 
@@ -53,23 +54,25 @@ class Targets:
             return self._bodies_table
         return None
 
+    def comets_table(self):
+        if self._comets_table is not None:
+            return self._comets_table
+        return None
+
     def _create_target_list(self, target_list=None):
-        """
-        Creates a table and list of targets in scope for the calculations.
+        """Creates a table and list of targets in scope for the calculations.
 
         The method reads the provided csv file containing the Gary Imm objects and adds custom
         targets defined in the const.py file. The table is used as a lookup table to populate the
         result table. Iteration is done via the FixedTarget list.
         For visibility, Polaris is appended lastly.
 
-        Parameters
-        ----------
-        target_list
+        Args:
+            target_list
 
-        Returns
-        -------
-        astropy.Table, [astroplan.FixedTarget]
-            Lookup table, list of targets to calculate
+        Returns:
+            (Table): Targets to calculate
+            (List): Targets to calculate
         """
 
         input_targets = None
@@ -127,7 +130,6 @@ class Targets:
                         ]
                     )
         else:
-            print("csv")
             input_targets = Table.read(f"{target_list}.csv", format="ascii.csv")
 
         # Adding visual magnitude to target csvs without magnitude by
@@ -202,20 +204,19 @@ class Targets:
     def input_targets_add_foto(
         self, constraints, observability_constraints, observation_timeframe, observer, fixed_targets
     ):
-        """_summary_
+        """Add fraction of time observable to target list
 
         Args:
-            constraints (_type_): _description_
-            observability_constraints (_type_): _description_
-            observation_timeframe (_type_): _description_
-            observer (_type_): _description_
-            fixed_targets (_type_): _description_
+            constraints (dict): Configured constraints
+            observability_constraints (list): Altitude, airmass and moon separation constraint
+            observation_timeframe (dict): Start and end times, time range and current day
+            observer (Observer): Our observer
+            fixed_targets (List): Targets to calculate
 
         Returns:
-            _type_: _description_
+            input_targets (Table): Targets to calculate including foto
         """
 
-        _LOGGER.debug("Adding fraction of time observable to input targets")
         observability_targets = observability_table(
             observability_constraints,
             observer,
@@ -233,19 +234,13 @@ class Targets:
         return self._input_targets
 
     def _create_uptonight_targets_table(self):
-        """Creates the result table.
+        """Creates the result table for deep sky objects
 
         Rows will be added while objects are calculated
 
-        Parameters
-        ----------
-        none
-
-        Returns
-        -------
-        astropy.Table: Result table
+        Returns:
+            uptonight_targets (Table): Result table
         """
-
         uptonight_targets = Table(
             names=(
                 "target name",
@@ -289,19 +284,13 @@ class Targets:
         return uptonight_targets
 
     def _create_uptonight_bodies_table(self):
-        """Creates the result table for the bodies.
+        """Creates the result table for solar system bodies
 
         Rows will be added while objects are calculated
 
-        Parameters
-        ----------
-        none
-
-        Returns
-        -------
-        astropy.Table: Result table
+        Returns:
+            uptonight_bodies (Table): Result table
         """
-
         uptonight_bodies = Table(
             names=(
                 "target name",
@@ -309,6 +298,7 @@ class Targets:
                 "right ascension",
                 "declination",
                 "max altitude",
+                "visual magnitude",
                 "azimuth",
                 "max altitude time",
                 "meridian transit",
@@ -323,6 +313,7 @@ class Targets:
                 np.float16,
                 np.float16,
                 np.float16,
+                np.float16,
                 str,
                 str,
                 str,
@@ -333,7 +324,49 @@ class Targets:
         uptonight_bodies["right ascension"].info.format = ".1f"
         uptonight_bodies["declination"].info.format = ".1f"
         uptonight_bodies["max altitude"].info.format = ".1f"
+        uptonight_bodies["visual magnitude"].info.format = ".1f"
         uptonight_bodies["azimuth"].info.format = ".1f"
         uptonight_bodies["foto"].info.format = ".1f"
 
         return uptonight_bodies
+
+    def _create_uptonight_comets_table(self):
+        """Creates the result table for comets
+
+        Rows will be added while objects are calculated
+
+        Returns:
+            uptonight_comets (Table): Result table
+        """
+        uptonight_comets = Table(
+            names=(
+                "target name",
+                "distance earth au",
+                "distance sun au",
+                "absolute magnitude",  # magnitude_g
+                "visual magnitude",
+                "altitude",
+                "azimuth",
+                "rise time",
+                "set time",
+            ),
+            dtype=(
+                str,
+                np.float16,
+                np.float16,
+                np.float16,
+                np.float16,
+                np.float16,
+                np.float16,
+                str,
+                str,
+            ),
+        )
+        uptonight_comets["distance earth au"].info.format = ".3f"
+        uptonight_comets["distance sun au"].info.format = ".3f"
+        uptonight_comets["absolute magnitude"].info.format = ".2f"
+        uptonight_comets["visual magnitude"].info.format = ".2f"
+        uptonight_comets["azimuth"].info.format = ".1f"
+        uptonight_comets["azimuth"].info.format = ".1f"
+
+        return uptonight_comets

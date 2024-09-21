@@ -1,1 +1,1 @@
-"""Constant Definitions for AllSky."""
+"""Constant Definitions for UpTonight."""

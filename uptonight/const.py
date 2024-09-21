@@ -21,19 +21,20 @@ DEFAULT_NORTH_TO_EAST_CCW = False
 # Default target list to use
 DEFAULT_TARGETS = "targets/GaryImm"
 
-OUTPUT_DATESTAMP = False
+# Default magnitude limit (comets)
+DEFAULT_MAGNITUDE_LIMIT = 12
 
 # Solar System
 BODIES = [
-    ("Sun", "sun", "gold", 250),
-    ("Moon", "moon", "lightgrey", 150),
-    ("Mercury", "mercury", "pink", 20),
-    ("Venus", "venus", "rosybrown", 30),
-    ("Mars", "mars", "red", 30),
-    ("Jupiter", "jupiter", "chocolate", 50),
-    ("Saturn", "saturn", "khaki", 45),
-    ("Uranus", "uranus", "lightsteelblue", 20),
-    ("Neptune", "neptune", "royalblue", 15),
+    ("Sun", "sun", "gold", 250, 10),
+    ("Moon", "moon", "lightgrey", 150, 301),
+    ("Mercury", "mercury", "pink", 20, 199),
+    ("Venus", "venus", "rosybrown", 30, 299),
+    ("Mars", "mars", "red", 30, 499),
+    ("Jupiter", "jupiter", "chocolate", 50, 599),
+    ("Saturn", "saturn", "khaki", 45, 699),
+    ("Uranus", "uranus", "lightsteelblue", 20, 799),
+    ("Neptune", "neptune", "royalblue", 15, 899),
 ]
 
 # Any custom target you want to include in the calculations

@@ -8,25 +8,19 @@ import pytz
 from astroplan import (
     AirmassConstraint,
     AltitudeConstraint,
-    FixedTarget,
     MoonSeparationConstraint,
     Observer,
     download_IERS_A,
-    is_observable,
-    observability_table,
-    time_grid_from_range,
 )
-from astroplan.plots import plot_sky
 from astropy import units as u
-from astropy.coordinates import AltAz, EarthLocation, SkyCoord, get_body
+from astropy.coordinates import EarthLocation
 from astropy.time import Time
-from matplotlib import cm
 from pytz import timezone
 
-from uptonight.const import (
-    BODIES,
-    CUSTOM_TARGETS,
-)
+from uptonight.bodies import UpTonightBodies
+from uptonight.comets import UpTonightComets
+from uptonight.horizon import UpTonightHorizon
+from uptonight.objects import UpTonightObjects
 from uptonight.plot import Plot
 from uptonight.report import Report
 from uptonight.sunmoon import SunMoon
@@ -40,13 +34,6 @@ download_IERS_A()
 
 _LOGGER = logging.getLogger(__name__)
 logging.getLogger("matplotlib").setLevel(logging.INFO)
-
-# Debug: enable/disable functionality
-calc_horizon = True
-calc_targets = True
-plot_objects = True
-calc_bodies = True
-plot_bodies = True
 
 
 class UpTonight:
@@ -138,12 +125,18 @@ class UpTonight:
         Realtime plot in live mode.
     uptonight-report.txt, uptonight-report-YYYYMMDD.txt, uptonight-report.json:
         Report of todays objects for obeservation from your location within the defined constraints.
-        Both generated files are identical.
+    uptonight-bodies-report.txt, uptonight-bodies-report-YYYYMMDD.txt, uptonight-bodies-report.json:
+        Report of todays solar system bodies for obeservation from your location within
+        the defined constraints.
+    uptonight-comets-report.txt, uptonight-comets-report-YYYYMMDD.txt, uptonight-comets-report.json:
+        Report of todays comets for obeservation from your location within the defined constraints.
     """
 
     def __init__(
         self,
         location,
+        features,
+        output_datestamp=False,
         environment={},
         constraints={},
         target_list=None,
@@ -157,21 +150,25 @@ class UpTonight:
         """Init function for UpTonight
 
         Args:
-            location (_type_): _description_
-            environment (dict, optional): _description_. Defaults to {}.
-            constraints (dict, optional): _description_. Defaults to {}.
-            target_list (_type_, optional): _description_. Defaults to None.
-            bucket_list (list, optional): _description_. Defaults to [].
-            done_list (list, optional): _description_. Defaults to [].
-            observation_date (_type_, optional): _description_. Defaults to None.
-            type_filter (str, optional): _description_. Defaults to "".
-            output_dir (str, optional): _description_. Defaults to ".".
-            live (bool, optional): _description_. Defaults to False.
+            location (dict): Location of the observer
+            features (dict): Features enabled
+            output_datestamp (bool): Add datestamp to plot and reports
+            environment (dict, optional): Environmental conditions
+            constraints (dict, optional): Constraints for targets
+            target_list (str, optional): Name of the target list for deep sky objects
+            bucket_list (list, optional): Bocket list
+            done_list (list, optional): Done (exclude) list
+            observation_date (str, optional): Day for calculation
+            type_filter (str, optional): Filter on object types
+            output_dir (str, optional): Output directory
+            live (bool, optional): Live mode
 
         Returns:
-            None: None
+            None
         """
         self._location = location
+        self._features = features
+        self._output_datestamp = output_datestamp
         self._environment = environment
         self._constraints = constraints
         self._target_list = target_list
@@ -199,7 +196,6 @@ class UpTonight:
         if self._type_filter != "":
             self._filter_ext = f"-{self._type_filter}"
 
-        _LOGGER.info("Building targets lists")
         self._targets = Targets(target_list=target_list)
         # Table with targets to calculate
         self._input_targets = self._targets.input_targets()
@@ -213,6 +209,20 @@ class UpTonight:
             self._observer,
             self._fixed_targets,
         )
+
+        if self._features.get("horizon"):
+            self._horizon = UpTonightHorizon(self._observer, self._observation_timeframe, self._constraints)
+
+        if self._features.get("objects"):
+            self._objects = UpTonightObjects(
+                self._observer, self._observation_timeframe, self._constraints, self._input_targets
+            )
+
+        if self._features.get("bodies"):
+            self._bodies = UpTonightBodies(self._observer, self._observation_timeframe, self._constraints)
+
+        if self._features.get("comets"):
+            self._comets = UpTonightComets(self._observer, self._observation_timeframe, self._constraints)
 
         return None
 
@@ -275,6 +285,8 @@ class UpTonight:
         Returns:
             dict: { "observing_start_time": observing_start_time,
                     "observing_end_time": observing_end_time,
+                    "observing_start_time_civil": observing_start_time_civil,
+                    "observing_end_time_civil": observing_end_time_civil,
                     "time_range": Time()
                     "current_day": current_day, }
         """
@@ -295,9 +307,13 @@ class UpTonight:
                 )
                 + 1 * u.minute
             )
+            observing_start_time_civil = observing_start_time
+            observing_end_time_civil = observing_end_time
         else:
             observing_start_time = self._sun_moon.sun_next_setting()
             observing_end_time = self._sun_moon.sun_next_rising()
+            observing_start_time_civil = self._sun_moon.sun_next_setting_civil()
+            observing_end_time_civil = self._sun_moon.sun_next_rising_civil()
 
         _LOGGER.debug("Observing start time: {0}".format(observing_start_time.strftime("%m/%d/%Y %H:%M:%S")))
 
@@ -306,6 +322,8 @@ class UpTonight:
         observation_timeframe = {
             "observing_start_time": observing_start_time,
             "observing_end_time": observing_end_time,
+            "observing_start_time_civil": observing_start_time_civil,
+            "observing_end_time_civil": observing_end_time_civil,
             "time_range": Time(
                 [
                     observing_start_time,
@@ -340,538 +358,6 @@ class UpTonight:
 
         return observability_constraints
 
-    def _altaz_to_radec(self, alt, az, time_str, observer_location):
-        """
-        Convert altitude-azimuth coordinates to right ascension and declination.
-
-        Args:
-            alt (float): Altitude in degrees.
-            az (float): Azimuth in degrees.
-            time_str (str): Observation time in ISO format (e.g., '2024-04-01T22:30:00').
-            observer_location (EarthLocation): Observer's Earth location.
-
-        Returns:
-            tuple: (RA in degrees, Dec in degrees).
-        """
-
-        # Define the observation time
-        time = Time(time_str)
-
-        # Create AltAz frame for the given time and location
-        object_altaz = AltAz(obstime=time, location=observer_location)
-
-        # Create a SkyCoord object in AltAz frame
-        altaz = SkyCoord(alt=alt * u.deg, az=az * u.deg, frame=object_altaz)
-
-        # Transform to ICRS (equatorial) frame to get RA and Dec
-        radec = altaz.transform_to("icrs")
-
-        return radec.ra.degree, radec.dec.degree
-
-    def _horizon(self, horizon):
-        """
-        Adds the horizon to the plot.
-
-        Args:
-            horizon (list): List of alt/az pairs defining the horizon
-
-        Returns:
-            ax (Axes): An Axes object (ax) with a map of the sky.
-        """
-
-        _LOGGER.info("Creating plot of horizon")
-
-        observation_time = self._observation_timeframe["observing_start_time"]
-
-        for horizon_direction in horizon:
-            # Perform the conversion
-            ra_deg, dec_deg = self._altaz_to_radec(
-                horizon_direction.get("alt"),
-                horizon_direction.get("az"),
-                observation_time,
-                self._observer_location,
-            )
-
-            # Convert RA from degrees to hours, minutes, seconds
-            ra = SkyCoord(ra=ra_deg * u.deg, dec=dec_deg * u.deg, frame="icrs").ra.to_string(
-                unit=u.hour, sep=":", precision=2
-            )
-            dec = SkyCoord(ra=ra_deg * u.deg, dec=dec_deg * u.deg, frame="icrs").dec.to_string(sep=":", precision=2)
-
-            target = FixedTarget(
-                coord=SkyCoord(
-                    f"{ra} {dec}",
-                    unit=(u.hourangle, u.deg),
-                ),
-                name="_horizon",
-            )
-            ax = plot_sky(
-                target,
-                self._observer,
-                observation_time,
-                style_kwargs=dict(color="w", label=target.name, marker="o", s=30),
-                north_to_east_ccw=self._constraints["north_to_east_ccw"],
-            )
-
-        return ax
-
-    def _objects(
-        self,
-        uptonight_targets,
-        within_threshold,
-        time_grid,
-        bucket_list=[],
-        done_list=[],
-        type_filter="",
-    ):
-        """Create plot and table of targets
-
-        Args:
-            uptonight_targets (Table): Result table for targets.
-            within_threshold (int): Max number of targets to calculate.
-            time_grid (list): Linearly-spaced sequence of times.
-            bucket_list (list): List of targets on the bucket list.
-            done_list (list): List of targets on the done list to ignore.
-            type_filter (str): Filter
-
-        Returns:
-            uptonight_targets (Table): Result table for targets.
-            ax (Axes): An Axes object (ax) with a map of the sky.
-        """
-
-        _LOGGER.info("Creating plot and table of targets")
-        cmap = cm.hsv
-
-        target_no = 0
-        for index, target_row in enumerate(self._input_targets):
-            fraction_of_time_observable = target_row["fraction of time observable"]
-
-            # Filter #1:
-            #   - Max number of targets and fraction of time observability threshold
-            #   - Object on bucket list
-            if (
-                fraction_of_time_observable >= self._constraints["fraction_of_time_observable_threshold"]
-                and target_no < self._constraints["max_number_within_threshold"]
-                or target_row["name"] in bucket_list
-            ):
-                # Filter #2:
-                #   - Object type (if set)
-                if type_filter != "" and type_filter.lower() not in self._input_targets[index]["type"].lower():
-                    continue
-
-                # Filter #3:
-                #   - Object size
-                #   - Object on bucket list
-                #   - Object not on done list
-                size = self._input_targets[index]["size"]
-                if (
-                    size >= self._constraints["size_constraint_min"]
-                    and size <= self._constraints["size_constraint_max"]
-                    and target_row["name"] not in done_list
-                    or target_row["name"] in bucket_list
-                ):
-                    if str(target_row["description"]) == "--":
-                        target_row["description"] = target_row["name"]
-                        target_row["name"] = "--"
-
-                    target = FixedTarget(
-                        coord=SkyCoord(
-                            f"{target_row['ra']} {target_row['dec']}",
-                            unit=(u.hourangle, u.deg),
-                        ),
-                        name=str(target_row["description"])
-                        + str(
-                            f" ({target_row['name']}, {target_row['size']}', {str(int(round(self._input_targets[index]['mag'] * 10, 0)) / 10)})"
-                        ),
-                    )
-
-                    # Object start azimuth and altitude
-                    azimuth = self._observer.altaz(self._observation_timeframe["observing_start_time"], target).az
-                    altitude = self._observer.altaz(self._observation_timeframe["observing_start_time"], target).alt
-
-                    # Choose marker
-                    # Default: Square
-                    marker = "s"
-                    if "galaxy" in self._input_targets[index]["type"].lower():
-                        # Galaxy: Circle
-                        marker = "o"
-                    if "nebula" in self._input_targets[index]["type"].lower():
-                        # Nebula: Diamond
-                        marker = "D"
-
-                    # Calculate meridian transit and antitransit
-                    meridian_transit_time = self._observer.target_meridian_transit_time(
-                        self._observation_timeframe["observing_start_time"],
-                        target,
-                        which="next",
-                    )
-                    if meridian_transit_time < self._observation_timeframe["observing_end_time"]:
-                        meridian_transit = str(
-                            self._observer.astropy_time_to_datetime(meridian_transit_time).strftime("%m/%d/%Y %H:%M:%S")
-                        )
-                    else:
-                        meridian_transit = ""
-
-                    meridian_antitransit_time = self._observer.target_meridian_antitransit_time(
-                        self._observation_timeframe["observing_start_time"],
-                        target,
-                        which="next",
-                    )
-                    if meridian_antitransit_time < self._observation_timeframe["observing_end_time"]:
-                        meridian_antitransit = str(
-                            self._observer.astropy_time_to_datetime(meridian_antitransit_time).strftime(
-                                "%m/%d/%Y %H:%M:%S"
-                            )
-                        )
-                    else:
-                        meridian_antitransit = ""
-
-                    # Add target to results table
-                    uptonight_targets.add_row(
-                        (
-                            target.name,
-                            target.coord.to_string("hmsdms"),
-                            target.ra,
-                            target.dec,
-                            altitude,
-                            azimuth,
-                            meridian_transit,
-                            meridian_antitransit,
-                            self._input_targets[index]["type"],
-                            self._input_targets[index]["constellation"],
-                            self._input_targets[index]["size"],
-                            self._input_targets[index]["mag"],
-                            fraction_of_time_observable,
-                        )
-                    )
-
-                    if plot_objects:
-                        # Plot target
-                        ax = plot_sky(
-                            target,
-                            self._observer,
-                            time_grid,
-                            style_kwargs=dict(
-                                color=cmap(target_no / within_threshold * 0.75),
-                                label="_Hidden",
-                                marker=marker,
-                                s=3,
-                            ),
-                            north_to_east_ccw=self._constraints["north_to_east_ccw"],
-                        )
-                        ax = plot_sky(
-                            target,
-                            self._observer,
-                            self._observation_timeframe["observing_start_time"],
-                            style_kwargs=dict(
-                                color=cmap(target_no / within_threshold * 0.75),
-                                label=target.name,
-                                marker=marker,
-                                s=30,
-                            ),
-                            north_to_east_ccw=self._constraints["north_to_east_ccw"],
-                        )
-                    target_no = target_no + 1
-
-            # Always add Polaris
-            if target_row["name"] == "Polaris" or target_row["name"] in CUSTOM_TARGETS:
-                target = FixedTarget(
-                    coord=SkyCoord(
-                        f"{target_row['ra']} {target_row['dec']}",
-                        unit=(u.hourangle, u.deg),
-                    ),
-                    name=target_row["description"]
-                    + f" ({target_row['name']}, {target_row['size']}', {str(int(round(self._input_targets[index]['mag'] * 10, 0)) / 10)})",
-                )
-                ax = plot_sky(
-                    target,
-                    self._observer,
-                    time_grid,
-                    style_kwargs=dict(color="w", label=target.name, marker="*"),
-                    north_to_east_ccw=self._constraints["north_to_east_ccw"],
-                )
-
-        return uptonight_targets, ax
-
-    def _bodies(self, uptonight_bodies, time_grid):
-        """Create plot and table of bodies
-
-        Args:
-            uptonight_bodies (Table): Result table for bodies.
-            time_grid (list): Linearly-spaced sequence of times.
-
-        Returns:
-            uptonight_bodies (Table): Result table for bodies.
-            ax (Axes): An Axes object (ax) with a map of the sky.
-        """
-
-        _LOGGER.info("Creating plot and table of bodies")
-        object_frame = AltAz(obstime=time_grid, location=self._observer.location)
-
-        # No altitude and moon separation constraints for the bodies
-        observability_constraints = [
-            AltitudeConstraint(0 * u.deg, 90 * u.deg),
-        ]
-
-        if plot_bodies:
-            for name, planet_label, color, size in BODIES:
-                if planet_label != "sun":
-                    observable = is_observable(
-                        observability_constraints,
-                        self._observer,
-                        get_body(planet_label, self._observation_timeframe["time_range"]),
-                        time_range=self._observation_timeframe["time_range"],
-                    )
-                    if True in observable:
-                        _LOGGER.info(f"%s is observable", planet_label.capitalize())
-                        object_body = get_body(planet_label, time_grid)
-                        object_altaz = object_body.transform_to(object_frame)
-                        ax = plot_sky(
-                            object_altaz,
-                            self._observer,
-                            time_grid,
-                            style_kwargs=dict(color=color, label=name, linewidth=3, alpha=0.5, s=size),
-                            north_to_east_ccw=self._constraints["north_to_east_ccw"],
-                        )
-
-            # Sun
-            if self._live and self._sun_moon.sun_altitude() > 0:
-                name, planet_label, color, size = BODIES[0]
-                object_body = get_body(planet_label, time_grid)
-                object_altaz = object_body.transform_to(object_frame)
-                ax = plot_sky(
-                    object_altaz,
-                    self._observer,
-                    time_grid,
-                    style_kwargs=dict(color=color, label=name, linewidth=3, alpha=0.5, s=size),
-                    north_to_east_ccw=self._constraints["north_to_east_ccw"],
-                )
-
-        _LOGGER.info("Creating result table of bodies")
-        for name, planet_label, color, size in BODIES:
-            if planet_label != "sun":
-                observable = is_observable(
-                    observability_constraints,
-                    self._observer,
-                    get_body(planet_label, self._observation_timeframe["time_range"]),
-                    time_range=self._observation_timeframe["time_range"],
-                )
-                if True in observable:
-                    _LOGGER.debug(f"Calculating max altitude for {name}")
-                    # target = FixedTarget(name=name, coord=get_body(planet_label, midnight_observer))
-                    target = FixedTarget(
-                        name=name, coord=get_body(planet_label, self._observation_timeframe["observing_start_time"])
-                    )
-
-                    observability_targets = observability_table(
-                        observability_constraints,
-                        self._observer,
-                        [target],
-                        time_range=self._observation_timeframe["time_range"],
-                    )
-                    observability_targets["fraction of time observable"].info.format = ".3f"
-                    fraction_of_time_observable = observability_targets["fraction of time observable"][0]
-
-                    # Calculate meridian transit and antitransit
-                    meridian_transit_time = self._observer.target_meridian_transit_time(
-                        self._observation_timeframe["observing_start_time"],
-                        target,
-                        which="next",
-                    )
-                    if meridian_transit_time < self._observation_timeframe["observing_end_time"]:
-                        meridian_transit = str(
-                            self._observer.astropy_time_to_datetime(meridian_transit_time).strftime("%m/%d/%Y %H:%M:%S")
-                        )
-                    else:
-                        meridian_transit = ""
-
-                    meridian_antitransit_time = self._observer.target_meridian_antitransit_time(
-                        self._observation_timeframe["observing_start_time"],
-                        target,
-                        which="next",
-                    )
-                    if meridian_antitransit_time < self._observation_timeframe["observing_end_time"]:
-                        meridian_antitransit = str(
-                            self._observer.astropy_time_to_datetime(meridian_antitransit_time).strftime(
-                                "%m/%d/%Y %H:%M:%S"
-                            )
-                        )
-                    else:
-                        meridian_antitransit = ""
-
-                    # Max altitude
-                    # _LOGGER.debug(
-                    #     f"observing_start_time: {self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_start_time"]).strftime("%m/%d/%Y %H:%M:%S")}"
-                    # )
-                    # _LOGGER.debug(
-                    #     f"observing_end_time: {self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_end_time"]).strftime("%m/%d/%Y %H:%M:%S")}"
-                    # )
-                    # _LOGGER.debug(
-                    #     f"meridian_transit_time: {self._observer.astropy_time_to_datetime(meridian_transit_time).strftime("%m/%d/%Y %H:%M:%S")}"
-                    # )
-                    # _LOGGER.debug(
-                    #     f"meridian_antitransit_time: {self._observer.astropy_time_to_datetime(meridian_antitransit_time).strftime("%m/%d/%Y %H:%M:%S")}"
-                    # )
-
-                    max_altitude = 0
-                    # Meridian transmit during astronomical night
-                    if (
-                        self._observation_timeframe["observing_start_time"] < meridian_transit_time
-                        and self._observation_timeframe["observing_end_time"] > meridian_transit_time
-                    ):
-                        # It's within astronomical darkness
-                        object_body = get_body(planet_label, meridian_transit_time)
-                        object_altaz = AltAz(obstime=meridian_transit_time, location=self._observer.location)
-                        body_altaz = object_body.transform_to(object_altaz)
-                        max_altitude_time = str(
-                            self._observer.astropy_time_to_datetime(meridian_transit_time).strftime("%m/%d/%Y %H:%M:%S")
-                        )
-                        max_altitude = body_altaz.alt
-                        azimuth = body_altaz.az
-                    else:
-                        if meridian_transit_time > self._observation_timeframe["observing_end_time"]:
-                            object_body = get_body(planet_label, self._observation_timeframe["observing_start_time"])
-                            object_altaz = AltAz(
-                                obstime=self._observation_timeframe["observing_start_time"],
-                                location=self._observer.location,
-                            )
-                            body_altaz = object_body.transform_to(object_altaz)
-                            max_altitude_time = str(
-                                self._observer.astropy_time_to_datetime(
-                                    self._observation_timeframe["observing_start_time"]
-                                ).strftime("%m/%d/%Y %H:%M:%S")
-                            )
-                            if body_altaz.az.is_within_bounds("0d", "180d"):
-                                object_body = get_body(planet_label, self._observation_timeframe["observing_end_time"])
-                                object_altaz = AltAz(
-                                    obstime=self._observation_timeframe["observing_end_time"],
-                                    location=self._observer.location,
-                                )
-                                body_altaz = object_body.transform_to(object_altaz)
-                                max_altitude_time = str(
-                                    self._observer.astropy_time_to_datetime(
-                                        self._observation_timeframe["observing_end_time"]
-                                    ).strftime("%m/%d/%Y %H:%M:%S")
-                                )
-                            max_altitude = body_altaz.alt
-                            azimuth = body_altaz.az
-
-                    # Add target to results table
-                    uptonight_bodies.add_row(
-                        (
-                            name,
-                            object_body.to_string("hmsdms"),
-                            object_body.ra,
-                            object_body.dec,
-                            max_altitude,
-                            azimuth,
-                            str(max_altitude_time),
-                            meridian_transit,
-                            meridian_antitransit,
-                            "Planet" if name != "Moon" else "Moon",
-                            fraction_of_time_observable,
-                        )
-                    )
-        uptonight_bodies.sort("foto")
-        uptonight_bodies.reverse()
-
-        return uptonight_bodies, ax
-
-    def _legend(self, ax, astronight_from, astronight_to):
-        """Create legend and descriptions of the plot
-
-        Args:
-            ax (Axes): An Axes object (ax) with a map of the sky.
-            astronight_from (str): Datetime string for beginning of astronomical darkness
-            astronight_to (str): Datetime string for ending of astronomical darkness
-        """
-
-        astronight_from = self._observer.astropy_time_to_datetime(
-            self._observation_timeframe["observing_start_time"]
-        ).strftime("%m/%d %H:%M")
-        astronight_to = self._observer.astropy_time_to_datetime(
-            self._observation_timeframe["observing_end_time"]
-        ).strftime("%m/%d %H:%M")
-        duration = str(
-            self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_end_time"])
-            - self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_start_time"])
-        ).split(":")
-        if ax is not None:
-            ax.legend(loc="upper right", bbox_to_anchor=(1.4, 1))
-            if not self._live:
-                ax.set_title(
-                    f"{self._sun_moon.darkness().capitalize()} night: {astronight_from} to {astronight_to} (duration {duration[0]}:{duration[1]}hs)"
-                )
-            else:
-                ax.set_title(f"{astronight_from}")
-            plt.figtext(
-                0.02,
-                0.915,
-                "Sunset/rise: {} / {}".format(
-                    self._sun_moon.sun_next_setting_civil(),
-                    self._sun_moon.sun_next_rising_civil(),
-                ),
-                size=12,
-            )
-            plt.figtext(
-                0.02,
-                0.895,
-                "Moonrise/set: {} / {}".format(
-                    self._sun_moon.moon_next_rising(),
-                    self._sun_moon.moon_next_setting(),
-                ),
-                size=12,
-            )
-            plt.figtext(
-                0.02,
-                0.875,
-                "Moon illumination: {:.0f}%".format(self._sun_moon.moon_illumination()),
-                size=12,
-            )
-            plt.figtext(
-                0.02,
-                0.855,
-                "Alt constraint min/max: {}° / {}°".format(
-                    self._constraints["altitude_constraint_min"],
-                    self._constraints["altitude_constraint_max"],
-                ),
-                size=12,
-            )
-            plt.figtext(
-                0.02,
-                0.835,
-                "Airmass constraint: {}".format(self._constraints["airmass_constraint"]),
-                size=12,
-            )
-            plt.figtext(
-                0.02,
-                0.815,
-                "Size constraint min/max: {}' / {}'".format(
-                    self._constraints["size_constraint_min"],
-                    self._constraints["size_constraint_max"],
-                ),
-                size=12,
-            )
-            plt.figtext(
-                0.02,
-                0.795,
-                "Fraction of time: {:.0f}%".format(self._constraints["fraction_of_time_observable_threshold"] * 100),
-                size=12,
-            )
-            plt.figtext(
-                0.02,
-                0.775,
-                "Moon separation: {:.0f}°".format(self._moon_separation),
-                size=12,
-            )
-
-            plt.figtext(0.02, 0.750, "Solar System: Big circle", size=8)
-            plt.figtext(0.02, 0.735, "Nebula: Diamond", size=8)
-            plt.figtext(0.02, 0.720, "Galaxy: Circle", size=8)
-            plt.figtext(0.02, 0.705, "Rest: Square", size=8)
-
-            plt.tight_layout()
-
     def calc(
         self,
         bucket_list=[],
@@ -891,37 +377,16 @@ class UpTonight:
         # This will be our result table(s)
         uptonight_targets = self._targets.targets_table()
         uptonight_bodies = self._targets.bodies_table()
-
-        # Count targets within constraints
-        within_threshold = 0
-        for index, target in enumerate(self._input_targets):
-            fraction_of_time_observable = self._input_targets[index]["fraction of time observable"]
-            size = self._input_targets[index]["size"]
-            if (
-                fraction_of_time_observable >= self._constraints["fraction_of_time_observable_threshold"]
-                and size >= self._constraints["size_constraint_min"]
-                and size <= self._constraints["size_constraint_max"]
-            ):
-                within_threshold = within_threshold + 1
-
-        _LOGGER.info(f"Number of targets within constraints: {within_threshold}")
-        if within_threshold > self._constraints["max_number_within_threshold"]:
-            within_threshold = self._constraints["max_number_within_threshold"]
-
-        # Create grid of times from start_time to end_time
-        # with resolution time_resolution
-        time_resolution = 15 * u.minute
-        time_grid = time_grid_from_range(
-            [
-                self._observation_timeframe["observing_start_time"],
-                self._observation_timeframe["observing_end_time"],
-            ],
-            time_resolution=time_resolution,
-        )
+        uptonight_comets = self._targets.comets_table()
 
         # Configure the plot
         # Color maps: https://matplotlib.org/stable/tutorials/colors/colormaps.html
         plot = Plot(
+            self._observer,
+            self._observation_timeframe,
+            self._constraints,
+            self._moon_separation,
+            self._sun_moon,
             self._output_dir,
             self._observation_timeframe["current_day"],
             self._filter_ext,
@@ -930,21 +395,20 @@ class UpTonight:
         ax = None
 
         # Creating plot of the horizon
-        if calc_horizon:
+        if self._features.get("horizon"):
             if horizon is not None:
-                # Plot the horizon
-                ax = self._horizon(horizon)
+                ax = self._horizon.horizon(horizon)
 
         # Creating plot and table of targets
-        if calc_targets:
-            if within_threshold > 0:
-                uptonight_targets, ax = self._objects(
-                    uptonight_targets, within_threshold, time_grid, bucket_list, done_list, type_filter
-                )
+        if self._features.get("objects"):
+            uptonight_targets, ax = self._objects.objects(uptonight_targets, bucket_list, done_list, type_filter)
 
         # Creating plot and table of bodies
-        if calc_bodies:
-            uptonight_bodies, ax = self._bodies(uptonight_bodies, time_grid)
+        if self._features.get("bodies"):
+            uptonight_bodies, ax = self._bodies.bodies(uptonight_bodies)
+
+        if self._features.get("comets"):
+            uptonight_comets, ax = self._comets.comets(uptonight_comets)
 
         # Title, legend, and config
         astronight_from = self._observer.astropy_time_to_datetime(
@@ -954,11 +418,11 @@ class UpTonight:
             self._observation_timeframe["observing_end_time"]
         ).strftime("%m/%d %H:%M")
 
-        self._legend(ax, astronight_from, astronight_to)
+        plot.legend(ax, astronight_from, astronight_to)
 
         # Save plot
         _LOGGER.debug("Saving plot")
-        plot.save_png(plt)
+        plot.save_png(plt, self._output_datestamp)
 
         # Clear plot
         plt.clf()
@@ -976,11 +440,21 @@ class UpTonight:
                 self._filter_ext,
                 self._constraints,
             )
-            report.save_txt(uptonight_targets, "")
-            report.save_txt(uptonight_bodies, "-bodies")
-            report.save_json(uptonight_targets, "")
-            report.save_json(uptonight_bodies, "-bodies")
+            if self._features.get("objects"):
+                report.save_txt(uptonight_targets, "", self._output_datestamp)
+                report.save_json(uptonight_targets, "", self._output_datestamp)
+            if self._features.get("bodies"):
+                report.save_txt(uptonight_bodies, "-bodies", self._output_datestamp)
+                report.save_json(uptonight_bodies, "-bodies", self._output_datestamp)
+            if self._features.get("comets"):
+                report.save_txt(uptonight_comets, "-comets", self._output_datestamp)
+                report.save_json(uptonight_comets, "-comets", self._output_datestamp)
 
-        print(uptonight_targets)
+        if self._features.get("objects"):
+            print(uptonight_targets)
 
-        print(uptonight_bodies)
+        if self._features.get("bodies"):
+            print(uptonight_bodies)
+
+        if self._features.get("comets"):
+            print(uptonight_comets)

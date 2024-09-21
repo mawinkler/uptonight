@@ -1,10 +1,10 @@
-from astropy.time import Time, TimeDelta
-from datetime import datetime
 import logging
 import warnings
+from datetime import datetime
+
 from astroplan.exceptions import TargetAlwaysUpWarning, TargetNeverUpWarning
 from astropy import units as u
-
+from astropy.time import Time
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -23,10 +23,12 @@ class SunMoon:
         self._sun_next_setting = None
         self._sun_next_rising = None
         self._sun_next_setting_civil = None
+        self._sun_next_setting_civil_short = None
         self._sun_next_rising_civil = None
+        self._sun_next_rising_civil_short = None
         self._moon_illumination = None
-        self._moon_next_setting = None
-        self._moon_next_rising = None
+        self._moon_next_setting_short = None
+        self._moon_next_rising_short = None
 
         # Calculate tonights night unless a date is given
         if observation_date is None:
@@ -81,9 +83,19 @@ class SunMoon:
             return self._sun_next_setting_civil
         return None
 
+    def sun_next_setting_civil_short(self) -> Time:
+        if self._sun_next_setting_civil_short is not None:
+            return self._sun_next_setting_civil_short
+        return None
+
     def sun_next_rising_civil(self) -> Time:
         if self._sun_next_rising_civil is not None:
             return self._sun_next_rising_civil
+        return None
+
+    def sun_next_rising_civil_short(self) -> Time:
+        if self._sun_next_rising_civil_short is not None:
+            return self._sun_next_rising_civil_short
         return None
 
     def sun_altitude(self) -> float:
@@ -96,27 +108,21 @@ class SunMoon:
             return self._moon_illumination
         return None
 
-    def moon_next_setting(self) -> Time:
-        if self._moon_next_setting is not None:
-            return self._moon_next_setting
+    def moon_next_setting_short(self) -> Time:
+        if self._moon_next_setting_short is not None:
+            return self._moon_next_setting_short
         return None
 
-    def moon_next_rising(self) -> Time:
-        if self._moon_next_rising is not None:
-            return self._moon_next_rising
+    def moon_next_rising_short(self) -> Time:
+        if self._moon_next_rising_short is not None:
+            return self._moon_next_rising_short
         return None
 
     def _sun(self, time):
-        """
-        Calculate the Sun rise, set, and the type of darkness to expect.
+        """Calculate the Sun rise, set, and the type of darkness to expect.
 
-        Parameters
-        ----------
-        time
-
-        Returns
-        -------
-        None
+        Args:
+            time (Time): Calculation time
         """
 
         darkness = ""
@@ -156,10 +162,12 @@ class SunMoon:
                     sun_next_setting = time
                 w.clear()
 
-        sun_next_setting_civil = self._observer.astropy_time_to_datetime(
+        sun_next_setting_civil, sun_next_rising_civil = self._observer.tonight(time=time, horizon=-6 * u.deg)
+
+        sun_next_setting_civil_short = self._observer.astropy_time_to_datetime(
             self._observer.sun_set_time(time, which="next", horizon=-6 * u.deg)
         ).strftime("%m/%d %H:%M")
-        sun_next_rising_civil = self._observer.astropy_time_to_datetime(
+        sun_next_rising_civil_short = self._observer.astropy_time_to_datetime(
             self._observer.sun_rise_time(time, which="next", horizon=-6 * u.deg)
         ).strftime("%m/%d %H:%M")
 
@@ -167,26 +175,22 @@ class SunMoon:
         self._sun_next_setting = sun_next_setting
         self._sun_next_rising = sun_next_rising
         self._sun_next_setting_civil = sun_next_setting_civil
+        self._sun_next_setting_civil_short = sun_next_setting_civil_short
         self._sun_next_rising_civil = sun_next_rising_civil
+        self._sun_next_rising_civil_short = sun_next_rising_civil_short
 
         return None
 
     def _moon(self, time, sun_next_setting):
-        """
-        Calculate the Moon rise, set, and illumination.
+        """Calculate the Moon rise, set, and illumination.
 
-        Parameters
-        ----------
-        time
-        sun_next_setting
-
-        Returns
-        -------
-        None
+        Args:
+            time (Time): Calculation time
+            sun_next_setting (Time): Next sun set
         """
 
-        moon_next_setting = None
-        moon_next_rising = None
+        moon_next_setting_short = None
+        moon_next_rising_short = None
 
         calctime = time
         with warnings.catch_warnings(record=True) as w:
@@ -198,7 +202,9 @@ class SunMoon:
                         calctime = calctime + 1 * u.day
                     w.clear()
                 else:
-                    moon_next_setting = self._observer.astropy_time_to_datetime(moon_set_time).strftime("%m/%d %H:%M")
+                    moon_next_setting_short = self._observer.astropy_time_to_datetime(moon_set_time).strftime(
+                        "%m/%d %H:%M"
+                    )
                     break
 
         calctime = time
@@ -211,13 +217,37 @@ class SunMoon:
                         calctime = calctime + 1 * u.day
                     w.clear()
                 else:
-                    moon_next_rising = self._observer.astropy_time_to_datetime(moon_rise_time).strftime("%m/%d %H:%M")
+                    moon_next_rising_short = self._observer.astropy_time_to_datetime(moon_rise_time).strftime(
+                        "%m/%d %H:%M"
+                    )
                     break
+
+        # # Define location on Earth (longitude, latitude, and height)
+        # location = EarthLocation(lat=37.7749*u.deg, lon=-122.4194*u.deg, height=10*u.m)  # Example: San Francisco
+
+        # # Define time (UTC)
+        # time = Time.now()  # Use current time
+
+        # # Get the Moon's position from the given location and time
+        # moon = get_moon(time, location)
+
+        # # Calculate the Moon's distance from Earth (in kilometers)
+        # moon_distance = moon.distance.to(u.km)
+
+        # # The average distance of the Moon from Earth (in kilometers)
+        # average_moon_distance = 384400 * u.km
+
+        # # Calculate the relative size of the Moon compared to its average size
+        # relative_size = average_moon_distance / moon_distance
+
+        # # Output results
+        # print(f"Moon's current distance: {moon_distance:.2f}")
+        # print(f"Relative size of the Moon compared to average: {relative_size:.2f}")
 
         moon_illumination = self._observer.moon_illumination(sun_next_setting) * 100
 
         self._moon_illumination = moon_illumination
-        self._moon_next_setting = moon_next_setting
-        self._moon_next_rising = moon_next_rising
+        self._moon_next_setting_short = moon_next_setting_short
+        self._moon_next_rising_short = moon_next_rising_short
 
         return None

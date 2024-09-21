@@ -1,8 +1,3 @@
-from uptonight.const import (
-    OUTPUT_DATESTAMP,
-)
-
-
 class Report:
     """UpTonight Reports"""
 
@@ -17,6 +12,19 @@ class Report:
         filter_ext,
         constraints,
     ):
+        """Init reports
+
+        Args:
+            observer (Observer): The astroplan opbserver
+            astronight_from (str): Observation start time
+            astronight_to (str): Observation end time
+            constraints (dict): Observing contraints
+            sun_moon (SunMoon): Sun and Moon helper
+            output_dir (str): Output directory
+            current_day (Time): Day for calculation
+            filter_ext (str): Object filter
+            constraints (dict): Constraints
+        """
         self._observer = observer
         self._astronight_from = astronight_from
         self._astronight_to = astronight_to
@@ -28,19 +36,13 @@ class Report:
 
         return None
 
-    def save_txt(self, uptonight_result, result_type):
+    def save_txt(self, uptonight_result, result_type, output_datestamp):
+        """Save report as txt
+
+        Args:
+            uptonight_result (Table): Results
+            result_type (str): Type
         """
-        Save report as txt
-
-        Parameters
-        ----------
-        contents
-
-        Returns
-        -------
-        contents
-        """
-
         if len(uptonight_result) > 0:
             uptonight_result.write(
                 f"{self._output_dir}/uptonight{result_type}-report{self._filter_ext}.txt",
@@ -64,7 +66,7 @@ class Report:
 
         contents = self._report_add_info(contents)
 
-        if OUTPUT_DATESTAMP:
+        if output_datestamp:
             with open(
                 f"{self._output_dir}/uptonight{result_type}-report-{self._current_day}{self._filter_ext}.txt",
                 "w",
@@ -78,20 +80,14 @@ class Report:
         ) as report:
             report.write(contents)
 
-    def save_json(self, uptonight_result, result_type):
+    def save_json(self, uptonight_result, result_type, output_datestamp):
+        """Save report as json
+
+        Args:
+            uptonight_result (Table): Results
+            result_type (str): Type
         """
-        Write JSON for Home Assistant
-
-        Parameters
-        ----------
-        contents
-
-        Returns
-        -------
-        contents
-        """
-
-        if OUTPUT_DATESTAMP:
+        if output_datestamp:
             uptonight_result.write(
                 f"{self._output_dir}/uptonight{result_type}-report-{self._current_day}.json",
                 overwrite=True,
@@ -104,18 +100,14 @@ class Report:
         )
 
     def _report_add_info(self, contents):
+        """Add observatory information to report
+
+        Args:
+            contents (str): Content
+
+        Returns:
+            contents (str): Modified content
         """
-        Add observatory information to report
-
-        Parameters
-        ----------
-        contents
-
-        Returns
-        -------
-        contents
-        """
-
         moon_separation = 0
         if self._constraints["moon_separation_use_illumination"]:
             moon_separation = self._sun_moon.moon_illumination()
