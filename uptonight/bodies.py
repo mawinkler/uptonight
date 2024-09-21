@@ -137,7 +137,7 @@ class UpTonightBodies:
                 # target = FixedTarget(name=name, coord=get_body(planet_label, midnight_observer))
                 visual_magnitude = 0
                 if planet_label != "moon" and planet_label != "sun":
-                    _LOGGER.debug(f"Calculating visual magnitude for {name}")
+                    # _LOGGER.debug(f"Calculating visual magnitude for {name}")
                     visual_magnitude = self._visual_magnitude(planet_label)
                     target = FixedTarget(
                         name=name + f", mag:  {visual_magnitude:.1f}",
@@ -158,7 +158,7 @@ class UpTonightBodies:
                 observability_targets["fraction of time observable"].info.format = ".3f"
                 fraction_of_time_observable = observability_targets["fraction of time observable"][0]
 
-                _LOGGER.debug(f"Calculating max altitude for {name}")
+                # _LOGGER.debug(f"Calculating max altitude for {name}")
                 # Calculate meridian transit and antitransit
                 meridian_transit_time, meridian_antitransit_time, meridian_transit, meridian_antitransit = (
                     self._transits(target)

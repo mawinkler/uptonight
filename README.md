@@ -8,6 +8,8 @@
 
 UpTonight calculates the best astrophotography targets for the night at a given location. The default target list for deep sky objects is a merge of Gary Imm's [My Top 100 Astrophotography Targets](https://www.astrobin.com/uc8p37/) and the top 200 from his incredible [Deep Sky Compendium](http://www.garyimm.com/compendium). In addition, UpTonight calculates the observability of the solar system bodies. Finally, it can calculate the brightest visible comets based on the [Minor Planet Center](https://www.minorplanetcenter.net/data) database.
 
+***UpTonight calculates Deep Sky Objects, Solar System Bodies and Comets!***
+
 - [How it Works](#how-it-works)
   - [Deep Sky Objects](#deep-sky-objects)
   - [Solar System Bodies](#solar-system-bodies)
@@ -17,7 +19,6 @@ UpTonight calculates the best astrophotography targets for the night at a given 
   - [Python Script](#python-script)
   - [Container](#container)
 - [Adding Custom Objects](#adding-custom-objects)
-
 
 UpTonight generates a plot of the sky in addition to a report on today's destinations. Below is the year 2024 starting with September for Munich:
 
