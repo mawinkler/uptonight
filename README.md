@@ -517,17 +517,24 @@ Simultaneously create live plots using the same config file:
 
 ## Adding Custom Objects
 
-If you want to add your own objects to the calculation, just add them to the list `CUSTOM_TARGETS` defined in `uptonight/const.py`. Example:
+If you want to add your own objects to the calculation, just add them to the `config.yaml`. Example:
 
-```py
-    {
-        "name": "NGC 3227",
-        "common name": "Galaxy duo NGC 3226",
-        "type": "Galaxy",
-        "constellation": "Leo",
-        "size": 4, # in arc minutes
-        "ra": "10 23 30",
-        "dec": "+19 51 54",
-        "mag": 10.4,
-    },
+```yaml
+custom_targets:
+  - name: NGC 4395
+    description: NGC 4395
+    type: Galaxy
+    constellation: Canes Venatici
+    size: 13
+    ra: 12 25 48
+    dec: +33 32 48
+    mag: 10.0
+  - name: NGC 3227
+    description: Galaxy duo NGC 3226
+    type: Galaxy
+    constellation: Leo
+    size: 4
+    ra: 10 23 30
+    dec: +19 51 54
+    mag: 10.4
 ```

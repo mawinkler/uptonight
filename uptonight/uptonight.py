@@ -142,6 +142,7 @@ class UpTonight:
         target_list=None,
         bucket_list=[],
         done_list=[],
+        custom_targets=[],
         observation_date=None,
         type_filter="",
         output_dir=".",
@@ -174,6 +175,7 @@ class UpTonight:
         self._target_list = target_list
         self._bucket_list = bucket_list
         self._done_list = done_list
+        self._custom_targets = custom_targets
         self._observation_date = observation_date
         self._type_filter = type_filter
         self._output_dir = output_dir
@@ -196,7 +198,7 @@ class UpTonight:
         if self._type_filter != "":
             self._filter_ext = f"-{self._type_filter}"
 
-        self._targets = Targets(target_list=target_list)
+        self._targets = Targets(target_list=target_list, custom_targets=custom_targets)
         # Table with targets to calculate
         self._input_targets = self._targets.input_targets()
         # List of fixed targets to calculate the fraction of time observable with
@@ -215,7 +217,11 @@ class UpTonight:
 
         if self._features.get("objects"):
             self._objects = UpTonightObjects(
-                self._observer, self._observation_timeframe, self._constraints, self._input_targets
+                self._observer,
+                self._observation_timeframe,
+                self._constraints,
+                self._input_targets,
+                self._custom_targets,
             )
 
         if self._features.get("bodies"):

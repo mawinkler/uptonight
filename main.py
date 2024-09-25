@@ -60,6 +60,7 @@ def main():
     live_mode = False
     bucket_list = []
     done_list = []
+    custom_targets = []
     horizon = None
     horizon_filled = None
     features = {"horizon": False, "objects": True, "bodies": True, "comets": False}
@@ -101,6 +102,8 @@ def main():
         bucket_list = cfg["bucket_list"]
     if cfg is not None and "done_list" in cfg.keys() and cfg["done_list"] is not None:
         done_list = cfg["done_list"]
+    if cfg is not None and "custom_targets" in cfg.keys() and cfg["custom_targets"] is not None:
+        custom_targets = cfg["custom_targets"]
     if cfg is not None and "horizon" in cfg.keys() and cfg["horizon"] is not None:
         horizon = cfg["horizon"]
     if cfg is not None and "features" in cfg.keys() and cfg["features"] is not None:
@@ -210,6 +213,7 @@ def main():
                 target_list=target_list,
                 bucket_list=bucket_list,
                 done_list=done_list,
+                custom_targets=custom_targets,
                 observation_date=observation_date,
                 type_filter=type_filter,
                 output_dir=output_dir,
@@ -236,6 +240,7 @@ def main():
             target_list=target_list,
             bucket_list=bucket_list,
             done_list=done_list,
+            custom_targets=custom_targets,
             observation_date=observation_date,
             type_filter=type_filter,
             output_dir=output_dir,

@@ -36,27 +36,3 @@ BODIES = [
     ("Uranus", "uranus", "lightsteelblue", 20, 799),
     ("Neptune", "neptune", "royalblue", 15, 899),
 ]
-
-# Any custom target you want to include in the calculations
-CUSTOM_TARGETS = [
-    {
-        "name": "NGC 4395",
-        "description": "NGC 4395",
-        "type": "Galaxy",
-        "constellation": "Canes Venatici",
-        "size": 13,
-        "ra": "12 25 48",
-        "dec": "+33 32 48",
-        "mag": 10.0,
-    },
-    {
-        "name": "NGC 3227",
-        "description": "Galaxy duo NGC 3226",
-        "type": "Galaxy",
-        "constellation": "Leo",
-        "size": 4,
-        "ra": "10 23 30",
-        "dec": "+19 51 54",
-        "mag": 10.4,
-    },
-]

@@ -9,10 +9,6 @@ from astropy import units as u
 from astropy.coordinates import SkyCoord
 from matplotlib import cm
 
-from uptonight.const import (
-    CUSTOM_TARGETS,
-)
-
 _LOGGER = logging.getLogger(__name__)
 
 
@@ -25,6 +21,7 @@ class UpTonightObjects:
         observation_timeframe,
         constraints,
         input_targets,
+        custom_targets,
     ):
         """Init objects
 
@@ -38,6 +35,7 @@ class UpTonightObjects:
         self._observation_timeframe = observation_timeframe
         self._constraints = constraints
         self._input_targets = input_targets
+        self._custom_targets = custom_targets
 
         _LOGGER.info(f"Deep Sky Objects loaded: {len(self._input_targets)}")
 
@@ -200,7 +198,7 @@ class UpTonightObjects:
                         target_no = target_no + 1
 
             # Always add Polaris
-            if target_row["name"] == "Polaris" or target_row["name"] in CUSTOM_TARGETS:
+            if target_row["name"] == "Polaris" or target_row["name"] in self._custom_targets:
                 target = FixedTarget(
                     coord=SkyCoord(
                         f"{target_row['ra']} {target_row['dec']}",

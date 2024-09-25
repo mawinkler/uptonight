@@ -11,10 +11,6 @@ from astropy import units as u
 from astropy.coordinates import SkyCoord
 from astropy.table import Table
 
-from uptonight.const import (
-    CUSTOM_TARGETS,
-)
-
 # from astroquery.simbad import Simbad
 
 _LOGGER = logging.getLogger(__name__)
@@ -26,8 +22,11 @@ class Targets:
     def __init__(
         self,
         target_list=None,
+        custom_targets=[],
     ):
-        self._input_targets, self._fixed_targets = self._create_target_list(target_list=target_list)
+        self._target_list = target_list
+        self._custom_targets = custom_targets
+        self._input_targets, self._fixed_targets = self._create_target_list()
         self._targets_table = self._create_uptonight_targets_table()
         self._bodies_table = self._create_uptonight_bodies_table()
         self._comets_table = self._create_uptonight_comets_table()
@@ -59,16 +58,13 @@ class Targets:
             return self._comets_table
         return None
 
-    def _create_target_list(self, target_list=None):
+    def _create_target_list(self):
         """Creates a table and list of targets in scope for the calculations.
 
         The method reads the provided csv file containing the Gary Imm objects and adds custom
         targets defined in the const.py file. The table is used as a lookup table to populate the
         result table. Iteration is done via the FixedTarget list.
         For visibility, Polaris is appended lastly.
-
-        Args:
-            target_list
 
         Returns:
             (Table): Targets to calculate
@@ -78,11 +74,11 @@ class Targets:
         input_targets = None
 
         # Default to GaryImm
-        if target_list is None:
-            target_list = "targets/GaryImm"
+        if self._target_list is None:
+            self._target_list = "targets/GaryImm"
 
-        if os.path.isfile(f"{target_list}.yaml"):
-            with open(f"{target_list}.yaml", "r", encoding="utf-8") as ymlfile:
+        if os.path.isfile(f"{self._target_list}.yaml"):
+            with open(f"{self._target_list}.yaml", "r", encoding="utf-8") as ymlfile:
                 targets = yaml.load(ymlfile, Loader=yaml.FullLoader)
                 input_targets = Table(
                     names=(
@@ -130,7 +126,7 @@ class Targets:
                         ]
                     )
         else:
-            input_targets = Table.read(f"{target_list}.csv", format="ascii.csv")
+            input_targets = Table.read(f"{self._target_list}.csv", format="ascii.csv")
 
         # Adding visual magnitude to target csvs without magnitude by
         # querying Simbad
@@ -158,13 +154,13 @@ class Targets:
         ]
 
         # Add custom targets
-        for custom_target in CUSTOM_TARGETS:
+        for custom_target in self._custom_targets:
             name = custom_target.get("name")
             desc = custom_target.get("description")
             ra = custom_target.get("ra")
             dec = custom_target.get("dec")
-            size = custom_target.get("size")
-            mag = custom_target.get("mag")
+            size = custom_target.get("size", 0)
+            mag = custom_target.get("mag", 0)
             input_targets.add_row(
                 [
                     name,
@@ -197,7 +193,7 @@ class Targets:
         # We need to add Polaris here as well to have the same number of objects as in the input_targets table
         fixed_targets.append(FixedTarget.from_name("Polaris"))
 
-        # input_targets.write(f"{target_list}-mag.csv", format="ascii.csv")
+        # input_targets.write(f"{self._target_list}-mag.csv", format="ascii.csv")
 
         return input_targets, fixed_targets
 

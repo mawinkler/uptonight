@@ -51,6 +51,32 @@ done_list:
   - IC 1795
   - LBN 535
 
+custom_targets:
+  - name: NGC 4395
+    description: NGC 4395
+    type: Galaxy
+    constellation: Canes Venatici
+    size: 13
+    ra: 12 25 48
+    dec: +33 32 48
+    mag: 10.0
+  - name: NGC 3227
+    description: Galaxy duo NGC 3226
+    type: Galaxy
+    constellation: Leo
+    size: 4
+    ra: 10 23 30
+    dec: +19 51 54
+    mag: 10.4
+  - name: LBN 105
+    description: SH2-73
+    type: Molecular Cloud
+    constellation: Hercules
+    size: 75
+    ra: 16 11 7.6
+    dec: +21 52 26.4
+    mag: 0
+
 # Horizon
 horizon:
   # Step size in degrees
