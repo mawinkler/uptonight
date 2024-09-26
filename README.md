@@ -207,6 +207,7 @@ Messier | All 110 official Messier objects. | 110
 Herschel400 | The Herschel 400 - 400 of the best objects from the NGC list as selected by the Astronomical League. | 400
 OpenIC | The Index Catalogue (IC) based on [OpenNGC](https://github.com/mattiaverga/OpenNGC) | 5589
 OpenNGC | The New General Catalogue (NGC) based on [OpenNGC](https://github.com/mattiaverga/OpenNGC) | 8373
+LDN | Lynds Catalog of Dark Nebulae based on [NASA](https://heasarc.gsfc.nasa.gov/W3Browse/nebula-catalog/ldn.html) | 1802
 
 ### Solar System Bodies
 
