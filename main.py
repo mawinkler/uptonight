@@ -57,13 +57,13 @@ def main():
     target_list = f"{app_directory}/{DEFAULT_TARGETS}"
     type_filter = ""
     output_dir = f"{app_directory}/out"
-    live_mode = False
+    live = {}
     bucket_list = []
     done_list = []
     custom_targets = []
     horizon = None
     horizon_filled = None
-    features = {"horizon": False, "objects": True, "bodies": True, "comets": False}
+    features = {"horizon": False, "objects": True, "bodies": True, "comets": False, "alttime": False}
     output_datestamp = False
 
     # Read config.yaml
@@ -88,6 +88,11 @@ def main():
             if item[1] is not None:
                 constraints[item[0]] = item[1]
 
+    if cfg is not None and "live" in cfg.keys():
+        for item in cfg["live"].items():
+            if item[1] is not None:
+                live[item[0]] = item[1]
+
     if cfg is not None and "observation_date" in cfg.keys() and cfg["observation_date"] is not None:
         observation_date = cfg["observation_date"]
     if cfg is not None and "target_list" in cfg.keys() and cfg["target_list"] is not None:
@@ -96,8 +101,8 @@ def main():
         type_filter = cfg["type_filter"]
     if cfg is not None and "output_dir" in cfg.keys() and cfg["output_dir"] is not None:
         output_dir = f"{app_directory}/{cfg['output_dir']}"
-    if cfg is not None and "live_mode" in cfg.keys() and cfg["live_mode"] is not None:
-        live_mode = bool(cfg["live_mode"])
+    if cfg is not None and "live_mode" in cfg.keys() and cfg["live_mode"] is not None:  # deprecated
+        live = {"enabled": bool(cfg["live_mode"]), "interval": 300}
     if cfg is not None and "bucket_list" in cfg.keys() and cfg["bucket_list"] is not None:
         bucket_list = cfg["bucket_list"]
     if cfg is not None and "done_list" in cfg.keys() and cfg["done_list"] is not None:
@@ -162,7 +167,7 @@ def main():
         output_dir = os.getenv("OUTPUT_DIR")
     if os.getenv("LIVE_MODE") is not None:
         if os.getenv("LIVE_MODE").lower() == "true":
-            live_mode = True
+            live = {"enabled": True, "interval": 300}
 
     # We need at least a longitute and latitude, the rest is optional
     if location["longitude"] == "" or location["latitude"] == "":
@@ -195,12 +200,13 @@ def main():
 
     _LOGGER.debug(f"North to East ccw: {constraints['north_to_east_ccw']}")
     _LOGGER.debug(f"Output directory: {output_dir}")
-    _LOGGER.debug(f"Live mode: {live_mode}")
+    _LOGGER.debug(f"Live mode: {live.get('enabled', False)}")
+    _LOGGER.debug(f"Live mode interval: {live.get('interval', 300)}")
 
     start = time.time()
 
     # Do the math
-    if live_mode:
+    if live.get("enabled"):
         _LOGGER.info("UpTonight live mode")
         while True:
             # Initialize UpTonight
@@ -217,7 +223,7 @@ def main():
                 observation_date=observation_date,
                 type_filter=type_filter,
                 output_dir=output_dir,
-                live=live_mode,
+                live=live.get("enabled"),
             )
 
             uptonight.calc(
@@ -226,7 +232,7 @@ def main():
                 type_filter=type_filter,
                 horizon=horizon_filled,
             )
-            sleep(300)
+            sleep(live.get("interval", 300))
     else:
         _LOGGER.info("UpTonight one-time calculation mode")
 
@@ -244,7 +250,7 @@ def main():
             observation_date=observation_date,
             type_filter=type_filter,
             output_dir=output_dir,
-            live=live_mode,
+            live=False,
         )
 
         uptonight.calc(

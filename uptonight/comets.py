@@ -202,6 +202,7 @@ class UpTonightComets:
             uptonight_comets.add_row(
                 (
                     row.designation,
+                    target.coord.to_string("hmsdms"),
                     row.distance_au_earth,
                     row.distance_au_sun,
                     row.magnitude_g,

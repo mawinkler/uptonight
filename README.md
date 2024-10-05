@@ -14,6 +14,7 @@ UpTonight calculates the best astrophotography targets for the night at a given 
   - [Deep Sky Objects](#deep-sky-objects)
   - [Solar System Bodies](#solar-system-bodies)
   - [Comets](#comets)
+  - [Altutide vs. Time Diagrams](#altutide-vs-time-diagrams)
 - [How to Run](#how-to-run)
   - [Configuration](#configuration)
   - [Python Script](#python-script)
@@ -39,56 +40,56 @@ Moon illumination: 19%
 Contraints: Altitude constraint minimum: 20°, maximum: 80°, Airmass constraint: 2.92, Moon separation constraint: 19°, Size constraint minimum: 3', maximum: 300'
 Altitude and Azimuth calculated for 09/07 21:33
 
-                                                      target name               hmsdms right ascension declination altitude azimuth    meridian transit antimeridian transit              type  constellation  size  mag foto
------------------------------------------------------------------ -------------------- --------------- ----------- -------- ------- ------------------- -------------------- ----------------- -------------- ----- ---- ----
-                   Bubble Nebula (NGC 7635, size: 15', mag:  0.0) 23h20m45s +61d12m42s           350.2        61.2     55.3    45.7 09/08/2024 01:25:26                        Emission Nebula     Cassiopeia  15.0  0.0  1.0
-                      Cave Nebula (Sh2-155, size: 40', mag:  0.0) 22h57m54s +62d31m06s           344.5        62.5     58.0    43.5 09/08/2024 01:02:32                            Dark Nebula        Cepheus  40.0  0.0  1.0
-                       Bode's Galaxy (M 81, size: 27', mag:  6.9) 09h55m33s +69d03m56s           148.9        69.1     30.3   345.5                      09/08/2024 00:01:18            Galaxy     Ursa Major  27.0  6.9  1.0
-                  Hourglass Nebula (Sh2-106, size: 3', mag:  0.0) 20h27m27s +37d22m49s           306.8        37.4     74.8   129.1 09/07/2024 22:32:25                        Emission Nebula         Cygnus   3.0  0.0  1.0
-                     Cygnus Loop (Sh2-103, size: 180', mag:  0.0) 20h51m21s +31d10m00s           312.8        31.2     66.9   129.2 09/07/2024 22:56:22                      Supernova Remnant         Cygnus 180.0  0.0  1.0
-                     Tulip Nebula (Sh2-101, size: 20', mag:  0.0) 19h59m55s +35d16m36s           300.0        35.3     75.9   152.2 09/07/2024 22:04:58                        Emission Nebula         Cygnus  20.0  0.0  1.0
-            Gamma Cassiopeia Nebula (IC 63, size: 20', mag:  0.0) 00h59m29s +60d54m42s            14.9        60.9     43.7    41.7 09/08/2024 03:04:19                        Emission Nebula     Cassiopeia  20.0  0.0  1.0
-             Reaching Hand Nebula (LBN 438, size: 30', mag:  0.0) 22h41m17s +37d45m36s           340.2        37.8     53.8    88.1 09/08/2024 00:46:06                        Molecular Cloud        Lacerta  30.0  0.0  1.0
-Squid Nebula or Flying Bat (SH2-129) (OU 4, size: 60', mag:  0.0) 21h11m47s +59d57m01s           318.0        59.9     70.9    41.8 09/07/2024 23:16:21                        Emission Nebula        Cepheus  60.0  0.0  1.0
-                          Ced214 (NGC 7822, size: 60', mag:  0.0) 00h03m36s +67d09m00s             0.9        67.1     51.2    35.1 09/08/2024 02:08:22                        Emission Nebula        Cepheus  60.0  0.0  1.0
-                   Triangulum Galaxy (M 33, size: 70', mag:  5.7) 01h33m51s +30d39m37s            23.5        30.7     21.5    67.3 09/08/2024 03:38:28                                 Galaxy            Tri  70.0  5.7  1.0
-                   Wizard Nebula (NGC 7380, size: 25', mag:  0.0) 22h47m21s +58d07m54s           341.8        58.1     59.3    51.9 09/08/2024 00:52:01                        Emission Nebula        Cepheus  25.0  0.0  1.0
-            Northern Lagoon Nebula (Sh2-158, size: 8', mag:  0.0) 23h13m37s +61d30m00s           348.5        61.5     56.2    45.3 09/08/2024 01:18:17                        Emission Nebula        Cepheus   8.0  0.0  1.0
-          Deer Lick Galaxy Group (NGC 7331, size: 25', mag:  9.5) 22h37m04s +34d24m57s           339.2        34.4     52.7    93.6 09/08/2024 00:41:54                                 Galaxy        Pegasus  25.0  9.5  1.0
-                Loop of Darkness (LBN 468, size: 120', mag:  0.0) 20h42m29s +67d51m00s           310.5        67.9     68.1    18.6 09/07/2024 22:46:45                        Molecular Cloud        Cepheus 120.0  0.0  1.0
-                     Iris Nebula (NGC 7023, size: 60', mag:  7.1) 21h01m36s +68d10m10s           315.5        68.2     66.8    21.7 09/07/2024 23:05:53                      Reflection Nebula        Cepheus  60.0  7.1  1.0
-                Cat's Eye Nebula (NGC 6543, size: 8', mag:  11.3) 17h58m33s +66d37m59s           269.8        66.6     68.1   335.8                                           Planetary Nebula          Draco   8.0 11.3  1.0
-             Eastern Veil Nebula (NGC 6992, size: 60', mag:  0.0) 20h56m19s +31d44m36s           314.0        31.8     66.7   126.2 09/07/2024 23:01:18                      Supernova Remnant         Cygnus  60.0  0.0  1.0
-            Pickering`s Triangle (NGC 6979, size: 60', mag:  0.0) 20h50m28s +32d01m36s           312.5        32.0     67.7   128.2 09/07/2024 22:55:28                      Supernova Remnant         Cygnus  60.0  0.0  1.0
-   Western Veil or Witch's Broom (NGC 6960, size: 70', mag:  0.0) 20h45m58s +30d35m42s           311.5        30.6     67.1   132.5 09/07/2024 22:50:59                      Supernova Remnant         Cygnus  70.0  0.0  1.0
-                Fireworks Galaxy (NGC 6946, size: 11', mag:  9.0) 20h34m52s +60d09m14s           308.8        60.2     74.6    32.2 09/07/2024 22:39:26                                 Galaxy         Cygnus  11.0  9.0  1.0
-                Crescent Nebula (NGC 6888, size: 20', mag:  10.0) 20h12m06s +38d21m17s           303.0        38.3     77.4   136.5 09/07/2024 22:17:06                      Wolf-Rayet Nebula         Cygnus  20.0 10.0  1.0
-              Lobster Claw Nebula (Sh2-157, size: 70', mag:  0.0) 23h16m04s +60d02m06s           349.0        60.0     55.8    47.9 09/08/2024 01:20:45                      Wolf-Rayet Nebula     Cassiopeia  70.0  0.0  1.0
-              Angler Fish Nebula (LDN 1251, size: 90', mag:  0.0) 22h36m03s +75d15m35s           339.0        75.2     56.7    19.6 09/08/2024 00:40:18                            Dark Nebula        Cepheus  90.0  0.0  1.0
-      Phantom of the Opera Nebula (Sh2-173, size: 25', mag:  0.0) 00h21m16s +61d43m30s             5.3        61.7     48.3    42.8 09/08/2024 02:26:02                        Emission Nebula     Cassiopeia  25.0  0.0  1.0
-           Valentine Rose Nebula (Sh2-174, size: 10', mag:  14.7) 23h47m08s +80d49m22s           356.8        80.8     51.3    13.1 09/08/2024 01:51:46                       Planetary Nebula        Cepheus  10.0 14.7  1.0
-                    Ghost Nebula (vdB 141, size: 20', mag:  10.8) 21h16m27s +68d15m52s           319.0        68.2     65.8    24.0 09/07/2024 23:20:45                      Reflection Nebula        Cepheus  20.0 10.8  1.0
-                     Shark Nebula (vdB 150, size: 11', mag:  8.4) 22h09m40s +73d23m25s           332.5        73.4     59.2    21.0 09/08/2024 00:13:53                      Reflection Nebula        Cepheus  11.0  8.4  1.0
-                      Wolf's Cave (vdB 152, size: 60', mag:  9.3) 22h14m02s +69d56m00s           333.5        69.9     60.6    27.3 09/08/2024 00:18:24                      Reflection Nebula        Cepheus  60.0  9.3  1.0
-                Stephan's Quintet (Arp 319, size: 5', mag:  13.6) 22h36m04s +33d56m00s           339.0        33.9     52.5    94.4 09/08/2024 00:40:54                           Galaxy Group        Pegasus   5.0 13.6  1.0
-                        NGC 2146 (NGC 2146, size: 6', mag:  10.6) 06h18m38s +78d21m22s            94.7        78.4     36.9     4.1                                                     Galaxy Camelopardalis   6.0 10.6  1.0
-                    Heart Nebula (IC 1805, size: 120', mag:  0.0) 02h32m47s +61d28m30s            38.2        61.5     34.4    33.6 09/08/2024 04:37:43                        Emission Nebula     Cassiopeia 120.0  0.0  1.0
-                        Cigar Galaxy (M 82, size: 10', mag:  8.4) 09h55m53s +69d40m50s           149.0        69.7     30.8   345.8                      09/08/2024 00:01:40            Galaxy     Ursa Major  10.0  8.4  1.0
-                             HDW 2 (Sh2-200, size: 6', mag:  0.0) 03h11m01s +62d47m45s            47.8        62.8     32.0    28.9                                           Planetary Nebula     Cassiopeia   6.0  0.0  1.0
-          CTB 1 or Garlic Nebula (Abell 85, size: 35', mag:  0.0) 23h59m54s +62d26m51s           360.0        62.4     50.9    42.6 09/08/2024 02:04:39                      Supernova Remnant     Cassiopeia  35.0  0.0  1.0
-                            WR 134 (WR 134, size: 25', mag:  8.1) 20h10m00s +36d11m00s           302.5        36.2     75.8   143.1 09/07/2024 22:15:01                      Wolf-Rayet Nebula         Cygnus  25.0  8.1  1.0
-                   Dolphin Nebula (Sh2-188, size: 9', mag:  17.4) 01h30m33s +58d24m51s            22.6        58.4     39.1    42.2 09/08/2024 03:35:23                       Planetary Nebula     Cassiopeia   9.0 17.4  1.0
-   ET or Owl or Dragonfly Cluster (NGC 457, size: 13', mag:  6.4) 01h19m35s +58d17m12s            19.9        58.3     40.3    43.3 09/08/2024 03:24:24                           Open Cluster     Cassiopeia  13.0  6.4  1.0
-             Flying Dragon Nebula (Sh2-114, size: 60', mag:  0.0) 21h21m12s +38d42m00s           320.2        38.7     67.6   104.1 09/07/2024 23:26:06                        Emission Nebula         Cygnus  60.0  0.0  0.9
-         Fossil Footprint Nebula (NGC 1491, size: 12', mag:  0.0) 04h03m14s +51d18m57s            60.8        51.3     18.7    30.8                                            Emission Nebula        Perseus  12.0  0.0  0.9
-                   Andromeda Galaxy (M 31, size: 189', mag:  3.4) 00h42m44s +41d16m08s            10.7        41.3     36.2    65.7 09/08/2024 02:47:27                                 Galaxy      Andromeda 189.0  3.4  0.9
-               Double Cluster Duo (NGC 869, size: 60', mag:  0.0) 02h19m00s +57d07m42s            34.8        57.1     33.1    39.0 09/08/2024 04:23:50                           Open Cluster        Perseus  60.0  0.0  0.9
-              Outer Limits Galaxy (NGC 891, size: 14', mag:  9.9) 02h22m33s +42d20m54s            35.6        42.3     22.7    50.9 09/08/2024 04:27:13                                 Galaxy      Andromeda  14.0  9.9  0.9
-                 Elephant's Trunk (IC 1396, size: 60', mag:  0.0) 21h38m58s +57d29m21s           324.8        57.5     68.4    51.8 09/07/2024 23:43:36                            Dark Nebula        Cepheus  60.0  0.0  0.9
-       Dumbbell or Apple Core Nebula (M 27, size: 6', mag:  14.1) 19h59m36s +22d43m15s           300.0        22.7     63.9   163.2 09/07/2024 22:04:47                       Planetary Nebula      Vulpecula   6.0 14.1  0.9
-                        Eagle Nebula (M 16, size: 35', mag:  0.0) 18h18m48s -13d48m24s           274.8       -13.8     26.2   198.6                                            Emission Nebula        Serpens  35.0  0.0  0.2
-        Horsehead and Flame Nebula (IC 434, size: 30', mag:  0.0) 05h41m00s -02d27m12s            85.2        -2.5    -38.8    35.2                                                Dark Nebula          Orion  30.0  0.0  0.1
-    Thor's Helmet or Duck Nebula (NGC 2359, size: 10', mag:  0.0) 07h18m30s -13d13m36s           109.6       -13.2    -55.0     4.0                                          Wolf-Rayet Nebula    Canis Major  10.0  0.0  0.0
+       id                                                      target name                   hmsdms right ascension declination altitude azimuth    meridian transit antimeridian transit              type  constellation  size  mag foto
+--------- ---------------------------------------------------------------- ------------------------ --------------- ----------- -------- ------- ------------------- -------------------- ----------------- -------------- ----- ---- ----
+  Sh2-155                       Cave Nebula (Sh2-155, size: 40', mag: 0.0)     22h57m54s +62d31m06s           344.5        62.5     58.0    43.5 09/08/2024 01:02:32                            Dark Nebula        Cepheus  40.0  0.0  1.0
+  Sh2-103                      Cygnus Loop (Sh2-103, size: 180', mag: 0.0)     20h51m21s +31d10m00s           312.8        31.2     66.9   129.2 09/07/2024 22:56:22                      Supernova Remnant         Cygnus 180.0  0.0  1.0
+  Sh2-101                      Tulip Nebula (Sh2-101, size: 20', mag: 0.0)     19h59m55s +35d16m36s           300.0        35.3     75.9   152.2 09/07/2024 22:04:58                        Emission Nebula         Cygnus  20.0  0.0  1.0
+    IC 63             Gamma Cassiopeia Nebula (IC 63, size: 20', mag: 0.0)     00h59m29s +60d54m42s            14.9        60.9     43.7    41.7 09/08/2024 03:04:19                        Emission Nebula     Cassiopeia  20.0  0.0  1.0
+  LBN 438              Reaching Hand Nebula (LBN 438, size: 30', mag: 0.0)     22h41m17s +37d45m36s           340.2        37.8     53.8    88.1 09/08/2024 00:46:06                        Molecular Cloud        Lacerta  30.0  0.0  1.0
+  LBN 468                 Loop of Darkness (LBN 468, size: 120', mag: 0.0)     20h42m29s +67d51m00s           310.5        67.9     68.1    18.6 09/07/2024 22:46:45                        Molecular Cloud        Cepheus 120.0  0.0  1.0
+     OU 4 Squid Nebula or Flying Bat (SH2-129) (OU 4, size: 60', mag: 0.0)     21h11m47s +59d57m01s           318.0        59.9     70.9    41.8 09/07/2024 23:16:21                        Emission Nebula        Cepheus  60.0  0.0  1.0
+ NGC 7635                    Bubble Nebula (NGC 7635, size: 15', mag: 0.0)     23h20m45s +61d12m42s           350.2        61.2     55.3    45.7 09/08/2024 01:25:26                        Emission Nebula     Cassiopeia  15.0  0.0  1.0
+ NGC 7380                    Wizard Nebula (NGC 7380, size: 25', mag: 0.0)     22h47m21s +58d07m54s           341.8        58.1     59.3    51.9 09/08/2024 00:52:01                        Emission Nebula        Cepheus  25.0  0.0  1.0
+ NGC 7331           Deer Lick Galaxy Group (NGC 7331, size: 25', mag: 9.5)     22h37m04s +34d24m57s           339.2        34.4     52.7    93.6 09/08/2024 00:41:54                                 Galaxy        Pegasus  25.0  9.5  1.0
+ NGC 6992              Eastern Veil Nebula (NGC 6992, size: 60', mag: 0.0)     20h56m19s +31d44m36s           314.0        31.8     66.7   126.2 09/07/2024 23:01:18                      Supernova Remnant         Cygnus  60.0  0.0  1.0
+ NGC 6979             Pickering`s Triangle (NGC 6979, size: 60', mag: 0.0)     20h50m28s +32d01m36s           312.5        32.0     67.7   128.2 09/07/2024 22:55:28                      Supernova Remnant         Cygnus  60.0  0.0  1.0
+ NGC 6960    Western Veil or Witch's Broom (NGC 6960, size: 70', mag: 0.0)     20h45m58s +30d35m42s           311.5        30.6     67.1   132.5 09/07/2024 22:50:59                      Supernova Remnant         Cygnus  70.0  0.0  1.0
+ NGC 6946                 Fireworks Galaxy (NGC 6946, size: 11', mag: 9.0)     20h34m52s +60d09m14s           308.8        60.2     74.6    32.2 09/07/2024 22:39:26                                 Galaxy         Cygnus  11.0  9.0  1.0
+ NGC 6888                 Crescent Nebula (NGC 6888, size: 20', mag: 10.0)     20h12m06s +38d21m17s           303.0        38.3     77.4   136.5 09/07/2024 22:17:06                      Wolf-Rayet Nebula         Cygnus  20.0 10.0  1.0
+ LDN 1251               Angler Fish Nebula (LDN 1251, size: 90', mag: 0.0)     22h36m03s +75d15m35s           339.0        75.2     56.7    19.6 09/08/2024 00:40:18                            Dark Nebula        Cepheus  90.0  0.0  1.0
+ NGC 6543                 Cat's Eye Nebula (NGC 6543, size: 8', mag: 11.3)     17h58m33s +66d37m59s           269.8        66.6     68.1   335.8                                           Planetary Nebula          Draco   8.0 11.3  1.0
+     M 33                    Triangulum Galaxy (M 33, size: 70', mag: 5.7)     01h33m51s +30d39m37s            23.5        30.7     21.5    67.3 09/08/2024 03:38:28                                 Galaxy            Tri  70.0  5.7  1.0
+     M 81                        Bode's Galaxy (M 81, size: 27', mag: 6.9)     09h55m33s +69d03m56s           148.9        69.1     30.3   345.5                      09/08/2024 00:01:18            Galaxy     Ursa Major  27.0  6.9  1.0
+     M 82                         Cigar Galaxy (M 82, size: 10', mag: 8.4)     09h55m53s +69d40m50s           149.0        69.7     30.8   345.8                      09/08/2024 00:01:40            Galaxy     Ursa Major  10.0  8.4  1.0
+  NGC 457    ET or Owl or Dragonfly Cluster (NGC 457, size: 13', mag: 6.4)     01h19m35s +58d17m12s            19.9        58.3     40.3    43.3 09/08/2024 03:24:24                           Open Cluster     Cassiopeia  13.0  6.4  1.0
+ NGC 2146                         NGC 2146 (NGC 2146, size: 6', mag: 10.6)     06h18m38s +78d21m22s            94.7        78.4     36.9     4.1                                                     Galaxy Camelopardalis   6.0 10.6  1.0
+  Sh2-106                   Hourglass Nebula (Sh2-106, size: 3', mag: 0.0)     20h27m27s +37d22m49s           306.8        37.4     74.8   129.1 09/07/2024 22:32:25                        Emission Nebula         Cygnus   3.0  0.0  1.0
+ NGC 7822                           Ced214 (NGC 7822, size: 60', mag: 0.0)     00h03m36s +67d09m00s             0.9        67.1     51.2    35.1 09/08/2024 02:08:22                        Emission Nebula        Cepheus  60.0  0.0  1.0
+  Sh2-157               Lobster Claw Nebula (Sh2-157, size: 70', mag: 0.0)     23h16m04s +60d02m06s           349.0        60.0     55.8    47.9 09/08/2024 01:20:45                      Wolf-Rayet Nebula     Cassiopeia  70.0  0.0  1.0
+   WR 134                             WR 134 (WR 134, size: 25', mag: 8.1)     20h10m00s +36d11m00s           302.5        36.2     75.8   143.1 09/07/2024 22:15:01                      Wolf-Rayet Nebula         Cygnus  25.0  8.1  1.0
+  vdB 141                     Ghost Nebula (vdB 141, size: 20', mag: 10.8)     21h16m27s +68d15m52s           319.0        68.2     65.8    24.0 09/07/2024 23:20:45                      Reflection Nebula        Cepheus  20.0 10.8  1.0
+  vdB 152                       Wolf's Cave (vdB 152, size: 60', mag: 9.3)     22h14m02s +69d56m00s           333.5        69.9     60.6    27.3 09/08/2024 00:18:24                      Reflection Nebula        Cepheus  60.0  9.3  1.0
+  Arp 319                 Stephan's Quintet (Arp 319, size: 5', mag: 13.6)     22h36m04s +33d56m00s           339.0        33.9     52.5    94.4 09/08/2024 00:40:54                           Galaxy Group        Pegasus   5.0 13.6  1.0
+  Sh2-200                              HDW 2 (Sh2-200, size: 6', mag: 0.0)     03h11m01s +62d47m45s            47.8        62.8     32.0    28.9                                           Planetary Nebula     Cassiopeia   6.0  0.0  1.0
+ Abell 85           CTB 1 or Garlic Nebula (Abell 85, size: 35', mag: 0.0)     23h59m54s +62d26m51s           360.0        62.4     50.9    42.6 09/08/2024 02:04:39                      Supernova Remnant     Cassiopeia  35.0  0.0  1.0
+  Sh2-188                    Dolphin Nebula (Sh2-188, size: 9', mag: 17.4)     01h30m33s +58d24m51s            22.6        58.4     39.1    42.2 09/08/2024 03:35:23                       Planetary Nebula     Cassiopeia   9.0 17.4  1.0
+  Sh2-174            Valentine Rose Nebula (Sh2-174, size: 10', mag: 14.7)     23h47m08s +80d49m22s           356.8        80.8     51.3    13.1 09/08/2024 01:51:46                       Planetary Nebula        Cepheus  10.0 14.7  1.0
+  Sh2-158             Northern Lagoon Nebula (Sh2-158, size: 8', mag: 0.0)     23h13m37s +61d30m00s           348.5        61.5     56.2    45.3 09/08/2024 01:18:17                        Emission Nebula        Cepheus   8.0  0.0  1.0
+  Sh2-173       Phantom of the Opera Nebula (Sh2-173, size: 25', mag: 0.0)     00h21m16s +61d43m30s             5.3        61.7     48.3    42.8 09/08/2024 02:26:02                        Emission Nebula     Cassiopeia  25.0  0.0  1.0
+  Sh2-114              Flying Dragon Nebula (Sh2-114, size: 60', mag: 0.0)     21h21m12s +38d42m00s           320.2        38.7     67.6   104.1 09/07/2024 23:26:06                        Emission Nebula         Cygnus  60.0  0.0  0.9
+ NGC 1491          Fossil Footprint Nebula (NGC 1491, size: 12', mag: 0.0)     04h03m14s +51d18m57s            60.8        51.3     18.7    30.8                                            Emission Nebula        Perseus  12.0  0.0  0.9
+     M 31                    Andromeda Galaxy (M 31, size: 189', mag: 3.4)     00h42m44s +41d16m08s            10.7        41.3     36.2    65.7 09/08/2024 02:47:27                                 Galaxy      Andromeda 189.0  3.4  0.9
+  Sh2-132                       Lion Nebula (Sh2-132, size: 60', mag: 0.0)     22h19m09s +56d04m45s           334.8        56.1     63.0    56.4 09/08/2024 00:23:50                      Wolf-Rayet Nebula        Cepheus  60.0  0.0  0.9
+Abell 426         Perseus Galaxy Cluster (Abell 426, size: 150', mag: 0.0)     03h18m36s +41d30m54s            49.7        41.5     15.2    43.2                                             Galaxy Cluster        Perseus 150.0  0.0  0.9
+     M 27        Dumbbell or Apple Core Nebula (M 27, size: 6', mag: 14.1)     19h59m36s +22d43m15s           300.0        22.7     63.9   163.2 09/07/2024 22:04:47                       Planetary Nebula      Vulpecula   6.0 14.1  0.9
+  NGC 891               Outer Limits Galaxy (NGC 891, size: 14', mag: 9.9)     02h22m33s +42d20m54s            35.6        42.3     22.7    50.9 09/08/2024 04:27:13                                 Galaxy      Andromeda  14.0  9.9  0.9
+  IC 1396                  Elephant's Trunk (IC 1396, size: 60', mag: 0.0)     21h38m58s +57d29m21s           324.8        57.5     68.4    51.8 09/07/2024 23:43:36                            Dark Nebula        Cepheus  60.0  0.0  0.9
+  NGC 281                     PacMan Nebula (NGC 281, size: 35', mag: 0.0)     00h52m54s +56d37m29s            13.2        56.6     42.7    47.5 09/08/2024 02:57:42                        Emission Nebula     Cassiopeia  35.0  0.0  0.9
+  NGC 869                Double Cluster Duo (NGC 869, size: 60', mag: 0.0)     02h19m00s +57d07m42s            34.8        57.1     33.1    39.0 09/08/2024 04:23:50                           Open Cluster        Perseus  60.0  0.0  0.9
+  LBN 105                            SH2-73 (LBN 105, size: 75', mag: 0.0) 16h11m07.6s +21d52m26.4s           242.8        21.9     43.0   253.9                                            Molecular Cloud       Hercules  75.0  0.0  0.3
+   IC 434         Horsehead and Flame Nebula (IC 434, size: 30', mag: 0.0)     05h41m00s -02d27m12s            85.2        -2.5    -38.8    35.2                                                Dark Nebula          Orion  30.0  0.0  0.1
+ NGC 2359     Thor's Helmet or Duck Nebula (NGC 2359, size: 10', mag: 0.0)     07h18m30s -13d13m36s           109.6       -13.2    -55.0     4.0                                          Wolf-Rayet Nebula    Canis Major  10.0  0.0  0.0
 ```
 
 Example report for the solar system bodies:
@@ -142,6 +143,7 @@ Altitude and Azimuth calculated for 09/07 21:33
   - [Deep Sky Objects](#deep-sky-objects)
   - [Solar System Bodies](#solar-system-bodies)
   - [Comets](#comets)
+  - [Altutide vs. Time Diagrams](#altutide-vs-time-diagrams)
 - [How to Run](#how-to-run)
   - [Configuration](#configuration)
   - [Python Script](#python-script)
@@ -264,6 +266,12 @@ Report contents for the comets:
 List | Description | Objects
 ---- | ----------- | -------
 CometsEls | The up to date comet database maintained by the [Minor Planet Center](https://www.minorplanetcenter.net/data). | 1168 (as of 09/18/24)
+
+### Altutide vs. Time Diagrams
+
+If you enable the UpTonight feature `alttime` in your config file an altitude vs time diagram is created for each observable deep sky object, body, and comet. This is only supported if *not* running in live mode.
+
+![alt text](images/uptonight-alttime-ic-63.png "IC 63")
 
 ## How to Run
 
@@ -416,7 +424,16 @@ features:
   objects: true
   bodies: true
   comets: true
+  alttime: true
 ```
+
+You can enable or disable the following UpTonights features:
+
+- `horizon`: Plot the horizon baesd on `horizon.anchor_points`.
+- `objects`: Calculate and plot deep sky objects based on the chosen target list.
+- `bodies`: Calculate and plot solar sysstem bodies.
+- `comets`: Calculate and plot comets.
+- `alttime`: Calculate and plot altitude vs time diagrams for observable deep sky objects.
 
 ### Python Script
 

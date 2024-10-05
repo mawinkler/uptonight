@@ -239,6 +239,7 @@ class Targets:
         """
         uptonight_targets = Table(
             names=(
+                "id",
                 "target name",
                 "hmsdms",
                 "right ascension",
@@ -254,6 +255,7 @@ class Targets:
                 "foto",
             ),
             dtype=(
+                str,
                 str,
                 str,
                 np.float16,
@@ -337,6 +339,7 @@ class Targets:
         uptonight_comets = Table(
             names=(
                 "target name",
+                "hmsdms",
                 "distance earth au",
                 "distance sun au",
                 "absolute magnitude",  # magnitude_g
@@ -347,6 +350,7 @@ class Targets:
                 "set time",
             ),
             dtype=(
+                str,
                 str,
                 np.float16,
                 np.float16,

@@ -281,7 +281,7 @@ class UpTonight:
         utcoffset = datetime.now(pytz.timezone(self._location["timezone"])).utcoffset().total_seconds() / 3600
         sun_moon = SunMoon(self._observer, self._observation_date, utcoffset)
 
-        _LOGGER.debug(f"Sun and Moon helper created")
+        _LOGGER.debug("Sun and Moon helper created")
 
         return sun_moon
 
@@ -405,16 +405,35 @@ class UpTonight:
             if horizon is not None:
                 ax = self._horizon.horizon(horizon)
 
+        # Purge old altitude time plots
+        if not self._live and self._features.get("alttime"):
+            plot.altitude_time_purge()
+
         # Creating plot and table of targets
         if self._features.get("objects"):
             uptonight_targets, ax = self._objects.objects(uptonight_targets, bucket_list, done_list, type_filter)
+            if not self._live and self._features.get("alttime"):
+                for target_row in uptonight_targets:
+                    plot.altitude_time(
+                        target_row,
+                    )
 
         # Creating plot and table of bodies
         if self._features.get("bodies"):
             uptonight_bodies, ax = self._bodies.bodies(uptonight_bodies)
+            if not self._live and self._features.get("alttime"):
+                for target_row in uptonight_bodies:
+                    plot.altitude_time(
+                        target_row,
+                    )
 
         if self._features.get("comets"):
             uptonight_comets, ax = self._comets.comets(uptonight_comets)
+            if not self._live and self._features.get("alttime"):
+                for target_row in uptonight_comets:
+                    plot.altitude_time(
+                        target_row,
+                    )
 
         # Title, legend, and config
         astronight_from = self._observer.astropy_time_to_datetime(

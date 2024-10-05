@@ -129,8 +129,7 @@ class UpTonightObjects:
                             ),
                             name=str(target_row["description"])
                             + str(
-                                # f" ({target_row['name']}, size: {target_row['size']:.0f}', mag:  {str(int(round(self._input_targets[index]['mag'] * 10, 0)) / 10)})"
-                                f" ({target_row['name']}, size: {target_row['size']:.0f}', mag:  {self._input_targets[index]['mag']:.1f})"
+                                f" ({target_row['name']}, size: {target_row['size']:.0f}', mag: {self._input_targets[index]['mag']:.1f})"
                             ),
                         )
 
@@ -154,6 +153,7 @@ class UpTonightObjects:
                         # Add target to results table
                         uptonight_targets.add_row(
                             (
+                                target_row["name"],
                                 target.name,
                                 target.coord.to_string("hmsdms"),
                                 target.ra,

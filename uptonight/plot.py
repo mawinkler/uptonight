@@ -1,4 +1,17 @@
+import logging
+import os
+
 import matplotlib.pyplot as plt
+import numpy as np
+from astroplan import (
+    time_grid_from_range,
+)
+from astropy import units as u
+from astropy.coordinates import AltAz, SkyCoord
+from matplotlib.colors import LinearSegmentedColormap
+
+_LOGGER = logging.getLogger(__name__)
+logging.getLogger("matplotlib").setLevel(logging.INFO)
 
 
 class Plot:
@@ -42,6 +55,171 @@ class Plot:
         self._style_plot()
 
         return None
+
+    def altitude_time_purge(self):
+        """Purge old altitude over time plots in the output directory"""
+        for filename in os.listdir(f"{self._output_dir}"):
+            if filename.startswith("uptonight-alttime") and filename.endswith(".png"):
+                full_path = os.path.join(self._output_dir, filename)
+                _LOGGER.debug(f"Purge diagram {full_path}")
+                try:
+                    os.remove(full_path)
+                except OSError:
+                    pass
+            else:
+                continue
+
+    def altitude_time(self, target):
+        """Create an altitude over time plot for an object
+
+        Args:
+            target (Table.row): The objects data
+        """
+        # Define the Deep Sky Object
+        target_id = target.get("id", target.get("target name"))
+        target_name = target["target name"]
+        target_hmsdms = target["hmsdms"]
+        dso = SkyCoord(target_hmsdms, frame="icrs")
+        _LOGGER.debug(f"Create altitude plot for {target_id}")
+
+        # Times
+        start_time = self._observation_timeframe["observing_start_time"]
+        end_time = self._observation_timeframe["observing_end_time"]
+        start_time_civil = self._observation_timeframe["observing_start_time_civil"]
+        end_time_civil = self._observation_timeframe["observing_end_time_civil"]
+        diff_civil_astro = (
+            self._observer.astropy_time_to_datetime(start_time)
+            - self._observer.astropy_time_to_datetime(start_time_civil)
+        ).seconds // 60
+        diff_astro_civil = (
+            self._observer.astropy_time_to_datetime(end_time_civil) - self._observer.astropy_time_to_datetime(end_time)
+        ).seconds // 60
+
+        # Calculate the target
+        time_resolution = 1 * u.minute
+        time_grid = time_grid_from_range(
+            [
+                start_time_civil,
+                end_time_civil,
+            ],
+            time_resolution=time_resolution,
+        )
+        times_plot = np.linspace(
+            self._observer.astropy_time_to_datetime(start_time_civil).hour,
+            (
+                self._observer.astropy_time_to_datetime(end_time_civil)
+                - self._observer.astropy_time_to_datetime(start_time_civil)
+            ).seconds
+            / 3600
+            + self._observer.astropy_time_to_datetime(start_time_civil).hour,
+            num=len(time_grid),
+        )
+
+        # Convert to AltAz frame and extract altitude and azimuth
+        altaz_frame = AltAz(obstime=time_grid, location=self._observer.location)
+        altaz = dso.transform_to(altaz_frame)
+        altitudes = altaz.alt.deg
+
+        # Plotting
+        plt.figure(figsize=(15, 10))
+        plt.xticks([])
+        plt.xlim(times_plot.min(), times_plot.max())
+        plt.ylim(0, 90)
+        plt.plot(times_plot, altitudes, color="#CC6666", label=target["target name"], lw=3)
+        plt.fill_between(times_plot, 0, altitudes, where=(altitudes > 0), color="#1C1C1C", alpha=0.8)
+
+        # Labels and title
+        plt.ylabel("Altitude [°]", fontsize=12)
+        plt.title(f"Altitude of {target_name}")
+        plt.grid(True)
+
+        # Sunset and sunrise, fill with gradient
+        cmap = LinearSegmentedColormap.from_list("my_cmap", ["#606060", "#1C1C1C", "#1C1C1C"])
+        norm = plt.Normalize(vmin=times_plot[0], vmax=times_plot[0] + diff_civil_astro)
+        width = 2
+        for i in range(diff_civil_astro):
+            plt.fill_between(times_plot[i : i + width], altitudes[i : i + width], color=cmap(norm(i)), alpha=0.8)
+            plt.fill_between(
+                times_plot[len(times_plot) - i - 1 - width : len(times_plot) - i - 1],
+                altitudes[len(times_plot) - i - 1 - width : len(times_plot) - i - 1],
+                color=cmap(norm(i)),
+                alpha=0.8,
+            )
+
+        # Highlight maximum altitude
+        max_altitude = np.max(altitudes)
+        max_time = times_plot[np.argmax(altitudes)]
+        plt.scatter(max_time, max_altitude, color="#F2F2F2", edgecolor="#CC6666", zorder=5, s=30)
+        plt.text(
+            max_time,
+            max_altitude,
+            f"alt {max_altitude:.1f}°",
+            color="#F2F2F2",
+            ha="right",
+            fontsize=12,
+        )
+        plt.axvline(max_time, color="green", linestyle="--", lw=1)
+
+        min_altitude = np.min(altitudes)
+        min_time = times_plot[np.argmin(altitudes)]
+        plt.scatter(min_time, min_altitude, color="#F2F2F2", edgecolor="#CC6666", zorder=5, s=30)
+        plt.text(
+            min_time,
+            min_altitude,
+            f"alt {min_altitude:.1f}°",
+            color="#F2F2F2",
+            ha="right",
+            fontsize=12,
+        )
+        plt.axvline(min_time, color="green", linestyle="--", lw=1)
+
+        # Horizon
+        plt.axhline(0, color="green", linestyle="--", lw=1)
+
+        # Mark sunset (civil and astronomical)
+        plt.axvline(times_plot[0], color="#F2F2F2", linestyle="--", lw=1)
+        plt.axvline(times_plot[diff_civil_astro - 1], color="#F2F2F2", linestyle="--", lw=1)
+
+        # Mark sunrise (civil and astronomical)
+        plt.axvline(times_plot[-1], color="#F2F2F2", linestyle="--", lw=1)
+        plt.axvline(times_plot[len(times_plot) - diff_astro_civil - 1], color="#F2F2F2", linestyle="--", lw=1)
+
+        # Texts
+        plt.text(
+            times_plot[0],
+            -4,
+            self._observer.astropy_time_to_datetime(start_time_civil).strftime("%m/%d %H:%M"),
+            fontsize=12,
+            ha="center",
+        )
+        plt.text(
+            times_plot[diff_civil_astro - 1],
+            -4,
+            self._observer.astropy_time_to_datetime(start_time).strftime("%m/%d %H:%M"),
+            fontsize=12,
+            ha="center",
+        )
+        plt.text(
+            times_plot[-1],
+            -4,
+            self._observer.astropy_time_to_datetime(end_time_civil).strftime("%m/%d %H:%M"),
+            fontsize=12,
+            ha="center",
+        )
+        plt.text(
+            times_plot[len(times_plot) - diff_astro_civil - 1],
+            -4,
+            self._observer.astropy_time_to_datetime(end_time).strftime("%m/%d %H:%M"),
+            fontsize=12,
+            ha="center",
+        )
+
+        # Save the plot
+        plot_name = f"uptonight-alttime-{target_id.lower().replace(' ', '-').replace('/', '-')}.png"
+        plt.savefig(f"{self._output_dir}/{plot_name}")
+
+        plt.clf()
+        plt.close()
 
     def save_png(self, plt, output_datestamp):
         """Save plot as png
