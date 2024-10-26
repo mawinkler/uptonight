@@ -25,6 +25,7 @@ class Plot:
         moon_separation,
         sun_moon,
         output_dir,
+        colors,
         current_day,
         filter_ext,
         live,
@@ -38,6 +39,7 @@ class Plot:
             moon_separation (int): Moon separation as degrees
             sun_moon (SunMoon): Sun and Moon helper
             output_dir (str): Output directory
+            colors (dict): Color table
             current_day (Time): Day for calculation
             filter_ext (str): Object filter
             live (bool): Live mode
@@ -48,6 +50,7 @@ class Plot:
         self._moon_separation = moon_separation
         self._sun_moon = sun_moon
         self._output_dir = output_dir
+        self._colors = colors
         self._current_day = current_day
         self._filter_ext = filter_ext
         self._live = live
@@ -125,8 +128,8 @@ class Plot:
         plt.xticks([])
         plt.xlim(times_plot.min(), times_plot.max())
         plt.ylim(0, 90)
-        plt.plot(times_plot, altitudes, color="#CC6666", label=target["target name"], lw=3)
-        plt.fill_between(times_plot, 0, altitudes, where=(altitudes > 0), color="#1C1C1C", alpha=0.8)
+        plt.plot(times_plot, altitudes, color=self._colors["alttime"], label=target["target name"], lw=3)
+        plt.fill_between(times_plot, 0, altitudes, where=(altitudes > 0), color=self._colors["figure"], alpha=0.8)
 
         # Labels and title
         plt.ylabel("Altitude [°]", fontsize=12)
@@ -134,7 +137,9 @@ class Plot:
         plt.grid(True)
 
         # Sunset and sunrise, fill with gradient
-        cmap = LinearSegmentedColormap.from_list("my_cmap", ["#606060", "#1C1C1C", "#1C1C1C"])
+        cmap = LinearSegmentedColormap.from_list(
+            "my_cmap", [self._colors["ticks"], self._colors["figure"], self._colors["figure"]]
+        )
         norm = plt.Normalize(vmin=times_plot[0], vmax=times_plot[0] + diff_civil_astro)
         width = 2
         for i in range(diff_civil_astro):
@@ -149,40 +154,46 @@ class Plot:
         # Highlight maximum altitude
         max_altitude = np.max(altitudes)
         max_time = times_plot[np.argmax(altitudes)]
-        plt.scatter(max_time, max_altitude, color="#F2F2F2", edgecolor="#CC6666", zorder=5, s=30)
+        plt.scatter(
+            max_time, max_altitude, color=self._colors["text"], edgecolor=self._colors["alttime"], zorder=5, s=30
+        )
         plt.text(
             max_time,
             max_altitude,
             f"alt {max_altitude:.1f}°",
-            color="#F2F2F2",
+            color=self._colors["text"],
             ha="right",
             fontsize=12,
         )
-        plt.axvline(max_time, color="green", linestyle="--", lw=1)
+        plt.axvline(max_time, color=self._colors["meridian"], linestyle="--", lw=1)
 
         min_altitude = np.min(altitudes)
         min_time = times_plot[np.argmin(altitudes)]
-        plt.scatter(min_time, min_altitude, color="#F2F2F2", edgecolor="#CC6666", zorder=5, s=30)
+        plt.scatter(
+            min_time, min_altitude, color=self._colors["text"], edgecolor=self._colors["alttime"], zorder=5, s=30
+        )
         plt.text(
             min_time,
             min_altitude,
             f"alt {min_altitude:.1f}°",
-            color="#F2F2F2",
+            color=self._colors["text"],
             ha="right",
             fontsize=12,
         )
-        plt.axvline(min_time, color="green", linestyle="--", lw=1)
+        plt.axvline(min_time, color=self._colors["meridian"], linestyle="--", lw=1)
 
         # Horizon
-        plt.axhline(0, color="green", linestyle="--", lw=1)
+        plt.axhline(0, color=self._colors["meridian"], linestyle="--", lw=1)
 
         # Mark sunset (civil and astronomical)
-        plt.axvline(times_plot[0], color="#F2F2F2", linestyle="--", lw=1)
-        plt.axvline(times_plot[diff_civil_astro - 1], color="#F2F2F2", linestyle="--", lw=1)
+        plt.axvline(times_plot[0], color=self._colors["ticks"], linestyle="--", lw=1)
+        plt.axvline(times_plot[diff_civil_astro - 1], color=self._colors["ticks"], linestyle="--", lw=1)
 
         # Mark sunrise (civil and astronomical)
-        plt.axvline(times_plot[-1], color="#F2F2F2", linestyle="--", lw=1)
-        plt.axvline(times_plot[len(times_plot) - diff_astro_civil - 1], color="#F2F2F2", linestyle="--", lw=1)
+        plt.axvline(times_plot[-1], color=self._colors["ticks"], linestyle="--", lw=1)
+        plt.axvline(
+            times_plot[len(times_plot) - diff_astro_civil - 1], color=self._colors["ticks"], linestyle="--", lw=1
+        )
 
         # Texts
         plt.text(
@@ -342,27 +353,27 @@ class Plot:
 
         plt.rcParams["xtick.labelsize"] = 13
         plt.rcParams["ytick.labelsize"] = 13
-        plt.rcParams["xtick.color"] = "#F2F2F2"
-        plt.rcParams["ytick.color"] = "#F2F2F2"
+        plt.rcParams["xtick.color"] = self._colors["ticks"]  # "#F2F2F2"
+        plt.rcParams["ytick.color"] = self._colors["ticks"]  # "#F2F2F2"
 
         # Axes
         plt.rcParams["axes.titlesize"] = 14
-        plt.rcParams["axes.labelcolor"] = "w"
-        plt.rcParams["axes.facecolor"] = "#262626"
-        plt.rcParams["axes.edgecolor"] = "#F2F2F2"
+        plt.rcParams["axes.labelcolor"] = self._colors["text"]  # "w"
+        plt.rcParams["axes.facecolor"] = self._colors["axes"]  # "#262626"
+        plt.rcParams["axes.edgecolor"] = self._colors["axes"]  # "#F2F2F2"
 
         # Legend
-        plt.rcParams["legend.facecolor"] = "#262626"
-        plt.rcParams["legend.edgecolor"] = "#262626"
+        plt.rcParams["legend.facecolor"] = self._colors["legend"]  # "#262626"
+        plt.rcParams["legend.edgecolor"] = self._colors["legend"]  # "#262626"
         plt.rcParams["legend.fontsize"] = 6
         # plt.rcParams["legend.framealpha"] = 0.2
 
         # Figure
-        plt.rcParams["figure.facecolor"] = "#1C1C1C"
-        plt.rcParams["figure.edgecolor"] = "#1C1C1C"
+        plt.rcParams["figure.facecolor"] = self._colors["figure"]  # "#1C1C1C"
+        plt.rcParams["figure.edgecolor"] = self._colors["figure"]  # "#1C1C1C"
         plt.rcParams["figure.figsize"] = (15, 10)
         plt.rcParams["figure.dpi"] = 300
 
         # Other
-        plt.rcParams["grid.color"] = "w"
-        plt.rcParams["text.color"] = "w"
+        plt.rcParams["grid.color"] = self._colors["grid"]  # "w"
+        plt.rcParams["text.color"] = self._colors["text"]  # "w"

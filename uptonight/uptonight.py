@@ -136,6 +136,7 @@ class UpTonight:
         self,
         location,
         features,
+        colors,
         output_datestamp=False,
         environment={},
         constraints={},
@@ -153,6 +154,7 @@ class UpTonight:
         Args:
             location (dict): Location of the observer
             features (dict): Features enabled
+            colors (dict): Color table
             output_datestamp (bool): Add datestamp to plot and reports
             environment (dict, optional): Environmental conditions
             constraints (dict, optional): Constraints for targets
@@ -169,6 +171,7 @@ class UpTonight:
         """
         self._location = location
         self._features = features
+        self._colors = colors
         self._output_datestamp = output_datestamp
         self._environment = environment
         self._constraints = constraints
@@ -213,7 +216,9 @@ class UpTonight:
         )
 
         if self._features.get("horizon"):
-            self._horizon = UpTonightHorizon(self._observer, self._observation_timeframe, self._constraints)
+            self._horizon = UpTonightHorizon(
+                self._observer, self._observation_timeframe, self._constraints, self._colors
+            )
 
         if self._features.get("objects"):
             self._objects = UpTonightObjects(
@@ -394,6 +399,7 @@ class UpTonight:
             self._moon_separation,
             self._sun_moon,
             self._output_dir,
+            self._colors,
             self._observation_timeframe["current_day"],
             self._filter_ext,
             self._live,

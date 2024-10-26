@@ -19,6 +19,7 @@ class UpTonightHorizon:
         observer,
         observation_timeframe,
         constraints,
+        colors,
     ):
         """Init horizon
 
@@ -26,6 +27,7 @@ class UpTonightHorizon:
             observer (Observer): The astroplan opbserver
             observation_timeframe (dict): Oberserving time ranges
             constraints (dict): Observing contraints
+            colors (dict): Color table
         """
         self._observer = observer
         self._observer_location = EarthLocation.from_geodetic(
@@ -35,6 +37,7 @@ class UpTonightHorizon:
         )
         self._observation_timeframe = observation_timeframe
         self._constraints = constraints
+        self._colors = colors
 
         return None
 
@@ -79,7 +82,7 @@ class UpTonightHorizon:
                 target,
                 self._observer,
                 observation_time,
-                style_kwargs=dict(color="w", label=target.name, marker="o", s=30),
+                style_kwargs=dict(color=self._colors["ticks"], label=target.name, marker="o", s=30),
                 north_to_east_ccw=self._constraints["north_to_east_ccw"],
             )
 

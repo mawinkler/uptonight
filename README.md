@@ -418,6 +418,17 @@ horizon:
     - alt: 20
       az: 360
 
+# Set custom color table
+colors:
+  ticks: "#9C9C9C"
+  grid: "#9C9C9C"
+  axes: "#262626"
+  figure: "#1C1C1C"
+  legend: "#262626"
+  alttime: "#CC6666"
+  meridian: "#66CC66"
+  text: "#FFFFFF"
+
 # Enable or disable component calculation
 features:
   horizon: true
