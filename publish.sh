@@ -2,19 +2,24 @@
 
 set -e
 
+# export PATH=/usr/local/bin/:${PATH}
+which docker
 VERSION=$(cat .VERSION)
 
 printf '%s\n' "Building uptonight version ${VERSION}"
 
-docker run --privileged multiarch/qemu-user-static:latest --reset -p yes --credential yes
+# docker run --privileged multiarch/qemu-user-static:latest --reset -p yes --credential yes 
 
 if [[ "${VERSION}" == "dev" ]]; then
-    # --no-cache \
+        # --no-cache \
+    #,linux/arm64/v8
     printf '%s\n' "Building development version"
-    docker buildx build \
+    docker buildx build --progress=plain \
         -t mawinkler/uptonight:${VERSION} \
         --platform linux/amd64,linux/arm64/v8 \
-        --push .
+        --push -f Dockerfile .
+    docker pull mawinkler/uptonight:dev
+    docker run --rm -v ./config.yaml:/app/config.yaml -v ./outdev:/app/out mawinkler/uptonight:dev
 else
     printf '%s\n' "Building public version"
     docker buildx build \

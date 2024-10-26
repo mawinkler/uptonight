@@ -1,39 +1,40 @@
 # Compile image
-FROM ubuntu:jammy AS compile-image
+FROM ubuntu:noble AS compile-image
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /app
 
-RUN apt-get update \
-    && apt-get install -y python3-pip python3-dev pkg-config libhdf5-dev \
-    && cd /usr/local/bin \
-    && ln -s /usr/bin/python3 python \
-    && pip3 install --upgrade pip
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends python3-pip python3-venv python3-dev pkg-config libhdf5-dev build-essential gcc && \
+    cd /usr/local/bin && \
+    ln -s /usr/bin/python3 python && \
+    python3 --version && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt requirements.txt
 
-RUN pip3 install --upgrade pip setuptools && \
-    pip install --no-cache-dir -r requirements.txt --user && \
+RUN python3 -m venv venv && \
+    venv/bin/pip install --no-cache-dir -r requirements.txt && \
     pip list
 
-# Run image
-FROM ubuntu:jammy AS runtime-image
-
-RUN apt-get update \
-    && apt-get install -y python3 \
-    && cd /usr/local/bin \
-    && ln -s /usr/bin/python3 python
-
-COPY --from=compile-image /root/.local /root/.local
-COPY --from=compile-image /etc/ssl /etc/ssl
-
-WORKDIR /app
+RUN venv/bin/pip install pyinstaller
 
 COPY uptonight uptonight
 COPY targets targets
 COPY main.py .
 
-ENV PATH=/root/local/bin:$PATH
+RUN venv/bin/pyinstaller --recursive-copy-metadata matplotlib --onefile main.py 
 
-ENTRYPOINT ["python3", "/app/main.py"]
+# Run image
+FROM ubuntu:noble AS runtime-image
+
+WORKDIR /app
+
+# Copy only the necessary files from the build stage
+COPY --from=compile-image /app/dist/main /app/main
+COPY --from=compile-image /app/targets /app/targets
+
+# Run the UpTonight executable
+ENTRYPOINT ["/app/main"]

@@ -35,8 +35,13 @@ logging.basicConfig(
 
 def main():
     """Main"""
-    app_directory = pathlib.Path(__file__).parent.resolve()
-    print(app_directory)
+    # Determine if application is a script file or frozen exe
+    if getattr(sys, 'frozen', False):
+        app_directory = "/app"
+        _LOGGER.debug(f"UpTonight running frozen, app directory set to {app_directory}")
+    elif __file__:
+        app_directory = pathlib.Path(__file__).parent.resolve()
+        _LOGGER.debug(f"UpTonight running as script file, app directory set to {app_directory}")
 
     # Defaults
     location = {"longitude": "", "latitude": "", "elevation": 0, "timezone": "UTC"}
