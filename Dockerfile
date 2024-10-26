@@ -25,7 +25,7 @@ COPY uptonight uptonight
 COPY targets targets
 COPY main.py .
 
-RUN venv/bin/pyinstaller --recursive-copy-metadata matplotlib --onefile main.py 
+RUN venv/bin/pyinstaller --recursive-copy-metadata matplotlib --collect-all dateutil --onefile main.py 
 
 # Run image
 FROM ubuntu:noble AS runtime-image
