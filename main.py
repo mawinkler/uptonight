@@ -120,7 +120,7 @@ def main():
     if cfg is not None and "type_filter" in cfg.keys() and cfg["type_filter"] is not None:
         type_filter = cfg["type_filter"]
     if cfg is not None and "output_dir" in cfg.keys() and cfg["output_dir"] is not None:
-        output_dir = f"{app_directory}/{cfg["output_dir"]}"
+        output_dir = f"{app_directory}/{cfg['output_dir']}"
     if cfg is not None and "live_mode" in cfg.keys() and cfg["live_mode"] is not None:  # deprecated
         live = {"enabled": bool(cfg["live_mode"]), "interval": 300}
     if cfg is not None and "bucket_list" in cfg.keys() and cfg["bucket_list"] is not None:
@@ -196,35 +196,35 @@ def main():
         _LOGGER.error("Longitute and/or latitude not set")
         sys.exit(0)
 
-    _LOGGER.debug(f"Location longitude: {location["longitude"]}")
-    _LOGGER.debug(f"Location latitude: {location["latitude"]}")
-    _LOGGER.debug(f"Location elevation: {location["elevation"]}")
-    _LOGGER.debug(f"Location timezone: {location["timezone"]}")
+    _LOGGER.debug(f"Location longitude: {location['longitude']}")
+    _LOGGER.debug(f"Location latitude: {location['latitude']}")
+    _LOGGER.debug(f"Location elevation: {location['elevation']}")
+    _LOGGER.debug(f"Location timezone: {location['timezone']}")
     _LOGGER.debug(f"Observation date: {observation_date}")
     _LOGGER.debug(f"Colors: {colors}")
     _LOGGER.debug(f"Features: {features}")
     _LOGGER.debug(f"Output datestamp: {output_datestamp}")
 
-    _LOGGER.debug(f"Environment pressure: {environment["pressure"]}")
-    _LOGGER.debug(f"Environment temperature: {environment["temperature"]}")
-    _LOGGER.debug(f"Environment relative_humidity: {environment["relative_humidity"]}")
+    _LOGGER.debug(f"Environment pressure: {environment['pressure']}")
+    _LOGGER.debug(f"Environment temperature: {environment['temperature']}")
+    _LOGGER.debug(f"Environment relative_humidity: {environment['relative_humidity']}")
 
-    _LOGGER.debug(f"DSO Altitude constraint min: {constraints["altitude_constraint_min"]}")
-    _LOGGER.debug(f"DSO Altitude constraint max: {constraints["altitude_constraint_max"]}")
-    _LOGGER.debug(f"DSO Airmass constraint: {constraints["airmass_constraint"]}")
-    _LOGGER.debug(f"DSO Size constraint min: {constraints["size_constraint_min"]}")
-    _LOGGER.debug(f"DSO Size constraint max: {constraints["size_constraint_max"]}")
-    _LOGGER.debug(f"DSO Fraction of time observable threshold: {constraints["fraction_of_time_observable_threshold"]}")
-    _LOGGER.debug(f"DSO Max number within threshold: {constraints["max_number_within_threshold"]}")
-    _LOGGER.debug(f"DSO Moon separation min: {constraints["moon_separation_min"]}")
-    _LOGGER.debug(f"DSO Moon separation use illumination: {constraints["moon_separation_use_illumination"]}")
+    _LOGGER.debug(f"DSO Altitude constraint min: {constraints['altitude_constraint_min']}")
+    _LOGGER.debug(f"DSO Altitude constraint max: {constraints['altitude_constraint_max']}")
+    _LOGGER.debug(f"DSO Airmass constraint: {constraints['airmass_constraint']}")
+    _LOGGER.debug(f"DSO Size constraint min: {constraints['size_constraint_min']}")
+    _LOGGER.debug(f"DSO Size constraint max: {constraints['size_constraint_max']}")
+    _LOGGER.debug(f"DSO Fraction of time observable threshold: {constraints['fraction_of_time_observable_threshold']}")
+    _LOGGER.debug(f"DSO Max number within threshold: {constraints['max_number_within_threshold']}")
+    _LOGGER.debug(f"DSO Moon separation min: {constraints['moon_separation_min']}")
+    _LOGGER.debug(f"DSO Moon separation use illumination: {constraints['moon_separation_use_illumination']}")
     _LOGGER.debug(f"DSO Target list: {target_list}")
     _LOGGER.debug(f"DSO Type filter: {type_filter}")
 
-    _LOGGER.debug(f"North to East ccw: {constraints["north_to_east_ccw"]}")
+    _LOGGER.debug(f"North to East ccw: {constraints['north_to_east_ccw']}")
     _LOGGER.debug(f"Output directory: {output_dir}")
-    _LOGGER.debug(f"Live mode: {live.get("enabled", False)}")
-    _LOGGER.debug(f"Live mode interval: {live.get("interval", 300)}")
+    _LOGGER.debug(f"Live mode: {live.get('enabled', False)}")
+    _LOGGER.debug(f"Live mode interval: {live.get('interval', 300)}")
 
     start = time.time()
 
