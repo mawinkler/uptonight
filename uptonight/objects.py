@@ -124,15 +124,20 @@ class UpTonightObjects:
                             target_row["description"] = target_row["name"]
                             target_row["name"] = "--"
 
+                        if str(target_row["description"]) != "":
+                            name = str(target_row["description"]) + str(
+                                f" ({target_row['name']}, size: {target_row['size']:.0f}', mag: {self._input_targets[index]['mag']:.1f})"
+                            )
+                        else:
+                            name = str(target_row["name"]) + str(
+                                f" (size: {target_row['size']:.0f}', mag: {self._input_targets[index]['mag']:.1f})"
+                            )
                         target = FixedTarget(
                             coord=SkyCoord(
                                 f"{target_row['ra']} {target_row['dec']}",
                                 unit=(u.hourangle, u.deg),
                             ),
-                            name=str(target_row["description"])
-                            + str(
-                                f" ({target_row['name']}, size: {target_row['size']:.0f}', mag: {self._input_targets[index]['mag']:.1f})"
-                            ),
+                            name=name,
                         )
 
                         # Object start azimuth and altitude
