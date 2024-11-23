@@ -71,7 +71,9 @@ class UpTonightObjects:
             ):
                 within_threshold = within_threshold + 1
 
-        _LOGGER.info(f"Number of deep sky objects within constraints: {within_threshold}")
+        within_threshold = within_threshold + len(bucket_list)
+
+        _LOGGER.info(f"Number of deep sky objects within constraints or on bucket list: {within_threshold}")
         if within_threshold > self._constraints["max_number_within_threshold"]:
             within_threshold = self._constraints["max_number_within_threshold"]
 
@@ -204,7 +206,8 @@ class UpTonightObjects:
                         f"{target_row['ra']} {target_row['dec']}",
                         unit=(u.hourangle, u.deg),
                     ),
-                    name=target_row["description"]
+                    name="_"
+                    + target_row["description"]
                     + f" ({target_row['name']}, {target_row['size']}', {str(int(round(self._input_targets[index]['mag'] * 10, 0)) / 10)})",
                 )
                 ax = plot_sky(

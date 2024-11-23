@@ -1,0 +1,8932 @@
+- constellation: Sagittarius
+  dec: -28 51 12
+  description: S 17
+  mag: 13
+  name: LBN 1
+  ra: 17 45 10.5
+  size: 4
+  type: HII region
+- constellation: Sagittarius
+  dec: -29 10 59
+  description: S 19
+  mag: 11
+  name: LBN 2
+  ra: 17 48 11.0
+  size: 14
+  type: HII region
+- constellation: Sagittarius
+  dec: -28 46 03
+  description: S 20
+  mag: 13
+  name: LBN 3
+  ra: 17 47 10.4
+  size: 2
+  type: HII region
+- constellation: Sagittarius
+  dec: -28 55 46
+  description: S 21
+  mag: 13
+  name: LBN 4
+  ra: 17 51 10.7
+  size: 3
+  type: HII region
+- constellation: Ophiucus
+  dec: -17 35 45
+  description: ''
+  mag: 13
+  name: LBN 5
+  ra: 16 40 53.6
+  size: 25
+  type: HII region
+- constellation: Ophiucus
+  dec: -16 36 02
+  description: ''
+  mag: 15
+  name: LBN 6
+  ra: 16 36 52.3
+  size: 90
+  type: HII region
+- constellation: Ophiucus
+  dec: -15 46 14
+  description: DG 144
+  mag: 15
+  name: LBN 7
+  ra: 16 33 51.2
+  size: 50
+  type: HII region
+- constellation: Libra
+  dec: -05 59 01
+  description: ''
+  mag: 15
+  name: LBN 8
+  ra: 15 50 39.6
+  size: 45
+  type: HII region
+- constellation: Sagittarius
+  dec: -26 11 08
+  description: ''
+  mag: 11
+  name: LBN 9
+  ra: 17 46 06.6
+  size: 5
+  type: HII region
+- constellation: Libra
+  dec: -04 41 50
+  description: ''
+  mag: 15
+  name: LBN 10
+  ra: 15 53 38.4
+  size: 60
+  type: HII region
+- constellation: Libra
+  dec: -04 03 01
+  description: ''
+  mag: 13
+  name: LBN 11
+  ra: 15 50 37.7
+  size: 15
+  type: HII region
+- constellation: Ophiucus
+  dec: -11 46 26
+  description: ''
+  mag: 11
+  name: LBN 12
+  ra: 16 30 46.6
+  size: 65
+  type: HII region
+- constellation: Ophiucus
+  dec: -08 02 38
+  description: S 14
+  mag: 15
+  name: LBN 13
+  ra: 16 12 42.1
+  size: 35
+  type: HII region
+- constellation: Sagittarius
+  dec: -24 50 28
+  description: S 22
+  mag: 11
+  name: LBN 14
+  ra: 17 55 04.7
+  size: 60
+  type: HII region
+- constellation: Libra
+  dec: -03 44 57
+  description: ''
+  mag: 13
+  name: LBN 15
+  ra: 15 51 37.4
+  size: 20
+  type: HII region
+- constellation: Ophiucus
+  dec: -11 16 18
+  description: ''
+  mag: 13
+  name: LBN 16
+  ra: 16 32 46.1
+  size: 150
+  type: HII region
+- constellation: Ophiucus
+  dec: -07 05 45
+  description: S 24
+  mag: 13
+  name: LBN 17
+  ra: 16 10 41.1
+  size: 30
+  type: HII region
+- constellation: Serpens
+  dec: -02 54 01
+  description: ''
+  mag: 13
+  name: LBN 18
+  ra: 15 50 36.6
+  size: 28
+  type: HII region
+- constellation: Serpens
+  dec: -02 49 01
+  description: ''
+  mag: 15
+  name: LBN 19
+  ra: 15 50 36.5
+  size: 140
+  type: HII region
+- constellation: Ophiucus
+  dec: -09 36 42
+  description: ''
+  mag: 11
+  name: LBN 20
+  ra: 16 26 44.1
+  size: 50
+  type: HII region
+- constellation: Ophiucus
+  dec: -09 36 34
+  description: ''
+  mag: 9
+  name: LBN 21
+  ra: 16 28 44.1
+  size: 18
+  type: HII region
+- constellation: Ophiucus
+  dec: -09 31 34
+  description: ''
+  mag: 13
+  name: LBN 22
+  ra: 16 28 44.0
+  size: 40
+  type: HII region
+- constellation: Serpens
+  dec: -01 57 08
+  description: ''
+  mag: 13
+  name: LBN 23
+  ra: 15 48 35.6
+  size: 30
+  type: HII region
+- constellation: Ophiucus
+  dec: -10 06 18
+  description: S 27
+  mag: 15
+  name: LBN 24
+  ra: 16 32 44.7
+  size: 480
+  type: HII region
+- constellation: Sagittarius
+  dec: -24 19 49
+  description: Lagoon Nebula, Hourglass Nebula, M 8, NGC 6523, NGC 6523
+  mag: 5
+  name: LBN 25
+  ra: 18 04 04.0
+  size: 45
+  type: Nebula
+- constellation: Sagittarius
+  dec: -24 19 45
+  description: ''
+  mag: 7
+  name: LBN 26
+  ra: 18 05 04.0
+  size: 90
+  type: HII region
+- constellation: Sagittarius
+  dec: -22 59 58
+  description: Trifid Nebula, M 20, NGC 6514, Cr 360, NGC 6514
+  mag: 5
+  name: LBN 27
+  ra: 18 02 02.1
+  size: 20
+  type: Open cluster
+- constellation: Sagittarius
+  dec: -23 59 23
+  description: NGC 6559, NGC 6559
+  mag: 5
+  name: LBN 28
+  ra: 18 10 03.5
+  size: 15
+  type: Nebula
+- constellation: Sagittarius
+  dec: -23 59 23
+  description: S 29
+  mag: 9
+  name: LBN 29
+  ra: 18 10 03.5
+  size: 45
+  type: HII region
+- constellation: Ophiucus
+  dec: -07 26 50
+  description: ''
+  mag: 11
+  name: LBN 30
+  ra: 16 24 41.7
+  size: 140
+  type: HII region
+- constellation: Sagittarius
+  dec: -23 26 31
+  description: IC 4681, IC 4681
+  mag: 15
+  name: LBN 31
+  ra: 18 08 02.8
+  size: 3
+  type: Star
+- constellation: Ophiucus
+  dec: -08 36 18
+  description: ''
+  mag: 11
+  name: LBN 32
+  ra: 16 32 43.1
+  size: 65
+  type: HII region
+- constellation: Sagittarius
+  dec: -23 44 18
+  description: IC 1274, IC 1274
+  mag: 5
+  name: LBN 33
+  ra: 18 11 03.2
+  size: 20
+  type: HII region
+- constellation: Sagittarius
+  dec: -23 26 27
+  description: IC 4684, VdB 115, IC 4684
+  mag: 9
+  name: LBN 34
+  ra: 18 09 02.7
+  size: 3
+  type: Reflection nebula
+- constellation: Ophiucus
+  dec: -09 01 06
+  description: ''
+  mag: 9
+  name: LBN 35
+  ra: 16 35 43.6
+  size: 20
+  type: HII region
+- constellation: Serpens
+  dec: -01 38 24
+  description: S 33
+  mag: 15
+  name: LBN 37
+  ra: 16 00 35.4
+  size: 30
+  type: HII region
+- constellation: Sagittarius
+  dec: -21 59 32
+  description: S 34
+  mag: 13
+  name: LBN 38
+  ra: 18 08 00.8
+  size: 60
+  type: HII region
+- constellation: Ophiucus
+  dec: -07 51 02
+  description: ''
+  mag: 11
+  name: LBN 39
+  ra: 16 36 42.3
+  size: 70
+  type: HII region
+- constellation: Sagittarius
+  dec: -21 29 27
+  description: ''
+  mag: 11
+  name: LBN 40
+  ra: 18 09 00.1
+  size: 10
+  type: HII region
+- constellation: Sagittarius
+  dec: -31 21 33
+  description: ''
+  mag: 15
+  name: LBN 41
+  ra: 20 03 09.0
+  size: 210
+  type: HII region
+- constellation: Sagittarius
+  dec: -20 18 57
+  description: S 35
+  mag: 7
+  name: LBN 42
+  ra: 18 15 58.5
+  size: 10
+  type: HII region
+- constellation: Sagittarius
+  dec: -19 43 52
+  description: NGC 6590, VdB 119, NGC 6590
+  mag: 5
+  name: LBN 43
+  ra: 18 16 57.7
+  size: 4
+  type: Reflection nebula
+- constellation: Serpens
+  dec: +00 21 59
+  description: S 36
+  mag: 15
+  name: LBN 45
+  ra: 16 06 33.3
+  size: 40
+  type: HII region
+- constellation: Sagittarius
+  dec: -19 38 52
+  description: NGC 6589, VdB 118, NGC 6589
+  mag: 5
+  name: LBN 46
+  ra: 18 16 57.6
+  size: 4
+  type: Nebula
+- constellation: Sagittarius
+  dec: -19 28 52
+  description: IC 1283, IC 1283
+  mag: 7
+  name: LBN 47
+  ra: 18 16 57.4
+  size: 15
+  type: HII region
+- constellation: Sagittarius
+  dec: -18 09 27
+  description: S 38
+  mag: 13
+  name: LBN 48
+  ra: 18 08 55.7
+  size: 3
+  type: HII region
+- constellation: Sagittarius
+  dec: -17 44 14
+  description: S 40
+  mag: 13
+  name: LBN 49
+  ra: 18 11 55.1
+  size: 15
+  type: HII region
+- constellation: Sagittarius
+  dec: -16 59 36
+  description: ''
+  mag: 13
+  name: LBN 50
+  ra: 18 06 54.2
+  size: 18
+  type: HII region
+- constellation: Sagittarius
+  dec: -17 58 57
+  description: S 41
+  mag: 11
+  name: LBN 51
+  ra: 18 15 55.4
+  size: 210
+  type: HII region
+- constellation: Sagittarius
+  dec: -17 58 39
+  description: ''
+  mag: 7
+  name: LBN 52
+  ra: 18 19 55.4
+  size: 30
+  type: HII region
+- constellation: Sagittarius
+  dec: -16 39 19
+  description: ''
+  mag: 15
+  name: LBN 53
+  ra: 18 10 53.8
+  size: 30
+  type: HII region
+- constellation: Sagittarius
+  dec: -27 51 33
+  description: ''
+  mag: 15
+  name: LBN 54
+  ra: 20 03 04.3
+  size: 260
+  type: HII region
+- constellation: Sagittarius
+  dec: -16 38 57
+  description: IC 4701, IC 4701
+  mag: 11
+  name: LBN 55
+  ra: 18 15 53.7
+  size: 60
+  type: Nebula
+- constellation: Sagittarius
+  dec: -16 38 57
+  description: S 42
+  mag: 9
+  name: LBN 56
+  ra: 18 15 53.7
+  size: 3
+  type: HII region
+- constellation: Sagittarius
+  dec: -15 58 48
+  description: ''
+  mag: 15
+  name: LBN 57
+  ra: 18 17 52.9
+  size: 120
+  type: HII region
+- constellation: Serpens
+  dec: -14 09 41
+  description: S 46
+  mag: 9
+  name: LBN 58
+  ra: 18 05 50.6
+  size: 30
+  type: HII region
+- constellation: Serpens
+  dec: -15 28 53
+  description: S 47
+  mag: 9
+  name: LBN 59
+  ra: 18 16 52.3
+  size: 5
+  type: HII region
+- constellation: Sagittarius
+  dec: -15 58 35
+  description: Omega Nebula, Swan Nebula, Checkmark Nebula, Horseshoe Nebula, Lobster
+    Nebula, M 17, NGC 6618, Cr 377, NGC 6618
+  mag: 5
+  name: LBN 60
+  ra: 18 20 52.9
+  size: 40
+  type: Open cluster
+- constellation: Serpens
+  dec: -14 29 10
+  description: ''
+  mag: 13
+  name: LBN 61
+  ra: 18 12 51.0
+  size: 20
+  type: HII region
+- constellation: Serpens
+  dec: -14 48 35
+  description: S 50
+  mag: 15
+  name: LBN 62
+  ra: 18 20 51.4
+  size: 20
+  type: HII region
+- constellation: Sagittarius
+  dec: -15 57 52
+  description: ''
+  mag: 13
+  name: LBN 63
+  ra: 18 30 52.8
+  size: 80
+  type: HII region
+- constellation: Serpens
+  dec: -14 38 26
+  description: S 48
+  mag: 11
+  name: LBN 64
+  ra: 18 22 51.2
+  size: 15
+  type: HII region
+- constellation: Sagittarius
+  dec: -16 47 08
+  description: S 51
+  mag: 15
+  name: LBN 65
+  ra: 18 40 53.7
+  size: 40
+  type: HII region
+- constellation: Scutum
+  dec: -14 48 13
+  description: ''
+  mag: 13
+  name: LBN 66
+  ra: 18 25 51.4
+  size: 10
+  type: HII region
+- constellation: Serpens
+  dec: -13 48 44
+  description: Eagle Nebula, Star Queen Nebula, M 16, NGC 6611, Cr 375, Mel 198, NGC
+    6611
+  mag: 5
+  name: LBN 67
+  ra: 18 18 50.2
+  size: 120
+  type: Open cluster
+- constellation: Serpens
+  dec: -13 53 40
+  description: ''
+  mag: 9
+  name: LBN 68
+  ra: 18 19 50.3
+  size: 35
+  type: HII region
+- constellation: Scutum
+  dec: -15 27 39
+  description: ''
+  mag: 13
+  name: LBN 69
+  ra: 18 33 52.1
+  size: 30
+  type: HII region
+- constellation: Serpens
+  dec: -12 58 40
+  description: ''
+  mag: 15
+  name: LBN 70
+  ra: 18 19 49.1
+  size: 180
+  type: HII region
+- constellation: Serpens
+  dec: -12 28 44
+  description: ''
+  mag: 9
+  name: LBN 71
+  ra: 18 18 48.5
+  size: 80
+  type: HII region
+- constellation: Serpens
+  dec: -11 58 48
+  description: S 54
+  mag: 5
+  name: LBN 72
+  ra: 18 17 47.9
+  size: 60
+  type: HII region
+- constellation: Scutum
+  dec: -11 45 43
+  description: S 55
+  mag: 9
+  name: LBN 73
+  ra: 18 32 47.6
+  size: 20
+  type: HII region
+- constellation: Scutum
+  dec: -11 45 43
+  description: ''
+  mag: 15
+  name: LBN 74
+  ra: 18 32 47.6
+  size: 10
+  type: HII region
+- constellation: Scutum
+  dec: -10 47 47
+  description: IC 1287, VdB 124, IC 1287
+  mag: 9
+  name: LBN 75
+  ra: 18 31 46.4
+  size: 20
+  type: Reflection nebula
+- constellation: Scutum
+  dec: -10 47 47
+  description: ''
+  mag: 15
+  name: LBN 76
+  ra: 18 31 46.4
+  size: 35
+  type: HII region
+- constellation: Scutum
+  dec: -09 37 52
+  description: S 56
+  mag: 15
+  name: LBN 77
+  ra: 18 30 45.0
+  size: 10
+  type: HII region
+- constellation: Scutum
+  dec: -08 37 52
+  description: S 57
+  mag: 11
+  name: LBN 78
+  ra: 18 30 43.9
+  size: 2
+  type: HII region
+- constellation: Scutum
+  dec: -08 27 48
+  description: S 58
+  mag: 9
+  name: LBN 79
+  ra: 18 31 43.7
+  size: 8
+  type: HII region
+- constellation: Scutum
+  dec: -07 37 26
+  description: S 59
+  mag: 13
+  name: LBN 80
+  ra: 18 36 42.6
+  size: 30
+  type: HII region
+- constellation: Scutum
+  dec: -06 52 35
+  description: ''
+  mag: 15
+  name: LBN 81
+  ra: 18 34 41.8
+  size: 40
+  type: HII region
+- constellation: Scutum
+  dec: -06 37 26
+  description: S 60
+  mag: 11
+  name: LBN 82
+  ra: 18 36 41.5
+  size: 15
+  type: HII region
+- constellation: Sagittarius
+  dec: -14 52 39
+  description: ''
+  mag: 11
+  name: LBN 83
+  ra: 19 45 49.8
+  size: 10
+  type: HII region
+- constellation: Scutum
+  dec: -04 57 39
+  description: S 61
+  mag: 5
+  name: LBN 84
+  ra: 18 33 39.5
+  size: 2
+  type: HII region
+- constellation: Serpens
+  dec: -03 48 05
+  description: S 62
+  mag: 11
+  name: LBN 85
+  ra: 18 27 38.2
+  size: 3
+  type: HII region
+- constellation: Sagittarius
+  dec: -14 21 52
+  description: S 63
+  mag: 13
+  name: LBN 86
+  ra: 19 57 48.8
+  size: 70
+  type: HII region
+- constellation: Sagittarius
+  dec: -12 42 39
+  description: ''
+  mag: 11
+  name: LBN 87
+  ra: 19 45 47.4
+  size: 10
+  type: HII region
+- constellation: Ophiucus
+  dec: +06 06 54
+  description: DG 146
+  mag: 11
+  name: LBN 88
+  ra: 17 18 26.7
+  size: 12
+  type: HII region
+- constellation: Sagittarius
+  dec: -12 12 39
+  description: ''
+  mag: 11
+  name: LBN 89
+  ra: 19 45 46.8
+  size: 2
+  type: HII region
+- constellation: Serpens
+  dec: -02 07 48
+  description: S 64
+  mag: 7
+  name: LBN 90
+  ra: 18 31 36.3
+  size: 20
+  type: HII region
+- constellation: Aquila
+  dec: -03 43 43
+  description: S 65
+  mag: 13
+  name: LBN 91
+  ra: 18 46 38.1
+  size: 10
+  type: HII region
+- constellation: Aquila
+  dec: -01 56 47
+  description: S 66
+  mag: 11
+  name: LBN 92
+  ra: 18 45 36.0
+  size: 10
+  type: HII region
+- constellation: Serpens
+  dec: +00 51 42
+  description: S 68
+  mag: 9
+  name: LBN 93
+  ra: 18 24 32.8
+  size: 8
+  type: HII region
+- constellation: Aquila
+  dec: -02 19 30
+  description: S 67
+  mag: 13
+  name: LBN 94
+  ra: 18 49 36.5
+  size: 15
+  type: HII region
+- constellation: Serpens
+  dec: +00 02 25
+  description: ''
+  mag: 13
+  name: LBN 95
+  ra: 18 34 33.8
+  size: 12
+  type: HII region
+- constellation: Serpens
+  dec: +01 02 08
+  description: DG 152
+  mag: 11
+  name: LBN 96
+  ra: 18 30 32.6
+  size: 8
+  type: HII region
+- constellation: Serpens
+  dec: +01 13 12
+  description: ''
+  mag: 9
+  name: LBN 97
+  ra: 18 31 32.4
+  size: 10
+  type: HII region
+- constellation: Serpens
+  dec: +01 22 12
+  description: DG 153
+  mag: 11
+  name: LBN 98
+  ra: 18 31 32.2
+  size: 22
+  type: HII region
+- constellation: Aquila
+  dec: -00 16 56
+  description: S 69
+  mag: 11
+  name: LBN 99
+  ra: 18 43 34.1
+  size: 15
+  type: HII region
+- constellation: Aquila
+  dec: -07 22 39
+  description: ''
+  mag: 13
+  name: LBN 100
+  ra: 19 45 41.6
+  size: 40
+  type: HII region
+- constellation: Aquila
+  dec: -05 52 39
+  description: ''
+  mag: 15
+  name: LBN 101
+  ra: 19 45 40.0
+  size: 180
+  type: HII region
+- constellation: Ophiucus
+  dec: +07 03 58
+  description: S 70
+  mag: 15
+  name: LBN 102
+  ra: 18 14 25.5
+  size: 8
+  type: HII region
+- constellation: Aquila
+  dec: +02 09 21
+  description: S 71
+  mag: 5
+  name: LBN 103
+  ra: 19 01 31.4
+  size: 2
+  type: HII region
+- constellation: Aquila
+  dec: +02 24 33
+  description: ''
+  mag: 13
+  name: LBN 104
+  ra: 19 04 31.1
+  size: 35
+  type: HII region
+- constellation: Hercules
+  dec: +21 52 14
+  description: S 73
+  mag: 13
+  name: LBN 105
+  ra: 16 10 10.0
+  size: 60
+  type: HII region
+- constellation: Hercules
+  dec: +21 42 25
+  description: ''
+  mag: 15
+  name: LBN 106
+  ra: 16 13 10.0
+  size: 30
+  type: HII region
+- constellation: Serpens
+  dec: +06 02 51
+  description: ''
+  mag: 13
+  name: LBN 107
+  ra: 18 54 26.9
+  size: 4
+  type: HII region
+- constellation: Aquila
+  dec: -01 51 34
+  description: ''
+  mag: 15
+  name: LBN 108
+  ra: 20 02 35.7
+  size: 150
+  type: HII region
+- constellation: Aquila
+  dec: +05 34 54
+  description: S 74
+  mag: 15
+  name: LBN 109
+  ra: 19 09 27.6
+  size: 3
+  type: HII region
+- constellation: Aquila
+  dec: +07 48 59
+  description: Sh2- 76, S 76
+  mag: 15
+  name: LBN 110
+  ra: 18 56 24.9
+  size: 8
+  type: HII region
+- constellation: Aquila
+  dec: -01 20 53
+  description: DG 161
+  mag: 11
+  name: LBN 111
+  ra: 20 13 35.2
+  size: 20
+  type: HII region
+- constellation: Aquarius
+  dec: -05 38 58
+  description: ''
+  mag: 13
+  name: LBN 112
+  ra: 20 46 38.8
+  size: 30
+  type: HII region
+- constellation: Aquila
+  dec: -00 50 53
+  description: ''
+  mag: 13
+  name: LBN 113
+  ra: 20 13 34.7
+  size: 70
+  type: HII region
+- constellation: Aquila
+  dec: -02 29 49
+  description: ''
+  mag: 15
+  name: LBN 114
+  ra: 20 31 36.2
+  size: 85
+  type: HII region
+- constellation: Aquila
+  dec: -01 30 10
+  description: ''
+  mag: 15
+  name: LBN 115
+  ra: 20 25 35.3
+  size: 35
+  type: HII region
+- constellation: Aquila
+  dec: -00 21 00
+  description: ''
+  mag: 15
+  name: LBN 116
+  ra: 20 11 34.2
+  size: 140
+  type: HII region
+- constellation: Aquarius
+  dec: -07 47 31
+  description: ''
+  mag: 15
+  name: LBN 117
+  ra: 21 14 39.9
+  size: 360
+  type: HII region
+- constellation: Aquarius
+  dec: -04 48 32
+  description: ''
+  mag: 15
+  name: LBN 118
+  ra: 20 54 38.0
+  size: 90
+  type: HII region
+- constellation: Aquila
+  dec: -00 50 03
+  description: ''
+  mag: 15
+  name: LBN 119
+  ra: 20 27 34.6
+  size: 140
+  type: HII region
+- constellation: Aquila
+  dec: -01 19 42
+  description: ''
+  mag: 15
+  name: LBN 120
+  ra: 20 33 35.1
+  size: 35
+  type: HII region
+- constellation: Aquila
+  dec: -00 49 32
+  description: ''
+  mag: 15
+  name: LBN 121
+  ra: 20 36 34.6
+  size: 70
+  type: HII region
+- constellation: Aquila
+  dec: +00 50 50
+  description: ''
+  mag: 15
+  name: LBN 122
+  ra: 20 25 33.1
+  size: 42
+  type: HII region
+- constellation: Aquila
+  dec: +01 09 57
+  description: ''
+  mag: 15
+  name: LBN 123
+  ra: 20 27 32.8
+  size: 20
+  type: HII region
+- constellation: Aquila
+  dec: -00 12 45
+  description: ''
+  mag: 15
+  name: LBN 124
+  ra: 20 32 34.1
+  size: 20
+  type: HII region
+- constellation: Aquila
+  dec: +01 20 11
+  description: ''
+  mag: 15
+  name: LBN 125
+  ra: 20 31 32.6
+  size: 30
+  type: HII region
+- constellation: Aquila
+  dec: +11 27 36
+  description: ''
+  mag: 15
+  name: LBN 126
+  ra: 19 49 21.8
+  size: 20
+  type: HII region
+- constellation: Sagitta
+  dec: +16 50 02
+  description: S 80
+  mag: 5
+  name: LBN 127
+  ra: 19 11 14.6
+  size: 1
+  type: HII region
+- constellation: Sagitta
+  dec: +18 16 20
+  description: DG 159
+  mag: 9
+  name: LBN 129
+  ra: 19 30 13.4
+  size: 7
+  type: HII region
+- constellation: Vulpecula
+  dec: +20 47 08
+  description: DG 157
+  mag: 15
+  name: LBN 130
+  ra: 19 27 10.3
+  size: 8
+  type: HII region
+- constellation: Sagitta
+  dec: +18 22 32
+  description: S 84
+  mag: 9
+  name: LBN 131
+  ra: 19 48 14.0
+  size: 15
+  type: HII region
+- constellation: Delphinus
+  dec: +14 09 50
+  description: ''
+  mag: 15
+  name: LBN 132
+  ra: 20 25 20.2
+  size: 120
+  type: HII region
+- constellation: Vulpecula
+  dec: +22 45 59
+  description: DG 155
+  mag: 11
+  name: LBN 133
+  ra: 19 25 07.7
+  size: 5
+  type: HII region
+- constellation: Vulpecula
+  dec: +22 46 04
+  description: C 167
+  mag: 7
+  name: LBN 134
+  ra: 19 26 07.7
+  size: 8
+  type: HII region
+- constellation: Vulpecula
+  dec: +23 17 12
+  description: NGC 6823, Cr 405, NGC 6823
+  mag: 9
+  name: LBN 135
+  ra: 19 43 07.9
+  size: 40
+  type: Open cluster
+- constellation: Vulpecula
+  dec: +24 42 23
+  description: S 87
+  mag: 11
+  name: LBN 136
+  ra: 19 46 06.3
+  size: 17
+  type: HII region
+- constellation: Vulpecula
+  dec: +25 10 23
+  description: ''
+  mag: 5
+  name: LBN 137
+  ra: 19 46 05.7
+  size: 2
+  type: HII region
+- constellation: Vulpecula
+  dec: +25 11 23
+  description: ''
+  mag: 5
+  name: LBN 138
+  ra: 19 46 05.7
+  size: 2
+  type: HII region
+- constellation: Vulpecula
+  dec: +25 20 23
+  description: S 88
+  mag: 9
+  name: LBN 139
+  ra: 19 46 05.5
+  size: 18
+  type: HII region
+- constellation: Pegasus
+  dec: +06 13 44
+  description: ''
+  mag: 15
+  name: LBN 140
+  ra: 21 42 29.7
+  size: 180
+  type: HII region
+- constellation: Delphinus
+  dec: +19 59 57
+  description: ''
+  mag: 13
+  name: LBN 141
+  ra: 20 27 14.3
+  size: 160
+  type: HII region
+- constellation: Pegasus
+  dec: +20 35 21
+  description: ''
+  mag: 15
+  name: LBN 142
+  ra: 22 28 24.0
+  size: 200
+  type: HII region
+- constellation: Delphinus
+  dec: +18 10 45
+  description: ''
+  mag: 13
+  name: LBN 143
+  ra: 20 41 17.1
+  size: 120
+  type: HII region
+- constellation: Vulpecula
+  dec: +26 48 35
+  description: S 90
+  mag: 7
+  name: LBN 144
+  ra: 19 49 03.8
+  size: 8
+  type: HII region
+- constellation: Vulpecula
+  dec: +28 17 23
+  description: S 92
+  mag: 13
+  name: LBN 145
+  ra: 19 46 01.6
+  size: 45
+  type: HII region
+- constellation: Vulpecula
+  dec: +27 16 58
+  description: S 93
+  mag: 5
+  name: LBN 146
+  ra: 19 55 03.6
+  size: 1
+  type: HII region
+- constellation: Cygnus
+  dec: +29 36 48
+  description: S 91
+  mag: 9
+  name: LBN 147
+  ra: 19 36 59.2
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +31 26 11
+  description: S 94
+  mag: 11
+  name: LBN 148
+  ra: 19 27 55.9
+  size: 50
+  type: HII region
+- constellation: Vulpecula
+  dec: +29 17 58
+  description: Sh2- 95, S 95
+  mag: 5
+  name: LBN 149
+  ra: 19 55 00.9
+  size: 1
+  type: HII region
+- constellation: Cygnus
+  dec: +32 41 15
+  description: S 96
+  mag: 13
+  name: LBN 150
+  ra: 19 28 54.1
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +30 08 02
+  description: S 97
+  mag: 15
+  name: LBN 151
+  ra: 19 55 59.9
+  size: 10
+  type: HII region
+- constellation: Pegasus
+  dec: +12 43 31
+  description: ''
+  mag: 15
+  name: LBN 152
+  ra: 21 37 25.0
+  size: 190
+  type: HII region
+- constellation: Vulpecula
+  dec: +29 10 36
+  description: IC 4954, IC 4954
+  mag: 7
+  name: LBN 153
+  ra: 20 05 01.9
+  size: 3
+  type: HII region
+- constellation: Cygnus
+  dec: +31 18 13
+  description: S 98
+  mag: 15
+  name: LBN 154
+  ra: 19 58 58.5
+  size: 10
+  type: HII region
+- constellation: Cygnus
+  dec: +32 12 32
+  description: ''
+  mag: 11
+  name: LBN 155
+  ra: 20 03 57.7
+  size: 5
+  type: HII region
+- constellation: Cygnus
+  dec: +33 13 06
+  description: ''
+  mag: 11
+  name: LBN 156
+  ra: 19 56 55.6
+  size: 22
+  type: HII region
+- constellation: Pegasus
+  dec: +13 14 03
+  description: ''
+  mag: 15
+  name: LBN 157
+  ra: 21 50 25.4
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +33 12 17
+  description: ''
+  mag: 9
+  name: LBN 158
+  ra: 19 59 55.9
+  size: 16
+  type: HII region
+- constellation: Cygnus
+  dec: +33 08 25
+  description: ''
+  mag: 11
+  name: LBN 159
+  ra: 20 01 56.2
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +33 28 21
+  description: S 99
+  mag: 7
+  name: LBN 160
+  ra: 20 00 55.6
+  size: 3
+  type: HII region
+- constellation: Cygnus
+  dec: +33 28 25
+  description: S 100
+  mag: 7
+  name: LBN 161
+  ra: 20 01 55.7
+  size: 3
+  type: HII region
+- constellation: Cygnus
+  dec: +33 38 44
+  description: ''
+  mag: 15
+  name: LBN 162
+  ra: 20 06 56.0
+  size: 180
+  type: HII region
+- constellation: Cygnus
+  dec: +33 18 55
+  description: ''
+  mag: 13
+  name: LBN 163
+  ra: 20 09 56.7
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +34 08 32
+  description: ''
+  mag: 11
+  name: LBN 164
+  ra: 20 03 54.9
+  size: 33
+  type: HII region
+- constellation: Cygnus
+  dec: +36 37 15
+  description: ''
+  mag: 15
+  name: LBN 165
+  ra: 19 43 49.1
+  size: 195
+  type: HII region
+- constellation: Cygnus
+  dec: +34 08 43
+  description: ''
+  mag: 11
+  name: LBN 166
+  ra: 20 06 55.2
+  size: 40
+  type: HII region
+- constellation: Vulpecula
+  dec: +26 41 30
+  description: ''
+  mag: 15
+  name: LBN 167
+  ra: 20 55 09.5
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +35 18 17
+  description: C 173
+  mag: 5
+  name: LBN 168
+  ra: 19 59 52.8
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +30 40 17
+  description: S 102
+  mag: 15
+  name: LBN 169
+  ra: 20 33 02.7
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +34 38 40
+  description: ''
+  mag: 13
+  name: LBN 170
+  ra: 20 05 54.4
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +35 28 21
+  description: ''
+  mag: 11
+  name: LBN 171
+  ra: 20 00 52.7
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +34 18 55
+  description: ''
+  mag: 11
+  name: LBN 172
+  ra: 20 09 55.3
+  size: 43
+  type: HII region
+- constellation: Cygnus
+  dec: +37 17 23
+  description: ''
+  mag: 15
+  name: LBN 173
+  ra: 19 45 48.2
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +35 08 32
+  description: ''
+  mag: 9
+  name: LBN 174
+  ra: 20 03 53.5
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +33 49 09
+  description: ''
+  mag: 11
+  name: LBN 175
+  ra: 20 13 56.5
+  size: 53
+  type: HII region
+- constellation: Cygnus
+  dec: +37 37 15
+  description: ''
+  mag: 15
+  name: LBN 176
+  ra: 19 43 47.5
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +35 10 36
+  description: ''
+  mag: 7
+  name: LBN 177
+  ra: 20 04 53.5
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +36 08 13
+  description: ''
+  mag: 13
+  name: LBN 178
+  ra: 19 58 51.4
+  size: 100
+  type: HII region
+- constellation: Cygnus
+  dec: +35 23 47
+  description: ''
+  mag: 9
+  name: LBN 179
+  ra: 20 07 53.5
+  size: 25
+  type: HII region
+- constellation: Cygnus
+  dec: +36 18 32
+  description: ''
+  mag: 13
+  name: LBN 180
+  ra: 20 03 51.7
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +34 59 09
+  description: IC 1310, IC 1310
+  mag: 9
+  name: LBN 181
+  ra: 20 13 54.8
+  size: 15
+  type: Nebula
+- constellation: Cygnus
+  dec: +35 48 55
+  description: ''
+  mag: 9
+  name: LBN 182
+  ra: 20 09 53.1
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +36 58 28
+  description: ''
+  mag: 9
+  name: LBN 183
+  ra: 20 02 50.5
+  size: 15
+  type: HII region
+- constellation: Cygnus
+  dec: +38 17 46
+  description: ''
+  mag: 15
+  name: LBN 184
+  ra: 19 51 47.2
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +34 19 45
+  description: ''
+  mag: 13
+  name: LBN 185
+  ra: 20 23 56.9
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +38 42 42
+  description: ''
+  mag: 15
+  name: LBN 186
+  ra: 19 50 46.4
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +36 48 47
+  description: ''
+  mag: 9
+  name: LBN 187
+  ra: 20 07 51.4
+  size: 80
+  type: HII region
+- constellation: Pisces
+  dec: +00 06 05
+  description: ''
+  mag: 15
+  name: LBN 188
+  ra: 22 58 33.8
+  size: 22
+  type: HII region
+- constellation: Cygnus
+  dec: +37 08 47
+  description: ''
+  mag: 11
+  name: LBN 189
+  ra: 20 07 50.8
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +37 58 32
+  description: ''
+  mag: 11
+  name: LBN 190
+  ra: 20 03 49.1
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +31 11 20
+  description: Western Veil Nebula, Witch's Broom Nebula, Filamentary Nebula, Lace-work
+    Nebula, C 34, NGC 6960, NGC 6960
+  mag: 3
+  name: LBN 191
+  ra: 20 52 04.2
+  size: 210
+  type: Supernova remnant
+- constellation: Cygnus
+  dec: +38 08 40
+  description: ''
+  mag: 11
+  name: LBN 192
+  ra: 20 05 49.0
+  size: 10
+  type: HII region
+- constellation: Cygnus
+  dec: +37 48 54
+  description: ''
+  mag: 13
+  name: LBN 193
+  ra: 20 09 50.0
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +38 28 36
+  description: ''
+  mag: 11
+  name: LBN 194
+  ra: 20 04 48.4
+  size: 4
+  type: HII region
+- constellation: Cygnus
+  dec: +36 49 24
+  description: S 104
+  mag: 7
+  name: LBN 195
+  ra: 20 17 52.5
+  size: 7
+  type: HII region
+- constellation: Cygnus
+  dec: +39 57 50
+  description: ''
+  mag: 13
+  name: LBN 196
+  ra: 19 52 44.4
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +38 28 40
+  description: ''
+  mag: 11
+  name: LBN 197
+  ra: 20 05 48.5
+  size: 5
+  type: HII region
+- constellation: Cygnus
+  dec: +35 40 03
+  description: ''
+  mag: 15
+  name: LBN 198
+  ra: 20 28 55.6
+  size: 130
+  type: HII region
+- constellation: Cygnus
+  dec: +39 28 21
+  description: ''
+  mag: 11
+  name: LBN 199
+  ra: 20 00 46.2
+  size: 35
+  type: HII region
+- constellation: Cygnus
+  dec: +40 17 54
+  description: ''
+  mag: 13
+  name: LBN 200
+  ra: 19 53 44.0
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +40 47 38
+  description: ''
+  mag: 15
+  name: LBN 201
+  ra: 19 49 42.6
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +40 08 02
+  description: ''
+  mag: 13
+  name: LBN 202
+  ra: 19 55 44.5
+  size: 45
+  type: HII region
+- constellation: Cygnus
+  dec: +38 19 05
+  description: Crescent Nebula, C 27, NGC 6888, NGC 6888
+  mag: 5
+  name: LBN 203
+  ra: 20 12 49.6
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +41 47 11
+  description: ''
+  mag: 13
+  name: LBN 204
+  ra: 19 42 40.0
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +39 08 43
+  description: ''
+  mag: 15
+  name: LBN 205
+  ra: 20 06 47.5
+  size: 300
+  type: HII region
+- constellation: Cygnus
+  dec: +38 09 16
+  description: ''
+  mag: 11
+  name: LBN 206
+  ra: 20 15 50.3
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +40 18 13
+  description: ''
+  mag: 15
+  name: LBN 207
+  ra: 19 58 44.6
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +38 58 54
+  description: ''
+  mag: 7
+  name: LBN 208
+  ra: 20 09 48.2
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +37 59 24
+  description: ''
+  mag: 13
+  name: LBN 209
+  ra: 20 17 50.8
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +36 39 59
+  description: ''
+  mag: 15
+  name: LBN 210
+  ra: 20 27 54.0
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +37 09 49
+  description: ''
+  mag: 13
+  name: LBN 211
+  ra: 20 24 52.9
+  size: 240
+  type: HII region
+- constellation: Cygnus
+  dec: +37 59 31
+  description: ''
+  mag: 13
+  name: LBN 212
+  ra: 20 19 51.0
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +40 08 32
+  description: ''
+  mag: 11
+  name: LBN 213
+  ra: 20 03 45.5
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +39 43 47
+  description: ''
+  mag: 11
+  name: LBN 214
+  ra: 20 07 46.7
+  size: 4
+  type: HII region
+- constellation: Cygnus
+  dec: +38 49 16
+  description: ''
+  mag: 11
+  name: LBN 215
+  ra: 20 15 49.2
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +39 58 43
+  description: ''
+  mag: 11
+  name: LBN 216
+  ra: 20 06 46.1
+  size: 45
+  type: HII region
+- constellation: Cygnus
+  dec: +40 18 36
+  description: ''
+  mag: 9
+  name: LBN 217
+  ra: 20 04 45.3
+  size: 15
+  type: HII region
+- constellation: Cygnus
+  dec: +36 55 10
+  description: ''
+  mag: 7
+  name: LBN 218
+  ra: 20 30 54.1
+  size: 10
+  type: HII region
+- constellation: Cygnus
+  dec: +37 05 06
+  description: ''
+  mag: 13
+  name: LBN 219
+  ra: 20 29 53.7
+  size: 30
+  type: HII region
+- constellation: Pegasus
+  dec: +22 23 56
+  description: ''
+  mag: 15
+  name: LBN 220
+  ra: 21 47 18.7
+  size: 25
+  type: HII region
+- constellation: Cygnus
+  dec: +42 27 38
+  description: ''
+  mag: 13
+  name: LBN 221
+  ra: 19 49 39.5
+  size: 52
+  type: HII region
+- constellation: Cygnus
+  dec: +40 28 47
+  description: ''
+  mag: 13
+  name: LBN 222
+  ra: 20 07 45.4
+  size: 180
+  type: HII region
+- constellation: Cygnus
+  dec: +39 59 05
+  description: ''
+  mag: 11
+  name: LBN 223
+  ra: 20 12 46.9
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +38 29 49
+  description: ''
+  mag: 15
+  name: LBN 224
+  ra: 20 24 50.9
+  size: 150
+  type: HII region
+- constellation: Cygnus
+  dec: +44 36 27
+  description: ''
+  mag: 15
+  name: LBN 225
+  ra: 19 31 33.1
+  size: 210
+  type: HII region
+- constellation: Cygnus
+  dec: +37 40 13
+  description: ''
+  mag: 15
+  name: LBN 226
+  ra: 20 31 53.1
+  size: 110
+  type: HII region
+- constellation: Cygnus
+  dec: +41 08 43
+  description: ''
+  mag: 9
+  name: LBN 227
+  ra: 20 06 44.1
+  size: 100
+  type: HII region
+- constellation: Cygnus
+  dec: +42 37 54
+  description: ''
+  mag: 13
+  name: LBN 228
+  ra: 19 53 39.7
+  size: 35
+  type: HII region
+- constellation: Cygnus
+  dec: +37 10 31
+  description: ''
+  mag: 13
+  name: LBN 229
+  ra: 20 36 54.5
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +35 11 14
+  description: ''
+  mag: 13
+  name: LBN 230
+  ra: 20 49 59.0
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +36 20 51
+  description: S 107
+  mag: 13
+  name: LBN 231
+  ra: 20 42 56.5
+  size: 8
+  type: HII region
+- constellation: Cygnus
+  dec: +41 58 24
+  description: ''
+  mag: 13
+  name: LBN 232
+  ra: 20 01 42.0
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +41 18 51
+  description: ''
+  mag: 11
+  name: LBN 233
+  ra: 20 08 44.1
+  size: 160
+  type: HII region
+- constellation: Cygnus
+  dec: +39 39 38
+  description: S 108
+  mag: 9
+  name: LBN 234
+  ra: 20 21 48.7
+  size: 110
+  type: HII region
+- constellation: Cygnus
+  dec: +36 40 51
+  description: ''
+  mag: 15
+  name: LBN 235
+  ra: 20 42 56.1
+  size: 180
+  type: HII region
+- constellation: Cygnus
+  dec: +40 39 16
+  description: ''
+  mag: 9
+  name: LBN 236
+  ra: 20 15 46.2
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +42 43 13
+  description: ''
+  mag: 11
+  name: LBN 237
+  ra: 19 58 40.2
+  size: 53
+  type: HII region
+- constellation: Cygnus
+  dec: +42 18 36
+  description: ''
+  mag: 11
+  name: LBN 238
+  ra: 20 04 41.8
+  size: 10
+  type: HII region
+- constellation: Cygnus
+  dec: +41 19 09
+  description: ''
+  mag: 7
+  name: LBN 239
+  ra: 20 13 44.8
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +40 39 31
+  description: ''
+  mag: 11
+  name: LBN 240
+  ra: 20 19 46.8
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +40 39 31
+  description: ''
+  mag: 7
+  name: LBN 241
+  ra: 20 19 46.8
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +42 48 28
+  description: ''
+  mag: 11
+  name: LBN 242
+  ra: 20 02 40.6
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +41 58 58
+  description: ''
+  mag: 11
+  name: LBN 243
+  ra: 20 10 43.2
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +43 08 24
+  description: ''
+  mag: 15
+  name: LBN 244
+  ra: 20 01 39.8
+  size: 420
+  type: HII region
+- constellation: Cygnus
+  dec: +36 31 17
+  description: ''
+  mag: 13
+  name: LBN 246
+  ra: 20 50 57.4
+  size: 45
+  type: HII region
+- constellation: Cygnus
+  dec: +38 10 47
+  description: ''
+  mag: 13
+  name: LBN 247
+  ra: 20 41 53.8
+  size: 101
+  type: HII region
+- constellation: Cygnus
+  dec: +41 09 34
+  description: ''
+  mag: 15
+  name: LBN 248
+  ra: 20 20 46.1
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +40 29 52
+  description: ''
+  mag: 5
+  name: LBN 249
+  ra: 20 25 47.9
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +36 11 30
+  description: ''
+  mag: 11
+  name: LBN 250
+  ra: 20 54 58.4
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +41 49 20
+  description: Gamma Cygni Nebula, Butterfly Nebula, IC 1318, IC 1318A
+  mag: 5
+  name: LBN 251
+  ra: 20 16 44.3
+  size: 45
+  type: Star
+- constellation: Cygnus
+  dec: +43 08 39
+  description: ''
+  mag: 11
+  name: LBN 252
+  ra: 20 05 40.4
+  size: 18
+  type: HII region
+- constellation: Cygnus
+  dec: +40 59 52
+  description: ''
+  mag: 9
+  name: LBN 253
+  ra: 20 25 47.1
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +32 12 42
+  description: S 110
+  mag: 15
+  name: LBN 254
+  ra: 21 19 06.6
+  size: 100
+  type: HII region
+- constellation: Cygnus
+  dec: +37 11 20
+  description: ''
+  mag: 11
+  name: LBN 255
+  ra: 20 51 56.7
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +35 51 46
+  description: ''
+  mag: 11
+  name: LBN 256
+  ra: 20 59 59.6
+  size: 12
+  type: HII region
+- constellation: Cygnus
+  dec: +40 40 06
+  description: ''
+  mag: 11
+  name: LBN 257
+  ra: 20 29 48.2
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +40 15 17
+  description: ''
+  mag: 13
+  name: LBN 258
+  ra: 20 32 49.3
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +42 09 27
+  description: ''
+  mag: 9
+  name: LBN 259
+  ra: 20 18 44.0
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +43 58 32
+  description: ''
+  mag: 13
+  name: LBN 260
+  ra: 20 03 38.5
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +41 14 56
+  description: ''
+  mag: 15
+  name: LBN 261
+  ra: 20 26 46.8
+  size: 25
+  type: HII region
+- constellation: Cygnus
+  dec: +44 08 32
+  description: ''
+  mag: 11
+  name: LBN 262
+  ra: 20 03 38.2
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +38 50 57
+  description: ''
+  mag: 15
+  name: LBN 263
+  ra: 20 44 53.3
+  size: 130
+  type: HII region
+- constellation: Cygnus
+  dec: +43 48 47
+  description: ''
+  mag: 11
+  name: LBN 264
+  ra: 20 07 39.4
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +39 10 51
+  description: ''
+  mag: 9
+  name: LBN 265
+  ra: 20 42 52.5
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +36 26 45
+  description: ''
+  mag: 11
+  name: LBN 266
+  ra: 20 59 58.9
+  size: 12
+  type: HII region
+- constellation: Cygnus
+  dec: +41 10 06
+  description: ''
+  mag: 9
+  name: LBN 267
+  ra: 20 29 47.4
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +41 51 49
+  description: ''
+  mag: 9
+  name: LBN 268
+  ra: 20 24 45.5
+  size: 5
+  type: HII region
+- constellation: Cygnus
+  dec: +36 11 52
+  description: ''
+  mag: 13
+  name: LBN 269
+  ra: 21 01 59.5
+  size: 130
+  type: HII region
+- constellation: Cygnus
+  dec: +42 09 45
+  description: ''
+  mag: 13
+  name: LBN 270
+  ra: 20 23 44.8
+  size: 180
+  type: HII region
+- constellation: Cygnus
+  dec: +40 40 27
+  description: ''
+  mag: 11
+  name: LBN 271
+  ra: 20 35 49.1
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +44 48 28
+  description: ''
+  mag: 9
+  name: LBN 272
+  ra: 20 02 36.7
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +42 09 52
+  description: ''
+  mag: 9
+  name: LBN 273
+  ra: 20 25 45.1
+  size: 22
+  type: HII region
+- constellation: Cygnus
+  dec: +40 40 30
+  description: ''
+  mag: 9
+  name: LBN 275
+  ra: 20 36 49.3
+  size: 10
+  type: HII region
+- constellation: Cygnus
+  dec: +40 50 27
+  description: ''
+  mag: 9
+  name: LBN 276
+  ra: 20 35 48.9
+  size: 8
+  type: HII region
+- constellation: Cygnus
+  dec: +39 50 51
+  description: ''
+  mag: 13
+  name: LBN 277
+  ra: 20 42 51.5
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +43 09 27
+  description: ''
+  mag: 9
+  name: LBN 278
+  ra: 20 18 42.3
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +42 09 56
+  description: ''
+  mag: 11
+  name: LBN 279
+  ra: 20 26 45.3
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +42 22 52
+  description: NGC 6914, VdB 132, NGC 6914
+  mag: 5
+  name: LBN 280
+  ra: 20 25 44.7
+  size: 3
+  type: Reflection nebula
+- constellation: Cygnus
+  dec: +42 28 52
+  description: ''
+  mag: 5
+  name: LBN 281
+  ra: 20 25 44.6
+  size: 3
+  type: HII region
+- constellation: Cygnus
+  dec: +29 33 36
+  description: ''
+  mag: 15
+  name: LBN 282
+  ra: 21 39 11.9
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +38 11 30
+  description: ''
+  mag: 13
+  name: LBN 283
+  ra: 20 54 55.8
+  size: 35
+  type: HII region
+- constellation: Cygnus
+  dec: +37 11 49
+  description: ''
+  mag: 11
+  name: LBN 284
+  ra: 21 00 58.1
+  size: 25
+  type: HII region
+- constellation: Cygnus
+  dec: +41 30 20
+  description: ''
+  mag: 13
+  name: LBN 285
+  ra: 20 33 47.5
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +41 40 17
+  description: ''
+  mag: 9
+  name: LBN 286
+  ra: 20 32 47.0
+  size: 12
+  type: HII region
+- constellation: Cygnus
+  dec: +30 03 34
+  description: S 111
+  mag: 15
+  name: LBN 287
+  ra: 21 38 11.3
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +42 00 13
+  description: ''
+  mag: 11
+  name: LBN 288
+  ra: 20 31 46.3
+  size: 45
+  type: HII region
+- constellation: Cygnus
+  dec: +39 01 20
+  description: ''
+  mag: 13
+  name: LBN 289
+  ra: 20 51 54.1
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +37 31 49
+  description: ''
+  mag: 11
+  name: LBN 290
+  ra: 21 00 57.6
+  size: 8
+  type: HII region
+- constellation: Cygnus
+  dec: +38 06 39
+  description: ''
+  mag: 11
+  name: LBN 291
+  ra: 20 57 56.4
+  size: 10
+  type: HII region
+- constellation: Cygnus
+  dec: +43 09 49
+  description: ''
+  mag: 9
+  name: LBN 292
+  ra: 20 24 43.2
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +42 40 06
+  description: ''
+  mag: 13
+  name: LBN 293
+  ra: 20 29 44.9
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +45 48 32
+  description: ''
+  mag: 11
+  name: LBN 294
+  ra: 20 03 34.8
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +39 09 26
+  description: ''
+  mag: 11
+  name: LBN 295
+  ra: 20 53 54.3
+  size: 15
+  type: HII region
+- constellation: Cygnus
+  dec: +37 41 55
+  description: ''
+  mag: 13
+  name: LBN 296
+  ra: 21 02 57.7
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +46 08 24
+  description: ''
+  mag: 11
+  name: LBN 297
+  ra: 20 01 33.8
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +44 19 31
+  description: ''
+  mag: 9
+  name: LBN 298
+  ra: 20 19 40.3
+  size: 8
+  type: HII region
+- constellation: Cygnus
+  dec: +37 51 58
+  description: ''
+  mag: 11
+  name: LBN 299
+  ra: 21 03 57.7
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +43 59 41
+  description: ''
+  mag: 9
+  name: LBN 300
+  ra: 20 22 41.4
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +44 39 23
+  description: ''
+  mag: 9
+  name: LBN 301
+  ra: 20 17 39.3
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +41 00 57
+  description: ''
+  mag: 11
+  name: LBN 302
+  ra: 20 44 50.1
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +44 29 31
+  description: ''
+  mag: 9
+  name: LBN 303
+  ra: 20 19 40.0
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +38 41 45
+  description: ''
+  mag: 13
+  name: LBN 304
+  ra: 20 59 55.9
+  size: 130
+  type: HII region
+- constellation: Cygnus
+  dec: +43 29 59
+  description: ''
+  mag: 9
+  name: LBN 305
+  ra: 20 27 43.1
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +29 53 49
+  description: ''
+  mag: 15
+  name: LBN 306
+  ra: 21 44 12.3
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +37 12 13
+  description: ''
+  mag: 15
+  name: LBN 307
+  ra: 21 08 59.3
+  size: 230
+  type: HII region
+- constellation: Cygnus
+  dec: +41 01 04
+  description: ''
+  mag: 13
+  name: LBN 308
+  ra: 20 46 50.4
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +43 10 13
+  description: ''
+  mag: 11
+  name: LBN 309
+  ra: 20 31 44.4
+  size: 42
+  type: HII region
+- constellation: Cygnus
+  dec: +45 09 20
+  description: ''
+  mag: 11
+  name: LBN 310
+  ra: 20 16 38.2
+  size: 360
+  type: HII region
+- constellation: Cygnus
+  dec: +41 01 07
+  description: ''
+  mag: 15
+  name: LBN 311
+  ra: 20 47 50.6
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +42 20 37
+  description: ''
+  mag: 11
+  name: LBN 312
+  ra: 20 38 46.9
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +45 49 01
+  description: ''
+  mag: 9
+  name: LBN 313
+  ra: 20 11 36.1
+  size: 55
+  type: HII region
+- constellation: Cygnus
+  dec: +44 59 34
+  description: ''
+  mag: 9
+  name: LBN 314
+  ra: 20 20 39.2
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +44 10 10
+  description: ''
+  mag: 11
+  name: LBN 315
+  ra: 20 30 42.4
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +38 12 16
+  description: ''
+  mag: 13
+  name: LBN 316
+  ra: 21 09 58.2
+  size: 160
+  type: HII region
+- constellation: Cygnus
+  dec: +44 10 13
+  description: ''
+  mag: 9
+  name: LBN 317
+  ra: 20 31 42.6
+  size: 23
+  type: HII region
+- constellation: Cygnus
+  dec: +39 51 48
+  description: ''
+  mag: 13
+  name: LBN 318
+  ra: 21 00 54.5
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +41 11 23
+  description: ''
+  mag: 13
+  name: LBN 319
+  ra: 20 52 51.2
+  size: 35
+  type: HII region
+- constellation: Cygnus
+  dec: +42 11 07
+  description: ''
+  mag: 11
+  name: LBN 320
+  ra: 20 47 48.7
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +38 12 22
+  description: ''
+  mag: 11
+  name: LBN 321
+  ra: 21 11 58.6
+  size: 85
+  type: HII region
+- constellation: Cygnus
+  dec: +43 00 50
+  description: ''
+  mag: 9
+  name: LBN 322
+  ra: 20 42 46.5
+  size: 8
+  type: HII region
+- constellation: Cygnus
+  dec: +43 05 50
+  description: ''
+  mag: 11
+  name: LBN 323
+  ra: 20 42 46.4
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +43 00 54
+  description: ''
+  mag: 13
+  name: LBN 324
+  ra: 20 43 46.7
+  size: 100
+  type: HII region
+- constellation: Cygnus
+  dec: +46 19 27
+  description: ''
+  mag: 7
+  name: LBN 325
+  ra: 20 18 36.2
+  size: 25
+  type: HII region
+- constellation: Cygnus
+  dec: +46 29 30
+  description: ''
+  mag: 11
+  name: LBN 326
+  ra: 20 19 36.1
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +42 11 20
+  description: ''
+  mag: 13
+  name: LBN 327
+  ra: 20 51 49.4
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +42 31 17
+  description: IC 5068, IC 5068
+  mag: 7
+  name: LBN 328
+  ra: 20 50 48.7
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +43 01 10
+  description: ''
+  mag: 13
+  name: LBN 329
+  ra: 20 48 47.6
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +45 00 23
+  description: ''
+  mag: 11
+  name: LBN 330
+  ra: 20 34 41.6
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +47 39 09
+  description: ''
+  mag: 11
+  name: LBN 331
+  ra: 20 13 32.6
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +42 31 30
+  description: ''
+  mag: 9
+  name: LBN 332
+  ra: 20 54 49.5
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +38 02 48
+  description: S 113
+  mag: 11
+  name: LBN 333
+  ra: 21 21 00.3
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +43 41 07
+  description: ''
+  mag: 11
+  name: LBN 334
+  ra: 20 47 46.3
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +46 59 41
+  description: ''
+  mag: 9
+  name: LBN 335
+  ra: 20 22 35.6
+  size: 10
+  type: HII region
+- constellation: Cygnus
+  dec: +47 09 38
+  description: ''
+  mag: 9
+  name: LBN 336
+  ra: 20 21 35.1
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +45 40 20
+  description: C 181
+  mag: 5
+  name: LBN 337
+  ra: 20 33 40.2
+  size: 13
+  type: HII region
+- constellation: Cygnus
+  dec: +43 51 07
+  description: ''
+  mag: 7
+  name: LBN 338
+  ra: 20 47 46.0
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +45 20 34
+  description: ''
+  mag: 11
+  name: LBN 339
+  ra: 20 37 41.6
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +40 17 19
+  description: ''
+  mag: 13
+  name: LBN 340
+  ra: 21 10 55.6
+  size: 9
+  type: HII region
+- constellation: Cygnus
+  dec: +44 11 04
+  description: ''
+  mag: 13
+  name: LBN 341
+  ra: 20 46 45.3
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +43 01 30
+  description: ''
+  mag: 15
+  name: LBN 342
+  ra: 20 54 48.7
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +43 41 17
+  description: ''
+  mag: 7
+  name: LBN 343
+  ra: 20 50 46.9
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +47 09 48
+  description: ''
+  mag: 13
+  name: LBN 344
+  ra: 20 24 35.6
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +47 39 38
+  description: ''
+  mag: 13
+  name: LBN 345
+  ra: 20 21 34.0
+  size: 180
+  type: HII region
+- constellation: Cygnus
+  dec: +38 22 53
+  description: ''
+  mag: 15
+  name: LBN 346
+  ra: 21 23 00.2
+  size: 100
+  type: HII region
+- constellation: Cygnus
+  dec: +38 47 48
+  description: S 114
+  mag: 11
+  name: LBN 347
+  ra: 21 20 59.4
+  size: 12
+  type: HII region
+- constellation: Cygnus
+  dec: +43 11 33
+  description: ''
+  mag: 9
+  name: LBN 348
+  ra: 20 55 48.6
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +43 11 33
+  description: ''
+  mag: 9
+  name: LBN 349
+  ra: 20 55 48.6
+  size: 45
+  type: HII region
+- constellation: Cygnus
+  dec: +44 11 17
+  description: IC 5070, IC 5070
+  mag: 9
+  name: LBN 350
+  ra: 20 50 46.0
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +46 10 30
+  description: ''
+  mag: 13
+  name: LBN 351
+  ra: 20 36 39.8
+  size: 180
+  type: HII region
+- constellation: Cygnus
+  dec: +47 10 06
+  description: ''
+  mag: 9
+  name: LBN 352
+  ra: 20 29 36.5
+  size: 85
+  type: HII region
+- constellation: Cygnus
+  dec: +44 21 17
+  description: IC 5067, IC 5067
+  mag: 5
+  name: LBN 353
+  ra: 20 50 45.8
+  size: 25
+  type: Nebula
+- constellation: Cygnus
+  dec: +43 21 39
+  description: ''
+  mag: 7
+  name: LBN 354
+  ra: 20 57 48.7
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +36 33 26
+  description: ''
+  mag: 15
+  name: LBN 355
+  ra: 21 35 04.4
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +43 11 45
+  description: ''
+  mag: 9
+  name: LBN 356
+  ra: 20 59 49.4
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +46 50 23
+  description: S 115
+  mag: 7
+  name: LBN 357
+  ra: 20 34 38.2
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +46 50 23
+  description: ''
+  mag: 9
+  name: LBN 358
+  ra: 20 34 38.2
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +44 21 23
+  description: ''
+  mag: 7
+  name: LBN 359
+  ra: 20 52 46.1
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +40 32 33
+  description: ''
+  mag: 13
+  name: LBN 360
+  ra: 21 15 56.2
+  size: 33
+  type: HII region
+- constellation: Cygnus
+  dec: +46 00 47
+  description: ''
+  mag: 11
+  name: LBN 361
+  ra: 20 41 41.1
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +47 10 20
+  description: ''
+  mag: 7
+  name: LBN 362
+  ra: 20 33 37.3
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +43 11 58
+  description: ''
+  mag: 15
+  name: LBN 363
+  ra: 21 03 50.1
+  size: 140
+  type: HII region
+- constellation: Cygnus
+  dec: +48 39 48
+  description: ''
+  mag: 15
+  name: LBN 364
+  ra: 20 24 32.5
+  size: 110
+  type: HII region
+- constellation: Cygnus
+  dec: +43 12 04
+  description: ''
+  mag: 11
+  name: LBN 365
+  ra: 21 05 50.5
+  size: 100
+  type: HII region
+- constellation: Cygnus
+  dec: +38 13 20
+  description: ''
+  mag: 13
+  name: LBN 366
+  ra: 21 33 02.2
+  size: 150
+  type: HII region
+- constellation: Cygnus
+  dec: +47 40 27
+  description: ''
+  mag: 11
+  name: LBN 367
+  ra: 20 35 36.7
+  size: 150
+  type: HII region
+- constellation: Cygnus
+  dec: +47 40 27
+  description: ''
+  mag: 9
+  name: LBN 368
+  ra: 20 35 36.7
+  size: 10
+  type: HII region
+- constellation: Cygnus
+  dec: +42 52 13
+  description: ''
+  mag: 13
+  name: LBN 369
+  ra: 21 08 51.6
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +49 19 41
+  description: ''
+  mag: 7
+  name: LBN 370
+  ra: 20 22 30.6
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +45 11 29
+  description: ''
+  mag: 11
+  name: LBN 371
+  ra: 20 54 45.1
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +47 50 27
+  description: ''
+  mag: 9
+  name: LBN 372
+  ra: 20 35 36.4
+  size: 30
+  type: HII region
+- constellation: Cygnus
+  dec: +44 11 51
+  description: North America Nebula, C 20, NGC 7000, NGC 7000
+  mag: 11
+  name: LBN 373
+  ra: 21 01 48.2
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +38 03 28
+  description: ''
+  mag: 13
+  name: LBN 374
+  ra: 21 36 03.0
+  size: 110
+  type: HII region
+- constellation: Cygnus
+  dec: +47 50 33
+  description: ''
+  mag: 9
+  name: LBN 375
+  ra: 20 37 36.8
+  size: 25
+  type: HII region
+- constellation: Cygnus
+  dec: +48 00 30
+  description: ''
+  mag: 9
+  name: LBN 376
+  ra: 20 36 36.2
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +49 29 48
+  description: ''
+  mag: 9
+  name: LBN 377
+  ra: 20 24 30.6
+  size: 105
+  type: HII region
+- constellation: Cygnus
+  dec: +45 21 36
+  description: ''
+  mag: 9
+  name: LBN 378
+  ra: 20 56 45.3
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +49 00 06
+  description: ''
+  mag: 9
+  name: LBN 379
+  ra: 20 29 32.7
+  size: 12
+  type: HII region
+- constellation: Cygnus
+  dec: +48 10 30
+  description: ''
+  mag: 13
+  name: LBN 380
+  ra: 20 36 35.9
+  size: 150
+  type: HII region
+- constellation: Cygnus
+  dec: +48 40 23
+  description: ''
+  mag: 9
+  name: LBN 381
+  ra: 20 34 34.5
+  size: 100
+  type: HII region
+- constellation: Cygnus
+  dec: +49 10 13
+  description: ''
+  mag: 11
+  name: LBN 382
+  ra: 20 31 32.8
+  size: 240
+  type: HII region
+- constellation: Cygnus
+  dec: +43 12 27
+  description: ''
+  mag: 11
+  name: LBN 383
+  ra: 21 13 52.1
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +45 41 42
+  description: ''
+  mag: 5
+  name: LBN 384
+  ra: 20 58 45.1
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +45 11 54
+  description: ''
+  mag: 7
+  name: LBN 385
+  ra: 21 02 46.8
+  size: 70
+  type: HII region
+- constellation: Cygnus
+  dec: +49 30 13
+  description: ''
+  mag: 9
+  name: LBN 386
+  ra: 20 31 32.1
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +45 51 45
+  description: ''
+  mag: 7
+  name: LBN 387
+  ra: 20 59 45.0
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +47 11 20
+  description: ''
+  mag: 15
+  name: LBN 388
+  ra: 20 51 41.0
+  size: 240
+  type: HII region
+- constellation: Cygnus
+  dec: +43 42 30
+  description: ''
+  mag: 9
+  name: LBN 389
+  ra: 21 14 51.6
+  size: 15
+  type: HII region
+- constellation: Cygnus
+  dec: +43 52 30
+  description: ''
+  mag: 11
+  name: LBN 390
+  ra: 21 14 51.4
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +43 42 36
+  description: S 119
+  mag: 13
+  name: LBN 391
+  ra: 21 16 52.0
+  size: 150
+  type: HII region
+- constellation: Cygnus
+  dec: +45 12 13
+  description: ''
+  mag: 13
+  name: LBN 392
+  ra: 21 08 48.0
+  size: 50
+  type: HII region
+- constellation: Cygnus
+  dec: +44 02 33
+  description: ''
+  mag: 9
+  name: LBN 393
+  ra: 21 15 51.3
+  size: 25
+  type: HII region
+- constellation: Cygnus
+  dec: +47 23 32
+  description: IC 5076, VdB 137, IC 5076
+  mag: 5
+  name: LBN 394
+  ra: 20 55 41.5
+  size: 7
+  type: Reflection nebula
+- constellation: Cygnus
+  dec: +40 03 33
+  description: ''
+  mag: 15
+  name: LBN 395
+  ra: 21 38 01.1
+  size: 2
+  type: HII region
+- constellation: Cygnus
+  dec: +40 08 33
+  description: ''
+  mag: 15
+  name: LBN 396
+  ra: 21 38 01.0
+  size: 2
+  type: HII region
+- constellation: Cygnus
+  dec: +40 01 36
+  description: ''
+  mag: 15
+  name: LBN 397
+  ra: 21 39 01.3
+  size: 2
+  type: HII region
+- constellation: Cygnus
+  dec: +40 03 36
+  description: ''
+  mag: 15
+  name: LBN 398
+  ra: 21 39 01.3
+  size: 2
+  type: HII region
+- constellation: Cygnus
+  dec: +40 21 33
+  description: ''
+  mag: 15
+  name: LBN 399
+  ra: 21 38 00.7
+  size: 2
+  type: HII region
+- constellation: Cygnus
+  dec: +43 42 47
+  description: ''
+  mag: 7
+  name: LBN 400
+  ra: 21 20 52.9
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +43 22 53
+  description: ''
+  mag: 11
+  name: LBN 401
+  ra: 21 22 53.8
+  size: 100
+  type: HII region
+- constellation: Cygnus
+  dec: +44 12 45
+  description: ''
+  mag: 11
+  name: LBN 402
+  ra: 21 19 51.9
+  size: 60
+  type: HII region
+- constellation: Cygnus
+  dec: +48 14 39
+  description: DG 166
+  mag: 15
+  name: LBN 403
+  ra: 20 57 40.3
+  size: 5
+  type: HII region
+- constellation: Cygnus
+  dec: +44 42 56
+  description: ''
+  mag: 15
+  name: LBN 404
+  ra: 21 23 52.1
+  size: 90
+  type: HII region
+- constellation: Cygnus
+  dec: +42 13 43
+  description: S 118
+  mag: 15
+  name: LBN 405
+  ra: 21 41 59.4
+  size: 270
+  type: HII region
+- constellation: Draco
+  dec: +60 14 39
+  description: ''
+  mag: 15
+  name: LBN 406
+  ra: 16 45 42.9
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +44 13 28
+  description: ''
+  mag: 15
+  name: LBN 407
+  ra: 21 35 55.5
+  size: 120
+  type: HII region
+- constellation: Cygnus
+  dec: +50 11 54
+  description: DG 170
+  mag: 9
+  name: LBN 408
+  ra: 21 02 37.7
+  size: 2
+  type: HII region
+- constellation: Cygnus
+  dec: +50 06 57
+  description: DG 169
+  mag: 9
+  name: LBN 409
+  ra: 21 03 38.1
+  size: 2
+  type: HII region
+- constellation: Cygnus
+  dec: +49 37 09
+  description: ''
+  mag: 11
+  name: LBN 410
+  ra: 21 07 40.1
+  size: 2
+  type: HII region
+- constellation: Cygnus
+  dec: +49 55 03
+  description: DG 171
+  mag: 11
+  name: LBN 411
+  ra: 21 05 39.0
+  size: 2
+  type: HII region
+- constellation: Cygnus
+  dec: +50 14 57
+  description: ''
+  mag: 9
+  name: LBN 412
+  ra: 21 03 37.9
+  size: 2
+  type: HII region
+- constellation: Draco
+  dec: +60 45 00
+  description: ''
+  mag: 15
+  name: LBN 413
+  ra: 16 50 39.8
+  size: 40
+  type: HII region
+- constellation: Cygnus
+  dec: +44 25 43
+  description: S 123
+  mag: 13
+  name: LBN 414
+  ra: 21 41 56.6
+  size: 15
+  type: HII region
+- constellation: Draco
+  dec: +61 24 39
+  description: ''
+  mag: 15
+  name: LBN 415
+  ra: 16 45 37.4
+  size: 210
+  type: HII region
+- constellation: Cygnus
+  dec: +47 43 12
+  description: ''
+  mag: 15
+  name: LBN 416
+  ra: 21 29 48.9
+  size: 80
+  type: HII region
+- constellation: Cygnus
+  dec: +48 33 01
+  description: ''
+  mag: 15
+  name: LBN 417
+  ra: 21 25 46.6
+  size: 30
+  type: HII region
+- constellation: Pegasus
+  dec: +24 16 04
+  description: ''
+  mag: 15
+  name: LBN 418
+  ra: 22 57 25.5
+  size: 200
+  type: HII region
+- constellation: Pegasus
+  dec: +19 16 20
+  description: ''
+  mag: 15
+  name: LBN 419
+  ra: 23 12 28.9
+  size: 180
+  type: HII region
+- constellation: Lacerta
+  dec: +42 44 37
+  description: ''
+  mag: 15
+  name: LBN 420
+  ra: 22 05 04.0
+  size: 190
+  type: HII region
+- constellation: Cygnus
+  dec: +50 13 28
+  description: ''
+  mag: 11
+  name: LBN 421
+  ra: 21 35 46.5
+  size: 30
+  type: HII region
+- constellation: Cepheus
+  dec: +56 46 16
+  description: C 184
+  mag: 13
+  name: LBN 422
+  ra: 20 50 18.8
+  size: 15
+  type: HII region
+- constellation: Cygnus
+  dec: +50 21 33
+  description: ''
+  mag: 7
+  name: LBN 423
+  ra: 21 37 46.8
+  size: 12
+  type: HII region
+- constellation: Cygnus
+  dec: +47 14 12
+  description: Cocoon Nebula, C 19, IC 5146, Cr 470, IC 5146
+  mag: 5
+  name: LBN 424
+  ra: 21 53 55.9
+  size: 10
+  type: Open cluster
+- constellation: Lacerta
+  dec: +43 14 51
+  description: ''
+  mag: 15
+  name: LBN 425
+  ra: 22 12 05.1
+  size: 270
+  type: HII region
+- constellation: Cygnus
+  dec: +50 23 41
+  description: S 124
+  mag: 11
+  name: LBN 426
+  ra: 21 40 47.6
+  size: 90
+  type: HII region
+- constellation: Pegasus
+  dec: +23 36 18
+  description: ''
+  mag: 15
+  name: LBN 427
+  ra: 23 10 27.4
+  size: 20
+  type: HII region
+- constellation: Lacerta
+  dec: +38 15 28
+  description: S 126
+  mag: 15
+  name: LBN 428
+  ra: 22 32 13.9
+  size: 110
+  type: HII region
+- constellation: Lacerta
+  dec: +39 05 24
+  description: ''
+  mag: 11
+  name: LBN 429
+  ra: 22 30 12.9
+  size: 100
+  type: HII region
+- constellation: Lacerta
+  dec: +39 05 26
+  description: ''
+  mag: 9
+  name: LBN 430
+  ra: 22 31 13.1
+  size: 50
+  type: HII region
+- constellation: Pegasus
+  dec: +25 26 16
+  description: ''
+  mag: 15
+  name: LBN 431
+  ra: 23 08 26.6
+  size: 50
+  type: HII region
+- constellation: Lacerta
+  dec: +42 15 10
+  description: ''
+  mag: 13
+  name: LBN 432
+  ra: 22 22 08.5
+  size: 270
+  type: HII region
+- constellation: Lacerta
+  dec: +38 05 36
+  description: ''
+  mag: 15
+  name: LBN 433
+  ra: 22 37 15.1
+  size: 120
+  type: HII region
+- constellation: Pegasus
+  dec: +09 16 39
+  description: ''
+  mag: 15
+  name: LBN 434
+  ra: 23 42 32.9
+  size: 80
+  type: HII region
+- constellation: Lacerta
+  dec: +37 35 40
+  description: ''
+  mag: 15
+  name: LBN 435
+  ra: 22 40 16.1
+  size: 20
+  type: HII region
+- constellation: Cygnus
+  dec: +54 33 09
+  description: S 127
+  mag: 11
+  name: LBN 436
+  ra: 21 28 36.2
+  size: 1
+  type: HII region
+- constellation: Lacerta
+  dec: +40 35 28
+  description: DG 187
+  mag: 11
+  name: LBN 437
+  ra: 22 32 12.2
+  size: 75
+  type: HII region
+- constellation: Lacerta
+  dec: +37 45 42
+  description: ''
+  mag: 11
+  name: LBN 438
+  ra: 22 41 16.2
+  size: 30
+  type: HII region
+- constellation: Pegasus
+  dec: +28 36 13
+  description: ''
+  mag: 15
+  name: LBN 439
+  ra: 23 05 25.0
+  size: 28
+  type: HII region
+- constellation: Lacerta
+  dec: +37 15 46
+  description: ''
+  mag: 13
+  name: LBN 440
+  ra: 22 44 17.1
+  size: 10
+  type: HII region
+- constellation: Cepheus
+  dec: +59 32 57
+  description: DG 168
+  mag: 11
+  name: LBN 441
+  ra: 21 03 14.7
+  size: 1
+  type: HII region
+- constellation: Lacerta
+  dec: +41 05 37
+  description: ''
+  mag: 13
+  name: LBN 442
+  ra: 22 38 13.3
+  size: 110
+  type: HII region
+- constellation: Cepheus
+  dec: +55 53 20
+  description: S 128
+  mag: 7
+  name: LBN 443
+  ra: 21 32 34.6
+  size: 1
+  type: HII region
+- constellation: Draco
+  dec: +63 49 29
+  description: ''
+  mag: 15
+  name: LBN 444
+  ra: 20 18 42.3
+  size: 10
+  type: HII region
+- constellation: Cepheus
+  dec: +59 17 21
+  description: ''
+  mag: 11
+  name: LBN 445
+  ra: 21 11 18.3
+  size: 60
+  type: HII region
+- constellation: Cepheus
+  dec: +58 35 38
+  description: C 191
+  mag: 9
+  name: LBN 446
+  ra: 21 17 22.5
+  size: 12
+  type: HII region
+- constellation: Draco
+  dec: +64 19 14
+  description: ''
+  mag: 15
+  name: LBN 447
+  ra: 20 14 38.4
+  size: 10
+  type: HII region
+- constellation: Lacerta
+  dec: +41 35 40
+  description: ''
+  mag: 15
+  name: LBN 448
+  ra: 22 40 13.4
+  size: 42
+  type: HII region
+- constellation: Cepheus
+  dec: +59 42 21
+  description: C 190
+  mag: 13
+  name: LBN 449
+  ra: 21 11 17.1
+  size: 150
+  type: HII region
+- constellation: Lacerta
+  dec: +42 15 43
+  description: ''
+  mag: 15
+  name: LBN 450
+  ra: 22 42 13.4
+  size: 290
+  type: HII region
+- constellation: Cepheus
+  dec: +57 23 27
+  description: Elephant Trunk, IC 1396, Cr 439, IC 1396A
+  mag: 7
+  name: LBN 452
+  ra: 21 35 32.2
+  size: 14
+  type: Nebula
+- constellation: Cepheus
+  dec: +60 12 32
+  description: ''
+  mag: 11
+  name: LBN 453
+  ra: 21 15 17.0
+  size: 100
+  type: HII region
+- constellation: Lacerta
+  dec: +41 45 50
+  description: ''
+  mag: 15
+  name: LBN 454
+  ra: 22 47 15.0
+  size: 180
+  type: HII region
+- constellation: Cepheus
+  dec: +57 43 38
+  description: ''
+  mag: 11
+  name: LBN 455
+  ra: 21 39 32.9
+  size: 150
+  type: HII region
+- constellation: Cepheus
+  dec: +58 18 38
+  description: ''
+  mag: 7
+  name: LBN 456
+  ra: 21 39 31.5
+  size: 10
+  type: HII region
+- constellation: Cepheus
+  dec: +58 03 50
+  description: ''
+  mag: 9
+  name: LBN 457
+  ra: 21 44 34.0
+  size: 90
+  type: HII region
+- constellation: Lacerta
+  dec: +41 36 00
+  description: ''
+  mag: 13
+  name: LBN 458
+  ra: 22 54 16.8
+  size: 80
+  type: HII region
+- constellation: Draco
+  dec: +67 19 17
+  description: ''
+  mag: 15
+  name: LBN 459
+  ra: 20 15 21.4
+  size: 160
+  type: HII region
+- constellation: Lacerta
+  dec: +41 16 03
+  description: ''
+  mag: 11
+  name: LBN 460
+  ra: 22 57 17.7
+  size: 35
+  type: HII region
+- constellation: Lacerta
+  dec: +43 05 58
+  description: ''
+  mag: 13
+  name: LBN 461
+  ra: 22 53 15.6
+  size: 60
+  type: HII region
+- constellation: Lacerta
+  dec: +42 36 01
+  description: ''
+  mag: 11
+  name: LBN 462
+  ra: 22 55 16.4
+  size: 30
+  type: HII region
+- constellation: Andromeda
+  dec: +41 36 05
+  description: ''
+  mag: 13
+  name: LBN 463
+  ra: 22 58 17.8
+  size: 50
+  type: HII region
+- constellation: Draco
+  dec: +69 56 31
+  description: ''
+  mag: 15
+  name: LBN 464
+  ra: 19 31 45.8
+  size: 70
+  type: HII region
+- constellation: Draco
+  dec: +70 15 58
+  description: ''
+  mag: 15
+  name: LBN 465
+  ra: 19 23 40.4
+  size: 90
+  type: HII region
+- constellation: Pegasus
+  dec: +28 36 34
+  description: ''
+  mag: 15
+  name: LBN 466
+  ra: 23 31 29.1
+  size: 20
+  type: HII region
+- constellation: Pegasus
+  dec: +33 46 28
+  description: ''
+  mag: 13
+  name: LBN 467
+  ra: 23 22 26.3
+  size: 15
+  type: HII region
+- constellation: Cepheus
+  dec: +67 50 52
+  description: ''
+  mag: 15
+  name: LBN 468
+  ra: 20 42 29.7
+  size: 60
+  type: HII region
+- constellation: Draco
+  dec: +70 56 55
+  description: ''
+  mag: 15
+  name: LBN 469
+  ra: 19 37 38.3
+  size: 60
+  type: HII region
+- constellation: Pegasus
+  dec: +32 16 31
+  description: ''
+  mag: 13
+  name: LBN 470
+  ra: 23 26 27.4
+  size: 240
+  type: HII region
+- constellation: Cepheus
+  dec: +56 05 04
+  description: ''
+  mag: 7
+  name: LBN 471
+  ra: 22 18 51.2
+  size: 30
+  type: HII region
+- constellation: Cepheus
+  dec: +64 52 46
+  description: DG 174
+  mag: 11
+  name: LBN 472
+  ra: 21 20 02.4
+  size: 30
+  type: HII region
+- constellation: Cepheus
+  dec: +55 55 06
+  description: S 132
+  mag: 11
+  name: LBN 473
+  ra: 22 19 51.8
+  size: 80
+  type: HII region
+- constellation: Cepheus
+  dec: +58 24 42
+  description: ''
+  mag: 13
+  name: LBN 474
+  ra: 22 07 42.5
+  size: 45
+  type: HII region
+- constellation: Cepheus
+  dec: +67 21 34
+  description: ''
+  mag: 15
+  name: LBN 475
+  ra: 20 55 38.8
+  size: 150
+  type: HII region
+- constellation: Cepheus
+  dec: +64 23 08
+  description: S 133
+  mag: 13
+  name: LBN 476
+  ra: 21 28 08.2
+  size: 80
+  type: HII region
+- constellation: Andromeda
+  dec: +41 46 16
+  description: ''
+  mag: 11
+  name: LBN 477
+  ra: 23 08 20.2
+  size: 40
+  type: HII region
+- constellation: Andromeda
+  dec: +43 26 11
+  description: ''
+  mag: 13
+  name: LBN 478
+  ra: 23 04 18.3
+  size: 30
+  type: HII region
+- constellation: Cepheus
+  dec: +57 54 53
+  description: ''
+  mag: 11
+  name: LBN 479
+  ra: 22 12 45.6
+  size: 45
+  type: HII region
+- constellation: Andromeda
+  dec: +35 16 28
+  description: ''
+  mag: 13
+  name: LBN 480
+  ra: 23 22 25.8
+  size: 90
+  type: HII region
+- constellation: Draco
+  dec: +71 36 22
+  description: ''
+  mag: 15
+  name: LBN 481
+  ra: 19 29 28.7
+  size: 80
+  type: HII region
+- constellation: Cepheus
+  dec: +59 44 36
+  description: ''
+  mag: 13
+  name: LBN 482
+  ra: 22 04 38.4
+  size: 20
+  type: HII region
+- constellation: Cepheus
+  dec: +68 11 21
+  description: ''
+  mag: 15
+  name: LBN 483
+  ra: 20 51 31.9
+  size: 20
+  type: HII region
+- constellation: Pegasus
+  dec: +29 06 36
+  description: ''
+  mag: 15
+  name: LBN 484
+  ra: 23 35 29.6
+  size: 60
+  type: HII region
+- constellation: Cepheus
+  dec: +58 59 53
+  description: ''
+  mag: 11
+  name: LBN 485
+  ra: 22 12 43.5
+  size: 10
+  type: HII region
+- constellation: Cepheus
+  dec: +58 49 00
+  description: ''
+  mag: 13
+  name: LBN 486
+  ra: 22 16 45.6
+  size: 20
+  type: HII region
+- constellation: Cepheus
+  dec: +68 11 53
+  description: Iris Nebula, C 4, NGC 7023, Cr 429, VdB 139, NGC 7023
+  mag: 5
+  name: LBN 487
+  ra: 21 01 37.0
+  size: 10
+  type: Nebula
+- constellation: Cepheus
+  dec: +60 14 46
+  description: ''
+  mag: 13
+  name: LBN 488
+  ra: 22 09 39.6
+  size: 23
+  type: HII region
+- constellation: Cepheus
+  dec: +59 10 00
+  description: ''
+  mag: 9
+  name: LBN 489
+  ra: 22 16 44.9
+  size: 8
+  type: HII region
+- constellation: Cepheus
+  dec: +59 15 00
+  description: S 134
+  mag: 15
+  name: LBN 490
+  ra: 22 16 44.7
+  size: 190
+  type: HII region
+- constellation: Cepheus
+  dec: +59 15 02
+  description: ''
+  mag: 9
+  name: LBN 491
+  ra: 22 17 45.2
+  size: 13
+  type: HII region
+- constellation: Cepheus
+  dec: +58 40 08
+  description: S 135
+  mag: 11
+  name: LBN 492
+  ra: 22 20 47.6
+  size: 22
+  type: HII region
+- constellation: Cepheus
+  dec: +58 45 08
+  description: ''
+  mag: 7
+  name: LBN 493
+  ra: 22 20 47.4
+  size: 5
+  type: HII region
+- constellation: Cepheus
+  dec: +61 14 46
+  description: ''
+  mag: 15
+  name: LBN 494
+  ra: 22 09 37.3
+  size: 100
+  type: HII region
+- constellation: Cepheus
+  dec: +68 27 34
+  description: DG 172
+  mag: 13
+  name: LBN 495
+  ra: 21 15 43.0
+  size: 12
+  type: HII region
+- constellation: Cepheus
+  dec: +61 24 56
+  description: DG 180
+  mag: 13
+  name: LBN 496
+  ra: 22 14 39.3
+  size: 4
+  type: HII region
+- constellation: Cepheus
+  dec: +66 03 45
+  description: Small Cluster Nebula, NGC 7129, Cr 441, VdB 146, NGC 7129
+  mag: 5
+  name: LBN 497
+  ra: 21 42 08.8
+  size: 2
+  type: Nebula
+- constellation: Cepheus
+  dec: +64 34 18
+  description: S 137
+  mag: 13
+  name: LBN 498
+  ra: 21 56 21.6
+  size: 120
+  type: HII region
+- constellation: Andromeda
+  dec: +41 36 28
+  description: ''
+  mag: 13
+  name: LBN 499
+  ra: 23 23 24.1
+  size: 20
+  type: HII region
+- constellation: Cepheus
+  dec: +63 04 56
+  description: ''
+  mag: 9
+  name: LBN 500
+  ra: 22 14 35.3
+  size: 7
+  type: HII region
+- constellation: Cepheus
+  dec: +58 25 39
+  description: ''
+  mag: 13
+  name: LBN 501
+  ra: 22 38 55.9
+  size: 25
+  type: HII region
+- constellation: Cepheus
+  dec: +58 13 40
+  description: S 139
+  mag: 11
+  name: LBN 502
+  ra: 22 39 56.6
+  size: 10
+  type: HII region
+- constellation: Andromeda
+  dec: +40 01 32
+  description: ''
+  mag: 13
+  name: LBN 503
+  ra: 23 29 26.1
+  size: 30
+  type: HII region
+- constellation: Cepheus
+  dec: +68 08 32
+  description: C 194
+  mag: 7
+  name: LBN 504
+  ra: 21 36 56.7
+  size: 2
+  type: HII region
+- constellation: Cepheus
+  dec: +63 05 04
+  description: S 140
+  mag: 13
+  name: LBN 505
+  ra: 22 18 37.3
+  size: 35
+  type: HII region
+- constellation: Cepheus
+  dec: +57 55 47
+  description: ''
+  mag: 13
+  name: LBN 506
+  ra: 22 44 59.2
+  size: 83
+  type: HII region
+- constellation: Andromeda
+  dec: +40 46 33
+  description: ''
+  mag: 13
+  name: LBN 507
+  ra: 23 30 26.1
+  size: 60
+  type: HII region
+- constellation: Cepheus
+  dec: +62 42 11
+  description: DG 183
+  mag: 13
+  name: LBN 508
+  ra: 22 22 40.3
+  size: 1
+  type: HII region
+- constellation: Cepheus
+  dec: +61 35 22
+  description: S 141
+  mag: 15
+  name: LBN 509
+  ra: 22 28 45.7
+  size: 6
+  type: HII region
+- constellation: Cepheus
+  dec: +61 40 22
+  description: ''
+  mag: 13
+  name: LBN 510
+  ra: 22 28 45.6
+  size: 3
+  type: HII region
+- constellation: Cepheus
+  dec: +58 00 50
+  description: Wizard Nebula, NGC 7380, Cr 452, NGC 7380
+  mag: 5
+  name: LBN 511
+  ra: 22 47 00.0
+  size: 25
+  type: Open cluster
+- constellation: Cepheus
+  dec: +59 49 47
+  description: S 144
+  mag: 13
+  name: LBN 512
+  ra: 22 44 56.5
+  size: 10
+  type: HII region
+- constellation: Cepheus
+  dec: +58 55 54
+  description: ''
+  mag: 15
+  name: LBN 513
+  ra: 22 50 00.1
+  size: 50
+  type: HII region
+- constellation: Cepheus
+  dec: +59 53 54
+  description: S 146
+  mag: 9
+  name: LBN 514
+  ra: 22 49 58.8
+  size: 3
+  type: HII region
+- constellation: Cepheus
+  dec: +70 33 42
+  description: ''
+  mag: 15
+  name: LBN 515
+  ra: 21 40 46.2
+  size: 35
+  type: HII region
+- constellation: Cepheus
+  dec: +58 31 02
+  description: S 149
+  mag: 11
+  name: LBN 516
+  ra: 22 56 03.4
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +57 06 10
+  description: S 151
+  mag: 13
+  name: LBN 517
+  ra: 23 03 08.1
+  size: 30
+  type: HII region
+- constellation: Cassiopeia
+  dec: +58 45 06
+  description: S 153
+  mag: 11
+  name: LBN 518
+  ra: 22 59 04.5
+  size: 5
+  type: HII region
+- constellation: Cassiopeia
+  dec: +58 47 06
+  description: S 152
+  mag: 11
+  name: LBN 519
+  ra: 22 59 04.5
+  size: 2
+  type: HII region
+- constellation: Cepheus
+  dec: +65 05 27
+  description: S 150
+  mag: 11
+  name: LBN 520
+  ra: 22 31 39.5
+  size: 35
+  type: HII region
+- constellation: Cepheus
+  dec: +61 15 56
+  description: S 154
+  mag: 11
+  name: LBN 521
+  ra: 22 50 57.3
+  size: 55
+  type: HII region
+- constellation: Cepheus
+  dec: +62 15 50
+  description: ''
+  mag: 13
+  name: LBN 522
+  ra: 22 46 53.7
+  size: 540
+  type: HII region
+- constellation: Cepheus
+  dec: +65 27 27
+  description: DG 186
+  mag: 13
+  name: LBN 523
+  ra: 22 31 38.6
+  size: 15
+  type: HII region
+- constellation: Cepheus
+  dec: +62 10 58
+  description: DG 188
+  mag: 11
+  name: LBN 524
+  ra: 22 52 57.0
+  size: 4
+  type: HII region
+- constellation: Pegasus
+  dec: +21 06 42
+  description: ''
+  mag: 15
+  name: LBN 525
+  ra: 00 08 34.6
+  size: 30
+  type: HII region
+- constellation: Cepheus
+  dec: +66 45 30
+  description: ''
+  mag: 15
+  name: LBN 526
+  ra: 22 33 36.4
+  size: 50
+  type: HII region
+- constellation: Cepheus
+  dec: +62 36 02
+  description: ''
+  mag: 7
+  name: LBN 527
+  ra: 22 55 57.9
+  size: 14
+  type: HII region
+- constellation: Cepheus
+  dec: +70 54 37
+  description: ''
+  mag: 15
+  name: LBN 528
+  ra: 22 05 01.2
+  size: 120
+  type: HII region
+- constellation: Cepheus
+  dec: +62 26 03
+  description: S 155
+  mag: 11
+  name: LBN 529
+  ra: 22 56 58.7
+  size: 50
+  type: HII region
+- constellation: Pegasus
+  dec: +20 36 41
+  description: ''
+  mag: 15
+  name: LBN 530
+  ra: 00 10 34.8
+  size: 25
+  type: HII region
+- constellation: Cepheus
+  dec: +70 15 54
+  description: DG 179
+  mag: 9
+  name: LBN 531
+  ra: 22 13 10.2
+  size: 10
+  type: HII region
+- constellation: Cepheus
+  dec: +69 05 22
+  description: ''
+  mag: 15
+  name: LBN 532
+  ra: 22 28 25.7
+  size: 20
+  type: HII region
+- constellation: Cepheus
+  dec: +59 46 21
+  description: ''
+  mag: 7
+  name: LBN 533
+  ra: 23 14 10.6
+  size: 27
+  type: HII region
+- constellation: Andromeda
+  dec: +48 46 38
+  description: DG 191
+  mag: 9
+  name: LBN 534
+  ra: 23 40 26.9
+  size: 90
+  type: HII region
+- constellation: Cepheus
+  dec: +72 54 29
+  description: ''
+  mag: 15
+  name: LBN 535
+  ra: 22 00 46.3
+  size: 155
+  type: HII region
+- constellation: Cepheus
+  dec: +59 46 22
+  description: ''
+  mag: 11
+  name: LBN 536
+  ra: 23 15 11.1
+  size: 80
+  type: HII region
+- constellation: Cepheus
+  dec: +59 56 22
+  description: S 157
+  mag: 5
+  name: LBN 537
+  ra: 23 15 10.9
+  size: 3
+  type: HII region
+- constellation: Cepheus
+  dec: +71 00 07
+  description: ''
+  mag: 13
+  name: LBN 538
+  ra: 22 20 12.1
+  size: 10
+  type: HII region
+- constellation: Cepheus
+  dec: +69 05 33
+  description: ''
+  mag: 5
+  name: LBN 539
+  ra: 22 35 30.7
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 16 23
+  description: ''
+  mag: 9
+  name: LBN 540
+  ra: 23 16 11.1
+  size: 60
+  type: HII region
+- constellation: Cepheus
+  dec: +72 52 46
+  description: DG 177
+  mag: 11
+  name: LBN 541
+  ra: 22 08 53.1
+  size: 5
+  type: HII region
+- constellation: Cepheus
+  dec: +61 29 21
+  description: NGC 7538, NGC 7538
+  mag: 5
+  name: LBN 542
+  ra: 23 14 08.9
+  size: 8
+  type: Nebula
+- constellation: Cassiopeia
+  dec: +61 06 23
+  description: S 158
+  mag: 11
+  name: LBN 543
+  ra: 23 16 10.3
+  size: 7
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 36 24
+  description: ''
+  mag: 11
+  name: LBN 544
+  ra: 23 18 11.8
+  size: 20
+  type: HII region
+- constellation: Cepheus
+  dec: +77 02 32
+  description: ''
+  mag: 13
+  name: LBN 545
+  ra: 21 14 23.7
+  size: 5
+  type: HII region
+- constellation: Cepheus
+  dec: +73 22 46
+  description: DG 178
+  mag: 9
+  name: LBN 546
+  ra: 22 08 49.9
+  size: 10
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 46 24
+  description: S 161
+  mag: 11
+  name: LBN 547
+  ra: 23 17 10.2
+  size: 90
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 11 26
+  description: Bubble Nebula, C 11, NGC 7635, NGC 7635
+  mag: 5
+  name: LBN 548
+  ra: 23 20 12.3
+  size: 15
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 11 26
+  description: ''
+  mag: 9
+  name: LBN 549
+  ra: 23 20 12.3
+  size: 30
+  type: HII region
+- constellation: Cepheus
+  dec: +78 11 47
+  description: ''
+  mag: 13
+  name: LBN 550
+  ra: 20 58 49.1
+  size: 140
+  type: HII region
+- constellation: Cepheus
+  dec: +64 36 19
+  description: S 160
+  mag: 13
+  name: LBN 551
+  ra: 23 12 04.1
+  size: 100
+  type: HII region
+- constellation: Cepheus
+  dec: +78 36 43
+  description: ''
+  mag: 13
+  name: LBN 552
+  ra: 20 57 39.6
+  size: 35
+  type: HII region
+- constellation: Cepheus
+  dec: +76 56 41
+  description: ''
+  mag: 13
+  name: LBN 553
+  ra: 21 39 50.0
+  size: 5
+  type: HII region
+- constellation: Cassiopeia
+  dec: +56 57 37
+  description: S 164
+  mag: 11
+  name: LBN 554
+  ra: 23 38 23.6
+  size: 5
+  type: HII region
+- constellation: Cepheus
+  dec: +79 11 46
+  description: ''
+  mag: 15
+  name: LBN 555
+  ra: 20 58 27.7
+  size: 145
+  type: HII region
+- constellation: Pisces
+  dec: +19 56 38
+  description: ''
+  mag: 15
+  name: LBN 556
+  ra: 00 21 35.9
+  size: 60
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 46 35
+  description: Sh2- 163, S 163
+  mag: 11
+  name: LBN 557
+  ra: 23 33 19.4
+  size: 18
+  type: HII region
+- constellation: Cepheus
+  dec: +75 15 09
+  description: ''
+  mag: 15
+  name: LBN 558
+  ra: 22 20 47.9
+  size: 135
+  type: HII region
+- constellation: Cassiopeia
+  dec: +49 36 42
+  description: ''
+  mag: 13
+  name: LBN 559
+  ra: 23 56 32.2
+  size: 15
+  type: HII region
+- constellation: Cassiopeia
+  dec: +49 46 42
+  description: ''
+  mag: 15
+  name: LBN 560
+  ra: 23 57 32.5
+  size: 140
+  type: HII region
+- constellation: Andromeda
+  dec: +48 28 42
+  description: ''
+  mag: 11
+  name: LBN 561
+  ra: 23 59 33.2
+  size: 15
+  type: HII region
+- constellation: Cassiopeia
+  dec: +54 56 41
+  description: ''
+  mag: 15
+  name: LBN 562
+  ra: 23 50 29.3
+  size: 110
+  type: HII region
+- constellation: Cassiopeia
+  dec: +50 41 42
+  description: ''
+  mag: 11
+  name: LBN 563
+  ra: 23 57 32.4
+  size: 60
+  type: HII region
+- constellation: Andromeda
+  dec: +48 36 42
+  description: ''
+  mag: 11
+  name: LBN 564
+  ra: 00 01 33.9
+  size: 70
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 55 37
+  description: S 165
+  mag: 11
+  name: LBN 565
+  ra: 23 39 21.9
+  size: 8
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 54 39
+  description: S 166
+  mag: 15
+  name: LBN 566
+  ra: 23 42 24.0
+  size: 10
+  type: HII region
+- constellation: Cepheus
+  dec: +78 10 08
+  description: ''
+  mag: 15
+  name: LBN 567
+  ra: 22 20 20.7
+  size: 27
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 26 41
+  description: S 168
+  mag: 9
+  name: LBN 568
+  ra: 23 52 29.3
+  size: 5
+  type: HII region
+- constellation: Cepheus
+  dec: +80 24 11
+  description: ''
+  mag: 15
+  name: LBN 569
+  ra: 21 52 07.9
+  size: 70
+  type: HII region
+- constellation: Pisces
+  dec: +18 26 35
+  description: ''
+  mag: 15
+  name: LBN 570
+  ra: 00 29 36.5
+  size: 80
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 28 41
+  description: ''
+  mag: 7
+  name: LBN 571
+  ra: 23 53 29.8
+  size: 5
+  type: HII region
+- constellation: Draco
+  dec: +83 37 31
+  description: ''
+  mag: 15
+  name: LBN 572
+  ra: 19 43 45.0
+  size: 180
+  type: HII region
+- constellation: Cepheus
+  dec: +73 56 21
+  description: ''
+  mag: 13
+  name: LBN 573
+  ra: 23 13 46.8
+  size: 30
+  type: HII region
+- constellation: Pisces
+  dec: +17 56 33
+  description: ''
+  mag: 15
+  name: LBN 574
+  ra: 00 31 36.6
+  size: 40
+  type: HII region
+- constellation: Cepheus
+  dec: +74 06 27
+  description: ''
+  mag: 15
+  name: LBN 575
+  ra: 23 21 54.4
+  size: 40
+  type: HII region
+- constellation: Cassiopeia
+  dec: +62 16 42
+  description: ''
+  mag: 13
+  name: LBN 576
+  ra: 23 58 32.3
+  size: 30
+  type: HII region
+- constellation: Cassiopeia
+  dec: +64 39 42
+  description: S 170
+  mag: 11
+  name: LBN 577
+  ra: 00 01 33.9
+  size: 20
+  type: HII region
+- constellation: Cassiopeia
+  dec: +58 46 41
+  description: ''
+  mag: 5
+  name: LBN 578
+  ra: 00 10 38.2
+  size: 5
+  type: HII region
+- constellation: Draco
+  dec: +85 00 32
+  description: ''
+  mag: 15
+  name: LBN 579
+  ra: 20 32 50.6
+  size: 80
+  type: HII region
+- constellation: Cepheus
+  dec: +67 26 42
+  description: ''
+  mag: 9
+  name: LBN 580
+  ra: 00 00 33.3
+  size: 10
+  type: HII region
+- constellation: Cepheus
+  dec: +67 11 42
+  description: C 214
+  mag: 7
+  name: LBN 581
+  ra: 00 01 34.0
+  size: 20
+  type: HII region
+- constellation: Cepheus
+  dec: +67 16 42
+  description: ''
+  mag: 13
+  name: LBN 582
+  ra: 00 02 34.7
+  size: 180
+  type: HII region
+- constellation: Cepheus
+  dec: +67 16 42
+  description: ''
+  mag: 15
+  name: LBN 583
+  ra: 00 02 34.7
+  size: 120
+  type: HII region
+- constellation: Cepheus
+  dec: +66 56 42
+  description: ''
+  mag: 11
+  name: LBN 584
+  ra: 00 03 35.3
+  size: 35
+  type: HII region
+- constellation: Cassiopeia
+  dec: +65 37 42
+  description: DG   2
+  mag: 15
+  name: LBN 585
+  ra: 00 06 37.2
+  size: 1
+  type: HII region
+- constellation: Cepheus
+  dec: +67 26 42
+  description: ''
+  mag: 9
+  name: LBN 586
+  ra: 00 03 35.4
+  size: 35
+  type: HII region
+- constellation: Cepheus
+  dec: +68 36 42
+  description: ''
+  mag: 11
+  name: LBN 587
+  ra: 00 02 34.7
+  size: 95
+  type: HII region
+- constellation: Cepheus
+  dec: +67 06 42
+  description: ''
+  mag: 7
+  name: LBN 588
+  ra: 00 05 36.7
+  size: 25
+  type: HII region
+- constellation: Cepheus
+  dec: +68 36 42
+  description: NGC 7822, NGC 7822
+  mag: 9
+  name: LBN 589
+  ra: 00 03 35.5
+  size: 20
+  type: HII region
+- constellation: Cassiopeia
+  dec: +65 36 42
+  description: DG   3
+  mag: 13
+  name: LBN 590
+  ra: 00 03 35.2
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +59 16 38
+  description: ''
+  mag: 9
+  name: LBN 591
+  ra: 00 20 43.2
+  size: 6
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 46 38
+  description: ''
+  mag: 9
+  name: LBN 592
+  ra: 00 20 44.2
+  size: 20
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 46 38
+  description: S 173
+  mag: 13
+  name: LBN 593
+  ra: 00 22 45.3
+  size: 25
+  type: HII region
+- constellation: Cassiopeia
+  dec: +56 41 35
+  description: ''
+  mag: 15
+  name: LBN 594
+  ra: 00 28 45.8
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +56 44 34
+  description: ''
+  mag: 15
+  name: LBN 595
+  ra: 00 29 46.3
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +64 36 36
+  description: S 175
+  mag: 7
+  name: LBN 596
+  ra: 00 26 49.2
+  size: 1
+  type: HII region
+- constellation: Cassiopeia
+  dec: +57 16 33
+  description: S 176
+  mag: 13
+  name: LBN 597
+  ra: 00 31 47.4
+  size: 12
+  type: HII region
+- constellation: Cepheus
+  dec: +80 56 40
+  description: Sh2- 174, PK 120+18.1, S 174
+  mag: 13
+  name: LBN 598
+  ra: 23 47 08.7
+  size: 15
+  type: HII region
+- constellation: Cassiopeia
+  dec: +56 16 32
+  description: DG   4
+  mag: 15
+  name: LBN 599
+  ra: 00 33 47.8
+  size: 60
+  type: HII region
+- constellation: Cassiopeia
+  dec: +50 16 29
+  description: ''
+  mag: 11
+  name: LBN 600
+  ra: 00 38 46.8
+  size: 7
+  type: HII region
+- constellation: Perseus
+  dec: +32 19 22
+  description: C 24
+  mag: 11
+  name: LBN 601
+  ra: 03 45 08.6
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +69 26 31
+  description: DG   5
+  mag: 13
+  name: LBN 602
+  ra: 00 34 59.5
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +52 16 26
+  description: ''
+  mag: 15
+  name: LBN 603
+  ra: 00 42 49.2
+  size: 85
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 56 25
+  description: ''
+  mag: 13
+  name: LBN 604
+  ra: 00 43 56.7
+  size: 5
+  type: HII region
+- constellation: Cassiopeia
+  dec: +55 46 23
+  description: ''
+  mag: 15
+  name: LBN 605
+  ra: 00 45 52.6
+  size: 180
+  type: HII region
+- constellation: Ursa Minor
+  dec: +88 46 02
+  description: ''
+  mag: 15
+  name: LBN 606
+  ra: 22 49 27.0
+  size: 140
+  type: HII region
+- constellation: Cassiopeia
+  dec: +57 56 22
+  description: ''
+  mag: 11
+  name: LBN 607
+  ra: 00 46 54.7
+  size: 60
+  type: HII region
+- constellation: Cassiopeia
+  dec: +51 16 21
+  description: ''
+  mag: 11
+  name: LBN 608
+  ra: 00 48 50.8
+  size: 10
+  type: HII region
+- constellation: Cassiopeia
+  dec: +51 01 21
+  description: ''
+  mag: 11
+  name: LBN 609
+  ra: 00 48 50.6
+  size: 20
+  type: HII region
+- constellation: Cassiopeia
+  dec: +55 36 21
+  description: DG   7
+  mag: 13
+  name: LBN 610
+  ra: 00 48 53.7
+  size: 7
+  type: HII region
+- constellation: Cassiopeia
+  dec: +57 16 21
+  description: ''
+  mag: 11
+  name: LBN 611
+  ra: 00 48 55.0
+  size: 10
+  type: HII region
+- constellation: Cassiopeia
+  dec: +50 41 20
+  description: ''
+  mag: 11
+  name: LBN 612
+  ra: 00 49 50.8
+  size: 13
+  type: HII region
+- constellation: Cassiopeia
+  dec: +50 46 20
+  description: ''
+  mag: 11
+  name: LBN 613
+  ra: 00 49 50.8
+  size: 3
+  type: HII region
+- constellation: Cassiopeia
+  dec: +65 16 19
+  description: S 181
+  mag: 15
+  name: LBN 614
+  ra: 00 51 04.7
+  size: 15
+  type: HII region
+- constellation: Cassiopeia
+  dec: +56 26 18
+  description: ''
+  mag: 11
+  name: LBN 615
+  ra: 00 51 55.6
+  size: 23
+  type: HII region
+- constellation: Cassiopeia
+  dec: +56 36 17
+  description: Pacman Nebula, NGC 281, NGC  281
+  mag: 5
+  name: LBN 616
+  ra: 00 52 56.2
+  size: 35
+  type: HII region
+- constellation: Cepheus
+  dec: +86 16 04
+  description: S 178
+  mag: 15
+  name: LBN 617
+  ra: 01 07 04.3
+  size: 450
+  type: HII region
+- constellation: Cassiopeia
+  dec: +65 46 16
+  description: ''
+  mag: 15
+  name: LBN 618
+  ra: 00 54 07.3
+  size: 45
+  type: HII region
+- constellation: Andromeda
+  dec: +34 36 16
+  description: ''
+  mag: 15
+  name: LBN 619
+  ra: 00 53 44.1
+  size: 110
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 06 13
+  description: IC 59, VdB 5, IC   59
+  mag: 7
+  name: LBN 620
+  ra: 00 57 02.6
+  size: 10
+  type: Reflection nebula
+- constellation: Cassiopeia
+  dec: +56 29 13
+  description: DG   6
+  mag: 13
+  name: LBN 621
+  ra: 00 56 57.8
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 56 11
+  description: IC 63, IC   63
+  mag: 5
+  name: LBN 622
+  ra: 00 59 03.5
+  size: 10
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 56 11
+  description: S 185
+  mag: 15
+  name: LBN 623
+  ra: 00 59 03.5
+  size: 120
+  type: HII region
+- constellation: Cassiopeia
+  dec: +73 31 01
+  description: ''
+  mag: 11
+  name: LBN 624
+  ra: 01 07 37.2
+  size: 6
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 06 08
+  description: ''
+  mag: 11
+  name: LBN 625
+  ra: 01 01 04.7
+  size: 60
+  type: HII region
+- constellation: Cassiopeia
+  dec: +73 15 39
+  description: ''
+  mag: 15
+  name: LBN 626
+  ra: 01 23 50.8
+  size: 150
+  type: HII region
+- constellation: Camelopardalis
+  dec: +84 13 49
+  description: ''
+  mag: 15
+  name: LBN 627
+  ra: 11 05 21.3
+  size: 280
+  type: HII region
+- constellation: Cepheus
+  dec: +85 57 10
+  description: ''
+  mag: 13
+  name: LBN 628
+  ra: 04 26 34.1
+  size: 13
+  type: HII region
+- constellation: Camelopardalis
+  dec: +83 44 01
+  description: ''
+  mag: 13
+  name: LBN 629
+  ra: 10 55 33.4
+  size: 75
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 50 39
+  description: S 187
+  mag: 13
+  name: LBN 630
+  ra: 01 23 17.1
+  size: 3
+  type: HII region
+- constellation: Cepheus
+  dec: +85 08 52
+  description: ''
+  mag: 15
+  name: LBN 631
+  ra: 03 58 30.6
+  size: 80
+  type: HII region
+- constellation: Cepheus
+  dec: +85 05 54
+  description: ''
+  mag: 15
+  name: LBN 632
+  ra: 04 44 35.3
+  size: 105
+  type: HII region
+- constellation: Cassiopeia
+  dec: +58 22 28
+  description: S 188
+  mag: 5
+  name: LBN 633
+  ra: 01 30 14.5
+  size: 10
+  type: HII region
+- constellation: Cassiopeia
+  dec: +75 23 34
+  description: ''
+  mag: 13
+  name: LBN 634
+  ra: 02 25 01.9
+  size: 23
+  type: HII region
+- constellation: Cassiopeia
+  dec: +73 03 24
+  description: ''
+  mag: 13
+  name: LBN 635
+  ra: 02 28 43.6
+  size: 10
+  type: HII region
+- constellation: Cassiopeia
+  dec: +73 03 22
+  description: DG   9
+  mag: 13
+  name: LBN 636
+  ra: 02 29 44.3
+  size: 8
+  type: HII region
+- constellation: Cassiopeia
+  dec: +55 35 03
+  description: ''
+  mag: 15
+  name: LBN 637
+  ra: 01 44 15.8
+  size: 35
+  type: HII region
+- constellation: Cassiopeia
+  dec: +55 05 01
+  description: ''
+  mag: 15
+  name: LBN 638
+  ra: 01 45 15.4
+  size: 30
+  type: HII region
+- constellation: Pisces
+  dec: +16 35 50
+  description: ''
+  mag: 13
+  name: LBN 639
+  ra: 01 15 40.1
+  size: 25
+  type: HII region
+- constellation: Perseus
+  dec: +53 44 54
+  description: ''
+  mag: 15
+  name: LBN 640
+  ra: 01 49 14.8
+  size: 35
+  type: HII region
+- constellation: Cassiopeia
+  dec: +62 34 05
+  description: ''
+  mag: 15
+  name: LBN 641
+  ra: 02 11 42.5
+  size: 35
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 53 44
+  description: ''
+  mag: 15
+  name: LBN 642
+  ra: 02 20 44.7
+  size: 25
+  type: HII region
+- constellation: Cassiopeia
+  dec: +68 52 21
+  description: DG  10
+  mag: 11
+  name: LBN 643
+  ra: 02 51 29.5
+  size: 3
+  type: HII region
+- constellation: Pisces
+  dec: +17 15 40
+  description: ''
+  mag: 15
+  name: LBN 644
+  ra: 01 22 40.9
+  size: 270
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 58 31
+  description: Fish Head Nebula, IC 1795, IC 1795
+  mag: 5
+  name: LBN 645
+  ra: 02 25 47.1
+  size: 12
+  type: HII region
+- constellation: Cassiopeia
+  dec: +62 13 28
+  description: ''
+  mag: 9
+  name: LBN 646
+  ra: 02 26 48.4
+  size: 13
+  type: HII region
+- constellation: Cassiopeia
+  dec: +62 03 26
+  description: ''
+  mag: 7
+  name: LBN 647
+  ra: 02 27 48.3
+  size: 20
+  type: HII region
+- constellation: Cassiopeia
+  dec: +62 13 23
+  description: ''
+  mag: 15
+  name: LBN 648
+  ra: 02 28 49.2
+  size: 120
+  type: HII region
+- constellation: Cassiopeia
+  dec: +59 55 41
+  description: ''
+  mag: 15
+  name: LBN 649
+  ra: 02 21 39.6
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 33 28
+  description: ''
+  mag: 15
+  name: LBN 650
+  ra: 02 26 46.3
+  size: 35
+  type: HII region
+- constellation: Cassiopeia
+  dec: +73 10 00
+  description: ''
+  mag: 15
+  name: LBN 651
+  ra: 03 35 29.6
+  size: 210
+  type: HII region
+- constellation: Cassiopeia
+  dec: +65 32 24
+  description: ''
+  mag: 15
+  name: LBN 652
+  ra: 02 50 11.6
+  size: 35
+  type: HII region
+- constellation: Perseus
+  dec: +55 23 54
+  description: ''
+  mag: 9
+  name: LBN 653
+  ra: 02 16 27.2
+  size: 10
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 13 10
+  description: Heart Nebula, IC 1805, Cr 26, IC 1805
+  mag: 9
+  name: LBN 654
+  ra: 02 33 48.2
+  size: 60
+  type: Open cluster
+- constellation: Cassiopeia
+  dec: +61 03 10
+  description: ''
+  mag: 13
+  name: LBN 655
+  ra: 02 33 47.7
+  size: 80
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 33 13
+  description: ''
+  mag: 9
+  name: LBN 656
+  ra: 02 32 45.8
+  size: 55
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 28 13
+  description: ''
+  mag: 7
+  name: LBN 657
+  ra: 02 32 45.6
+  size: 15
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 12 51
+  description: ''
+  mag: 13
+  name: LBN 658
+  ra: 02 40 51.1
+  size: 100
+  type: HII region
+- constellation: Cassiopeia
+  dec: +59 38 02
+  description: ''
+  mag: 11
+  name: LBN 659
+  ra: 02 36 44.8
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 55 30
+  description: S 192
+  mag: 13
+  name: LBN 661
+  ra: 02 47 56.4
+  size: 1
+  type: HII region
+- constellation: Cassiopeia
+  dec: +61 52 30
+  description: ''
+  mag: 13
+  name: LBN 662
+  ra: 02 47 56.2
+  size: 2
+  type: HII region
+- constellation: Cassiopeia
+  dec: +59 34 53
+  description: S 191
+  mag: 15
+  name: LBN 663
+  ra: 02 39 45.8
+  size: 1
+  type: HII region
+- constellation: Cassiopeia
+  dec: +62 12 22
+  description: S 196
+  mag: 11
+  name: LBN 664
+  ra: 02 50 58.6
+  size: 6
+  type: HII region
+- constellation: Cassiopeia
+  dec: +59 33 48
+  description: S 195
+  mag: 15
+  name: LBN 665
+  ra: 02 41 46.5
+  size: 2
+  type: HII region
+- constellation: Andromeda
+  dec: +50 33 42
+  description: ''
+  mag: 15
+  name: LBN 666
+  ra: 02 21 20.1
+  size: 24
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 17 22
+  description: Soul Nebula, IC 1848, Cr 34, IC 1848
+  mag: 7
+  name: LBN 667
+  ra: 02 50 52.1
+  size: 40
+  type: Open cluster
+- constellation: Andromeda
+  dec: +50 23 42
+  description: ''
+  mag: 15
+  name: LBN 668
+  ra: 02 21 19.8
+  size: 150
+  type: HII region
+- constellation: Cassiopeia
+  dec: +59 42 25
+  description: ''
+  mag: 11
+  name: LBN 669
+  ra: 02 49 49.9
+  size: 10
+  type: HII region
+- constellation: Cassiopeia
+  dec: +59 57 22
+  description: ''
+  mag: 7
+  name: LBN 670
+  ra: 02 50 51.1
+  size: 25
+  type: HII region
+- constellation: Andromeda
+  dec: +50 13 39
+  description: ''
+  mag: 15
+  name: LBN 671
+  ra: 02 22 19.8
+  size: 22
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 12 13
+  description: ''
+  mag: 9
+  name: LBN 672
+  ra: 02 53 53.0
+  size: 120
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 32 07
+  description: ''
+  mag: 7
+  name: LBN 673
+  ra: 02 55 54.8
+  size: 25
+  type: HII region
+- constellation: Cassiopeia
+  dec: +62 46 20
+  description: S 200
+  mag: 15
+  name: LBN 674
+  ra: 03 11 08.7
+  size: 8
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 25 45
+  description: IC 1871, IC 1871
+  mag: 11
+  name: LBN 675
+  ra: 03 02 57.0
+  size: 4
+  type: HII region
+- constellation: Cassiopeia
+  dec: +60 51 07
+  description: ''
+  mag: 11
+  name: LBN 676
+  ra: 03 15 02.8
+  size: 20
+  type: HII region
+- constellation: Cassiopeia
+  dec: +59 41 10
+  description: S 202
+  mag: 15
+  name: LBN 677
+  ra: 03 13 58.3
+  size: 240
+  type: HII region
+- constellation: Camelopardalis
+  dec: +61 30 37
+  description: DG  13
+  mag: 11
+  name: LBN 678
+  ra: 03 24 08.4
+  size: 3
+  type: HII region
+- constellation: Perseus
+  dec: +56 41 33
+  description: ''
+  mag: 13
+  name: LBN 679
+  ra: 03 06 46.9
+  size: 105
+  type: HII region
+- constellation: Perseus
+  dec: +57 06 04
+  description: DG  12
+  mag: 13
+  name: LBN 680
+  ra: 03 15 50.8
+  size: 10
+  type: HII region
+- constellation: Camelopardalis
+  dec: +59 50 17
+  description: ''
+  mag: 11
+  name: LBN 681
+  ra: 03 30 04.0
+  size: 20
+  type: HII region
+- constellation: Camelopardalis
+  dec: +58 50 20
+  description: DG  17
+  mag: 11
+  name: LBN 682
+  ra: 03 29 00.2
+  size: 35
+  type: HII region
+- constellation: Ursa Major
+  dec: +70 47 34
+  description: ''
+  mag: 15
+  name: LBN 683
+  ra: 09 14 42.6
+  size: 300
+  type: HII region
+- constellation: Camelopardalis
+  dec: +58 30 10
+  description: ''
+  mag: 15
+  name: LBN 684
+  ra: 03 32 00.0
+  size: 40
+  type: HII region
+- constellation: Perseus
+  dec: +54 40 51
+  description: S 203
+  mag: 15
+  name: LBN 685
+  ra: 03 19 45.2
+  size: 90
+  type: HII region
+- constellation: Perseus
+  dec: +54 02 58
+  description: ''
+  mag: 13
+  name: LBN 686
+  ra: 03 17 43.0
+  size: 5
+  type: HII region
+- constellation: Camelopardalis
+  dec: +67 32 34
+  description: ''
+  mag: 15
+  name: LBN 687
+  ra: 05 27 13.3
+  size: 50
+  type: HII region
+- constellation: Aries
+  dec: +20 14 20
+  description: DG   8
+  mag: 13
+  name: LBN 688
+  ra: 02 04 46.3
+  size: 60
+  type: HII region
+- constellation: Camelopardalis
+  dec: +57 18 47
+  description: S 204
+  mag: 13
+  name: LBN 689
+  ra: 03 55 02.0
+  size: 30
+  type: HII region
+- constellation: Camelopardalis
+  dec: +66 32 00
+  description: ''
+  mag: 15
+  name: LBN 690
+  ra: 05 35 06.4
+  size: 80
+  type: HII region
+- constellation: Ursa Major
+  dec: +65 46 32
+  description: ''
+  mag: 15
+  name: LBN 691
+  ra: 09 37 02.0
+  size: 180
+  type: HII region
+- constellation: Ursa Major
+  dec: +67 03 30
+  description: ''
+  mag: 13
+  name: LBN 692
+  ra: 08 56 28.6
+  size: 20
+  type: HII region
+- constellation: Camelopardalis
+  dec: +65 01 51
+  description: ''
+  mag: 15
+  name: LBN 693
+  ra: 05 36 56.2
+  size: 90
+  type: HII region
+- constellation: Triangulum
+  dec: +32 03 00
+  description: ''
+  mag: 15
+  name: LBN 694
+  ra: 02 36 59.9
+  size: 90
+  type: HII region
+- constellation: Ursa Major
+  dec: +66 38 11
+  description: ''
+  mag: 15
+  name: LBN 695
+  ra: 09 02 23.5
+  size: 110
+  type: HII region
+- constellation: Camelopardalis
+  dec: +53 18 55
+  description: ''
+  mag: 13
+  name: LBN 696
+  ra: 03 52 49.4
+  size: 43
+  type: HII region
+- constellation: Camelopardalis
+  dec: +56 52 31
+  description: ''
+  mag: 15
+  name: LBN 697
+  ra: 04 15 05.0
+  size: 5
+  type: HII region
+- constellation: Camelopardalis
+  dec: +66 57 29
+  description: ''
+  mag: 13
+  name: LBN 698
+  ra: 06 37 09.2
+  size: 105
+  type: HII region
+- constellation: Camelopardalis
+  dec: +63 51 47
+  description: ''
+  mag: 15
+  name: LBN 699
+  ra: 05 37 49.0
+  size: 30
+  type: HII region
+- constellation: Camelopardalis
+  dec: +64 21 08
+  description: ''
+  mag: 15
+  name: LBN 700
+  ra: 05 46 52.5
+  size: 45
+  type: HII region
+- constellation: Camelopardalis
+  dec: +52 58 33
+  description: S 205
+  mag: 13
+  name: LBN 701
+  ra: 03 58 49.7
+  size: 100
+  type: HII region
+- constellation: Camelopardalis
+  dec: +66 16 55
+  description: ''
+  mag: 15
+  name: LBN 702
+  ra: 06 45 03.4
+  size: 70
+  type: HII region
+- constellation: Aries
+  dec: +19 13 50
+  description: ''
+  mag: 15
+  name: LBN 703
+  ra: 02 17 46.7
+  size: 420
+  type: HII region
+- constellation: Perseus
+  dec: +51 19 18
+  description: NGC 1491, NGC 1491
+  mag: 5
+  name: LBN 704
+  ra: 04 02 46.0
+  size: 9
+  type: HII region
+- constellation: Perseus
+  dec: +51 18 14
+  description: ''
+  mag: 9
+  name: LBN 705
+  ra: 04 03 46.1
+  size: 25
+  type: HII region
+- constellation: Perseus
+  dec: +50 58 14
+  description: S 206
+  mag: 11
+  name: LBN 706
+  ra: 04 03 45.3
+  size: 45
+  type: HII region
+- constellation: Aries
+  dec: +19 43 35
+  description: ''
+  mag: 13
+  name: LBN 707
+  ra: 02 23 47.6
+  size: 50
+  type: HII region
+- constellation: Camelopardalis
+  dec: +53 07 12
+  description: S 207
+  mag: 9
+  name: LBN 708
+  ra: 04 19 53.9
+  size: 7
+  type: HII region
+- constellation: Perseus
+  dec: +50 08 14
+  description: ''
+  mag: 15
+  name: LBN 709
+  ra: 04 03 43.2
+  size: 45
+  type: HII region
+- constellation: Perseus
+  dec: +51 12 47
+  description: ''
+  mag: 9
+  name: LBN 710
+  ra: 04 10 47.1
+  size: 7
+  type: HII region
+- constellation: Aries
+  dec: +19 33 22
+  description: ''
+  mag: 13
+  name: LBN 711
+  ra: 02 28 47.9
+  size: 30
+  type: HII region
+- constellation: Perseus
+  dec: +52 36 32
+  description: S 210
+  mag: 13
+  name: LBN 712
+  ra: 04 29 54.0
+  size: 20
+  type: HII region
+- constellation: Perseus
+  dec: +44 09 21
+  description: ''
+  mag: 15
+  name: LBN 713
+  ra: 03 45 27.3
+  size: 160
+  type: HII region
+- constellation: Perseus
+  dec: +43 29 21
+  description: ''
+  mag: 15
+  name: LBN 714
+  ra: 03 45 26.1
+  size: 60
+  type: HII region
+- constellation: Aries
+  dec: +12 53 43
+  description: ''
+  mag: 15
+  name: LBN 715
+  ra: 02 20 42.4
+  size: 60
+  type: HII region
+- constellation: Perseus
+  dec: +36 50 29
+  description: ''
+  mag: 13
+  name: LBN 716
+  ra: 03 26 12.6
+  size: 10
+  type: HII region
+- constellation: Perseus
+  dec: +50 51 03
+  description: S 211
+  mag: 7
+  name: LBN 717
+  ra: 04 36 50.1
+  size: 2
+  type: HII region
+- constellation: Perseus
+  dec: +37 40 11
+  description: ''
+  mag: 15
+  name: LBN 718
+  ra: 03 31 14.5
+  size: 210
+  type: HII region
+- constellation: Perseus
+  dec: +37 35 11
+  description: ''
+  mag: 13
+  name: LBN 719
+  ra: 03 31 14.4
+  size: 35
+  type: HII region
+- constellation: Perseus
+  dec: +37 50 01
+  description: ''
+  mag: 13
+  name: LBN 720
+  ra: 03 34 15.1
+  size: 70
+  type: HII region
+- constellation: Perseus
+  dec: +37 59 57
+  description: DG  19
+  mag: 13
+  name: LBN 721
+  ra: 03 35 15.5
+  size: 12
+  type: HII region
+- constellation: Perseus
+  dec: +50 25 47
+  description: NGC 1624, Cr 53, NGC 1624
+  mag: 5
+  name: LBN 722
+  ra: 04 40 49.4
+  size: 5
+  type: Nebula
+- constellation: Camelopardalis
+  dec: +61 21 20
+  description: ''
+  mag: 15
+  name: LBN 723
+  ra: 08 07 18.6
+  size: 55
+  type: HII region
+- constellation: Perseus
+  dec: +43 58 14
+  description: ''
+  mag: 15
+  name: LBN 724
+  ra: 04 03 29.7
+  size: 40
+  type: HII region
+- constellation: Aries
+  dec: +29 41 19
+  description: ''
+  mag: 15
+  name: LBN 725
+  ra: 03 11 01.7
+  size: 180
+  type: HII region
+- constellation: Aries
+  dec: +30 11 12
+  description: ''
+  mag: 15
+  name: LBN 726
+  ra: 03 13 02.5
+  size: 360
+  type: HII region
+- constellation: Camelopardalis
+  dec: +60 31 23
+  description: ''
+  mag: 13
+  name: LBN 727
+  ra: 08 06 15.3
+  size: 43
+  type: HII region
+- constellation: Ursa Major
+  dec: +60 20 07
+  description: ''
+  mag: 15
+  name: LBN 728
+  ra: 08 27 08.6
+  size: 25
+  type: HII region
+- constellation: Ursa Major
+  dec: +60 15 25
+  description: ''
+  mag: 15
+  name: LBN 729
+  ra: 08 22 09.8
+  size: 32
+  type: HII region
+- constellation: Aries
+  dec: +11 43 27
+  description: ''
+  mag: 15
+  name: LBN 730
+  ra: 02 26 41.9
+  size: 180
+  type: HII region
+- constellation: Perseus
+  dec: +44 57 08
+  description: S 213
+  mag: 15
+  name: LBN 731
+  ra: 04 20 33.9
+  size: 1
+  type: HII region
+- constellation: Camelopardalis
+  dec: +60 01 16
+  description: ''
+  mag: 15
+  name: LBN 732
+  ra: 08 08 12.7
+  size: 25
+  type: HII region
+- constellation: Camelopardalis
+  dec: +59 41 20
+  description: ''
+  mag: 15
+  name: LBN 733
+  ra: 08 07 11.7
+  size: 35
+  type: HII region
+- constellation: Perseus
+  dec: +31 40 29
+  description: DG  14
+  mag: 11
+  name: LBN 734
+  ra: 03 26 05.7
+  size: 10
+  type: HII region
+- constellation: Perseus
+  dec: +44 22 04
+  description: Sh2- 214, S 214
+  mag: 15
+  name: LBN 735
+  ra: 04 21 32.8
+  size: 4
+  type: HII region
+- constellation: Perseus
+  dec: +40 38 15
+  description: ''
+  mag: 15
+  name: LBN 736
+  ra: 04 03 23.5
+  size: 210
+  type: HII region
+- constellation: Perseus
+  dec: +48 33 14
+  description: DG  45
+  mag: 9
+  name: LBN 737
+  ra: 04 48 45.5
+  size: 1
+  type: HII region
+- constellation: Perseus
+  dec: +36 39 11
+  description: ''
+  mag: 15
+  name: LBN 738
+  ra: 03 48 15.2
+  size: 300
+  type: HII region
+- constellation: Auriga
+  dec: +50 19 54
+  description: ''
+  mag: 13
+  name: LBN 739
+  ra: 05 07 52.0
+  size: 8
+  type: HII region
+- constellation: Aries
+  dec: +30 54 25
+  description: ''
+  mag: 13
+  name: LBN 740
+  ra: 03 27 04.9
+  size: 20
+  type: HII region
+- constellation: Perseus
+  dec: +31 23 18
+  description: NGC 1333, VdB 17, NGC 1333
+  mag: 9
+  name: LBN 741
+  ra: 03 29 05.7
+  size: 9
+  type: Nebula
+- constellation: Perseus
+  dec: +46 45 31
+  description: ''
+  mag: 13
+  name: LBN 742
+  ra: 04 44 40.7
+  size: 55
+  type: HII region
+- constellation: Aries
+  dec: +20 12 06
+  description: ''
+  mag: 13
+  name: LBN 743
+  ra: 02 55 50.6
+  size: 140
+  type: HII region
+- constellation: Perseus
+  dec: +46 45 27
+  description: S 216
+  mag: 11
+  name: LBN 744
+  ra: 04 45 40.8
+  size: 50
+  type: HII region
+- constellation: Auriga
+  dec: +48 00 32
+  description: Sh2- 217, S 217
+  mag: 9
+  name: LBN 745
+  ra: 04 58 45.1
+  size: 9
+  type: HII region
+- constellation: Aries
+  dec: +29 50 19
+  description: DG  16
+  mag: 11
+  name: LBN 746
+  ra: 03 29 03.8
+  size: 10
+  type: HII region
+- constellation: Auriga
+  dec: +47 23 45
+  description: S 219
+  mag: 9
+  name: LBN 747
+  ra: 04 55 43.3
+  size: 2
+  type: HII region
+- constellation: Perseus
+  dec: +35 29 00
+  description: ''
+  mag: 11
+  name: LBN 748
+  ra: 03 51 13.8
+  size: 40
+  type: HII region
+- constellation: Perseus
+  dec: +32 09 43
+  description: ''
+  mag: 15
+  name: LBN 749
+  ra: 03 39 07.8
+  size: 150
+  type: HII region
+- constellation: Auriga
+  dec: +52 30 57
+  description: S 218
+  mag: 15
+  name: LBN 750
+  ra: 05 49 00.7
+  size: 90
+  type: HII region
+- constellation: Auriga
+  dec: +52 01 19
+  description: ''
+  mag: 15
+  name: LBN 751
+  ra: 05 43 59.0
+  size: 160
+  type: HII region
+- constellation: Perseus
+  dec: +36 58 22
+  description: ''
+  mag: 11
+  name: LBN 752
+  ra: 04 01 17.2
+  size: 300
+  type: HII region
+- constellation: Aries
+  dec: +18 12 06
+  description: ''
+  mag: 15
+  name: LBN 753
+  ra: 02 55 48.8
+  size: 100
+  type: HII region
+- constellation: Auriga
+  dec: +46 24 45
+  description: S 221
+  mag: 15
+  name: LBN 754
+  ra: 04 55 40.9
+  size: 60
+  type: HII region
+- constellation: Auriga
+  dec: +45 45 02
+  description: ''
+  mag: 15
+  name: LBN 755
+  ra: 04 51 39.0
+  size: 12
+  type: HII region
+- constellation: Perseus
+  dec: +36 38 22
+  description: California Nebula, NGC 1499, NGC 1499
+  mag: 5
+  name: LBN 756
+  ra: 04 01 16.6
+  size: 160
+  type: Nebula
+- constellation: Perseus
+  dec: +34 08 56
+  description: ''
+  mag: 15
+  name: LBN 757
+  ra: 03 52 11.9
+  size: 45
+  type: HII region
+- constellation: Perseus
+  dec: +32 08 26
+  description: IC 348, Cr 41, VdB 19, IC  348
+  mag: 7
+  name: LBN 758
+  ra: 03 44 08.3
+  size: 10
+  type: Open cluster
+- constellation: Auriga
+  dec: +46 14 03
+  description: ''
+  mag: 15
+  name: LBN 759
+  ra: 05 05 41.3
+  size: 90
+  type: HII region
+- constellation: Auriga
+  dec: +52 09 38
+  description: ''
+  mag: 15
+  name: LBN 760
+  ra: 06 06 59.7
+  size: 25
+  type: HII region
+- constellation: Taurus
+  dec: +29 09 44
+  description: ''
+  mag: 15
+  name: LBN 761
+  ra: 03 39 04.0
+  size: 140
+  type: HII region
+- constellation: Aries
+  dec: +17 11 54
+  description: ''
+  mag: 13
+  name: LBN 762
+  ra: 02 59 48.2
+  size: 30
+  type: HII region
+- constellation: Aries
+  dec: +19 51 12
+  description: ''
+  mag: 15
+  name: LBN 763
+  ra: 03 12 51.5
+  size: 25
+  type: HII region
+- constellation: Auriga
+  dec: +49 40 13
+  description: ''
+  mag: 15
+  name: LBN 764
+  ra: 05 58 52.4
+  size: 40
+  type: HII region
+- constellation: Auriga
+  dec: +49 00 13
+  description: ''
+  mag: 15
+  name: LBN 765
+  ra: 05 58 50.6
+  size: 50
+  type: HII region
+- constellation: Perseus
+  dec: +35 26 25
+  description: ''
+  mag: 11
+  name: LBN 766
+  ra: 04 31 17.6
+  size: 3
+  type: HII region
+- constellation: Perseus
+  dec: +35 26 25
+  description: NGC 1579, NGC 1579
+  mag: 11
+  name: LBN 767
+  ra: 04 31 17.6
+  size: 3
+  type: Nebula
+- constellation: Auriga
+  dec: +42 03 12
+  description: S 223
+  mag: 11
+  name: LBN 768
+  ra: 05 17 32.8
+  size: 70
+  type: HII region
+- constellation: Auriga
+  dec: +43 02 29
+  description: S 224
+  mag: 13
+  name: LBN 769
+  ra: 05 27 35.4
+  size: 20
+  type: HII region
+- constellation: Taurus
+  dec: +24 09 19
+  description: ''
+  mag: 9
+  name: LBN 770
+  ra: 03 45 58.5
+  size: 90
+  type: HII region
+- constellation: Taurus
+  dec: +24 09 19
+  description: Maia Nebula, NGC 1432, VdB 21, NGC 1432
+  mag: 5
+  name: LBN 771
+  ra: 03 45 58.5
+  size: 60
+  type: HII region
+- constellation: Taurus
+  dec: +24 09 19
+  description: ''
+  mag: 13
+  name: LBN 772
+  ra: 03 45 58.5
+  size: 180
+  type: HII region
+- constellation: Taurus
+  dec: +22 39 30
+  description: DG  20
+  mag: 15
+  name: LBN 773
+  ra: 03 42 56.6
+  size: 150
+  type: HII region
+- constellation: Taurus
+  dec: +25 28 45
+  description: ''
+  mag: 9
+  name: LBN 774
+  ra: 03 55 00.8
+  size: 180
+  type: HII region
+- constellation: Taurus
+  dec: +26 38 15
+  description: ''
+  mag: 15
+  name: LBN 775
+  ra: 04 03 02.8
+  size: 50
+  type: HII region
+- constellation: Taurus
+  dec: +24 08 53
+  description: ''
+  mag: 15
+  name: LBN 776
+  ra: 03 52 59.0
+  size: 200
+  type: HII region
+- constellation: Taurus
+  dec: +26 23 08
+  description: DG  26
+  mag: 11
+  name: LBN 777
+  ra: 04 05 02.6
+  size: 20
+  type: HII region
+- constellation: Auriga
+  dec: +40 32 33
+  description: S 225
+  mag: 13
+  name: LBN 778
+  ra: 05 26 30.2
+  size: 10
+  type: HII region
+- constellation: Taurus
+  dec: +25 08 23
+  description: ''
+  mag: 15
+  name: LBN 779
+  ra: 04 01 00.8
+  size: 150
+  type: HII region
+- constellation: Auriga
+  dec: +38 01 38
+  description: S 226
+  mag: 9
+  name: LBN 780
+  ra: 05 11 24.7
+  size: 2
+  type: HII region
+- constellation: Auriga
+  dec: +38 53 04
+  description: S 227
+  mag: 13
+  name: LBN 781
+  ra: 05 19 26.7
+  size: 30
+  type: HII region
+- constellation: Taurus
+  dec: +28 12 13
+  description: IC 359, UGC 2980, PGC 14653, IC  359
+  mag: 13
+  name: LBN 782
+  ra: 04 19 06.0
+  size: 15
+  type: Reflection nebula
+- constellation: Auriga
+  dec: +37 23 30
+  description: S 228
+  mag: 5
+  name: LBN 784
+  ra: 05 13 23.6
+  size: 2
+  type: HII region
+- constellation: Taurus
+  dec: +28 27 01
+  description: DG  30
+  mag: 11
+  name: LBN 785
+  ra: 04 22 06.5
+  size: 5
+  type: HII region
+- constellation: Taurus
+  dec: +25 37 37
+  description: IC 360, IC  360
+  mag: 11
+  name: LBN 786
+  ra: 04 13 02.2
+  size: 180
+  type: Nebula
+- constellation: Auriga
+  dec: +36 32 47
+  description: ''
+  mag: 15
+  name: LBN 787
+  ra: 05 23 22.5
+  size: 180
+  type: HII region
+- constellation: Taurus
+  dec: +26 05 41
+  description: C 33
+  mag: 11
+  name: LBN 788
+  ra: 04 27 03.7
+  size: 5
+  type: HII region
+- constellation: Auriga
+  dec: +37 31 42
+  description: ''
+  mag: 15
+  name: LBN 789
+  ra: 05 38 24.8
+  size: 120
+  type: HII region
+- constellation: Lynx
+  dec: +47 11 55
+  description: ''
+  mag: 15
+  name: LBN 790
+  ra: 07 57 37.0
+  size: 30
+  type: HII region
+- constellation: Auriga
+  dec: +34 03 26
+  description: ''
+  mag: 9
+  name: LBN 791
+  ra: 05 14 17.9
+  size: 100
+  type: HII region
+- constellation: Taurus
+  dec: +29 47 16
+  description: ''
+  mag: 11
+  name: LBN 792
+  ra: 04 48 10.0
+  size: 10
+  type: HII region
+- constellation: Taurus
+  dec: +26 36 25
+  description: ''
+  mag: 15
+  name: LBN 793
+  ra: 04 31 04.6
+  size: 360
+  type: HII region
+- constellation: Auriga
+  dec: +35 32 38
+  description: ''
+  mag: 9
+  name: LBN 794
+  ra: 05 25 20.8
+  size: 55
+  type: HII region
+- constellation: Auriga
+  dec: +34 23 13
+  description: Flaming Star Nebula, C 31, IC 405, VdB 34, IC  405
+  mag: 7
+  name: LBN 795
+  ra: 05 17 18.6
+  size: 50
+  type: Nebula
+- constellation: Auriga
+  dec: +34 03 08
+  description: ''
+  mag: 11
+  name: LBN 796
+  ra: 05 18 18.0
+  size: 240
+  type: HII region
+- constellation: Auriga
+  dec: +36 11 55
+  description: ''
+  mag: 15
+  name: LBN 797
+  ra: 05 35 22.3
+  size: 60
+  type: HII region
+- constellation: Auriga
+  dec: +30 33 29
+  description: DG  48
+  mag: 11
+  name: LBN 798
+  ra: 04 59 11.7
+  size: 8
+  type: HII region
+- constellation: Taurus
+  dec: +23 36 58
+  description: ''
+  mag: 13
+  name: LBN 799
+  ra: 04 23 00.2
+  size: 140
+  type: HII region
+- constellation: Taurus
+  dec: +24 36 38
+  description: ''
+  mag: 15
+  name: LBN 800
+  ra: 04 28 01.8
+  size: 300
+  type: HII region
+- constellation: Lynx
+  dec: +46 21 25
+  description: ''
+  mag: 11
+  name: LBN 801
+  ra: 08 05 34.0
+  size: 90
+  type: HII region
+- constellation: Auriga
+  dec: +35 51 42
+  description: S 233
+  mag: 9
+  name: LBN 802
+  ra: 05 38 21.8
+  size: 2
+  type: HII region
+- constellation: Auriga
+  dec: +35 51 37
+  description: ''
+  mag: 11
+  name: LBN 803
+  ra: 05 39 21.8
+  size: 12
+  type: HII region
+- constellation: Auriga
+  dec: +34 22 25
+  description: IC 417, IC  417
+  mag: 7
+  name: LBN 804
+  ra: 05 28 18.9
+  size: 13
+  type: HII region
+- constellation: Auriga
+  dec: +36 11 24
+  description: Sh2- 232, S 232
+  mag: 11
+  name: LBN 805
+  ra: 05 42 22.4
+  size: 40
+  type: HII region
+- constellation: Taurus
+  dec: +26 10 57
+  description: DG  42
+  mag: 13
+  name: LBN 806
+  ra: 04 38 04.4
+  size: 4
+  type: HII region
+- constellation: Auriga
+  dec: +33 22 51
+  description: IC 410, IC  410
+  mag: 7
+  name: LBN 807
+  ra: 05 22 17.1
+  size: 40
+  type: Nebula
+- constellation: Auriga
+  dec: +35 51 29
+  description: S 231
+  mag: 7
+  name: LBN 808
+  ra: 05 41 21.8
+  size: 10
+  type: HII region
+- constellation: Auriga
+  dec: +30 49 56
+  description: DG  50
+  mag: 13
+  name: LBN 809
+  ra: 05 07 12.4
+  size: 2
+  type: HII region
+- constellation: Auriga
+  dec: +34 12 12
+  description: NGC 1931, Cr 68, NGC 1931
+  mag: 5
+  name: LBN 810
+  ra: 05 31 18.7
+  size: 4
+  type: Open cluster
+- constellation: Lynx
+  dec: +45 31 51
+  description: ''
+  mag: 11
+  name: LBN 811
+  ra: 07 58 33.3
+  size: 60
+  type: HII region
+- constellation: Taurus
+  dec: +24 19 21
+  description: DG  37
+  mag: 13
+  name: LBN 812
+  ra: 04 32 01.6
+  size: 4
+  type: HII region
+- constellation: Taurus
+  dec: +25 44 49
+  description: IC 2087, IC 2087
+  mag: 9
+  name: LBN 813
+  ra: 04 40 03.9
+  size: 4
+  type: Nebula
+- constellation: Taurus
+  dec: +22 56 42
+  description: C 34
+  mag: 7
+  name: LBN 814
+  ra: 04 26 59.6
+  size: 10
+  type: HII region
+- constellation: Taurus
+  dec: +24 14 05
+  description: DG  40
+  mag: 13
+  name: LBN 815
+  ra: 04 36 01.7
+  size: 1
+  type: HII region
+- constellation: Taurus
+  dec: +22 56 17
+  description: ''
+  mag: 15
+  name: LBN 816
+  ra: 04 32 59.9
+  size: 130
+  type: HII region
+- constellation: Taurus
+  dec: +19 37 02
+  description: Struve's Lost Nebula, NGC 1554, NGC 1554
+  mag: 7
+  name: LBN 817
+  ra: 04 21 55.3
+  size: 7
+  type: Star
+- constellation: Auriga
+  dec: +30 41 38
+  description: DG  66
+  mag: 13
+  name: LBN 818
+  ra: 05 39 13.2
+  size: 22
+  type: HII region
+- constellation: Taurus
+  dec: +18 46 38
+  description: ''
+  mag: 15
+  name: LBN 819
+  ra: 04 27 54.5
+  size: 150
+  type: HII region
+- constellation: Eridanus
+  dec: -03 47 36
+  description: ''
+  mag: 15
+  name: LBN 820
+  ra: 02 49 30.7
+  size: 40
+  type: HII region
+- constellation: Taurus
+  dec: +18 06 26
+  description: S 239
+  mag: 9
+  name: LBN 821
+  ra: 04 30 53.8
+  size: 6
+  type: HII region
+- constellation: Taurus
+  dec: +28 01 38
+  description: S 240
+  mag: 9
+  name: LBN 822
+  ra: 05 39 09.1
+  size: 200
+  type: HII region
+- constellation: Auriga
+  dec: +30 29 49
+  description: C 61
+  mag: 7
+  name: LBN 823
+  ra: 06 04 13.1
+  size: 4
+  type: HII region
+- constellation: Auriga
+  dec: +30 14 49
+  description: DG  85
+  mag: 7
+  name: LBN 824
+  ra: 06 04 12.7
+  size: 2
+  type: HII region
+- constellation: Auriga
+  dec: +30 09 49
+  description: ''
+  mag: 13
+  name: LBN 825
+  ra: 06 04 12.6
+  size: 10
+  type: HII region
+- constellation: Taurus
+  dec: +27 00 46
+  description: S 242
+  mag: 9
+  name: LBN 826
+  ra: 05 51 07.8
+  size: 7
+  type: HII region
+- constellation: Taurus
+  dec: +27 00 41
+  description: DG  84
+  mag: 9
+  name: LBN 827
+  ra: 05 52 07.8
+  size: 10
+  type: HII region
+- constellation: Taurus
+  dec: +10 12 34
+  description: DG  28
+  mag: 9
+  name: LBN 828
+  ra: 04 13 44.4
+  size: 5
+  type: HII region
+- constellation: Taurus
+  dec: +06 38 27
+  description: ''
+  mag: 11
+  name: LBN 829
+  ra: 03 59 40.4
+  size: 22
+  type: HII region
+- constellation: Taurus
+  dec: +23 21 38
+  description: S 243
+  mag: 13
+  name: LBN 830
+  ra: 05 39 02.4
+  size: 8
+  type: HII region
+- constellation: Taurus
+  dec: +08 47 26
+  description: ''
+  mag: 15
+  name: LBN 831
+  ra: 04 15 42.9
+  size: 30
+  type: HII region
+- constellation: Taurus
+  dec: +08 47 26
+  description: ''
+  mag: 11
+  name: LBN 832
+  ra: 04 15 42.9
+  size: 6
+  type: HII region
+- constellation: Taurus
+  dec: +22 01 56
+  description: Crab Nebula, Taurus A, M 1, NGC 1952, NGC 1952
+  mag: 5
+  name: LBN 833
+  ra: 05 35 00.6
+  size: 8
+  type: Supernova remnant
+- constellation: Taurus
+  dec: +08 07 26
+  description: ''
+  mag: 15
+  name: LBN 834
+  ra: 04 15 42.2
+  size: 140
+  type: HII region
+- constellation: Taurus
+  dec: +04 58 27
+  description: ''
+  mag: 11
+  name: LBN 835
+  ra: 03 59 38.7
+  size: 20
+  type: HII region
+- constellation: Taurus
+  dec: +03 48 20
+  description: ''
+  mag: 11
+  name: LBN 836
+  ra: 04 01 37.5
+  size: 80
+  type: HII region
+- constellation: Taurus
+  dec: +20 20 30
+  description: ''
+  mag: 13
+  name: LBN 837
+  ra: 05 40 58.4
+  size: 3
+  type: HII region
+- constellation: Orion
+  dec: +14 04 18
+  description: S 246
+  mag: 15
+  name: LBN 838
+  ra: 05 01 49.9
+  size: 90
+  type: HII region
+- constellation: Taurus
+  dec: +03 08 16
+  description: S 245
+  mag: 13
+  name: LBN 839
+  ra: 04 02 36.9
+  size: 600
+  type: HII region
+- constellation: Gemini
+  dec: +23 16 43
+  description: IC 444, VdB 75, IC  444
+  mag: 9
+  name: LBN 840
+  ra: 06 19 02.4
+  size: 8
+  type: Reflection nebula
+- constellation: Gemini
+  dec: +23 28 35
+  description: S 249
+  mag: 13
+  name: LBN 841
+  ra: 06 21 02.7
+  size: 50
+  type: HII region
+- constellation: Taurus
+  dec: +07 06 18
+  description: ''
+  mag: 15
+  name: LBN 842
+  ra: 04 32 41.4
+  size: 270
+  type: HII region
+- constellation: Gemini
+  dec: +21 35 27
+  description: S 247
+  mag: 9
+  name: LBN 843
+  ra: 06 09 00.2
+  size: 10
+  type: HII region
+- constellation: Gemini
+  dec: +22 28 52
+  description: IC 443, IC  443
+  mag: 3
+  name: LBN 844
+  ra: 06 17 01.3
+  size: 50
+  type: Supernova remnant
+- constellation: Gemini
+  dec: +22 58 26
+  description: DG 101
+  mag: 11
+  name: LBN 845
+  ra: 06 23 02.0
+  size: 40
+  type: HII region
+- constellation: Taurus
+  dec: +07 15 50
+  description: S 250
+  mag: 13
+  name: LBN 846
+  ra: 04 39 41.7
+  size: 10
+  type: HII region
+- constellation: Taurus
+  dec: +07 25 45
+  description: ''
+  mag: 15
+  name: LBN 847
+  ra: 04 40 41.9
+  size: 25
+  type: HII region
+- constellation: Orion
+  dec: +13 01 22
+  description: ''
+  mag: 13
+  name: LBN 848
+  ra: 05 14 48.8
+  size: 2
+  type: HII region
+- constellation: Taurus
+  dec: +05 56 18
+  description: S 251
+  mag: 13
+  name: LBN 849
+  ra: 04 32 40.1
+  size: 10
+  type: HII region
+- constellation: Orion
+  dec: +13 23 09
+  description: ''
+  mag: 7
+  name: LBN 850
+  ra: 05 17 49.3
+  size: 5
+  type: HII region
+- constellation: Orion
+  dec: +13 23 09
+  description: ''
+  mag: 13
+  name: LBN 851
+  ra: 05 17 49.3
+  size: 15
+  type: HII region
+- constellation: Taurus
+  dec: +05 56 14
+  description: ''
+  mag: 15
+  name: LBN 852
+  ra: 04 33 40.1
+  size: 10
+  type: HII region
+- constellation: Eridanus
+  dec: +00 08 24
+  description: ''
+  mag: 15
+  name: LBN 853
+  ra: 04 00 33.8
+  size: 930
+  type: HII region
+- constellation: Orion
+  dec: +20 29 23
+  description: NGC 2175, Cr 84, NGC 2175
+  mag: 5
+  name: LBN 854
+  ra: 06 09 58.7
+  size: 40
+  type: Open cluster
+- constellation: Orion
+  dec: +18 41 32
+  description: C 62
+  mag: 7
+  name: LBN 855
+  ra: 06 07 56.3
+  size: 3
+  type: HII region
+- constellation: Eridanus
+  dec: -09 13 47
+  description: ''
+  mag: 11
+  name: LBN 856
+  ra: 03 12 25.6
+  size: 15
+  type: HII region
+- constellation: Orion
+  dec: +11 22 52
+  description: ''
+  mag: 13
+  name: LBN 857
+  ra: 05 21 47.0
+  size: 70
+  type: HII region
+- constellation: Orion
+  dec: +18 01 14
+  description: S 254
+  mag: 13
+  name: LBN 858
+  ra: 06 11 55.5
+  size: 10
+  type: HII region
+- constellation: Orion
+  dec: +17 59 10
+  description: IC 2162, IC 2162
+  mag: 7
+  name: LBN 859
+  ra: 06 12 55.4
+  size: 4
+  type: HII region
+- constellation: Orion
+  dec: +05 24 43
+  description: S 260
+  mag: 13
+  name: LBN 860
+  ra: 04 55 39.8
+  size: 40
+  type: HII region
+- constellation: Eridanus
+  dec: -03 51 32
+  description: ''
+  mag: 13
+  name: LBN 861
+  ra: 03 59 29.8
+  size: 90
+  type: HII region
+- constellation: Orion
+  dec: +15 49 27
+  description: ''
+  mag: 9
+  name: LBN 862
+  ra: 06 08 52.7
+  size: 30
+  type: HII region
+- constellation: Orion
+  dec: +15 46 27
+  description: S 261
+  mag: 11
+  name: LBN 863
+  ra: 06 08 52.6
+  size: 42
+  type: HII region
+- constellation: Orion
+  dec: +15 39 27
+  description: ''
+  mag: 9
+  name: LBN 864
+  ra: 06 08 52.5
+  size: 30
+  type: HII region
+- constellation: Orion
+  dec: +10 02 05
+  description: C 54
+  mag: 11
+  name: LBN 865
+  ra: 05 32 45.4
+  size: 270
+  type: HII region
+- constellation: Orion
+  dec: +08 22 52
+  description: S 263
+  mag: 11
+  name: LBN 867
+  ra: 05 21 43.4
+  size: 20
+  type: HII region
+- constellation: Orion
+  dec: +06 03 57
+  description: S 262
+  mag: 13
+  name: LBN 868
+  ra: 05 06 40.6
+  size: 30
+  type: HII region
+- constellation: Orion
+  dec: +07 48 05
+  description: S 265
+  mag: 11
+  name: LBN 869
+  ra: 05 18 42.7
+  size: 40
+  type: HII region
+- constellation: Eridanus
+  dec: -09 19 40
+  description: ''
+  mag: 13
+  name: LBN 870
+  ra: 03 28 25.0
+  size: 65
+  type: HII region
+- constellation: Orion
+  dec: +07 08 05
+  description: ''
+  mag: 11
+  name: LBN 871
+  ra: 05 18 41.9
+  size: 30
+  type: HII region
+- constellation: Orion
+  dec: +06 58 10
+  description: ''
+  mag: 11
+  name: LBN 872
+  ra: 05 17 41.7
+  size: 40
+  type: HII region
+- constellation: Orion
+  dec: +14 09 23
+  description: S 268
+  mag: 13
+  name: LBN 873
+  ra: 06 09 50.6
+  size: 30
+  type: HII region
+- constellation: Orion
+  dec: +13 44 19
+  description: S 268
+  mag: 13
+  name: LBN 874
+  ra: 06 10 50.1
+  size: 30
+  type: HII region
+- constellation: Orion
+  dec: +14 16 57
+  description: Sh2- 267, S 267
+  mag: 13
+  name: LBN 875
+  ra: 06 15 50.7
+  size: 8
+  type: HII region
+- constellation: Orion
+  dec: +13 50 01
+  description: S 269
+  mag: 7
+  name: LBN 876
+  ra: 06 14 50.2
+  size: 3
+  type: HII region
+- constellation: Orion
+  dec: +12 49 23
+  description: S 270
+  mag: 13
+  name: LBN 877
+  ra: 06 09 48.9
+  size: 1
+  type: HII region
+- constellation: Orion
+  dec: +09 11 13
+  description: ''
+  mag: 11
+  name: LBN 878
+  ra: 05 44 44.5
+  size: 30
+  type: HII region
+- constellation: Orion
+  dec: +09 03 08
+  description: C 59
+  mag: 5
+  name: LBN 879
+  ra: 05 45 44.3
+  size: 3
+  type: HII region
+- constellation: Orion
+  dec: +04 46 01
+  description: ''
+  mag: 11
+  name: LBN 880
+  ra: 05 19 39.2
+  size: 40
+  type: HII region
+- constellation: Orion
+  dec: +05 02 48
+  description: ''
+  mag: 11
+  name: LBN 881
+  ra: 05 22 39.5
+  size: 45
+  type: HII region
+- constellation: Orion
+  dec: +04 42 57
+  description: ''
+  mag: 11
+  name: LBN 882
+  ra: 05 20 39.1
+  size: 40
+  type: HII region
+- constellation: Orion
+  dec: +04 13 10
+  description: ''
+  mag: 11
+  name: LBN 883
+  ra: 05 17 38.5
+  size: 40
+  type: HII region
+- constellation: Orion
+  dec: +04 13 01
+  description: ''
+  mag: 11
+  name: LBN 884
+  ra: 05 19 38.6
+  size: 50
+  type: HII region
+- constellation: Orion
+  dec: +04 52 14
+  description: ''
+  mag: 11
+  name: LBN 885
+  ra: 05 30 39.4
+  size: 70
+  type: HII region
+- constellation: Orion
+  dec: +04 40 14
+  description: ''
+  mag: 7
+  name: LBN 886
+  ra: 05 30 39.1
+  size: 3
+  type: HII region
+- constellation: Gemini
+  dec: +11 58 09
+  description: ''
+  mag: 15
+  name: LBN 887
+  ra: 06 26 47.8
+  size: 130
+  type: HII region
+- constellation: Orion
+  dec: +03 52 22
+  description: ''
+  mag: 11
+  name: LBN 888
+  ra: 05 28 38.2
+  size: 55
+  type: HII region
+- constellation: Gemini
+  dec: +12 17 52
+  description: ''
+  mag: 13
+  name: LBN 889
+  ra: 06 30 48.2
+  size: 55
+  type: HII region
+- constellation: Orion
+  dec: +02 52 48
+  description: ''
+  mag: 9
+  name: LBN 890
+  ra: 05 22 37.0
+  size: 120
+  type: HII region
+- constellation: Gemini
+  dec: +16 44 57
+  description: ''
+  mag: 15
+  name: LBN 891
+  ra: 07 11 53.0
+  size: 120
+  type: HII region
+- constellation: Orion
+  dec: +03 32 14
+  description: ''
+  mag: 13
+  name: LBN 892
+  ra: 05 30 37.8
+  size: 30
+  type: HII region
+- constellation: Eridanus
+  dec: -04 53 41
+  description: ''
+  mag: 15
+  name: LBN 893
+  ra: 04 32 28.4
+  size: 60
+  type: HII region
+- constellation: Orion
+  dec: +04 11 39
+  description: DG  70
+  mag: 9
+  name: LBN 894
+  ra: 05 38 38.6
+  size: 20
+  type: HII region
+- constellation: Monoceros
+  dec: +10 57 52
+  description: ''
+  mag: 15
+  name: LBN 895
+  ra: 06 30 46.6
+  size: 120
+  type: HII region
+- constellation: Eridanus
+  dec: -06 13 21
+  description: ''
+  mag: 13
+  name: LBN 896
+  ra: 04 27 27.0
+  size: 40
+  type: HII region
+- constellation: Eridanus
+  dec: -05 43 37
+  description: ''
+  mag: 13
+  name: LBN 897
+  ra: 04 31 27.5
+  size: 25
+  type: HII region
+- constellation: Monoceros
+  dec: +10 26 52
+  description: IC 446, IC  446
+  mag: 9
+  name: LBN 898
+  ra: 06 30 46.0
+  size: 5
+  type: Nebula
+- constellation: Monoceros
+  dec: +10 57 26
+  description: ''
+  mag: 11
+  name: LBN 899
+  ra: 06 36 46.5
+  size: 30
+  type: HII region
+- constellation: Eridanus
+  dec: -05 49 49
+  description: ''
+  mag: 13
+  name: LBN 900
+  ra: 04 34 27.3
+  size: 26
+  type: HII region
+- constellation: Monoceros
+  dec: +10 20 43
+  description: NGC 2247, VdB 82, NGC 2247
+  mag: 5
+  name: LBN 901
+  ra: 06 32 45.8
+  size: 2
+  type: Reflection nebula
+- constellation: Monoceros
+  dec: +10 47 26
+  description: ''
+  mag: 7
+  name: LBN 902
+  ra: 06 36 46.3
+  size: 9
+  type: HII region
+- constellation: Monoceros
+  dec: +10 00 52
+  description: IC 2169, IC 2169
+  mag: 9
+  name: LBN 903
+  ra: 06 30 45.5
+  size: 25
+  type: Duplicate
+- constellation: Monoceros
+  dec: +10 09 43
+  description: NGC 2245, NGC 2245
+  mag: 5
+  name: LBN 904
+  ra: 06 32 45.6
+  size: 2
+  type: Reflection nebula
+- constellation: Orion
+  dec: +04 30 47
+  description: ''
+  mag: 15
+  name: LBN 905
+  ra: 05 50 39.0
+  size: 80
+  type: HII region
+- constellation: Eridanus
+  dec: -05 24 18
+  description: ''
+  mag: 11
+  name: LBN 906
+  ra: 04 41 27.7
+  size: 40
+  type: HII region
+- constellation: Orion
+  dec: -01 26 33
+  description: ''
+  mag: 9
+  name: LBN 907
+  ra: 05 13 32.1
+  size: 10
+  type: HII region
+- constellation: Orion
+  dec: +05 00 03
+  description: ''
+  mag: 15
+  name: LBN 908
+  ra: 06 00 39.6
+  size: 240
+  type: HII region
+- constellation: Eridanus
+  dec: -06 09 14
+  description: ''
+  mag: 11
+  name: LBN 909
+  ra: 04 40 26.9
+  size: 35
+  type: HII region
+- constellation: Orion
+  dec: -02 06 20
+  description: ''
+  mag: 9
+  name: LBN 910
+  ra: 05 10 31.3
+  size: 45
+  type: HII region
+- constellation: Monoceros
+  dec: +09 54 09
+  description: Christmas Tree Cluster, Cone Nebula, NGC 2264, Cr 112, Mel 49, NGC
+    2264
+  mag: 5
+  name: LBN 911
+  ra: 06 40 45.3
+  size: 10
+  type: Open cluster
+- constellation: Monoceros
+  dec: +09 42 09
+  description: ''
+  mag: 7
+  name: LBN 912
+  ra: 06 40 45.0
+  size: 45
+  type: HII region
+- constellation: Orion
+  dec: -00 39 59
+  description: IC 423, IC  423
+  mag: 7
+  name: LBN 913
+  ra: 05 33 32.9
+  size: 2
+  type: Nebula
+- constellation: Orion
+  dec: -00 28 03
+  description: DG  59
+  mag: 7
+  name: LBN 914
+  ra: 05 34 33.2
+  size: 2
+  type: HII region
+- constellation: Orion
+  dec: -02 06 41
+  description: ''
+  mag: 9
+  name: LBN 915
+  ra: 05 15 31.3
+  size: 60
+  type: HII region
+- constellation: Orion
+  dec: -03 21 03
+  description: NGC 1788, VdB 33, NGC 1788
+  mag: 5
+  name: LBN 916
+  ra: 05 06 29.9
+  size: 2
+  type: Reflection nebula
+- constellation: Eridanus
+  dec: -05 54 43
+  description: ''
+  mag: 9
+  name: LBN 917
+  ra: 04 47 27.1
+  size: 70
+  type: HII region
+- constellation: Orion
+  dec: +00 02 05
+  description: ''
+  mag: 15
+  name: LBN 918
+  ra: 05 32 33.8
+  size: 1560
+  type: HII region
+- constellation: Orion
+  dec: -01 46 58
+  description: ''
+  mag: 9
+  name: LBN 919
+  ra: 05 19 31.7
+  size: 50
+  type: HII region
+- constellation: Monoceros
+  dec: +08 43 17
+  description: Hubble's Variable Nebula, C 46, NGC 2261, NGC 2261
+  mag: 5
+  name: LBN 920
+  ra: 06 38 43.9
+  size: 2
+  type: Reflection nebula
+- constellation: Orion
+  dec: -00 23 12
+  description: IC 426, IC  426
+  mag: 7
+  name: LBN 921
+  ra: 05 36 33.3
+  size: 10
+  type: Nebula
+- constellation: Monoceros
+  dec: +08 57 09
+  description: ''
+  mag: 11
+  name: LBN 922
+  ra: 06 40 44.1
+  size: 180
+  type: HII region
+- constellation: Eridanus
+  dec: -03 55 54
+  description: ''
+  mag: 13
+  name: LBN 923
+  ra: 05 04 29.2
+  size: 120
+  type: HII region
+- constellation: Orion
+  dec: -00 43 29
+  description: ''
+  mag: 11
+  name: LBN 924
+  ra: 05 40 32.9
+  size: 15
+  type: HII region
+- constellation: Orion
+  dec: -00 38 29
+  description: DG  71
+  mag: 9
+  name: LBN 925
+  ra: 05 40 33.0
+  size: 2
+  type: HII region
+- constellation: Monoceros
+  dec: +09 59 21
+  description: ''
+  mag: 13
+  name: LBN 926
+  ra: 06 51 45.3
+  size: 10
+  type: HII region
+- constellation: Orion
+  dec: -00 34 29
+  description: DG  73
+  mag: 9
+  name: LBN 927
+  ra: 05 40 33.1
+  size: 2
+  type: HII region
+- constellation: Orion
+  dec: -00 08 21
+  description: DG  67
+  mag: 9
+  name: LBN 928
+  ra: 05 38 33.6
+  size: 15
+  type: HII region
+- constellation: Monoceros
+  dec: +07 57 22
+  description: ''
+  mag: 13
+  name: LBN 929
+  ra: 06 37 43.0
+  size: 540
+  type: HII region
+- constellation: Monoceros
+  dec: +07 17 39
+  description: ''
+  mag: 11
+  name: LBN 930
+  ra: 06 33 42.2
+  size: 30
+  type: HII region
+- constellation: Monoceros
+  dec: +07 17 39
+  description: IC 448, VdB 81, IC  448
+  mag: 9
+  name: LBN 931
+  ra: 06 33 42.2
+  size: 15
+  type: HII region
+- constellation: Monoceros
+  dec: +06 57 48
+  description: ''
+  mag: 11
+  name: LBN 932
+  ra: 06 31 41.8
+  size: 55
+  type: HII region
+- constellation: Orion
+  dec: +01 01 00
+  description: DG  82
+  mag: 9
+  name: LBN 933
+  ra: 05 47 34.9
+  size: 420
+  type: HII region
+- constellation: Orion
+  dec: +01 01 00
+  description: ''
+  mag: 7
+  name: LBN 934
+  ra: 05 47 34.9
+  size: 140
+  type: HII region
+- constellation: Orion
+  dec: -01 08 03
+  description: ''
+  mag: 9
+  name: LBN 935
+  ra: 05 34 32.4
+  size: 15
+  type: HII region
+- constellation: Monoceros
+  dec: +06 37 39
+  description: ''
+  mag: 9
+  name: LBN 936
+  ra: 06 33 41.4
+  size: 11
+  type: HII region
+- constellation: Orion
+  dec: -03 26 54
+  description: ''
+  mag: 11
+  name: LBN 937
+  ra: 05 18 29.8
+  size: 200
+  type: HII region
+- constellation: Orion
+  dec: +00 13 00
+  description: NGC 2071, VdB 60, NGC 2071
+  mag: 7
+  name: LBN 938
+  ra: 05 47 34.0
+  size: 7
+  type: Nebula
+- constellation: Orion
+  dec: +00 01 04
+  description: NGC 2064, NGC 2064
+  mag: 5
+  name: LBN 939
+  ra: 05 46 33.7
+  size: 10
+  type: Reflection nebula
+- constellation: Orion
+  dec: -01 38 03
+  description: Epsilon Orionis Nebula, NGC 1990, NGC 1990
+  mag: 9
+  name: LBN 940
+  ra: 05 34 31.8
+  size: 50
+  type: Star
+- constellation: Monoceros
+  dec: +05 52 48
+  description: ''
+  mag: 9
+  name: LBN 941
+  ra: 06 31 40.6
+  size: 18
+  type: HII region
+- constellation: Orion
+  dec: -03 47 03
+  description: ''
+  mag: 9
+  name: LBN 942
+  ra: 05 20 29.4
+  size: 100
+  type: HII region
+- constellation: Monoceros
+  dec: +05 37 39
+  description: ''
+  mag: 9
+  name: LBN 943
+  ra: 06 33 40.3
+  size: 30
+  type: HII region
+- constellation: Orion
+  dec: -01 31 29
+  description: IC 431, VdB 50, IC  431
+  mag: 5
+  name: LBN 944
+  ra: 05 40 32.0
+  size: 8
+  type: Reflection nebula
+- constellation: Orion
+  dec: -04 56 41
+  description: ''
+  mag: 9
+  name: LBN 945
+  ra: 05 15 28.0
+  size: 90
+  type: HII region
+- constellation: Orion
+  dec: -01 33 34
+  description: IC 432, VdB 51, IC  432
+  mag: 5
+  name: LBN 946
+  ra: 05 41 31.9
+  size: 10
+  type: Reflection nebula
+- constellation: Monoceros
+  dec: +06 36 52
+  description: ''
+  mag: 11
+  name: LBN 947
+  ra: 06 44 41.4
+  size: 60
+  type: HII region
+- constellation: Monoceros
+  dec: +04 57 43
+  description: NGC 2238, NGC 2238
+  mag: 5
+  name: LBN 948
+  ra: 06 32 39.5
+  size: 80
+  type: HII region
+- constellation: Monoceros
+  dec: +04 57 43
+  description: ''
+  mag: 9
+  name: LBN 949
+  ra: 06 32 39.5
+  size: 18
+  type: HII region
+- constellation: Orion
+  dec: -02 18 16
+  description: ''
+  mag: 9
+  name: LBN 950
+  ra: 05 37 31.0
+  size: 70
+  type: HII region
+- constellation: Monoceros
+  dec: +05 07 26
+  description: ''
+  mag: 9
+  name: LBN 951
+  ra: 06 36 39.7
+  size: 15
+  type: HII region
+- constellation: Monoceros
+  dec: +05 27 09
+  description: ''
+  mag: 11
+  name: LBN 952
+  ra: 06 40 40.0
+  size: 200
+  type: HII region
+- constellation: Orion
+  dec: -02 18 34
+  description: IC 434, IC  434
+  mag: 5
+  name: LBN 953
+  ra: 05 41 31.0
+  size: 90
+  type: HII region
+- constellation: Orion
+  dec: -02 18 34
+  description: NGC 2023, VdB 52, NGC 2023
+  mag: 5
+  name: LBN 954
+  ra: 05 41 31.0
+  size: 10
+  type: Reflection nebula
+- constellation: Orion
+  dec: -00 59 31
+  description: ''
+  mag: 7
+  name: LBN 955
+  ra: 05 54 32.6
+  size: 40
+  type: HII region
+- constellation: Orion
+  dec: -05 27 03
+  description: S 278
+  mag: 11
+  name: LBN 956
+  ra: 05 20 27.4
+  size: 50
+  type: HII region
+- constellation: Orion
+  dec: -05 27 07
+  description: ''
+  mag: 9
+  name: LBN 957
+  ra: 05 21 27.4
+  size: 8
+  type: HII region
+- constellation: Orion
+  dec: -03 08 25
+  description: ''
+  mag: 9
+  name: LBN 958
+  ra: 05 39 30.1
+  size: 60
+  type: HII region
+- constellation: Eridanus
+  dec: -07 55 46
+  description: Witch Head Nebula, IC 2118, VdB 36, IC 2118
+  mag: 9
+  name: LBN 959
+  ra: 05 02 24.7
+  size: 180
+  type: Duplicate
+- constellation: Orion
+  dec: -05 56 58
+  description: ''
+  mag: 9
+  name: LBN 960
+  ra: 05 19 26.9
+  size: 30
+  type: HII region
+- constellation: Orion
+  dec: -05 27 16
+  description: ''
+  mag: 9
+  name: LBN 961
+  ra: 05 23 27.4
+  size: 30
+  type: HII region
+- constellation: Orion
+  dec: -03 08 34
+  description: ''
+  mag: 7
+  name: LBN 962
+  ra: 05 41 30.1
+  size: 50
+  type: HII region
+- constellation: Orion
+  dec: -04 27 55
+  description: DG  56
+  mag: 13
+  name: LBN 963
+  ra: 05 32 28.5
+  size: 8
+  type: HII region
+- constellation: Orion
+  dec: -05 47 11
+  description: ''
+  mag: 11
+  name: LBN 964
+  ra: 05 22 27.0
+  size: 110
+  type: HII region
+- constellation: Orion
+  dec: -03 38 25
+  description: ''
+  mag: 9
+  name: LBN 965
+  ra: 05 39 29.5
+  size: 8
+  type: HII region
+- constellation: Orion
+  dec: -01 39 35
+  description: ''
+  mag: 13
+  name: LBN 966
+  ra: 05 55 31.8
+  size: 90
+  type: HII region
+- constellation: Orion
+  dec: -03 58 25
+  description: ''
+  mag: 9
+  name: LBN 967
+  ra: 05 39 29.1
+  size: 15
+  type: HII region
+- constellation: Eridanus
+  dec: -08 55 41
+  description: DG  49
+  mag: 11
+  name: LBN 968
+  ra: 05 01 23.6
+  size: 20
+  type: HII region
+- constellation: Orion
+  dec: -06 07 20
+  description: ''
+  mag: 9
+  name: LBN 969
+  ra: 05 24 26.6
+  size: 15
+  type: HII region
+- constellation: Monoceros
+  dec: +02 37 35
+  description: S 280
+  mag: 11
+  name: LBN 970
+  ra: 06 34 36.8
+  size: 40
+  type: HII region
+- constellation: Monoceros
+  dec: +02 37 35
+  description: ''
+  mag: 9
+  name: LBN 971
+  ra: 06 34 36.8
+  size: 25
+  type: HII region
+- constellation: Monoceros
+  dec: +02 37 35
+  description: ''
+  mag: 7
+  name: LBN 972
+  ra: 06 34 36.8
+  size: 10
+  type: HII region
+- constellation: Monoceros
+  dec: +02 37 35
+  description: ''
+  mag: 7
+  name: LBN 973
+  ra: 06 34 36.8
+  size: 20
+  type: HII region
+- constellation: Orion
+  dec: -05 28 07
+  description: Orion Nebula, Trapezium Cluster, Orion A, M 42, NGC 1976, NGC 1976
+  mag: 5
+  name: LBN 974
+  ra: 05 35 27.4
+  size: 90
+  type: Open cluster
+- constellation: Eridanus
+  dec: -09 55 33
+  description: ''
+  mag: 13
+  name: LBN 975
+  ra: 04 59 22.4
+  size: 120
+  type: HII region
+- constellation: Orion
+  dec: -02 59 44
+  description: ''
+  mag: 9
+  name: LBN 976
+  ra: 05 57 30.2
+  size: 160
+  type: HII region
+- constellation: Orion
+  dec: -05 58 16
+  description: NGC 1980, Cr 72, NGC 1980
+  mag: 9
+  name: LBN 977
+  ra: 05 37 26.8
+  size: 240
+  type: Open cluster
+- constellation: Monoceros
+  dec: +01 37 18
+  description: S 282
+  mag: 9
+  name: LBN 978
+  ra: 06 38 35.6
+  size: 40
+  type: HII region
+- constellation: Orion
+  dec: -06 44 12
+  description: NGC 1999, VdB 46, NGC 1999
+  mag: 5
+  name: LBN 979
+  ra: 05 36 25.9
+  size: 2
+  type: Reflection nebula
+- constellation: Lepus
+  dec: -10 56 02
+  description: ''
+  mag: 15
+  name: LBN 980
+  ra: 05 06 21.2
+  size: 50
+  type: HII region
+- constellation: Eridanus
+  dec: -14 23 53
+  description: ''
+  mag: 15
+  name: LBN 981
+  ra: 04 35 17.7
+  size: 120
+  type: HII region
+- constellation: Orion
+  dec: -05 29 26
+  description: ''
+  mag: 9
+  name: LBN 982
+  ra: 05 53 27.3
+  size: 50
+  type: HII region
+- constellation: Monoceros
+  dec: +00 26 56
+  description: S 284
+  mag: 15
+  name: LBN 983
+  ra: 06 43 34.3
+  size: 60
+  type: HII region
+- constellation: Monoceros
+  dec: +00 16 52
+  description: ''
+  mag: 13
+  name: LBN 984
+  ra: 06 44 34.1
+  size: 40
+  type: HII region
+- constellation: Orion
+  dec: -05 49 39
+  description: ''
+  mag: 9
+  name: LBN 985
+  ra: 05 56 26.9
+  size: 60
+  type: HII region
+- constellation: Monoceros
+  dec: +00 16 48
+  description: ''
+  mag: 9
+  name: LBN 986
+  ra: 06 45 34.1
+  size: 20
+  type: HII region
+- constellation: Monoceros
+  dec: +00 06 52
+  description: ''
+  mag: 11
+  name: LBN 987
+  ra: 06 44 33.9
+  size: 20
+  type: HII region
+- constellation: Orion
+  dec: -06 29 22
+  description: ''
+  mag: 11
+  name: LBN 988
+  ra: 05 52 26.1
+  size: 180
+  type: HII region
+- constellation: Orion
+  dec: -07 19 00
+  description: ''
+  mag: 11
+  name: LBN 989
+  ra: 05 47 25.2
+  size: 60
+  type: HII region
+- constellation: Monoceros
+  dec: -05 18 32
+  description: DG  91
+  mag: 9
+  name: LBN 990
+  ra: 06 08 27.5
+  size: 10
+  type: HII region
+- constellation: Lepus
+  dec: -12 26 24
+  description: ''
+  mag: 13
+  name: LBN 991
+  ra: 05 11 19.3
+  size: 70
+  type: HII region
+- constellation: Orion
+  dec: -09 23 29
+  description: DG  75
+  mag: 13
+  name: LBN 992
+  ra: 05 40 22.7
+  size: 10
+  type: HII region
+- constellation: Monoceros
+  dec: -06 12 32
+  description: C 65
+  mag: 7
+  name: LBN 993
+  ra: 06 08 26.5
+  size: 3
+  type: HII region
+- constellation: Monoceros
+  dec: -06 23 27
+  description: NGC 2170, VdB 67, NGC 2170
+  mag: 5
+  name: LBN 994
+  ra: 06 07 26.3
+  size: 2
+  type: Reflection nebula
+- constellation: Monoceros
+  dec: -06 20 32
+  description: C 66
+  mag: 7
+  name: LBN 995
+  ra: 06 08 26.3
+  size: 3
+  type: HII region
+- constellation: Monoceros
+  dec: -06 10 40
+  description: NGC 2183, NGC 2183
+  mag: 9
+  name: LBN 996
+  ra: 06 10 26.5
+  size: 2
+  type: HII region
+- constellation: Monoceros
+  dec: -06 12 40
+  description: NGC 2185, VdB 73, NGC 2185
+  mag: 9
+  name: LBN 997
+  ra: 06 10 26.5
+  size: 2
+  type: Nebula
+- constellation: Monoceros
+  dec: -06 20 36
+  description: NGC 2182, VdB 72, NGC 2182
+  mag: 5
+  name: LBN 998
+  ra: 06 09 26.3
+  size: 3
+  type: Reflection nebula
+- constellation: Monoceros
+  dec: -06 30 32
+  description: DG  92
+  mag: 9
+  name: LBN 999
+  ra: 06 08 26.1
+  size: 15
+  type: HII region
+- constellation: Monoceros
+  dec: -06 08 45
+  description: C 71
+  mag: 9
+  name: LBN 1000
+  ra: 06 11 26.6
+  size: 2
+  type: HII region
+- constellation: Lepus
+  dec: -10 57 54
+  description: ''
+  mag: 13
+  name: LBN 1001
+  ra: 05 32 20.9
+  size: 80
+  type: HII region
+- constellation: Orion
+  dec: -10 18 20
+  description: ''
+  mag: 13
+  name: LBN 1002
+  ra: 05 38 21.6
+  size: 50
+  type: HII region
+- constellation: Monoceros
+  dec: -06 15 58
+  description: DG  97
+  mag: 11
+  name: LBN 1003
+  ra: 06 14 26.4
+  size: 1
+  type: HII region
+- constellation: Monoceros
+  dec: -06 18 02
+  description: DG  98
+  mag: 11
+  name: LBN 1004
+  ra: 06 15 26.4
+  size: 1
+  type: HII region
+- constellation: Lepus
+  dec: -11 57 46
+  description: ''
+  mag: 13
+  name: LBN 1005
+  ra: 05 30 19.7
+  size: 60
+  type: HII region
+- constellation: Lepus
+  dec: -12 17 59
+  description: ''
+  mag: 13
+  name: LBN 1006
+  ra: 05 33 19.3
+  size: 50
+  type: HII region
+- constellation: Lepus
+  dec: -11 48 25
+  description: ''
+  mag: 13
+  name: LBN 1007
+  ra: 05 39 19.8
+  size: 30
+  type: HII region
+- constellation: Monoceros
+  dec: -09 45 14
+  description: ''
+  mag: 5
+  name: LBN 1008
+  ra: 06 04 22.3
+  size: 3
+  type: HII region
+- constellation: Lepus
+  dec: -12 28 46
+  description: ''
+  mag: 13
+  name: LBN 1009
+  ra: 05 44 19.0
+  size: 35
+  type: HII region
+- constellation: Lepus
+  dec: -12 58 38
+  description: ''
+  mag: 13
+  name: LBN 1010
+  ra: 05 42 18.4
+  size: 200
+  type: HII region
+- constellation: Monoceros
+  dec: -11 00 18
+  description: ''
+  mag: 15
+  name: LBN 1011
+  ra: 06 05 20.7
+  size: 240
+  type: HII region
+- constellation: Monoceros
+  dec: -04 44 12
+  description: S 287
+  mag: 13
+  name: LBN 1012
+  ra: 06 59 28.4
+  size: 12
+  type: HII region
+- constellation: Monoceros
+  dec: -04 14 50
+  description: S 288
+  mag: 5
+  name: LBN 1013
+  ra: 07 08 29.0
+  size: 1
+  type: HII region
+- constellation: Monoceros
+  dec: -07 20 16
+  description: S 289
+  mag: 11
+  name: LBN 1014
+  ra: 06 46 25.3
+  size: 8
+  type: HII region
+- constellation: Monoceros
+  dec: -09 38 07
+  description: DG 104
+  mag: 9
+  name: LBN 1015
+  ra: 06 30 22.5
+  size: 5
+  type: HII region
+- constellation: Lepus
+  dec: -13 39 47
+  description: ''
+  mag: 15
+  name: LBN 1016
+  ra: 05 58 17.5
+  size: 68
+  type: HII region
+- constellation: Monoceros
+  dec: -10 33 46
+  description: ''
+  mag: 11
+  name: LBN 1017
+  ra: 06 25 21.4
+  size: 5
+  type: HII region
+- constellation: Canis Major
+  dec: -12 00 57
+  description: ''
+  mag: 13
+  name: LBN 1018
+  ra: 06 14 19.5
+  size: 43
+  type: HII region
+- constellation: Lepus
+  dec: -14 09 47
+  description: ''
+  mag: 11
+  name: LBN 1019
+  ra: 05 58 16.9
+  size: 3
+  type: HII region
+- constellation: Monoceros
+  dec: -07 53 55
+  description: S 291
+  mag: 13
+  name: LBN 1020
+  ra: 06 55 24.8
+  size: 11
+  type: HII region
+- constellation: Monoceros
+  dec: -07 44 12
+  description: ''
+  mag: 9
+  name: LBN 1021
+  ra: 06 59 25.0
+  size: 2
+  type: HII region
+- constellation: Monoceros
+  dec: -08 13 59
+  description: DG 113
+  mag: 9
+  name: LBN 1022
+  ra: 06 56 24.4
+  size: 22
+  type: HII region
+- constellation: Monoceros
+  dec: -08 51 16
+  description: DG 114
+  mag: 7
+  name: LBN 1023
+  ra: 07 00 23.7
+  size: 3
+  type: HII region
+- constellation: Monoceros
+  dec: -07 54 58
+  description: ''
+  mag: 15
+  name: LBN 1024
+  ra: 07 10 24.9
+  size: 90
+  type: HII region
+- constellation: Lepus
+  dec: -16 00 18
+  description: ''
+  mag: 13
+  name: LBN 1025
+  ra: 06 05 14.6
+  size: 140
+  type: HII region
+- constellation: Monoceros
+  dec: -08 45 23
+  description: ''
+  mag: 13
+  name: LBN 1026
+  ra: 07 16 24.0
+  size: 140
+  type: HII region
+- constellation: Monoceros
+  dec: -10 24 33
+  description: IC 2177, IC 2177
+  mag: 5
+  name: LBN 1027
+  ra: 07 04 22.0
+  size: 20
+  type: Reflection nebula
+- constellation: Monoceros
+  dec: -09 05 23
+  description: ''
+  mag: 13
+  name: LBN 1028
+  ra: 07 16 23.7
+  size: 70
+  type: HII region
+- constellation: Monoceros
+  dec: -08 25 44
+  description: ''
+  mag: 13
+  name: LBN 1029
+  ra: 07 21 24.5
+  size: 40
+  type: HII region
+- constellation: Canis Major
+  dec: -11 14 24
+  description: S 293
+  mag: 11
+  name: LBN 1030
+  ra: 07 02 21.0
+  size: 20
+  type: HII region
+- constellation: Monoceros
+  dec: -08 25 56
+  description: ''
+  mag: 13
+  name: LBN 1031
+  ra: 07 24 24.5
+  size: 40
+  type: HII region
+- constellation: Monoceros
+  dec: -09 30 23
+  description: S 294
+  mag: 7
+  name: LBN 1032
+  ra: 07 16 23.2
+  size: 8
+  type: HII region
+- constellation: Monoceros
+  dec: -11 04 41
+  description: S 296
+  mag: 11
+  name: LBN 1033
+  ra: 07 06 21.2
+  size: 150
+  type: HII region
+- constellation: Monoceros
+  dec: -10 34 58
+  description: ''
+  mag: 13
+  name: LBN 1034
+  ra: 07 10 21.9
+  size: 120
+  type: HII region
+- constellation: Canis Major
+  dec: -11 29 29
+  description: S 295
+  mag: 11
+  name: LBN 1035
+  ra: 07 03 20.7
+  size: 15
+  type: HII region
+- constellation: Monoceros
+  dec: -10 35 23
+  description: ''
+  mag: 11
+  name: LBN 1036
+  ra: 07 16 22.0
+  size: 60
+  type: HII region
+- constellation: Canis Major
+  dec: -12 04 37
+  description: DG 116
+  mag: 7
+  name: LBN 1037
+  ra: 07 05 20.0
+  size: 150
+  type: HII region
+- constellation: Canis Major
+  dec: -11 49 50
+  description: ''
+  mag: 11
+  name: LBN 1038
+  ra: 07 08 20.4
+  size: 15
+  type: HII region
+- constellation: Canis Major
+  dec: -12 15 37
+  description: C 90
+  mag: 5
+  name: LBN 1039
+  ra: 07 05 19.8
+  size: 10
+  type: HII region
+- constellation: Canis Major
+  dec: -13 05 31
+  description: IC 468, IC  468
+  mag: 9
+  name: LBN 1040
+  ra: 07 18 19.1
+  size: 20
+  type: Nebula
+- constellation: Canis Major
+  dec: -13 07 31
+  description: Duck Nebula, Thor's Helmet, NGC 2359, NGC 2359
+  mag: 7
+  name: LBN 1041
+  ra: 07 18 19.1
+  size: 10
+  type: HII region
+- constellation: Canis Major
+  dec: -16 24 37
+  description: ''
+  mag: 11
+  name: LBN 1042
+  ra: 07 05 14.9
+  size: 7
+  type: HII region
+- constellation: Canis Major
+  dec: -18 24 53
+  description: ''
+  mag: 13
+  name: LBN 1043
+  ra: 07 09 12.5
+  size: 20
+  type: HII region
+- constellation: Canis Major
+  dec: -18 27 58
+  description: ''
+  mag: 5
+  name: LBN 1044
+  ra: 07 10 12.5
+  size: 10
+  type: HII region
+- constellation: Canis Major
+  dec: -16 36 00
+  description: ''
+  mag: 15
+  name: LBN 1045
+  ra: 07 25 15.2
+  size: 8
+  type: HII region
+- constellation: Puppis
+  dec: -17 00 28
+  description: S 302
+  mag: 9
+  name: LBN 1046
+  ra: 07 32 15.0
+  size: 20
+  type: HII region
+- constellation: Canis Major
+  dec: -22 43 54
+  description: S 303
+  mag: 11
+  name: LBN 1047
+  ra: 06 55 06.6
+  size: 60
+  type: HII region
+- constellation: Puppis
+  dec: -18 35 20
+  description: S 305
+  mag: 7
+  name: LBN 1048
+  ra: 07 30 13.0
+  size: 3
+  type: HII region
+- constellation: Canis Major
+  dec: -24 03 11
+  description: S 304
+  mag: 13
+  name: LBN 1049
+  ra: 06 45 04.5
+  size: 180
+  type: HII region
+- constellation: Puppis
+  dec: -19 09 20
+  description: S 306
+  mag: 13
+  name: LBN 1050
+  ra: 07 30 12.3
+  size: 30
+  type: HII region
+- constellation: Puppis
+  dec: -18 46 40
+  description: S 307
+  mag: 9
+  name: LBN 1051
+  ra: 07 35 13.0
+  size: 4
+  type: HII region
+- constellation: Canis Major
+  dec: -23 43 50
+  description: S 308
+  mag: 13
+  name: LBN 1052
+  ra: 06 54 05.2
+  size: 20
+  type: HII region
+- constellation: Puppis
+  dec: -19 28 28
+  description: S 309
+  mag: 11
+  name: LBN 1053
+  ra: 07 32 12.0
+  size: 10
+  type: HII region
+- constellation: Canis Major
+  dec: -21 55 35
+  description: ''
+  mag: 11
+  name: LBN 1054
+  ra: 07 19 08.4
+  size: 60
+  type: HII region
+- constellation: Canis Major
+  dec: -23 04 57
+  description: ''
+  mag: 15
+  name: LBN 1055
+  ra: 07 10 06.6
+  size: 150
+  type: HII region
+- constellation: Canis Major
+  dec: -24 14 36
+  description: ''
+  mag: 15
+  name: LBN 1056
+  ra: 07 05 04.9
+  size: 70
+  type: HII region
+- constellation: Puppis
+  dec: -22 06 16
+  description: ''
+  mag: 11
+  name: LBN 1057
+  ra: 07 29 08.6
+  size: 33
+  type: HII region
+- constellation: Canis Major
+  dec: -23 59 39
+  description: C 96
+  mag: 9
+  name: LBN 1058
+  ra: 07 20 05.8
+  size: 10
+  type: HII region
+- constellation: Canis Major
+  dec: -24 05 51
+  description: S 310
+  mag: 13
+  name: LBN 1059
+  ra: 07 23 05.8
+  size: 300
+  type: HII region
+- constellation: Canis Major
+  dec: -24 36 08
+  description: ''
+  mag: 11
+  name: LBN 1060
+  ra: 07 27 05.3
+  size: 180
+  type: HII region
+- constellation: Puppis
+  dec: -23 56 32
+  description: ''
+  mag: 11
+  name: LBN 1061
+  ra: 07 33 06.5
+  size: 20
+  type: HII region
+- constellation: Puppis
+  dec: -25 16 44
+  description: C 101
+  mag: 9
+  name: LBN 1062
+  ra: 07 36 04.9
+  size: 10
+  type: HII region
+- constellation: Canis Major
+  dec: -28 06 03
+  description: ''
+  mag: 13
+  name: LBN 1063
+  ra: 07 26 00.6
+  size: 90
+  type: HII region
+- constellation: Canis Major
+  dec: -29 05 59
+  description: ''
+  mag: 15
+  name: LBN 1064
+  ra: 07 24 59.1
+  size: 180
+  type: HII region
+- constellation: Puppis
+  dec: -26 27 47
+  description: NGC 2467, Cr 164, NGC 2467
+  mag: 5
+  name: LBN 1065
+  ra: 07 52 04.4
+  size: 8
+  type: Open cluster
+- constellation: Puppis
+  dec: -26 27 47
+  description: ''
+  mag: 7
+  name: LBN 1066
+  ra: 07 52 04.4
+  size: 10
+  type: HII region
+- constellation: Puppis
+  dec: -26 27 51
+  description: S 311
+  mag: 9
+  name: LBN 1067
+  ra: 07 53 04.5
+  size: 50
+  type: HII region
+- constellation: Canis Major
+  dec: -30 50 30
+  description: ''
+  mag: 13
+  name: LBN 1068
+  ra: 07 17 56.1
+  size: 110
+  type: HII region
+- constellation: Sextans
+  dec: -07 14 01
+  description: ''
+  mag: 15
+  name: LBN 1069
+  ra: 09 49 29.2
+  size: 45
+  type: HII region
+- constellation: Canis Major
+  dec: -31 16 03
+  description: ''
+  mag: 13
+  name: LBN 1070
+  ra: 07 25 56.0
+  size: 130
+  type: HII region
+- constellation: Pyxis
+  dec: -22 20 41
+  description: ''
+  mag: 11
+  name: LBN 1071
+  ra: 08 40 12.7
+  size: 80
+  type: HII region
+- constellation: Puppis
+  dec: -32 07 19
+  description: ''
+  mag: 13
+  name: LBN 1072
+  ra: 07 44 56.1
+  size: 120
+  type: HII region
+- constellation: Pyxis
+  dec: -24 40 41
+  description: ''
+  mag: 11
+  name: LBN 1073
+  ra: 08 40 10.2
+  size: 50
+  type: HII region
+- constellation: Pyxis
+  dec: -24 10 55
+  description: ''
+  mag: 11
+  name: LBN 1074
+  ra: 08 44 11.1
+  size: 70
+  type: HII region
+- constellation: Pyxis
+  dec: -24 01 04
+  description: ''
+  mag: 11
+  name: LBN 1075
+  ra: 08 47 11.5
+  size: 60
+  type: HII region
+- constellation: Pyxis
+  dec: -24 51 14
+  description: ''
+  mag: 11
+  name: LBN 1076
+  ra: 08 50 10.9
+  size: 70
+  type: HII region
+- constellation: Pyxis
+  dec: -25 11 37
+  description: S 312
+  mag: 13
+  name: LBN 1077
+  ra: 08 57 11.2
+  size: 840
+  type: HII region
+- constellation: Pyxis
+  dec: -26 11 46
+  description: ''
+  mag: 11
+  name: LBN 1078
+  ra: 09 00 10.5
+  size: 210
+  type: HII region
+- constellation: Pyxis
+  dec: -28 31 14
+  description: ''
+  mag: 13
+  name: LBN 1079
+  ra: 08 50 07.0
+  size: 15
+  type: HII region
+- constellation: Pyxis
+  dec: -28 21 24
+  description: ''
+  mag: 13
+  name: LBN 1080
+  ra: 08 53 07.5
+  size: 10
+  type: HII region
+- constellation: Pyxis
+  dec: -28 11 27
+  description: ''
+  mag: 15
+  name: LBN 1081
+  ra: 08 54 07.8
+  size: 80
+  type: HII region
+- constellation: Pyxis
+  dec: -28 42 07
+  description: ''
+  mag: 15
+  name: LBN 1082
+  ra: 09 07 08.7
+  size: 360
+  type: HII region
+- constellation: Pyxis
+  dec: -28 12 22
+  description: ''
+  mag: 11
+  name: LBN 1083
+  ra: 09 12 09.8
+  size: 300
+  type: HII region
+- constellation: Pyxis
+  dec: -30 42 07
+  description: ''
+  mag: 13
+  name: LBN 1084
+  ra: 09 07 06.5
+  size: 120
+  type: HII region
+- constellation: Pyxis
+  dec: -28 02 59
+  description: ''
+  mag: 11
+  name: LBN 1085
+  ra: 09 25 11.4
+  size: 20
+  type: HII region
+- constellation: Pyxis
+  dec: -31 12 34
+  description: ''
+  mag: 13
+  name: LBN 1086
+  ra: 09 16 07.2
+  size: 60
+  type: HII region
+- constellation: Pyxis
+  dec: -29 42 59
+  description: ''
+  mag: 15
+  name: LBN 1087
+  ra: 09 25 09.9
+  size: 75
+  type: HII region
+- constellation: Antlia
+  dec: -31 13 13
+  description: ''
+  mag: 13
+  name: LBN 1088
+  ra: 09 30 09.1
+  size: 180
+  type: HII region
+- constellation: Antlia
+  dec: -29 14 19
+  description: ''
+  mag: 13
+  name: LBN 1089
+  ra: 09 57 14.6
+  size: 150
+  type: HII region
+- constellation: Antlia
+  dec: -32 14 28
+  description: ''
+  mag: 13
+  name: LBN 1090
+  ra: 10 01 12.8
+  size: 140
+  type: HII region
+- constellation: Libra
+  dec: -29 50 53
+  description: ''
+  mag: 15
+  name: LBN 1091
+  ra: 15 19 02.8
+  size: 90
+  type: HII region
+- constellation: Scorpius
+  dec: -25 58 53
+  description: DG 125
+  mag: 13
+  name: LBN 1092
+  ra: 15 53 01.3
+  size: 130
+  type: HII region
+- constellation: Scorpius
+  dec: -25 58 42
+  description: S 1
+  mag: 11
+  name: LBN 1093
+  ra: 15 56 01.5
+  size: 90
+  type: HII region
+- constellation: Scorpius
+  dec: -26 28 27
+  description: DG 130
+  mag: 11
+  name: LBN 1094
+  ra: 16 00 02.4
+  size: 50
+  type: HII region
+- constellation: Scorpius
+  dec: -25 38 27
+  description: ''
+  mag: 11
+  name: LBN 1095
+  ra: 16 00 01.4
+  size: 60
+  type: HII region
+- constellation: Scorpius
+  dec: -27 55 41
+  description: IC 4591, IC 4591
+  mag: 15
+  name: LBN 1096
+  ra: 16 12 05.2
+  size: 12
+  type: HII region
+- constellation: Scorpius
+  dec: -23 28 53
+  description: ''
+  mag: 13
+  name: LBN 1097
+  ra: 15 52 58.3
+  size: 70
+  type: HII region
+- constellation: Scorpius
+  dec: -23 18 46
+  description: ''
+  mag: 13
+  name: LBN 1098
+  ra: 15 54 58.2
+  size: 40
+  type: HII region
+- constellation: Scorpius
+  dec: -23 08 23
+  description: S 7
+  mag: 11
+  name: LBN 1099
+  ra: 16 00 58.4
+  size: 130
+  type: HII region
+- constellation: Scorpius
+  dec: -28 16 33
+  description: ''
+  mag: 11
+  name: LBN 1100
+  ra: 16 29 06.8
+  size: 30
+  type: HII region
+- constellation: Scorpius
+  dec: -25 37 09
+  description: S 9
+  mag: 7
+  name: LBN 1101
+  ra: 16 20 02.7
+  size: 17
+  type: HII region
+- constellation: Scorpius
+  dec: -27 36 29
+  description: ''
+  mag: 11
+  name: LBN 1102
+  ra: 16 30 05.9
+  size: 80
+  type: HII region
+- constellation: Scorpius
+  dec: -28 06 17
+  description: ''
+  mag: 13
+  name: LBN 1103
+  ra: 16 33 06.8
+  size: 240
+  type: HII region
+- constellation: Scorpius
+  dec: -25 37 06
+  description: C 130
+  mag: 9
+  name: LBN 1104
+  ra: 16 21 02.7
+  size: 60
+  type: HII region
+- constellation: Scorpius
+  dec: -25 17 09
+  description: ''
+  mag: 7
+  name: LBN 1105
+  ra: 16 20 02.2
+  size: 12
+  type: HII region
+- constellation: Scorpius
+  dec: -25 17 06
+  description: ''
+  mag: 7
+  name: LBN 1106
+  ra: 16 21 02.3
+  size: 20
+  type: HII region
+- constellation: Scorpius
+  dec: -26 36 34
+  description: Antares Nebula, Cloud Nebula, IC 4606, IC 4606
+  mag: 5
+  name: LBN 1107
+  ra: 16 29 04.5
+  size: 60
+  type: Nebula
+- constellation: Scorpius
+  dec: -26 26 34
+  description: DG 141
+  mag: 11
+  name: LBN 1108
+  ra: 16 29 04.3
+  size: 180
+  type: HII region
+- constellation: Ophiucus
+  dec: -24 26 46
+  description: IC 4603, VdB 105, IC 4603
+  mag: 7
+  name: LBN 1109
+  ra: 16 26 01.5
+  size: 20
+  type: Nebula
+- constellation: Scorpius
+  dec: -25 06 26
+  description: IC 4605, VdB 108, IC 4605
+  mag: 9
+  name: LBN 1110
+  ra: 16 31 02.6
+  size: 30
+  type: Nebula
+- constellation: Ophiucus
+  dec: -23 26 46
+  description: Rho Ophiuchi Nebula, IC 4604, VdB 106, IC 4604
+  mag: 9
+  name: LBN 1111
+  ra: 16 26 00.2
+  size: 60
+  type: Nebula
+- constellation: Ophiucus
+  dec: -23 26 46
+  description: ''
+  mag: 11
+  name: LBN 1112
+  ra: 16 26 00.2
+  size: 70
+  type: HII region
+- constellation: Scorpius
+  dec: -19 17 37
+  description: IC 4592, VdB 100, IC 4592
+  mag: 9
+  name: LBN 1113
+  ra: 16 12 54.5
+  size: 60
+  type: Reflection nebula
+- constellation: Scorpius
+  dec: -19 17 29
+  description: ''
+  mag: 11
+  name: LBN 1114
+  ra: 16 14 54.6
+  size: 220
+  type: HII region
+- constellation: Scorpius
+  dec: -20 07 06
+  description: C 129
+  mag: 9
+  name: LBN 1115
+  ra: 16 20 55.9
+  size: 20
+  type: HII region
+- constellation: Scorpius
+  dec: -32 12 04
+  description: S 12
+  mag: 11
+  name: LBN 1116
+  ra: 17 33 15.5
+  size: 150
+  type: HII region
+- constellation: Scorpius
+  dec: -32 21 51
+  description: ''
+  mag: 9
+  name: LBN 1117
+  ra: 17 36 15.8
+  size: 80
+  type: HII region
+- constellation: Ophiucus
+  dec: -24 25 16
+  description: ''
+  mag: 15
+  name: LBN 1118
+  ra: 16 48 02.5
+  size: 300
+  type: HII region
+- constellation: Ophiucus
+  dec: -19 36 46
+  description: ''
+  mag: 13
+  name: LBN 1119
+  ra: 16 25 55.5
+  size: 150
+  type: HII region
+- constellation: Scorpius
+  dec: -31 20 54
+  description: ''
+  mag: 11
+  name: LBN 1120
+  ra: 17 49 14.4
+  size: 23
+  type: HII region
+- constellation: Scorpius
+  dec: -31 20 50
+  description: S 15
+  mag: 15
+  name: LBN 1121
+  ra: 17 50 14.4
+  size: 45
+  type: HII region
+- constellation: Libra
+  dec: -07 09 37
+  description: ''
+  mag: 11
+  name: LBN 1122
+  ra: 15 40 40.6
+  size: 60
+  type: HII region
+- constellation: Ophiucus
+  dec: -18 36 01
+  description: ''
+  mag: 15
+  name: LBN 1123
+  ra: 16 36 54.7
+  size: 210
+  type: HII region
+- constellation: Sagittarius
+  dec: -29 21 07
+  description: S 16
+  mag: 9
+  name: LBN 1124
+  ra: 17 46 11.3
+  size: 12
+  type: HII region
+- constellation: Sagittarius
+  dec: -29 13 03
+  description: S 18
+  mag: 13
+  name: LBN 1125
+  ra: 17 47 11.1
+  size: 2
+  type: HII region

@@ -80,6 +80,7 @@ def main():
     }
     features = {"horizon": False, "objects": True, "bodies": True, "comets": False, "alttime": False}
     output_datestamp = False
+    target = None
 
     # Read config.yaml
     if os.path.isfile(f"{app_directory}/config.yaml"):
@@ -137,6 +138,8 @@ def main():
         features = cfg["features"]
     if cfg is not None and "output_datestamp" in cfg.keys() and cfg["output_datestamp"] is not None:
         output_datestamp = cfg["output_datestamp"]
+    if os.getenv("TARGET") is not None:
+        target = os.getenv("TARGET")
 
     if horizon is not None:
         # Fill space in between anchor points
@@ -248,6 +251,7 @@ def main():
                 type_filter=type_filter,
                 output_dir=output_dir,
                 live=live.get("enabled"),
+                target=target,
             )
 
             uptonight.calc(
@@ -276,7 +280,8 @@ def main():
             type_filter=type_filter,
             output_dir=output_dir,
             live=False,
-        )
+            target=target,
+            )
 
         uptonight.calc(
             bucket_list=bucket_list,

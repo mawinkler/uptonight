@@ -210,6 +210,7 @@ Herschel400 | The Herschel 400 - 400 of the best objects from the NGC list as se
 OpenIC | The Index Catalogue (IC) based on [OpenNGC](https://github.com/mattiaverga/OpenNGC) | 5589
 OpenNGC | The New General Catalogue (NGC) based on [OpenNGC](https://github.com/mattiaverga/OpenNGC) | 8373
 LDN | Lynds Catalog of Dark Nebulae based on [NASA](https://heasarc.gsfc.nasa.gov/W3Browse/nebula-catalog/ldn.html) | 1802
+LBN | Lynds Catalog of Bright Nebulae based on [NASA](https://heasarc.gsfc.nasa.gov/W3Browse/nebula-catalog/lbn.html) | 1116
 
 ### Solar System Bodies
 
@@ -307,15 +308,16 @@ Variable | Unit | Description | Example | Optional | Default
 LONGITUDE | dms | Longitude in degrees minutes seconds | 11d34m51.50s
 LATITUDE | dms | Latitude in degrees minutes seconds | 48d08m10.77s
 ELEVATION | m | Height above sea level in meters | 519
-TIMEZONE | tz | TZ timezone | Europe/Berlin
+TIMEZONE | tz | TZ timezone | "Europe/Berlin"
 PRESSURE | bar | The ambient pressure | 1.022 | yes | 0
 RELATIVE_HUMIDITY | percentage | The ambient relative humidity | 0.8| yes | 0
 TEMPERATURE | degrees centigrade | The ambient temperature | 12| yes | 0
 OBSERVATION_DATE | %m/$d/%y | Day of observation | 10/01/23 | yes | *Current day*
-TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Messier) | targets/Messier | yes | targets/GaryImm
+TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Messier) | "targets/Messier" | yes | "targets/GaryImm"
 TYPE_FILTER | string | Filter on an object type | Nebula | yes | ""
 OUTPUT_DIR | string | Output directory for reports and the plot | "/tmp" | yes | "."
 LIVE_MODE | *bool* | Run in live mode, generate plot every five minutes.<br>Bash doesn't support boolean variables, but the code checks for the word 'true'. | true | yes | false
+TARGET | string | Calculate only the named deep sky object. This must be in the selected target list or in your custom targets. | "NGC 2359" | yes | not set
 
 UpTonight supports a ***live*** mode as well. Contrary to the normal mode where the calculations are done and the output is generated for the upcoming night you'll get a live plot. To enable this mode set `LIVE_MODE=true`. In this mode, UpTonight will create a file called `uptonight-liveplot.png` every five minutes but no `txt`, or `json`-reports.
 

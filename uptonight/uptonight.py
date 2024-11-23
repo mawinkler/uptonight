@@ -148,6 +148,7 @@ class UpTonight:
         type_filter="",
         output_dir=".",
         live=False,
+        target=None,
     ):
         """Init function for UpTonight
 
@@ -165,6 +166,7 @@ class UpTonight:
             type_filter (str, optional): Filter on object types
             output_dir (str, optional): Output directory
             live (bool, optional): Live mode
+            target (str, optional): Single target mode
 
         Returns:
             None
@@ -183,6 +185,7 @@ class UpTonight:
         self._type_filter = type_filter
         self._output_dir = output_dir
         self._live = live
+        self._target = target
 
         self._observer_location = self._get_observer_location()
         self._observer = self._get_observer(self._observer_location)
@@ -201,7 +204,7 @@ class UpTonight:
         if self._type_filter != "":
             self._filter_ext = f"-{self._type_filter}"
 
-        self._targets = Targets(target_list=target_list, custom_targets=custom_targets)
+        self._targets = Targets(target_list=target_list, custom_targets=custom_targets, target=self._target)
         # Table with targets to calculate
         self._input_targets = self._targets.input_targets()
         # List of fixed targets to calculate the fraction of time observable with
@@ -306,13 +309,13 @@ class UpTonight:
         observing_end_time = None
         if self._live:
             observing_start_time = Time(
-                datetime.utcnow(),
+                datetime.now(timezone.utc),
                 scale="utc",
                 location=self._observer.location,
             )
             observing_end_time = (
                 Time(
-                    datetime.utcnow(),
+                    datetime.now(timezone.utc),
                     scale="utc",
                     location=self._observer.location,
                 )

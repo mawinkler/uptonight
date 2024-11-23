@@ -23,10 +23,11 @@ class Targets:
         self,
         target_list=None,
         custom_targets=[],
+        target=None,
     ):
         self._target_list = target_list
         self._custom_targets = custom_targets
-        self._input_targets, self._fixed_targets = self._create_target_list()
+        self._input_targets, self._fixed_targets = self._create_target_list(target)
         self._targets_table = self._create_uptonight_targets_table()
         self._bodies_table = self._create_uptonight_bodies_table()
         self._comets_table = self._create_uptonight_comets_table()
@@ -58,13 +59,16 @@ class Targets:
             return self._comets_table
         return None
 
-    def _create_target_list(self):
+    def _create_target_list(self, target=None):
         """Creates a table and list of targets in scope for the calculations.
 
         The method reads the provided csv file containing the Gary Imm objects and adds custom
         targets defined in the const.py file. The table is used as a lookup table to populate the
         result table. Iteration is done via the FixedTarget list.
         For visibility, Polaris is appended lastly.
+
+        Args:
+            target (str, optional): Single target mode
 
         Returns:
             (Table): Targets to calculate
@@ -102,29 +106,30 @@ class Targets:
                         np.float16,
                     ),
                 )
-                for custom_target in targets:
-                    name = custom_target.get("name")
-                    desc = custom_target.get("description")
-                    type = custom_target.get("type")
-                    constellation = custom_target.get("constellation")
-                    ra = custom_target.get("ra")
-                    dec = custom_target.get("dec")
-                    size = custom_target.get("size")
-                    mag = custom_target.get("mag")
-                    if mag == -9999:
-                        mag = 0.0
-                    input_targets.add_row(
-                        [
-                            name,
-                            desc,
-                            type,
-                            constellation,
-                            float(size),
-                            ra,
-                            dec,
-                            float(mag),
-                        ]
-                    )
+                for input_target in targets:
+                    if target is None or target == input_target.get("name"):
+                        name = input_target.get("name")
+                        desc = input_target.get("description")
+                        type = input_target.get("type")
+                        constellation = input_target.get("constellation")
+                        ra = input_target.get("ra")
+                        dec = input_target.get("dec")
+                        size = input_target.get("size")
+                        mag = input_target.get("mag")
+                        if mag == -9999:
+                            mag = 0.0
+                        input_targets.add_row(
+                            [
+                                name,
+                                desc,
+                                type,
+                                constellation,
+                                float(size),
+                                ra,
+                                dec,
+                                float(mag),
+                            ]
+                        )
         else:
             input_targets = Table.read(f"{self._target_list}.csv", format="ascii.csv")
 
@@ -155,27 +160,28 @@ class Targets:
 
         # Add custom targets
         for custom_target in self._custom_targets:
-            name = custom_target.get("name")
-            desc = custom_target.get("description")
-            ra = custom_target.get("ra")
-            dec = custom_target.get("dec")
-            size = custom_target.get("size", 0)
-            mag = custom_target.get("mag", 0)
-            input_targets.add_row(
-                [
-                    name,
-                    desc,
-                    custom_target.get("type"),
-                    custom_target.get("constellation"),
-                    size,
-                    ra,
-                    dec,
-                    mag,
-                ]
-            )
-            fixed_targets.append(
-                FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=name),
-            )
+            if target is None or target == custom_target.get("name"):
+                name = custom_target.get("name")
+                desc = custom_target.get("description")
+                ra = custom_target.get("ra")
+                dec = custom_target.get("dec")
+                size = custom_target.get("size", 0)
+                mag = custom_target.get("mag", 0)
+                input_targets.add_row(
+                    [
+                        name,
+                        desc,
+                        custom_target.get("type"),
+                        custom_target.get("constellation"),
+                        size,
+                        ra,
+                        dec,
+                        mag,
+                    ]
+                )
+                fixed_targets.append(
+                    FixedTarget(coord=SkyCoord(f"{ra} {dec}", unit=(u.hourangle, u.deg)), name=name),
+                )
 
         # Lastly we add Polaris
         input_targets.add_row(
