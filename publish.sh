@@ -17,6 +17,7 @@ if [[ "${VERSION}" == "dev" ]]; then
     docker buildx build --progress=plain \
         -t mawinkler/uptonight:${VERSION} \
         --platform linux/amd64,linux/arm64/v8 \
+        --no-cache \
         --push -f Dockerfile .
     docker pull mawinkler/uptonight:dev
     docker run --rm -v ./config.yaml:/app/config.yaml -v ./outdev:/app/out mawinkler/uptonight:dev

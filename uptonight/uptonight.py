@@ -1,7 +1,7 @@
 """Uptonight - calculate the best objects for tonight"""
 
 import logging
-from datetime import datetime
+from datetime import datetime, UTC
 
 import matplotlib.pyplot as plt
 import pytz
@@ -309,13 +309,13 @@ class UpTonight:
         observing_end_time = None
         if self._live:
             observing_start_time = Time(
-                datetime.now(timezone.utc),
+                datetime.now(UTC),
                 scale="utc",
                 location=self._observer.location,
             )
             observing_end_time = (
                 Time(
-                    datetime.now(timezone.utc),
+                    datetime.now(UTC),
                     scale="utc",
                     location=self._observer.location,
                 )

@@ -1,6 +1,6 @@
 import logging
 import warnings
-from datetime import datetime, timezone
+from datetime import datetime, UTC
 
 from astroplan.exceptions import TargetAlwaysUpWarning, TargetNeverUpWarning
 from astropy import units as u
@@ -34,7 +34,7 @@ class SunMoon:
         if observation_date is None:
             time = (
                 Time(
-                    datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0),
+                    datetime.now(UTC).replace(hour=0, minute=0, second=0, microsecond=0),
                     scale="utc",
                     location=self._observer.location,
                 )
@@ -99,7 +99,7 @@ class SunMoon:
         return None
 
     def sun_altitude(self) -> float:
-        altitude = self._observer.sun_altaz(datetime.now(timezone.utc)).alt.degree
+        altitude = self._observer.sun_altaz(datetime.now(UTC)).alt.degree
         _LOGGER.debug("Sun altitude: {0}".format(altitude))
         return altitude
 
