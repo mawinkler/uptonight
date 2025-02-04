@@ -75,7 +75,7 @@ class UpTonightBodies:
 
         _LOGGER.info(f"Bodies loaded: {len(BODIES)}")
 
-    def bodies(self, uptonight_bodies):
+    def bodies(self, uptonight_bodies, ax):
         """Create plot and table of bodies
 
         Args:

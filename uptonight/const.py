@@ -36,3 +36,6 @@ BODIES = [
     ("Uranus", "uranus", "lightsteelblue", 20, 799),
     ("Neptune", "neptune", "royalblue", 15, 899),
 ]
+
+# Default Live Mode Interval
+DEFAULT_LIVE_MODE_INTERVAL = 900

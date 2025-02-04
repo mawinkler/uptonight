@@ -14,6 +14,7 @@ from uptonight.const import (
     DEFAULT_ALTITUDE_CONSTRAINT_MAX,
     DEFAULT_ALTITUDE_CONSTRAINT_MIN,
     DEFAULT_FRACTION_OF_TIME_OBSERVABLE_THRESHOLD,
+    DEFAULT_LIVE_MODE_INTERVAL,
     DEFAULT_MAX_NUMBER_WITHIN_THRESHOLD,
     DEFAULT_MOON_SEPARATION_MIN,
     DEFAULT_MOON_SEPARATION_USE_ILLUMINATION,
@@ -123,7 +124,7 @@ def main():
     if cfg is not None and "output_dir" in cfg.keys() and cfg["output_dir"] is not None:
         output_dir = f"{app_directory}/{cfg['output_dir']}"
     if cfg is not None and "live_mode" in cfg.keys() and cfg["live_mode"] is not None:  # deprecated
-        live = {"enabled": bool(cfg["live_mode"]), "interval": 300}
+        live = {"enabled": bool(cfg["live_mode"]), "interval": DEFAULT_LIVE_MODE_INTERVAL}
     if cfg is not None and "bucket_list" in cfg.keys() and cfg["bucket_list"] is not None:
         bucket_list = cfg["bucket_list"]
     if cfg is not None and "done_list" in cfg.keys() and cfg["done_list"] is not None:
@@ -192,7 +193,7 @@ def main():
         output_dir = os.getenv("OUTPUT_DIR")
     if os.getenv("LIVE_MODE") is not None:
         if os.getenv("LIVE_MODE").lower() == "true":
-            live = {"enabled": True, "interval": 300}
+            live = {"enabled": True, "interval": DEFAULT_LIVE_MODE_INTERVAL}
 
     # We need at least a longitute and latitude, the rest is optional
     if location["longitude"] == "" or location["latitude"] == "":
@@ -227,7 +228,7 @@ def main():
     _LOGGER.debug(f"North to East ccw: {constraints['north_to_east_ccw']}")
     _LOGGER.debug(f"Output directory: {output_dir}")
     _LOGGER.debug(f"Live mode: {live.get('enabled', False)}")
-    _LOGGER.debug(f"Live mode interval: {live.get('interval', 300)}")
+    _LOGGER.debug(f"Live mode interval: {live.get('interval', DEFAULT_LIVE_MODE_INTERVAL)}")
 
     start = time.time()
 
@@ -260,7 +261,7 @@ def main():
                 type_filter=type_filter,
                 horizon=horizon_filled,
             )
-            sleep(live.get("interval", 300))
+            sleep(live.get("interval", DEFAULT_LIVE_MODE_INTERVAL))
     else:
         _LOGGER.info("UpTonight one-time calculation mode")
 

@@ -420,7 +420,7 @@ class UpTonight:
 
         # Creating plot and table of targets
         if self._features.get("objects"):
-            uptonight_targets, ax = self._objects.objects(uptonight_targets, bucket_list, done_list, type_filter)
+            uptonight_targets, ax = self._objects.objects(uptonight_targets, ax, bucket_list, done_list, type_filter)
             if not self._live and self._features.get("alttime"):
                 for target_row in uptonight_targets:
                     plot.altitude_time(
@@ -429,7 +429,7 @@ class UpTonight:
 
         # Creating plot and table of bodies
         if self._features.get("bodies"):
-            uptonight_bodies, ax = self._bodies.bodies(uptonight_bodies)
+            uptonight_bodies, ax = self._bodies.bodies(uptonight_bodies, ax)
             if not self._live and self._features.get("alttime"):
                 for target_row in uptonight_bodies:
                     plot.altitude_time(
@@ -437,7 +437,7 @@ class UpTonight:
                     )
 
         if self._features.get("comets"):
-            uptonight_comets, ax = self._comets.comets(uptonight_comets)
+            uptonight_comets, ax = self._comets.comets(uptonight_comets, ax)
             if not self._live and self._features.get("alttime"):
                 for target_row in uptonight_comets:
                     plot.altitude_time(

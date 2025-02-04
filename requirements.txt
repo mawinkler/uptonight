@@ -1,5 +1,7 @@
 astroplan==0.10
+# astroplan==0.10.1
 astropy[recommended]==6.0.1
+# astropy[recommended]==7.0.0
 astroquery==0.4.7
 PyYAML==6.0.2
 skyfield==1.49

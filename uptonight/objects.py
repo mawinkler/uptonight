@@ -42,6 +42,7 @@ class UpTonightObjects:
     def objects(
         self,
         uptonight_targets,
+        ax,
         bucket_list=[],
         done_list=[],
         type_filter="",
