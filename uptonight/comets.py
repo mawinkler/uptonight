@@ -415,6 +415,20 @@ class UpTonightComets:
         Returns:
             (bool): True if comet is visible
         """
+        # Always up or down tests
+        if comet["rise_time"] is None and comet["alt"] <= 0:
+            _LOGGER.debug(f"Comet {comet["designation"]} is not rising and is below the horizon, so cannot be observed.")
+            return False
+        if comet["rise_time"] is None and comet["alt"] > 0:
+            _LOGGER.debug(f"Comet {comet["designation"]} is not rising, but is above the horizon so can be seen.")
+            return True
+        if comet["set_time"] is None and comet["alt"] > 0:
+            _LOGGER.debug(f"Comet {comet["designation"]} is not setting, but is above the horizon so can be seen.")
+            return True
+        if comet["set_time"] is None and comet["alt"] <= 0:
+            _LOGGER.debug(f"Comet {comet["designation"]} is not setting and is below the horizon, so cannot be observed.")
+            return True
+
         start1 = comet["rise_time"].to_datetime64()
         start2 = self._observation_timeframe["observing_start_time"]
         end1 = comet["set_time"].to_datetime64()
