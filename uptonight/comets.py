@@ -101,11 +101,12 @@ class UpTonightComets:
             ax (Axes): An Axes object (ax) with a map of the sky.
         """
         # Compute comets positions and distances
-        _LOGGER.debug("Compute comets positions and distances")
 
+        _LOGGER.debug(f"Compute the distance to Earth for {len(self._comets_data)} comets")
         self._comets_data["distance_au_earth"] = self._comets_data.apply(
             self._get_comet_position_and_distance_earth, axis=1
         )
+        _LOGGER.debug(f"Compute the distance to Sun for {len(self._comets_data)} comets")
         self._comets_data["distance_au_sun"] = self._comets_data.apply(
             self._get_comet_position_and_distance_sun, axis=1
         )
@@ -113,12 +114,12 @@ class UpTonightComets:
         # Function to compute visual magnitude
         # Apply the function to compute visual magnitude for each comet and
         # limit comets visiul magnitude to some reasonable value
-        _LOGGER.debug("Compute visual magnitudes")
+        _LOGGER.debug(f"Compute the visual magnitudes for {len(self._comets_data)} comets (magnitude limit: {self._magnitude_limit})")
         self._comets_data["visual_magnitude"] = self._comets_data.apply(self._compute_visual_magnitude, axis=1)
         self._comets_data = self._comets_data.loc[self._comets_data["visual_magnitude"] < self._magnitude_limit]
 
         # Compute coordinates for comets
-        _LOGGER.debug("Compute comets coordinates")
+        _LOGGER.debug(f"Compute the coordinates for {len(self._comets_data)} comets")
         observable_comets = self._comets_data
         self._comets_data["alt"] = self._comets_data.apply(self._comet_alt, axis=1)
         self._comets_data["az"] = self._comets_data.apply(self._comet_az, axis=1)
@@ -129,7 +130,7 @@ class UpTonightComets:
         observable_comets = observable_comets.sort_values(by=["visual_magnitude"])
 
         # Calculate rise and set times for the comets
-        _LOGGER.debug("Compute rise and set time for comets")
+        _LOGGER.debug(f"Compute the rise and set times for {len(observable_comets)} comets")
         self._start_time = self._observation_time - timedelta(hours=12)
         self._end_time = self._observation_time + timedelta(hours=12)
         observable_comets["rise_time"] = observable_comets.apply(self._compute_rise_time, axis=1)
@@ -417,21 +418,24 @@ class UpTonightComets:
         """
         # Always up or down tests
         if comet["rise_time"] is None and comet["alt"] <= 0:
-            _LOGGER.debug(f"Comet {comet["designation"]} is not rising and is below the horizon, so cannot be observed.")
+            _LOGGER.debug(f"Comet {comet['designation']} is not rising and is below the horizon, so cannot be observed")
             return False
         if comet["rise_time"] is None and comet["alt"] > 0:
-            _LOGGER.debug(f"Comet {comet["designation"]} is not rising, but is above the horizon so can be seen.")
+            _LOGGER.debug(f"Comet {comet['designation']} is not rising, but is above the horizon so can be seen")
             return True
         if comet["set_time"] is None and comet["alt"] > 0:
-            _LOGGER.debug(f"Comet {comet["designation"]} is not setting, but is above the horizon so can be seen.")
+            _LOGGER.debug(f"Comet {comet['designation']} is not setting, but is above the horizon so can be seen")
             return True
         if comet["set_time"] is None and comet["alt"] <= 0:
-            _LOGGER.debug(f"Comet {comet["designation"]} is not setting and is below the horizon, so cannot be observed.")
-            return True
+            _LOGGER.debug(f"Comet {comet['designation']} is not setting and is below the horizon, so cannot be observed")
+            return False
 
         start1 = comet["rise_time"].to_datetime64()
         start2 = self._observation_timeframe["observing_start_time"]
         end1 = comet["set_time"].to_datetime64()
         end2 = self._observation_timeframe["observing_end_time"]
 
-        return max(start1, start2) <= min(end1, end2)
+        observable = max(start1, start2) <= min(end1, end2)
+        _LOGGER.debug(f"Comet {comet['designation']} observable: {observable}.")
+        
+        return observable
