@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
-      - name: Set up Docker Buildx
+      - name: Set up Docker Buildx  
         uses: docker/setup-buildx-action@v3
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -29,12 +29,13 @@ jobs:
           tags: mawinkler/uptonight:latest
 
       - name: Vision One Container Security Scan Action
-        uses: trendmicro/tmas-scan-action@1.0.10
+        uses: trendmicro/tmas-scan-action@1.0.11
         with:
             # Mandatory
             TMAS_API_KEY: ${{ secrets.TMAS_API_KEY }}
             REGION: us-east-1
-
+            VULNERABILITY_SCAN: true
+            
             # Optional
             SBOM: true # Saves SBOM to SBOM.json so you can export it as an artifact later.
             MALWARE_SCAN: true # Enable malware scan.
@@ -51,14 +52,14 @@ jobs:
             SCAN_RESULT_ARTIFACT: result.json
 
       - name: Upload Scan Result Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: scan-result
           path: result.json
           retention-days: 30
 
       - name: Upload SBOM Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sbom
           path: SBOM.json
