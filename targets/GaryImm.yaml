@@ -265,10 +265,10 @@
 - constellation: Eridanus
   dec: -07 15 00
   description: Witch Head Nebula
-  mag: -9999
+  mag: 10
   name: IC 2118
   ra: 05 04 54
-  size: 240.0
+  size: 180.0
   type: Reflection Nebula
 - constellation: Cetus
   dec: 01 18 00

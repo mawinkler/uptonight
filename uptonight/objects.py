@@ -127,10 +127,10 @@ class UpTonightObjects:
 
                         if str(target_row["description"]) != "":
                             name = str(target_row["description"]) + str(
-                                f" ({target_row['name']}, size: {target_row['size']:.0f}'"
+                                f" ({target_row['name']}, size: {target_row['size']:.0f}', foto: {fraction_of_time_observable:.2f}"
                             )
                         else:
-                            name = str(target_row["name"]) + str(f" (size: {target_row['size']:.0f}'")
+                            name = str(target_row["name"]) + str(f" (size: {target_row['size']:.0f}', foto: {fraction_of_time_observable:.2f}")
                         if self._input_targets[index]["mag"] == 0:
                             name += ")"
                         else:
