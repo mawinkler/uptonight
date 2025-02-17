@@ -118,106 +118,109 @@ class UpTonightComets:
         self._comets_data["visual_magnitude"] = self._comets_data.apply(self._compute_visual_magnitude, axis=1)
         self._comets_data = self._comets_data.loc[self._comets_data["visual_magnitude"] < self._magnitude_limit]
 
-        # Compute coordinates for comets
-        _LOGGER.debug(f"Compute the coordinates for {len(self._comets_data)} comets")
-        observable_comets = self._comets_data
-        self._comets_data["alt"] = self._comets_data.apply(self._comet_alt, axis=1)
-        self._comets_data["az"] = self._comets_data.apply(self._comet_az, axis=1)
-        self._comets_data["ra"] = self._comets_data.apply(self._comet_ra, axis=1)
-        self._comets_data["dec"] = self._comets_data.apply(self._comet_dec, axis=1)
+        if len(self._comets_data) > 0:
+            # Compute coordinates for comets
+            _LOGGER.debug(f"Compute the coordinates for {len(self._comets_data)} comets")
+            observable_comets = self._comets_data
+            self._comets_data["alt"] = self._comets_data.apply(self._comet_alt, axis=1)
+            self._comets_data["az"] = self._comets_data.apply(self._comet_az, axis=1)
+            self._comets_data["ra"] = self._comets_data.apply(self._comet_ra, axis=1)
+            self._comets_data["dec"] = self._comets_data.apply(self._comet_dec, axis=1)
 
-        # Sort comets by visual magnitude
-        observable_comets = observable_comets.sort_values(by=["visual_magnitude"])
+            # Sort comets by visual magnitude
+            observable_comets = observable_comets.sort_values(by=["visual_magnitude"])
 
-        # Calculate rise and set times for the comets
-        _LOGGER.debug(f"Compute the rise and set times for {len(observable_comets)} comets")
-        self._start_time = self._observation_time - timedelta(hours=12)
-        self._end_time = self._observation_time + timedelta(hours=12)
-        observable_comets["rise_time"] = observable_comets.apply(self._compute_rise_time, axis=1)
-        observable_comets["set_time"] = observable_comets.apply(self._compute_set_time, axis=1)
-        observable_comets["is_observable"] = observable_comets.apply(self._comet_observable, axis=1)
-        observable_comets = observable_comets[observable_comets["is_observable"]]
-        observable_comets_no = len(observable_comets)
-        _LOGGER.info(f"Number of comets observable: {observable_comets_no}")
+            # Calculate rise and set times for the comets
+            _LOGGER.debug(f"Compute the rise and set times for {len(observable_comets)} comets")
+            self._start_time = self._observation_time - timedelta(hours=12)
+            self._end_time = self._observation_time + timedelta(hours=12)
+            observable_comets["rise_time"] = observable_comets.apply(self._compute_rise_time, axis=1)
+            observable_comets["set_time"] = observable_comets.apply(self._compute_set_time, axis=1)
+            observable_comets["is_observable"] = observable_comets.apply(self._comet_observable, axis=1)
+            observable_comets = observable_comets[observable_comets["is_observable"]]
+            observable_comets_no = len(observable_comets)
+            _LOGGER.info(f"Number of comets observable: {observable_comets_no}")
 
-        if observable_comets_no > 0:
-            # Find the visually brightest comet (lowest magnitude)
-            brightest_comet = observable_comets.loc[observable_comets["visual_magnitude"].idxmin()]
-            _LOGGER.info(
-                f"The visually brightest comet is {brightest_comet['designation']} with a magnitude of {brightest_comet['visual_magnitude']:.2f}."
-            )
+            if observable_comets_no > 0:
+                # Find the visually brightest comet (lowest magnitude)
+                brightest_comet = observable_comets.loc[observable_comets["visual_magnitude"].idxmin()]
+                _LOGGER.info(
+                    f"The visually brightest comet is {brightest_comet['designation']} with a magnitude of {brightest_comet['visual_magnitude']:.2f}."
+                )
 
-            with open("comets.txt", "w") as f:
-                f.write(observable_comets.to_string(header=True, index=False))
+                with open("comets.txt", "w") as f:
+                    f.write(observable_comets.to_string(header=True, index=False))
 
-            observable_comets_selected = observable_comets[
-                [
-                    "designation",
-                    "distance_au_earth",
-                    "distance_au_sun",
-                    "magnitude_g",
-                    "visual_magnitude",
-                    "alt",
-                    "az",
-                    "ra",
-                    "dec",
-                    "rise_time",
-                    "set_time",
+                observable_comets_selected = observable_comets[
+                    [
+                        "designation",
+                        "distance_au_earth",
+                        "distance_au_sun",
+                        "magnitude_g",
+                        "visual_magnitude",
+                        "alt",
+                        "az",
+                        "ra",
+                        "dec",
+                        "rise_time",
+                        "set_time",
+                    ]
                 ]
-            ]
 
-            cmap = cm.hsv
-            # For the comets, we're using the timespan in between civil darkness
-            time_resolution = 15 * u.minute
-            time_grid = time_grid_from_range(
-                [
-                    self._observation_timeframe["observing_start_time_civil"],
-                    self._observation_timeframe["observing_end_time_civil"],
-                ],
-                time_resolution=time_resolution,
-            )
-
-            _LOGGER.info("Creating plot and table of comets")
-            target_no = 0
-            for row in observable_comets_selected.itertuples(index=True):
-                target = FixedTarget(
-                    coord=SkyCoord(
-                        f"{row.ra} {row.dec}",
-                        unit=(u.hourangle, u.deg),
-                    ),
-                    name=str(row.designation) + f", mag:  {str(int(round(row.visual_magnitude * 10, 0)) / 10)}",
+                cmap = cm.hsv
+                # For the comets, we're using the timespan in between civil darkness
+                time_resolution = 15 * u.minute
+                time_grid = time_grid_from_range(
+                    [
+                        self._observation_timeframe["observing_start_time_civil"],
+                        self._observation_timeframe["observing_end_time_civil"],
+                    ],
+                    time_resolution=time_resolution,
                 )
 
-                ax = plot_sky(
-                    target,
-                    self._observer,
-                    time_grid,
-                    style_kwargs=dict(
-                        color=cmap(target_no / observable_comets_no * 0.75),
-                        label=target.name,
-                        marker="x",
-                        s=30,
-                    ),
-                    north_to_east_ccw=self._constraints["north_to_east_ccw"],
-                )
-
-                uptonight_comets.add_row(
-                    (
-                        row.designation,
-                        target.coord.to_string("hmsdms"),
-                        row.distance_au_earth,
-                        row.distance_au_sun,
-                        row.magnitude_g,
-                        row.visual_magnitude,
-                        row.alt,
-                        row.az,
-                        str(row.rise_time.strftime("%m/%d/%Y %H:%M:%S")),
-                        str(row.set_time.strftime("%m/%d/%Y %H:%M:%S")),
+                _LOGGER.info("Creating plot and table of comets")
+                target_no = 0
+                for row in observable_comets_selected.itertuples(index=True):
+                    target = FixedTarget(
+                        coord=SkyCoord(
+                            f"{row.ra} {row.dec}",
+                            unit=(u.hourangle, u.deg),
+                        ),
+                        name=str(row.designation) + f", mag:  {str(int(round(row.visual_magnitude * 10, 0)) / 10)}",
                     )
-                )
 
-                target_no = target_no + 1
+                    ax = plot_sky(
+                        target,
+                        self._observer,
+                        time_grid,
+                        style_kwargs=dict(
+                            color=cmap(target_no / observable_comets_no * 0.75),
+                            label=target.name,
+                            marker="x",
+                            s=30,
+                        ),
+                        north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                    )
 
+                    uptonight_comets.add_row(
+                        (
+                            row.designation,
+                            target.coord.to_string("hmsdms"),
+                            row.distance_au_earth,
+                            row.distance_au_sun,
+                            row.magnitude_g,
+                            row.visual_magnitude,
+                            row.alt,
+                            row.az,
+                            str(row.rise_time.strftime("%m/%d/%Y %H:%M:%S")),
+                            str(row.set_time.strftime("%m/%d/%Y %H:%M:%S")),
+                        )
+                    )
+
+                    target_no = target_no + 1
+        else:
+            _LOGGER.debug("No comets within constraints")
+            
         return uptonight_comets, ax
 
     def _get_comet_position_and_distance_earth(self, comet):
