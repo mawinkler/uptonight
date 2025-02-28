@@ -114,7 +114,9 @@ class UpTonightComets:
         # Function to compute visual magnitude
         # Apply the function to compute visual magnitude for each comet and
         # limit comets visiul magnitude to some reasonable value
-        _LOGGER.debug(f"Compute the visual magnitudes for {len(self._comets_data)} comets (magnitude limit: {self._magnitude_limit})")
+        _LOGGER.debug(
+            f"Compute the visual magnitudes for {len(self._comets_data)} comets (magnitude limit: {self._magnitude_limit})"
+        )
         self._comets_data["visual_magnitude"] = self._comets_data.apply(self._compute_visual_magnitude, axis=1)
         self._comets_data = self._comets_data.loc[self._comets_data["visual_magnitude"] < self._magnitude_limit]
 
@@ -169,7 +171,7 @@ class UpTonightComets:
 
                 cmap = cm.hsv
                 # For the comets, we're using the timespan in between civil darkness
-                time_resolution = 15 * u.minute
+                time_resolution = 1 * u.minute
                 time_grid = time_grid_from_range(
                     [
                         self._observation_timeframe["observing_start_time_civil"],
@@ -193,6 +195,18 @@ class UpTonightComets:
                         target,
                         self._observer,
                         time_grid,
+                        style_kwargs=dict(
+                            color=cmap(target_no / observable_comets_no * 0.75),
+                            label="_Hidden",
+                            marker=".",
+                            s=0.1,
+                        ),
+                        north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                    )
+                    ax = plot_sky(
+                        target,
+                        self._observer,
+                        self._observation_timeframe["observing_start_time_civil"],
                         style_kwargs=dict(
                             color=cmap(target_no / observable_comets_no * 0.75),
                             label=target.name,
@@ -220,7 +234,7 @@ class UpTonightComets:
                     target_no = target_no + 1
         else:
             _LOGGER.debug("No comets within constraints")
-            
+
         return uptonight_comets, ax
 
     def _get_comet_position_and_distance_earth(self, comet):
@@ -430,7 +444,9 @@ class UpTonightComets:
             _LOGGER.debug(f"Comet {comet['designation']} is not setting, but is above the horizon so can be seen")
             return True
         if comet["set_time"] is None and comet["alt"] <= 0:
-            _LOGGER.debug(f"Comet {comet['designation']} is not setting and is below the horizon, so cannot be observed")
+            _LOGGER.debug(
+                f"Comet {comet['designation']} is not setting and is below the horizon, so cannot be observed"
+            )
             return False
 
         start1 = comet["rise_time"].to_datetime64()
@@ -440,5 +456,5 @@ class UpTonightComets:
 
         observable = max(start1, start2) <= min(end1, end2)
         _LOGGER.debug(f"Comet {comet['designation']} observable: {observable}.")
-        
+
         return observable
