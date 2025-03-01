@@ -80,7 +80,7 @@ class UpTonightObjects:
 
         # Create grid of times from start_time to end_time
         # with resolution time_resolution
-        time_resolution = 15 * u.minute
+        time_resolution = 1 * u.minute
         time_grid = time_grid_from_range(
             [
                 self._observation_timeframe["observing_start_time"],
@@ -130,7 +130,9 @@ class UpTonightObjects:
                                 f" ({target_row['name']}, size: {target_row['size']:.0f}', foto: {fraction_of_time_observable:.2f}"
                             )
                         else:
-                            name = str(target_row["name"]) + str(f" (size: {target_row['size']:.0f}', foto: {fraction_of_time_observable:.2f}")
+                            name = str(target_row["name"]) + str(
+                                f" (size: {target_row['size']:.0f}', foto: {fraction_of_time_observable:.2f}"
+                            )
                         if self._input_targets[index]["mag"] == 0:
                             name += ")"
                         else:
@@ -189,8 +191,8 @@ class UpTonightObjects:
                             style_kwargs=dict(
                                 color=cmap(target_no / within_threshold * 0.75),
                                 label="_Hidden",
-                                marker=marker,
-                                s=3,
+                                marker=".",
+                                s=0.1,
                             ),
                             north_to_east_ccw=self._constraints["north_to_east_ccw"],
                         )

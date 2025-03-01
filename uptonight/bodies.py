@@ -86,7 +86,7 @@ class UpTonightBodies:
             ax (Axes): An Axes object (ax) with a map of the sky.
         """
         # For the comets, we're using the timespan in between civil darkness
-        time_resolution = 15 * u.minute
+        time_resolution = 1 * u.minute
         time_grid = time_grid_from_range(
             [
                 self._observation_timeframe["observing_start_time"],
@@ -193,6 +193,13 @@ class UpTonightBodies:
                     object_altaz,
                     self._observer,
                     time_grid,
+                    style_kwargs=dict(color=color, label="_Hidden", marker=".", s=5),
+                    north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                )
+                ax = plot_sky(
+                    object_altaz[0],
+                    self._observer,
+                    self._observation_timeframe["observing_start_time"],
                     style_kwargs=dict(color=color, label=target.name, linewidth=3, alpha=0.5, s=size),
                     north_to_east_ccw=self._constraints["north_to_east_ccw"],
                 )

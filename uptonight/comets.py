@@ -199,7 +199,7 @@ class UpTonightComets:
                             color=cmap(target_no / observable_comets_no * 0.75),
                             label="_Hidden",
                             marker=".",
-                            s=0.1,
+                            s=0.5,
                         ),
                         north_to_east_ccw=self._constraints["north_to_east_ccw"],
                     )

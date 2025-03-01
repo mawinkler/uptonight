@@ -61,7 +61,7 @@ class UpTonightHorizon:
             ra_deg, dec_deg = self._altaz_to_radec(
                 horizon_direction.get("alt"),
                 horizon_direction.get("az"),
-                observation_time,
+                self._observation_timeframe["observing_start_time"],
                 self._observer_location,
             )
 
@@ -81,8 +81,8 @@ class UpTonightHorizon:
             ax = plot_sky(
                 target,
                 self._observer,
-                observation_time,
-                style_kwargs=dict(color=self._colors["ticks"], label=target.name, marker="o", s=30),
+                self._observation_timeframe["observing_start_time"],
+                style_kwargs=dict(color=self._colors["ticks"], label=target.name, marker="o", s=10),
                 north_to_east_ccw=self._constraints["north_to_east_ccw"],
             )
 
