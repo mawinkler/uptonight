@@ -82,6 +82,7 @@ def main():
     features = {"horizon": False, "objects": True, "bodies": True, "comets": False, "alttime": False}
     output_datestamp = False
     target = None
+    prefix = ""
 
     # Read config.yaml
     if os.path.isfile(f"{app_directory}/config.yaml"):
@@ -125,6 +126,8 @@ def main():
         output_dir = f"{app_directory}/{cfg['output_dir']}"
     if cfg is not None and "live_mode" in cfg.keys() and cfg["live_mode"] is not None:  # deprecated
         live = {"enabled": bool(cfg["live_mode"]), "interval": DEFAULT_LIVE_MODE_INTERVAL}
+    if cfg is not None and "prefix" in cfg.keys() and cfg["prefix"] is not None:
+        prefix = cfg["prefix"]
     if cfg is not None and "bucket_list" in cfg.keys() and cfg["bucket_list"] is not None:
         bucket_list = cfg["bucket_list"]
     if cfg is not None and "done_list" in cfg.keys() and cfg["done_list"] is not None:
@@ -194,6 +197,8 @@ def main():
     if os.getenv("LIVE_MODE") is not None:
         if os.getenv("LIVE_MODE").lower() == "true":
             live = {"enabled": True, "interval": DEFAULT_LIVE_MODE_INTERVAL}
+    if os.getenv("PREFIX") is not None:
+        prefix = os.getenv("PREFIX")
 
     # We need at least a longitute and latitude, the rest is optional
     if location["longitude"] == "" or location["latitude"] == "":
@@ -229,6 +234,7 @@ def main():
     _LOGGER.debug(f"Output directory: {output_dir}")
     _LOGGER.debug(f"Live mode: {live.get('enabled', False)}")
     _LOGGER.debug(f"Live mode interval: {live.get('interval', DEFAULT_LIVE_MODE_INTERVAL)}")
+    _LOGGER.debug(f"prefix: {prefix}")
 
     start = time.time()
 
@@ -253,6 +259,7 @@ def main():
                 output_dir=output_dir,
                 live=live.get("enabled"),
                 target=target,
+                prefix=prefix,
             )
 
             uptonight.calc(
@@ -282,7 +289,8 @@ def main():
             output_dir=output_dir,
             live=False,
             target=target,
-            )
+            prefix=prefix,
+        )
 
         uptonight.calc(
             bucket_list=bucket_list,

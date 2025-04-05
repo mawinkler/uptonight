@@ -149,6 +149,7 @@ class UpTonight:
         output_dir=".",
         live=False,
         target=None,
+        prefix="",
     ):
         """Init function for UpTonight
 
@@ -186,6 +187,9 @@ class UpTonight:
         self._output_dir = output_dir
         self._live = live
         self._target = target
+        self._prefix = prefix
+        if not self._prefix.endswith("-"):
+            self._prefix += "-"
 
         self._observer_location = self._get_observer_location()
         self._observer = self._get_observer(self._observer_location)
@@ -406,6 +410,7 @@ class UpTonight:
             self._observation_timeframe["current_day"],
             self._filter_ext,
             self._live,
+            self._prefix,
         )
         ax = None
 
@@ -473,16 +478,17 @@ class UpTonight:
                 self._observation_timeframe["current_day"],
                 self._filter_ext,
                 self._constraints,
+                self._prefix,
             )
             if self._features.get("objects"):
                 report.save_txt(uptonight_targets, "", self._output_datestamp)
                 report.save_json(uptonight_targets, "", self._output_datestamp)
             if self._features.get("bodies"):
-                report.save_txt(uptonight_bodies, "-bodies", self._output_datestamp)
-                report.save_json(uptonight_bodies, "-bodies", self._output_datestamp)
+                report.save_txt(uptonight_bodies, "bodies-", self._output_datestamp)
+                report.save_json(uptonight_bodies, "bodies-", self._output_datestamp)
             if self._features.get("comets"):
-                report.save_txt(uptonight_comets, "-comets", self._output_datestamp)
-                report.save_json(uptonight_comets, "-comets", self._output_datestamp)
+                report.save_txt(uptonight_comets, "comets-", self._output_datestamp)
+                report.save_json(uptonight_comets, "comets-", self._output_datestamp)
 
         if self._features.get("objects"):
             print(uptonight_targets)

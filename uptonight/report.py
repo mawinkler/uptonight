@@ -11,6 +11,7 @@ class Report:
         current_day,
         filter_ext,
         constraints,
+        prefix,
     ):
         """Init reports
 
@@ -33,6 +34,7 @@ class Report:
         self._current_day = current_day
         self._filter_ext = filter_ext
         self._constraints = constraints
+        self._prefix = prefix
 
         return None
 
@@ -45,20 +47,20 @@ class Report:
         """
         if len(uptonight_result) > 0:
             uptonight_result.write(
-                f"{self._output_dir}/uptonight{result_type}-report{self._filter_ext}.txt",
+                f"{self._output_dir}/uptonight-{self._prefix}{result_type}report{self._filter_ext}.txt",
                 overwrite=True,
                 format="ascii.fixed_width_two_line",
             )
         else:
             with open(
-                f"{self._output_dir}/uptonight{result_type}-report{self._filter_ext}.txt",
+                f"{self._output_dir}/uptonight-{self._prefix}{result_type}report{self._filter_ext}.txt",
                 "w",
                 encoding="utf-8",
             ) as report:
                 report.writelines("")
 
         with open(
-            f"{self._output_dir}/uptonight{result_type}-report{self._filter_ext}.txt",
+            f"{self._output_dir}/uptonight-{self._prefix}{result_type}report{self._filter_ext}.txt",
             "r",
             encoding="utf-8",
         ) as report:
@@ -68,13 +70,13 @@ class Report:
 
         if output_datestamp:
             with open(
-                f"{self._output_dir}/uptonight{result_type}-report-{self._current_day}{self._filter_ext}.txt",
+                f"{self._output_dir}/uptonight-{self._prefix}{result_type}report-{self._current_day}{self._filter_ext}.txt",
                 "w",
                 encoding="utf-8",
             ) as report:
                 report.write(contents)
         with open(
-            f"{self._output_dir}/uptonight{result_type}-report{self._filter_ext}.txt",
+            f"{self._output_dir}/uptonight-{self._prefix}{result_type}report{self._filter_ext}.txt",
             "w",
             encoding="utf-8",
         ) as report:
@@ -89,12 +91,12 @@ class Report:
         """
         if output_datestamp:
             uptonight_result.write(
-                f"{self._output_dir}/uptonight{result_type}-report-{self._current_day}.json",
+                f"{self._output_dir}/uptonight-{self._prefix}{result_type}report-{self._current_day}.json",
                 overwrite=True,
                 format="pandas.json",
             )
         uptonight_result.write(
-            f"{self._output_dir}/uptonight{result_type}-report.json",
+            f"{self._output_dir}/uptonight-{self._prefix}{result_type}report.json",
             overwrite=True,
             format="pandas.json",
         )

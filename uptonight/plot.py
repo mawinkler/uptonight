@@ -29,6 +29,7 @@ class Plot:
         current_day,
         filter_ext,
         live,
+        prefix,
     ):
         """Init plot
 
@@ -54,6 +55,7 @@ class Plot:
         self._current_day = current_day
         self._filter_ext = filter_ext
         self._live = live
+        self._prefix = prefix
 
         self._style_plot()
 
@@ -62,7 +64,7 @@ class Plot:
     def altitude_time_purge(self):
         """Purge old altitude over time plots in the output directory"""
         for filename in os.listdir(f"{self._output_dir}"):
-            if filename.startswith("uptonight-alttime") and filename.endswith(".png"):
+            if filename.startswith(f"uptonight-{self._prefix}alttime") and filename.endswith(".png"):
                 full_path = os.path.join(self._output_dir, filename)
                 _LOGGER.debug(f"Purge diagram {full_path}")
                 try:
@@ -226,7 +228,7 @@ class Plot:
         )
 
         # Save the plot
-        plot_name = f"uptonight-alttime-{target_id.lower().replace(' ', '-').replace('/', '-')}.png"
+        plot_name = f"uptonight-{self._prefix}alttime-{target_id.lower().replace(' ', '-').replace('/', '-')}.png"
         plt.savefig(f"{self._output_dir}/{plot_name}")
 
         plt.clf()
@@ -240,10 +242,12 @@ class Plot:
         """
         if not self._live:
             if output_datestamp:
-                plt.savefig(f"{self._output_dir}/uptonight-plot-{self._current_day}{self._filter_ext}.png")
-            plt.savefig(f"{self._output_dir}/uptonight-plot{self._filter_ext}.png")
+                plt.savefig(
+                    f"{self._output_dir}/uptonight-{self._prefix}plot-{self._current_day}{self._filter_ext}.png"
+                )
+            plt.savefig(f"{self._output_dir}/uptonight-{self._prefix}plot{self._filter_ext}.png")
         else:
-            plt.savefig(f"{self._output_dir}/uptonight-liveplot{self._filter_ext}.png")
+            plt.savefig(f"{self._output_dir}/uptonight-{self._prefix}liveplot{self._filter_ext}.png")
 
     def legend(self, ax, astronight_from, astronight_to):
         """Create legend and descriptions of the plot
