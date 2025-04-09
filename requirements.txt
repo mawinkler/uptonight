@@ -9,6 +9,7 @@ pillow==10.3.0
 pandas==2.2.2
 requests==2.31.0
 h5py==3.10.0
+paho-mqtt==2.1.0
 
 # matplotlib==3.9.2
 # numpy==2.1.1

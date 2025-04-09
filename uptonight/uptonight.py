@@ -150,6 +150,7 @@ class UpTonight:
         live=False,
         target=None,
         prefix="",
+        mqtt=None,
     ):
         """Init function for UpTonight
 
@@ -188,8 +189,9 @@ class UpTonight:
         self._live = live
         self._target = target
         self._prefix = prefix
-        if not self._prefix.endswith("-"):
+        if self._prefix != "" and not self._prefix.endswith("-"):
             self._prefix += "-"
+        self._mqtt = mqtt
 
         self._observer_location = self._get_observer_location()
         self._observer = self._get_observer(self._observer_location)
@@ -452,19 +454,16 @@ class UpTonight:
         # Title, legend, and config
         astronight_from = self._observer.astropy_time_to_datetime(
             self._observation_timeframe["observing_start_time"]
-        ).strftime("%m/%d %H:%M")
+        )
         astronight_to = self._observer.astropy_time_to_datetime(
             self._observation_timeframe["observing_end_time"]
-        ).strftime("%m/%d %H:%M")
+        )
 
-        plot.legend(ax, astronight_from, astronight_to)
+        plot.legend(ax, astronight_from.strftime("%m/%d %H:%M"), astronight_to.strftime("%m/%d %H:%M"))
 
         # Save plot
         _LOGGER.debug("Saving plot")
         plot.save_png(plt, self._output_datestamp)
-
-        # Clear plot
-        plt.clf()
 
         if not self._live:
             # Save reports
@@ -479,16 +478,28 @@ class UpTonight:
                 self._filter_ext,
                 self._constraints,
                 self._prefix,
+                self._target_list,
+                plt,
             )
+
             if self._features.get("objects"):
                 report.save_txt(uptonight_targets, "", self._output_datestamp)
                 report.save_json(uptonight_targets, "", self._output_datestamp)
+                if self._mqtt is not None:
+                    report.save_mqtt(self._mqtt, uptonight_targets, "objects", self._output_datestamp)
             if self._features.get("bodies"):
-                report.save_txt(uptonight_bodies, "bodies-", self._output_datestamp)
-                report.save_json(uptonight_bodies, "bodies-", self._output_datestamp)
+                report.save_txt(uptonight_bodies, "bodies", self._output_datestamp)
+                report.save_json(uptonight_bodies, "bodies", self._output_datestamp)
+                if self._mqtt is not None:
+                    report.save_mqtt(self._mqtt, uptonight_bodies, "bodies", self._output_datestamp)
             if self._features.get("comets"):
-                report.save_txt(uptonight_comets, "comets-", self._output_datestamp)
-                report.save_json(uptonight_comets, "comets-", self._output_datestamp)
+                report.save_txt(uptonight_comets, "comets", self._output_datestamp)
+                report.save_json(uptonight_comets, "comets", self._output_datestamp)
+                if self._mqtt is not None:
+                    report.save_mqtt(self._mqtt, uptonight_comets, "comets", self._output_datestamp)
+
+        # Clear plot
+        plt.clf()
 
         if self._features.get("objects"):
             print(uptonight_targets)

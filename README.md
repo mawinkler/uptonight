@@ -15,6 +15,7 @@ UpTonight calculates the best astrophotography targets for the night at a given 
   - [Solar System Bodies](#solar-system-bodies)
   - [Comets](#comets)
   - [Altutide vs. Time Diagrams](#altutide-vs-time-diagrams)
+  - [MQTT Support](#mqtt-support)
 - [How to Run](#how-to-run)
   - [Configuration](#configuration)
   - [Python Script](#python-script)
@@ -144,6 +145,7 @@ Altitude and Azimuth calculated for 09/07 21:33
   - [Solar System Bodies](#solar-system-bodies)
   - [Comets](#comets)
   - [Altutide vs. Time Diagrams](#altutide-vs-time-diagrams)
+  - [MQTT Support](#mqtt-support)
 - [How to Run](#how-to-run)
   - [Configuration](#configuration)
   - [Python Script](#python-script)
@@ -274,6 +276,74 @@ If you enable the UpTonight feature `alttime` in your config file an altitude vs
 
 ![alt text](images/uptonight-alttime-ic-63.png "IC 63")
 
+### MQTT Support
+
+UpTonight can now send the results and the plot to an MQTT broker. If you're using Home Assistant it does support auto configuration of the created UpTonight Sensor and Camera.
+
+**Configuration**
+
+```yaml
+mqtt:
+  host: 192.168.1.100
+  port: 1883
+  user:
+  password:
+  clientid: uptonight
+```
+
+**Example for the Lovelace configuration**
+
+Camera (Plot):
+
+```yaml
+show_state: false
+show_name: false
+camera_view: live
+type: picture-entity
+entity: camera.uptonight_backyard_objects_garyimm_plot
+camera_image: camera.uptonight_backyard_objects_garyimm_plot
+aspect_ratio: 1.5:1
+tap_action:
+  action: fire-dom-event
+  browser_mod:
+    service: browser_mod.popup
+    data:
+      title: GaryImm
+      size: wide
+      content:
+        type: picture-entity
+        entity: camera.uptonight_backyard_objects_garyimm_plot
+        camera_image: camera.uptonight_backyard_objects_garyimm_plot
+        aspect_ratio: 1.5:1
+        show_state: true
+        show_name: false
+        camera_view: live
+        name: Live
+```
+
+Sensor (Report):
+
+```yaml
+type: markdown
+content: >-
+  <h2>
+    <ha-icon icon='mdi:creation-outline'></ha-icon>
+    UpTonight Bodies
+  </h2>
+  <hr>
+  {%- for item in state_attr("sensor.uptonight_backyard_bodies_garyimm",
+  "bodies") %}
+  {%- if loop.index <= 20 %}
+  <table><tr>
+  {{ loop.index }}. {{ item["target name"] }}, Alt: {{ item["max altitude"] |
+  round}}°, Az: {{ item.azimuth | round }}° at {{ item["max altitude time"]  }},
+  Mag: {{ item["visual magnitude"] | round(1) }}
+  {%- endif %}
+  {%- endfor %}
+```
+
+Check the other sensor attributes as well.
+
 ## How to Run
 
 There are two ways to run UpTonight. As a regular Python script or as a container.
@@ -334,11 +404,31 @@ Optionally, you can plot a custom horizon for your location (white dotted line).
 Example:
 
 ```yaml
-# observation_date: 03/28/24
+observation_date: # 01/27/25
 target_list: targets/GaryImm
-type_filter:  # e.g. Galaxy, Nebula 
+type_filter: # e.g. Galaxy, Nebula 
 output_dir: out
 live_mode: false
+
+# An optional prefix for the file names.
+# Example: uptonight-PREFIX-plot.png
+# prefix: PREFIX
+
+# Configure your mqtt broker for the reports and the plot.
+# Useful for an easy Home Assistant integration.
+# mqtt:
+#   host: 192.168.1.100
+#   port: 1883
+#   user:
+#   password:
+#   clientid: uptonight
+
+# Enable or disable festures
+features:
+  horizon: true
+  objects: true
+  bodies: false
+  comets: false
 
 location:
   longitude: 11d34m51.50s
@@ -352,41 +442,68 @@ environment:
   relative_humidity: 0.7
 
 constraints:
-  altitude_constraint_min: 30  # In deg above horizon
-  altitude_constraint_max: 80  # In deg above horizon
-  airmass_constraint: 2  # 30° to 90°, 2 = 1/cos(60)
-  size_constraint_min: 10  # In arc minutes
-  size_constraint_max: 300  # In arc minutes
+  altitude_constraint_min: 30  # in deg above horizon
+  altitude_constraint_max: 80  # in deg above horizon
+  airmass_constraint: 2  # 30° to 90°, 2 = 1/cos(60) 
+  size_constraint_min: 10  # in arc minutes
+  size_constraint_max: 300  # in arc minutes
 
-  moon_separation_min: 45  # In degrees
+  moon_separation_min: 45  # in degrees
 
   # If set to true, moon_separation_min is derived from the moon illumination
-  # percentage and overwrites moon_separation_min. 1% corresponds 1°.
+  # Percentage and overwrites moon_separation_min. 1% corresponds 1°.
   moon_separation_use_illumination: true
 
-  # Object needs to be within the constraints for at least 50% of darkness.
-  fraction_of_time_observable_threshold: 0.75
+  # Object needs to be within the constraints for at least 50% of darkness
+  fraction_of_time_observable_threshold: 0.5
 
-  # Maximum number of targets to calculate.
+  # Maximum number of targets to calculate
   max_number_within_threshold: 60
 
-  # true : Meaning that azimuth is shown increasing counter-clockwise (ccw), or 
-  #        with north at top, east at left, etc.
+  # true : Meaning that azimuth is shown increasing counter-clockwise (ccw), or with north
+  #        at top, east at left, etc.
   # false: Show azimuth increasing clockwise (cw).
   north_to_east_ccw: false
 
-# Personal bucket list to always include.
-# Constraints are ignored for these targets.
+output_datestamp: false
+
+# Personal bucket list to always include
 bucket_list:
   - IC 434
   - NGC 2359
+  - M 16
 
-# Personal done list to always ignore.
 done_list:
   - IC 1795
+  - LBN 535
+
+custom_targets:
+  - name: NGC 4395
+    description: NGC 4395
+    type: Galaxy
+    constellation: Canes Venatici
+    size: 13
+    ra: 12 25 48
+    dec: +33 32 48
+    mag: 10.0
+  - name: NGC 3227
+    description: Galaxy duo NGC 3226
+    type: Galaxy
+    constellation: Leo
+    size: 4
+    ra: 10 23 30
+    dec: +19 51 54
+    mag: 10.4
+  - name: LBN 105
+    description: SH2-73
+    type: Molecular Cloud
+    constellation: Hercules
+    size: 75
+    ra: 16 11 7.6
+    dec: +21 52 26.4
+    mag: 0
 
 # Horizon
-# Minimum altitudes from north (0), east (90), south (180), west (270), to north (360)
 horizon:
   # Step size in degrees
   step_size: 5
@@ -419,25 +536,6 @@ horizon:
       az: 343
     - alt: 20
       az: 360
-
-# Set custom color table
-colors:
-  ticks: "#9C9C9C"
-  grid: "#9C9C9C"
-  axes: "#262626"
-  figure: "#1C1C1C"
-  legend: "#262626"
-  alttime: "#CC6666"
-  meridian: "#66CC66"
-  text: "#FFFFFF"
-
-# Enable or disable component calculation
-features:
-  horizon: true
-  objects: true
-  bodies: true
-  comets: true
-  alttime: true
 ```
 
 You can enable or disable the following UpTonights features:

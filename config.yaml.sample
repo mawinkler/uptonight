@@ -1,8 +1,28 @@
-observation_date: # 01/27/24
+observation_date: # 01/27/25
 target_list: targets/GaryImm
 type_filter: # e.g. Galaxy, Nebula 
 output_dir: out
 live_mode: false
+
+# An optional prefix for the file names.
+# Example: uptonight-PREFIX-plot.png
+# prefix: PREFIX
+
+# Configure your mqtt broker for the reports and the plot.
+# Useful for an easy Home Assistant integration.
+# mqtt:
+#   host: 192.168.1.129
+#   port: 1883
+#   user:
+#   password:
+#   clientid: uptonight
+
+# Enable or disable festures
+features:
+  horizon: true
+  objects: true
+  bodies: false
+  comets: false
 
 location:
   longitude: 11d34m51.50s
@@ -24,24 +44,24 @@ constraints:
 
   moon_separation_min: 45  # in degrees
 
-  # if set to true, moon_separation_min is derived from the moon illumination
-  # percentage and overwrites moon_separation_min. 1% corresponds 1°.
+  # If set to true, moon_separation_min is derived from the moon illumination
+  # Percentage and overwrites moon_separation_min. 1% corresponds 1°.
   moon_separation_use_illumination: true
 
-  # object needs to be within the constraints for at least 50% of darkness
+  # Object needs to be within the constraints for at least 50% of darkness
   fraction_of_time_observable_threshold: 0.5
 
-  # maximum number of targets to calculate
+  # Maximum number of targets to calculate
   max_number_within_threshold: 60
 
-  # true : meaning that azimuth is shown increasing counter-clockwise (ccw), or with north
+  # true : Meaning that azimuth is shown increasing counter-clockwise (ccw), or with north
   #        at top, east at left, etc.
-  # false: show azimuth increasing clockwise (cw).
+  # false: Show azimuth increasing clockwise (cw).
   north_to_east_ccw: false
 
 output_datestamp: false
 
-# personal bucket list to always include
+# Personal bucket list to always include
 bucket_list:
   - IC 434
   - NGC 2359
@@ -110,10 +130,3 @@ horizon:
       az: 343
     - alt: 20
       az: 360
-
-features:
-  # Enable or disable festures
-  horizon: true
-  objects: true
-  bodies: false
-  comets: false

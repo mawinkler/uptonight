@@ -1,3 +1,20 @@
+import json
+import logging
+import queue
+import time
+from io import BytesIO
+
+from uptonight.const import FUNCTIONS
+from uptonight.mqtthandler import MQTTDeviceHandler, MQTTHandler
+
+from .const import (
+    DEVICE_TYPE_CAMERA,
+)
+
+_LOGGER = logging.getLogger(__name__)
+
+message_queue = queue.Queue()
+
 class Report:
     """UpTonight Reports"""
 
@@ -12,6 +29,8 @@ class Report:
         filter_ext,
         constraints,
         prefix,
+        target_list,
+        plot,
     ):
         """Init reports
 
@@ -35,9 +54,88 @@ class Report:
         self._filter_ext = filter_ext
         self._constraints = constraints
         self._prefix = prefix
+        self._target_list = target_list
+        self._plot = plot
 
         return None
 
+    def save_mqtt(self, mqtt_service, uptonight_result, result_type, output_datestamp):
+        """Save report as mqtt
+
+        Args:
+            uptonight_result (Table): Results
+            result_type (str): Type
+        """
+        target_list = self._target_list.split('/')[1]
+        self._mqtt_handler = MQTTHandler(mqtt_service)
+        mqtt_client = None
+        while not self._mqtt_handler.connected():
+            try:
+                mqtt_client = self._mqtt_handler.connect()
+            except ConnectionRefusedError as cre:
+                _LOGGER.error(f"MQTT Connection error: {cre}")
+                time.sleep(3)
+
+        for device in FUNCTIONS:
+            mqtt_device = {
+                "device_type": device,
+                "observatory": f"{self._observer.name.title()}",
+                "type": f"{result_type.title()}",
+                "catalogue": f"{target_list}",
+                "functions": list(FUNCTIONS.get(device)),
+            }
+        
+            _LOGGER.info(f"Create Home Assistant MQTT configuration for a {result_type}")
+            mqtt_device_handler = MQTTDeviceHandler(mqtt_client, message_queue, mqtt_device)
+            mqtt_device_handler.create_mqtt_config()
+
+            moon_separation = 0
+            if self._constraints["moon_separation_use_illumination"]:
+                moon_separation = self._sun_moon.moon_illumination()
+            else:
+                moon_separation = self._constraints["moon_separation_min"]
+            
+            uptonight_table = json.loads(uptonight_result.to_pandas().to_json(orient='records'))
+            data = {
+                "target_list": target_list,
+                "observatory": self._observer.name,
+                "site_longitude": round(self._observer.location.lon.value, 4),
+                "site_latitude": round(self._observer.location.lat.value, 4),
+                "elevation": round(self._observer.location.height.value, 2),
+                "astronight_from": self._astronight_from.isoformat(),
+                "astronight_to": self._astronight_to.isoformat(),
+                "darkness": self._sun_moon.darkness().title(),
+                "moon_illumination": round(self._sun_moon.moon_illumination(), 1),
+                "altitude_constraint_min": self._constraints['altitude_constraint_min'],
+                "altitude_constraint_max": self._constraints['altitude_constraint_max'],
+                "airmass_constraint": self._constraints['airmass_constraint'],
+                "moon_separation": round(moon_separation, 1),
+                "size_constraint_min": self._constraints['size_constraint_min'],
+                "size_constraint_max": self._constraints['size_constraint_max'],
+                "uptonight_table": uptonight_table,
+            }
+        
+            message_queue.put(data)
+            
+            if device in (DEVICE_TYPE_CAMERA):
+                buf = BytesIO()
+                self._plot.savefig(buf, format='png')  # You can also use 'jpg', 'svg', etc.
+
+                # Get bytearray
+                buf.seek(0)
+                plot_bytes = bytearray(buf.read())
+                
+                _LOGGER.debug(f"Image size {len(plot_bytes)} bytes")
+                data = {
+                    "screen": plot_bytes,
+                }
+
+                message_queue.put(data)
+        
+        mqtt_device_handler.looper()
+        
+        mqtt_client.disconnect()
+        
     def save_txt(self, uptonight_result, result_type, output_datestamp):
         """Save report as txt
 
@@ -45,6 +143,9 @@ class Report:
             uptonight_result (Table): Results
             result_type (str): Type
         """
+        if result_type != "" and not result_type.endswith("-"):
+            result_type += "-"
+
         if len(uptonight_result) > 0:
             uptonight_result.write(
                 f"{self._output_dir}/uptonight-{self._prefix}{result_type}report{self._filter_ext}.txt",
@@ -89,6 +190,9 @@ class Report:
             uptonight_result (Table): Results
             result_type (str): Type
         """
+        if result_type != "" and not result_type.endswith("-"):
+            result_type += "-"
+
         if output_datestamp:
             uptonight_result.write(
                 f"{self._output_dir}/uptonight-{self._prefix}{result_type}report-{self._current_day}.json",
@@ -131,7 +235,7 @@ class Report:
         contents.insert(9, "\n")
         contents.insert(
             10,
-            f"Observation timespan: {self._astronight_from} to {self._astronight_to} in {self._sun_moon.darkness()} darkness",
+            f"Observation timespan: {self._astronight_from.strftime("%m/%d %H:%M")} to {self._astronight_to.strftime("%m/%d %H:%M")} in {self._sun_moon.darkness()} darkness",
         )
         contents.insert(11, "\n")
         contents.insert(12, "Moon illumination: {:.0f}%".format(self._sun_moon.moon_illumination()))
@@ -143,7 +247,7 @@ class Report:
             + f"Size constraint minimum: {self._constraints['size_constraint_min']}', maximum: {self._constraints['size_constraint_max']}'",
         )
         contents.insert(15, "\n")
-        contents.insert(16, f"Altitude and Azimuth calculated for {self._astronight_from}")
+        contents.insert(16, f"Altitude and Azimuth calculated for {self._astronight_from.strftime("%m/%d %H:%M")}")
         contents.insert(17, "\n")
         contents.insert(18, "\n")
 

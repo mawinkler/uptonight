@@ -39,3 +39,61 @@ BODIES = [
 
 # Default Live Mode Interval
 DEFAULT_LIVE_MODE_INTERVAL = 900
+
+# MQTT
+MANUFACTURER = "UpTonight"
+
+DEVICE_TYPE_UPTONIGHT = "uptonight"
+DEVICE_TYPE_UPTONIGHT_ICON = "mdi:telescope"
+DEVICE_TYPE_CAMERA = "camera"
+DEVICE_TYPE_CAMERA_ICON = "mdi:camera"
+
+SENSOR_TYPE = 0
+SENSOR_NAME = 1
+SENSOR_UNIT = 2
+SENSOR_ICON = 3
+SENSOR_DEVICE_CLASS = 4
+SENSOR_STATE_CLASS = 5
+
+STATE_ON = "on"
+STATE_OFF = "off"
+
+TYPE_SENSOR = "sensor"
+
+UNIT_OF_MEASUREMENT_NONE = None
+UNIT_OF_MEASUREMENT_DEGREE = "°"
+UNIT_OF_MEASUREMENT_PERCENTAGE = "%"
+UNIT_OF_MEASUREMENT_ARCMIN = "'"
+UNIT_OF_MEASUREMENT_METER = "m"
+
+DEVICE_CLASS_NONE = None
+DEVICE_CLASS_TEMPERATURE = "temperature"
+DEVICE_CLASS_TIMESTAMP = "timestamp"
+DEVICE_CLASS_DISTANCE = "distance"
+
+STATE_CLASS_NONE = None
+STATE_CLASS_MEASUREMENT = "measurement"
+
+FUNCTIONS = {
+    DEVICE_TYPE_UPTONIGHT: (
+        [
+            TYPE_SENSOR,
+            "Count",
+            UNIT_OF_MEASUREMENT_NONE,
+            DEVICE_TYPE_UPTONIGHT_ICON,
+            DEVICE_CLASS_NONE,
+            STATE_CLASS_MEASUREMENT,
+        ],
+    ),
+    DEVICE_TYPE_CAMERA: (
+        [
+            TYPE_SENSOR,
+            "Plot",
+            UNIT_OF_MEASUREMENT_NONE,
+            DEVICE_TYPE_CAMERA_ICON,
+            DEVICE_CLASS_NONE,
+            STATE_CLASS_MEASUREMENT,
+        ],
+    )
+}
+ 

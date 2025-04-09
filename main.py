@@ -83,6 +83,7 @@ def main():
     output_datestamp = False
     target = None
     prefix = ""
+    mqtt = None
 
     # Read config.yaml
     if os.path.isfile(f"{app_directory}/config.yaml"):
@@ -116,6 +117,12 @@ def main():
             if item[1] is not None:
                 live[item[0]] = item[1]
 
+    if cfg is not None and "mqtt" in cfg.keys():
+        mqtt = {}
+        for item in cfg["mqtt"].items():
+            if item[1] is not None:
+                mqtt[item[0]] = item[1]
+                                       
     if cfg is not None and "observation_date" in cfg.keys() and cfg["observation_date"] is not None:
         observation_date = cfg["observation_date"]
     if cfg is not None and "target_list" in cfg.keys() and cfg["target_list"] is not None:
@@ -234,7 +241,8 @@ def main():
     _LOGGER.debug(f"Output directory: {output_dir}")
     _LOGGER.debug(f"Live mode: {live.get('enabled', False)}")
     _LOGGER.debug(f"Live mode interval: {live.get('interval', DEFAULT_LIVE_MODE_INTERVAL)}")
-    _LOGGER.debug(f"prefix: {prefix}")
+    _LOGGER.debug(f"Prefix: {prefix}")
+    _LOGGER.debug(f"MQTT: {mqtt}")
 
     start = time.time()
 
@@ -290,6 +298,7 @@ def main():
             live=False,
             target=target,
             prefix=prefix,
+            mqtt=mqtt,
         )
 
         uptonight.calc(
