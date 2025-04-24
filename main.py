@@ -122,7 +122,7 @@ def main():
         for item in cfg["mqtt"].items():
             if item[1] is not None:
                 mqtt[item[0]] = item[1]
-                                       
+
     if cfg is not None and "observation_date" in cfg.keys() and cfg["observation_date"] is not None:
         observation_date = cfg["observation_date"]
     if cfg is not None and "target_list" in cfg.keys() and cfg["target_list"] is not None:

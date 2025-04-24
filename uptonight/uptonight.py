@@ -25,6 +25,12 @@ from uptonight.plot import Plot
 from uptonight.report import Report
 from uptonight.sunmoon import SunMoon
 from uptonight.targets import Targets
+from uptonight.const import (
+    FEATURE_OBJECTS,
+    FEATURE_BODIES,
+    FEATURE_COMETS,
+    FEATURE_HORIZON,
+)
 
 download_IERS_A()
 
@@ -224,12 +230,12 @@ class UpTonight:
             self._fixed_targets,
         )
 
-        if self._features.get("horizon"):
+        if self._features.get(FEATURE_HORIZON):
             self._horizon = UpTonightHorizon(
                 self._observer, self._observation_timeframe, self._constraints, self._colors
             )
 
-        if self._features.get("objects"):
+        if self._features.get(FEATURE_OBJECTS):
             self._objects = UpTonightObjects(
                 self._observer,
                 self._observation_timeframe,
@@ -238,10 +244,10 @@ class UpTonight:
                 self._custom_targets,
             )
 
-        if self._features.get("bodies"):
+        if self._features.get(FEATURE_BODIES):
             self._bodies = UpTonightBodies(self._observer, self._observation_timeframe, self._constraints)
 
-        if self._features.get("comets"):
+        if self._features.get(FEATURE_COMETS):
             self._comets = UpTonightComets(self._observer, self._observation_timeframe, self._constraints)
 
         return None
@@ -417,7 +423,7 @@ class UpTonight:
         ax = None
 
         # Creating plot of the horizon
-        if self._features.get("horizon"):
+        if self._features.get(FEATURE_HORIZON):
             if horizon is not None:
                 ax = self._horizon.horizon(horizon)
 
@@ -426,7 +432,7 @@ class UpTonight:
             plot.altitude_time_purge()
 
         # Creating plot and table of targets
-        if self._features.get("objects"):
+        if self._features.get(FEATURE_OBJECTS):
             uptonight_targets, ax = self._objects.objects(uptonight_targets, ax, bucket_list, done_list, type_filter)
             if not self._live and self._features.get("alttime"):
                 for target_row in uptonight_targets:
@@ -435,7 +441,7 @@ class UpTonight:
                     )
 
         # Creating plot and table of bodies
-        if self._features.get("bodies"):
+        if self._features.get(FEATURE_BODIES):
             uptonight_bodies, ax = self._bodies.bodies(uptonight_bodies, ax)
             if not self._live and self._features.get("alttime"):
                 for target_row in uptonight_bodies:
@@ -443,7 +449,7 @@ class UpTonight:
                         target_row,
                     )
 
-        if self._features.get("comets"):
+        if self._features.get(FEATURE_COMETS):
             uptonight_comets, ax = self._comets.comets(uptonight_comets, ax)
             if not self._live and self._features.get("alttime"):
                 for target_row in uptonight_comets:
@@ -452,12 +458,8 @@ class UpTonight:
                     )
 
         # Title, legend, and config
-        astronight_from = self._observer.astropy_time_to_datetime(
-            self._observation_timeframe["observing_start_time"]
-        )
-        astronight_to = self._observer.astropy_time_to_datetime(
-            self._observation_timeframe["observing_end_time"]
-        )
+        astronight_from = self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_start_time"])
+        astronight_to = self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_end_time"])
 
         plot.legend(ax, astronight_from.strftime("%m/%d %H:%M"), astronight_to.strftime("%m/%d %H:%M"))
 
@@ -482,30 +484,30 @@ class UpTonight:
                 plt,
             )
 
-            if self._features.get("objects"):
+            if self._features.get(FEATURE_OBJECTS):
                 report.save_txt(uptonight_targets, "", self._output_datestamp)
                 report.save_json(uptonight_targets, "", self._output_datestamp)
                 if self._mqtt is not None:
-                    report.save_mqtt(self._mqtt, uptonight_targets, "objects", self._output_datestamp)
-            if self._features.get("bodies"):
-                report.save_txt(uptonight_bodies, "bodies", self._output_datestamp)
-                report.save_json(uptonight_bodies, "bodies", self._output_datestamp)
+                    report.save_mqtt(self._mqtt, uptonight_targets, FEATURE_OBJECTS, self._output_datestamp)
+            if self._features.get(FEATURE_BODIES):
+                report.save_txt(uptonight_bodies, FEATURE_BODIES, self._output_datestamp)
+                report.save_json(uptonight_bodies, FEATURE_BODIES, self._output_datestamp)
                 if self._mqtt is not None:
-                    report.save_mqtt(self._mqtt, uptonight_bodies, "bodies", self._output_datestamp)
-            if self._features.get("comets"):
-                report.save_txt(uptonight_comets, "comets", self._output_datestamp)
-                report.save_json(uptonight_comets, "comets", self._output_datestamp)
+                    report.save_mqtt(self._mqtt, uptonight_bodies, FEATURE_BODIES, self._output_datestamp)
+            if self._features.get(FEATURE_COMETS):
+                report.save_txt(uptonight_comets, FEATURE_COMETS, self._output_datestamp)
+                report.save_json(uptonight_comets, FEATURE_COMETS, self._output_datestamp)
                 if self._mqtt is not None:
-                    report.save_mqtt(self._mqtt, uptonight_comets, "comets", self._output_datestamp)
+                    report.save_mqtt(self._mqtt, uptonight_comets, FEATURE_COMETS, self._output_datestamp)
 
         # Clear plot
         plt.clf()
 
-        if self._features.get("objects"):
+        if self._features.get(FEATURE_OBJECTS):
             print(uptonight_targets)
 
-        if self._features.get("bodies"):
+        if self._features.get(FEATURE_BODIES):
             print(uptonight_bodies)
 
-        if self._features.get("comets"):
+        if self._features.get(FEATURE_COMETS):
             print(uptonight_comets)

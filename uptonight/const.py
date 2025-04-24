@@ -1,3 +1,14 @@
+#
+# Config
+#
+FEATURE_OBJECTS = "objects"
+FEATURE_BODIES = "bodies"
+FEATURE_COMETS = "comets"
+FEATURE_HORIZON = "horizon"
+
+#
+# Constraints
+#
 DEFAULT_ALTITUDE_CONSTRAINT_MIN = 30  # in deg above horizon
 DEFAULT_ALTITUDE_CONSTRAINT_MAX = 80  # in deg above horizon
 DEFAULT_AIRMASS_CONSTRAINT = 2  # 30° to 90°
@@ -24,7 +35,12 @@ DEFAULT_TARGETS = "targets/GaryImm"
 # Default magnitude limit (comets)
 DEFAULT_MAGNITUDE_LIMIT = 12
 
+# Default Live Mode Interval
+DEFAULT_LIVE_MODE_INTERVAL = 900
+
+#
 # Solar System
+#
 BODIES = [
     ("Sun", "sun", "gold", 250, 10),
     ("Moon", "moon", "lightgrey", 150, 301),
@@ -37,10 +53,9 @@ BODIES = [
     ("Neptune", "neptune", "royalblue", 15, 899),
 ]
 
-# Default Live Mode Interval
-DEFAULT_LIVE_MODE_INTERVAL = 900
-
+#
 # MQTT
+#
 MANUFACTURER = "UpTonight"
 
 DEVICE_TYPE_UPTONIGHT = "uptonight"
@@ -94,6 +109,5 @@ FUNCTIONS = {
             DEVICE_CLASS_NONE,
             STATE_CLASS_MEASUREMENT,
         ],
-    )
+    ),
 }
- 

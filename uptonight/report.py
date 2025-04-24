@@ -15,6 +15,7 @@ _LOGGER = logging.getLogger(__name__)
 
 message_queue = queue.Queue()
 
+
 class Report:
     """UpTonight Reports"""
 
@@ -66,7 +67,7 @@ class Report:
             uptonight_result (Table): Results
             result_type (str): Type
         """
-        target_list = self._target_list.split('/')[1]
+        target_list = self._target_list.split("/")[1]
         self._mqtt_handler = MQTTHandler(mqtt_service)
         mqtt_client = None
         while not self._mqtt_handler.connected():
@@ -84,7 +85,7 @@ class Report:
                 "catalogue": f"{target_list}",
                 "functions": list(FUNCTIONS.get(device)),
             }
-        
+
             _LOGGER.info(f"Create Home Assistant MQTT configuration for a {result_type}")
             mqtt_device_handler = MQTTDeviceHandler(mqtt_client, message_queue, mqtt_device)
             mqtt_device_handler.create_mqtt_config()
@@ -94,8 +95,8 @@ class Report:
                 moon_separation = self._sun_moon.moon_illumination()
             else:
                 moon_separation = self._constraints["moon_separation_min"]
-            
-            uptonight_table = json.loads(uptonight_result.to_pandas().to_json(orient='records'))
+
+            uptonight_table = json.loads(uptonight_result.to_pandas().to_json(orient="records"))
             data = {
                 "target_list": target_list,
                 "observatory": self._observer.name,
@@ -106,36 +107,36 @@ class Report:
                 "astronight_to": self._astronight_to.isoformat(),
                 "darkness": self._sun_moon.darkness().title(),
                 "moon_illumination": round(self._sun_moon.moon_illumination(), 1),
-                "altitude_constraint_min": self._constraints['altitude_constraint_min'],
-                "altitude_constraint_max": self._constraints['altitude_constraint_max'],
-                "airmass_constraint": self._constraints['airmass_constraint'],
+                "altitude_constraint_min": self._constraints["altitude_constraint_min"],
+                "altitude_constraint_max": self._constraints["altitude_constraint_max"],
+                "airmass_constraint": self._constraints["airmass_constraint"],
                 "moon_separation": round(moon_separation, 1),
-                "size_constraint_min": self._constraints['size_constraint_min'],
-                "size_constraint_max": self._constraints['size_constraint_max'],
+                "size_constraint_min": self._constraints["size_constraint_min"],
+                "size_constraint_max": self._constraints["size_constraint_max"],
                 "uptonight_table": uptonight_table,
             }
-        
+
             message_queue.put(data)
-            
+
             if device in (DEVICE_TYPE_CAMERA):
                 buf = BytesIO()
-                self._plot.savefig(buf, format='png')  # You can also use 'jpg', 'svg', etc.
+                self._plot.savefig(buf, format="png")  # You can also use 'jpg', 'svg', etc.
 
                 # Get bytearray
                 buf.seek(0)
                 plot_bytes = bytearray(buf.read())
-                
+
                 _LOGGER.debug(f"Image size {len(plot_bytes)} bytes")
                 data = {
                     "screen": plot_bytes,
                 }
 
                 message_queue.put(data)
-        
+
         mqtt_device_handler.looper()
-        
+
         mqtt_client.disconnect()
-        
+
     def save_txt(self, uptonight_result, result_type, output_datestamp):
         """Save report as txt
 

@@ -163,13 +163,31 @@ class SunMoon:
                 w.clear()
 
         sun_next_setting_civil, sun_next_rising_civil = self._observer.tonight(time=time, horizon=-6 * u.deg)
-
         sun_next_setting_civil_short = self._observer.astropy_time_to_datetime(
             self._observer.sun_set_time(time, which="next", horizon=-6 * u.deg)
         ).strftime("%m/%d %H:%M")
         sun_next_rising_civil_short = self._observer.astropy_time_to_datetime(
             self._observer.sun_rise_time(time, which="next", horizon=-6 * u.deg)
         ).strftime("%m/%d %H:%M")
+
+        # with warnings.catch_warnings(record=True) as w:
+        #     sun_next_setting_civil = self._observer.sun_set_time(time, which="next", horizon=-6 * u.deg)
+
+        #     if len(w):
+        #         if issubclass(w[-1].category, TargetAlwaysUpWarning):
+        #             _LOGGER.warning("Sun is not setting civically")
+        #             sun_next_rising_civil = time + 1 * u.day
+        #             sun_next_setting_civil = time
+        #             sun_next_rising_civil_short = self._observer.astropy_time_to_datetime(sun_next_rising_civil).strftime("%m/%d %H:%M")
+        #             sun_next_setting_civil_short = self._observer.astropy_time_to_datetime(sun_next_setting_civil).strftime("%m/%d %H:%M")
+        #     else:
+        #         sun_next_setting_civil, sun_next_rising_civil = self._observer.tonight(time=time, horizon=-6 * u.deg)
+        #         sun_next_setting_civil_short = self._observer.astropy_time_to_datetime(
+        #             self._observer.sun_set_time(time, which="next", horizon=-6 * u.deg)
+        #         ).strftime("%m/%d %H:%M")
+        #         sun_next_rising_civil_short = self._observer.astropy_time_to_datetime(
+        #             self._observer.sun_rise_time(time, which="next", horizon=-6 * u.deg)
+        #         ).strftime("%m/%d %H:%M")
 
         self._darkness = darkness
         self._sun_next_setting = sun_next_setting

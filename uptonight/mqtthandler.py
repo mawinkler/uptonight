@@ -20,9 +20,11 @@ from .const import (
     SENSOR_UNIT,
     STATE_OFF,
     STATE_ON,
+    FEATURE_OBJECTS,
 )
 
 _LOGGER = logging.getLogger(__name__)
+
 
 class MQTTHandler:
     def __init__(
@@ -126,7 +128,7 @@ class MQTTDeviceHandler:
         self._type = mqttdevice["type"]
         self._catalogue = mqttdevice["catalogue"]
         self._device_type = mqttdevice["device_type"]
-        
+
         self._device_functions = mqttdevice["functions"]
 
     def create_mqtt_config(self) -> None:
@@ -141,23 +143,10 @@ class MQTTDeviceHandler:
         _observatory = self._observatory.lower().replace(" ", "_")
         _type = self._type.lower().replace(" ", "_")
         _catalogue = self._catalogue.lower().replace(" ", "_")
-
         if self._device_type in (DEVICE_TYPE_UPTONIGHT):
             for function in self._device_functions:
-                root_topic = (
-                    "homeassistant/"
-                    + function[SENSOR_TYPE]
-                    + "/"
-                )
-                topic = (
-                    "uptonight/"
-                    + _observatory
-                    + "_"
-                    + _type
-                    + "_"
-                    + _catalogue
-                    + "/"
-                )
+                root_topic = "homeassistant/" + function[SENSOR_TYPE] + "/"
+                topic = "uptonight/" + _observatory + "_" + _type + "_" + _catalogue + "/"
                 config = {
                     "name": self._catalogue,
                     "state_topic": topic + "state",
@@ -186,30 +175,17 @@ class MQTTDeviceHandler:
 
             _LOGGER.debug(f"Published MQTT Config for a {self._device_type}")
 
-        if self._device_type in (DEVICE_TYPE_CAMERA):
+        if self._device_type in (DEVICE_TYPE_CAMERA) and _type == FEATURE_OBJECTS:
             # If the device is a camera we create a camera entity configuration
-            root_topic = (
-                "homeassistant/"
-                + "camera"
-                + "/"
-            )
-            topic = (
-                "uptonight/"
-                + _observatory
-                + "_"
-                + _type
-                + "_"
-                + _catalogue
-                + "/"
-            )
-            
+            root_topic = "homeassistant/" + "camera" + "/"
+            topic = "uptonight/" + _observatory + "_" + _type + "_" + _catalogue + "/"
             config = {
                 "name": f"{self._catalogue} {self._device_functions[0][SENSOR_NAME]}",
                 "topic": topic + "screen",
                 "availability_topic": topic + "lwt",
                 "payload_available": "ON",
                 "payload_not_available": "OFF",
-                "unique_id": self._device_type + "_" + _observatory + "_" + "camera" + "_" + _catalogue,
+                "unique_id": self._device_type + "_" + _observatory + "_" + _type + "_" + _catalogue,
                 "device": {
                     "identifiers": [self._type],
                     "name": f"UpTonight {self._observatory} {self._type}",
@@ -219,7 +195,7 @@ class MQTTDeviceHandler:
             }
             self._mqttclient.publish(root_topic + topic + "config", json.dumps(config), qos=0, retain=True)
             _LOGGER.debug("Published MQTT Camera Config for a %s", self._device_type)
-            
+
     def publish_device(self, message) -> None:
         """Publish device to mqtt, handle passage if device is mower"""
 
@@ -227,15 +203,7 @@ class MQTTDeviceHandler:
         _type = self._type.lower().replace(" ", "_")
         _catalogue = self._catalogue.lower().replace(" ", "_")
 
-        topic = (
-            "uptonight/"
-            + _observatory
-            + "_"
-            + _type
-            + "_"
-            + _catalogue
-            + "/"
-        )
+        topic = "uptonight/" + _observatory + "_" + _type + "_" + _catalogue + "/"
 
         try:
             self._mqttclient.publish(topic + "lwt", "ON")
@@ -260,12 +228,12 @@ class MQTTDeviceHandler:
                     "size_constraint_max": message.get("size_constraint_max"),
                     _type: message.get("uptonight_table"),
                 }
-                
+
                 response = self._mqttclient.publish(topic + "state", json.dumps(state))
                 response = self._mqttclient.publish(topic + "attributes", json.dumps(attributes))
-            
+
             if message.get("screen", None) is not None:
-                response = self._mqttclient.publish(topic + "screen", message.get("screen", None))           
+                response = self._mqttclient.publish(topic + "screen", message.get("screen", None))
         except MQTTException as mqttex:
             self._mqttclient.publish(topic + "lwt", "OFF")
             _LOGGER.error(f"{self._type}: Not connected")
