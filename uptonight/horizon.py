@@ -5,7 +5,7 @@ from astroplan import (
 )
 from astroplan.plots import plot_sky
 from astropy import units as u
-from astropy.coordinates import AltAz, SkyCoord, EarthLocation
+from astropy.coordinates import AltAz, EarthLocation, SkyCoord
 from astropy.time import Time
 
 _LOGGER = logging.getLogger(__name__)
@@ -41,7 +41,7 @@ class UpTonightHorizon:
 
         return None
 
-    def horizon(self, horizon):
+    def horizon(self, horizon, ax):
         """
         Adds the horizon to the plot.
 
@@ -84,6 +84,7 @@ class UpTonightHorizon:
                 self._observation_timeframe["observing_start_time"],
                 style_kwargs=dict(color=self._colors["ticks"], label=target.name, marker="o", s=10),
                 north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                ax=ax,
             )
 
         return ax

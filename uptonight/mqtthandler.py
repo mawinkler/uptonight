@@ -11,6 +11,7 @@ from paho.mqtt import MQTTException
 from .const import (
     DEVICE_TYPE_CAMERA,
     DEVICE_TYPE_UPTONIGHT,
+    FEATURE_OBJECTS,
     MANUFACTURER,
     SENSOR_DEVICE_CLASS,
     SENSOR_ICON,
@@ -20,7 +21,6 @@ from .const import (
     SENSOR_UNIT,
     STATE_OFF,
     STATE_ON,
-    FEATURE_OBJECTS,
 )
 
 _LOGGER = logging.getLogger(__name__)

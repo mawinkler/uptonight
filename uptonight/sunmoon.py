@@ -1,6 +1,6 @@
 import logging
 import warnings
-from datetime import datetime, UTC
+from datetime import UTC, datetime
 
 from astroplan.exceptions import TargetAlwaysUpWarning, TargetNeverUpWarning
 from astropy import units as u

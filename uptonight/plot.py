@@ -10,6 +10,10 @@ from astropy import units as u
 from astropy.coordinates import AltAz, SkyCoord
 from matplotlib.colors import LinearSegmentedColormap
 
+from uptonight.const import (
+    LAYOUT_PORTRAIT,
+)
+
 _LOGGER = logging.getLogger(__name__)
 logging.getLogger("matplotlib").setLevel(logging.INFO)
 
@@ -29,6 +33,7 @@ class Plot:
         current_day,
         filter_ext,
         live,
+        layout,
         prefix,
     ):
         """Init plot
@@ -55,6 +60,7 @@ class Plot:
         self._current_day = current_day
         self._filter_ext = filter_ext
         self._live = live
+        self._layout = layout
         self._prefix = prefix
 
         self._style_plot()
@@ -258,6 +264,14 @@ class Plot:
             astronight_to (str): Datetime string for ending of astronomical darkness
         """
 
+        figtext_x = 0.02
+        figtext_y_inc_large = 0.020
+        figtext_y_inc_small = 0.015
+        if self._layout == LAYOUT_PORTRAIT:
+            figtext_y = 0.4  # + figtext_y_inc_large * 8 + figtext_y_inc_small * 5
+        else:
+            figtext_y = 0.915
+
         astronight_from = self._observer.astropy_time_to_datetime(
             self._observation_timeframe["observing_start_time"]
         ).strftime("%m/%d %H:%M")
@@ -268,8 +282,13 @@ class Plot:
             self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_end_time"])
             - self._observer.astropy_time_to_datetime(self._observation_timeframe["observing_start_time"])
         ).split(":")
+
         if ax is not None:
-            ax.legend(loc="upper right", bbox_to_anchor=(1.4, 1))
+            if self._layout == LAYOUT_PORTRAIT:
+                ax.legend(loc="upper left", bbox_to_anchor=(0.5, -0.075))
+            else:
+                ax.legend(loc="upper right", bbox_to_anchor=(1.4, 1))
+
             if not self._live:
                 ax.set_title(
                     f"{self._sun_moon.darkness().capitalize()} night: {astronight_from} to {astronight_to} (duration {duration[0]}:{duration[1]}hs)"
@@ -277,73 +296,85 @@ class Plot:
             else:
                 ax.set_title(f"{astronight_from}")
             plt.figtext(
-                0.02,
-                0.915,
+                figtext_x,
+                figtext_y,
                 "Sunset/rise: {} / {}".format(
                     self._sun_moon.sun_next_setting_civil_short(),
                     self._sun_moon.sun_next_rising_civil_short(),
                 ),
                 size=12,
             )
+            figtext_y -= figtext_y_inc_large
             plt.figtext(
-                0.02,
-                0.895,
+                figtext_x,
+                figtext_y,
                 "Moonrise/set: {} / {}".format(
                     self._sun_moon.moon_next_rising_short(),
                     self._sun_moon.moon_next_setting_short(),
                 ),
                 size=12,
             )
+            figtext_y -= figtext_y_inc_large
             plt.figtext(
-                0.02,
-                0.875,
+                figtext_x,
+                figtext_y,
                 "Moon illumination: {:.0f}%".format(self._sun_moon.moon_illumination()),
                 size=12,
             )
+            figtext_y -= figtext_y_inc_large
             plt.figtext(
-                0.02,
-                0.855,
+                figtext_x,
+                figtext_y,
                 "Alt constraint min/max: {}° / {}°".format(
                     self._constraints["altitude_constraint_min"],
                     self._constraints["altitude_constraint_max"],
                 ),
                 size=12,
             )
+            figtext_y -= figtext_y_inc_large
             plt.figtext(
-                0.02,
-                0.835,
+                figtext_x,
+                figtext_y,
                 "Airmass constraint: {}".format(self._constraints["airmass_constraint"]),
                 size=12,
             )
+            figtext_y -= figtext_y_inc_large
             plt.figtext(
-                0.02,
-                0.815,
+                figtext_x,
+                figtext_y,
                 "Size constraint min/max: {}' / {}'".format(
                     self._constraints["size_constraint_min"],
                     self._constraints["size_constraint_max"],
                 ),
                 size=12,
             )
+            figtext_y -= figtext_y_inc_large
             plt.figtext(
-                0.02,
-                0.795,
+                figtext_x,
+                figtext_y,
                 "Fraction of time: {:.0f}%".format(self._constraints["fraction_of_time_observable_threshold"] * 100),
                 size=12,
             )
+            figtext_y -= figtext_y_inc_large
             plt.figtext(
-                0.02,
-                0.775,
+                figtext_x,
+                figtext_y,
                 "Moon separation: {:.0f}°".format(self._moon_separation),
                 size=12,
             )
+            figtext_y -= figtext_y_inc_large
 
-            plt.figtext(0.02, 0.750, "Solar System: Big circle", size=8)
-            plt.figtext(0.02, 0.735, "DSO Nebula: Diamond", size=8)
-            plt.figtext(0.02, 0.720, "DSO Galaxy: Circle", size=8)
-            plt.figtext(0.02, 0.705, "DSO Rest: Square", size=8)
-            plt.figtext(0.02, 0.690, "Comets: x", size=8)
+            plt.figtext(figtext_x, figtext_y, "Solar System: Big circle", size=8)
+            figtext_y -= figtext_y_inc_small
+            plt.figtext(figtext_x, figtext_y, "DSO Nebula: Diamond", size=8)
+            figtext_y -= figtext_y_inc_small
+            plt.figtext(figtext_x, figtext_y, "DSO Galaxy: Circle", size=8)
+            figtext_y -= figtext_y_inc_small
+            plt.figtext(figtext_x, figtext_y, "DSO Rest: Square", size=8)
+            figtext_y -= figtext_y_inc_small
+            plt.figtext(figtext_x, figtext_y, "Comets: x", size=8)
 
-            plt.tight_layout()
+            # plt.tight_layout()
 
     def _style_plot(self):
         """Style modifications for the plot"""
@@ -365,7 +396,10 @@ class Plot:
         plt.rcParams["axes.labelcolor"] = self._colors["text"]  # "w"
         plt.rcParams["axes.facecolor"] = self._colors["axes"]  # "#262626"
         plt.rcParams["axes.edgecolor"] = self._colors["axes"]  # "#F2F2F2"
-
+        if self._layout == LAYOUT_PORTRAIT:
+            plt.rcParams["axes.titley"] = 1.05
+        else:
+            plt.rcParams["axes.titley"] = 1.05
         # Legend
         plt.rcParams["legend.facecolor"] = self._colors["legend"]  # "#262626"
         plt.rcParams["legend.edgecolor"] = self._colors["legend"]  # "#262626"
@@ -375,7 +409,10 @@ class Plot:
         # Figure
         plt.rcParams["figure.facecolor"] = self._colors["figure"]  # "#1C1C1C"
         plt.rcParams["figure.edgecolor"] = self._colors["figure"]  # "#1C1C1C"
-        plt.rcParams["figure.figsize"] = (15, 10)
+        if self._layout == LAYOUT_PORTRAIT:
+            plt.rcParams["figure.figsize"] = (10, 15)
+        else:
+            plt.rcParams["figure.figsize"] = (15, 10)
         plt.rcParams["figure.dpi"] = 300
 
         # Other

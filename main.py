@@ -22,6 +22,7 @@ from uptonight.const import (
     DEFAULT_SIZE_CONSTRAINT_MAX,
     DEFAULT_SIZE_CONSTRAINT_MIN,
     DEFAULT_TARGETS,
+    LAYOUT_LANDSCAPE,
 )
 from uptonight.uptonight import UpTonight
 
@@ -80,6 +81,7 @@ def main():
         "text": "#FFFFFF",
     }
     features = {"horizon": False, "objects": True, "bodies": True, "comets": False, "alttime": False}
+    layout = LAYOUT_LANDSCAPE
     output_datestamp = False
     target = None
     prefix = ""
@@ -133,6 +135,8 @@ def main():
         output_dir = f"{app_directory}/{cfg['output_dir']}"
     if cfg is not None and "live_mode" in cfg.keys() and cfg["live_mode"] is not None:  # deprecated
         live = {"enabled": bool(cfg["live_mode"]), "interval": DEFAULT_LIVE_MODE_INTERVAL}
+    if cfg is not None and "layout" in cfg.keys() and cfg["layout"] is not None:
+        layout = cfg["layout"]
     if cfg is not None and "prefix" in cfg.keys() and cfg["prefix"] is not None:
         prefix = cfg["prefix"]
     if cfg is not None and "bucket_list" in cfg.keys() and cfg["bucket_list"] is not None:
@@ -266,6 +270,7 @@ def main():
                 type_filter=type_filter,
                 output_dir=output_dir,
                 live=live.get("enabled"),
+                layout=layout,
                 target=target,
                 prefix=prefix,
             )
@@ -296,6 +301,7 @@ def main():
             type_filter=type_filter,
             output_dir=output_dir,
             live=False,
+            layout=layout,
             target=target,
             prefix=prefix,
             mqtt=mqtt,

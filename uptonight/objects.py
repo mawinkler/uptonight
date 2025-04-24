@@ -195,6 +195,7 @@ class UpTonightObjects:
                                 s=0.1,
                             ),
                             north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                            ax=ax,
                         )
                         ax = plot_sky(
                             target,
@@ -207,6 +208,7 @@ class UpTonightObjects:
                                 s=30,
                             ),
                             north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                            ax=ax,
                         )
                         target_no = target_no + 1
 

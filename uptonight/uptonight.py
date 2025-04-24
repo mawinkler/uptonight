@@ -1,7 +1,7 @@
 """Uptonight - calculate the best objects for tonight"""
 
 import logging
-from datetime import datetime, UTC
+from datetime import UTC, datetime
 
 import matplotlib.pyplot as plt
 import pytz
@@ -19,18 +19,19 @@ from pytz import timezone
 
 from uptonight.bodies import UpTonightBodies
 from uptonight.comets import UpTonightComets
+from uptonight.const import (
+    FEATURE_BODIES,
+    FEATURE_COMETS,
+    FEATURE_HORIZON,
+    FEATURE_OBJECTS,
+    LAYOUT_PORTRAIT,
+)
 from uptonight.horizon import UpTonightHorizon
 from uptonight.objects import UpTonightObjects
 from uptonight.plot import Plot
 from uptonight.report import Report
 from uptonight.sunmoon import SunMoon
 from uptonight.targets import Targets
-from uptonight.const import (
-    FEATURE_OBJECTS,
-    FEATURE_BODIES,
-    FEATURE_COMETS,
-    FEATURE_HORIZON,
-)
 
 download_IERS_A()
 
@@ -118,6 +119,8 @@ class UpTonight:
     live             : bool (optional)
         When true function is called interval based to create a live view of the sky.
         Text report is not created.
+    layout           : string (optional)
+        Layout for the plot. Can either be "landscape" or "portrait". Defaults to "landscape"
 
     Returns
     -------
@@ -154,6 +157,7 @@ class UpTonight:
         type_filter="",
         output_dir=".",
         live=False,
+        layout="landscape",
         target=None,
         prefix="",
         mqtt=None,
@@ -193,6 +197,7 @@ class UpTonight:
         self._type_filter = type_filter
         self._output_dir = output_dir
         self._live = live
+        self._layout = layout
         self._target = target
         self._prefix = prefix
         if self._prefix != "" and not self._prefix.endswith("-"):
@@ -418,14 +423,22 @@ class UpTonight:
             self._observation_timeframe["current_day"],
             self._filter_ext,
             self._live,
+            self._layout,
             self._prefix,
         )
         ax = None
+        fig = plt.figure()  # Width=6 inches, Height=10 inches
+
+        # Create axes [left, bottom, width, height]
+        if self._layout == LAYOUT_PORTRAIT:
+            ax = fig.add_axes([0.0, 0.45, 1, 0.5], polar=True)
+        else:
+            ax = fig.add_axes([0.0, 0.04, 0.9, 0.885], polar=True)
 
         # Creating plot of the horizon
         if self._features.get(FEATURE_HORIZON):
             if horizon is not None:
-                ax = self._horizon.horizon(horizon)
+                ax = self._horizon.horizon(horizon, ax)
 
         # Purge old altitude time plots
         if not self._live and self._features.get("alttime"):

@@ -16,6 +16,7 @@ UpTonight calculates the best astrophotography targets for the night at a given 
   - [Comets](#comets)
   - [Altutide vs. Time Diagrams](#altutide-vs-time-diagrams)
   - [MQTT Support](#mqtt-support)
+  - [Example for the Home Assistant Lovelace configuration](#example-for-the-home-assistant-lovelace-configuration)
 - [How to Run](#how-to-run)
   - [Configuration](#configuration)
   - [Python Script](#python-script)
@@ -146,6 +147,7 @@ Altitude and Azimuth calculated for 09/07 21:33
   - [Comets](#comets)
   - [Altutide vs. Time Diagrams](#altutide-vs-time-diagrams)
   - [MQTT Support](#mqtt-support)
+  - [Example for the Home Assistant Lovelace configuration](#example-for-the-home-assistant-lovelace-configuration)
 - [How to Run](#how-to-run)
   - [Configuration](#configuration)
   - [Python Script](#python-script)
@@ -247,7 +249,7 @@ Report contents for the bodies:
 
 ### Comets
 
-The visual magnitude limit is defined in `uptonight/const.py`. The constraints set for deep sky objects are *not* applied to the bodies. Civil sunset and sunrise are used as the possible observation period.
+The visual magnitude limit is defined in `uptonight/const.py`. The constraints set for deep sky objects are *not* applied to the comets. Civil sunset and sunrise are used as the possible observation period.
 
 ```py
 # Default magnitude limit (comets)
@@ -291,7 +293,7 @@ mqtt:
   clientid: uptonight
 ```
 
-**Example for the Lovelace configuration**
+### Example for the Home Assistant Lovelace configuration
 
 Camera (Plot):
 
@@ -427,8 +429,13 @@ live_mode: false
 features:
   horizon: true
   objects: true
-  bodies: false
+  bodies: true
   comets: false
+  alttime: true
+
+# Layout of the plot.
+# Allowed values: landscape / portrait
+# layout: landscape
 
 location:
   longitude: 11d34m51.50s

@@ -6,6 +6,10 @@ FEATURE_BODIES = "bodies"
 FEATURE_COMETS = "comets"
 FEATURE_HORIZON = "horizon"
 
+# LAYOUT = "layout"
+LAYOUT_LANDSCAPE = "landscape"
+LAYOUT_PORTRAIT = "portrait"
+
 #
 # Constraints
 #

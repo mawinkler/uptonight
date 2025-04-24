@@ -202,6 +202,7 @@ class UpTonightComets:
                             s=0.5,
                         ),
                         north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                        ax=ax,
                     )
                     ax = plot_sky(
                         target,
@@ -214,6 +215,7 @@ class UpTonightComets:
                             s=30,
                         ),
                         north_to_east_ccw=self._constraints["north_to_east_ccw"],
+                        ax=ax,
                     )
 
                     uptonight_comets.add_row(
