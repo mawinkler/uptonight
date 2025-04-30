@@ -203,13 +203,28 @@ class UpTonightObjects:
                             self._observation_timeframe["observing_start_time"],
                             style_kwargs=dict(
                                 color=cmap(target_no / within_threshold * 0.75),
-                                label=target.name,
+                                label=f"{str(target_no + 1)}: {target.name}",
                                 marker=marker,
                                 s=30,
                             ),
                             north_to_east_ccw=self._constraints["north_to_east_ccw"],
                             ax=ax,
                         )
+
+                        altaz = self._observer.altaz(self._observation_timeframe["observing_start_time"], target)
+                        az = altaz.az.radian
+                        alt = 90 - altaz.alt.degree  # Convert altitude to radial distance for polar plot
+
+                        # Annotate the target with its number
+                        ax.annotate(
+                            str(target_no + 1),
+                            (az, alt),
+                            textcoords="offset points",
+                            xytext=(5, 5),
+                            ha="left",
+                            fontsize=6,
+                        )
+
                         target_no = target_no + 1
 
             # Always add Polaris

@@ -268,7 +268,8 @@ class Plot:
         figtext_y_inc_large = 0.020
         figtext_y_inc_small = 0.015
         if self._layout == LAYOUT_PORTRAIT:
-            figtext_y = 0.4  # + figtext_y_inc_large * 8 + figtext_y_inc_small * 5
+            # figtext_y = 0.4
+            figtext_y = 0.46
         else:
             figtext_y = 0.915
 
@@ -285,7 +286,8 @@ class Plot:
 
         if ax is not None:
             if self._layout == LAYOUT_PORTRAIT:
-                ax.legend(loc="upper left", bbox_to_anchor=(0.5, -0.075))
+                # ax.legend(loc="upper right", bbox_to_anchor=(0.5, -0.075))
+                ax.legend(loc="upper right", bbox_to_anchor=(1.15, 0.049))
             else:
                 ax.legend(loc="upper right", bbox_to_anchor=(1.4, 1))
 
