@@ -433,27 +433,7 @@ horizon:
 
 ***Bucket- and Done Lists:*** You can create a bucket list of objects which will allways show (if visible) ignoring the constraints. Similar is the done list, but in the opposite way. These targets are ignored. Use the `name` key for identification.
 
-***Custom Targets:*** If you want to add your own objects to the calculation. Example:
-
-```yaml
-custom_targets:
-  - name: NGC 4395
-    description: NGC 4395
-    type: Galaxy
-    constellation: Canes Venatici
-    size: 13
-    ra: 12 25 48
-    dec: +33 32 48
-    mag: 10.0
-  - name: NGC 3227
-    description: Galaxy duo NGC 3226
-    type: Galaxy
-    constellation: Leo
-    size: 4
-    ra: 10 23 30
-    dec: +19 51 54
-    mag: 10.4
-```
+***Custom Targets:*** If you want to add your own objects to the calculation. See the example above.
 
 ***Horizon:*** Optionally, you can plot a custom horizon for your location (white dotted line). For this, define the altitude / azimuth pairs as shown in the config example below. I did use this [digital angle meter](https://amzn.eu/d/gE778vk) from Amazon which I placed on my tripod with a compass next to it.
 
