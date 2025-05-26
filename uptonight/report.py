@@ -4,12 +4,8 @@ import queue
 import time
 from io import BytesIO
 
-from uptonight.const import FUNCTIONS
+from uptonight.const import DEVICE_TYPE_CAMERA, FEATURE_BODIES, FEATURE_COMETS, FEATURE_OBJECTS, FUNCTIONS
 from uptonight.mqtthandler import MQTTDeviceHandler, MQTTHandler
-
-from .const import (
-    DEVICE_TYPE_CAMERA,
-)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -77,6 +73,31 @@ class Report:
                 _LOGGER.error(f"MQTT Connection error: {cre}")
                 time.sleep(3)
 
+        if result_type == FEATURE_OBJECTS:
+            uptonight_result.remove_columns(
+                [
+                    "hmsdms",
+                    "right ascension",
+                    "declination",
+                    "altitude",
+                    "azimuth",
+                ]
+            )
+        if result_type == FEATURE_BODIES:
+            uptonight_result.remove_columns(
+                [
+                    "hmsdms",
+                    "right ascension",
+                    "declination",
+                ]
+            )
+        if result_type == FEATURE_COMETS:
+            uptonight_result.remove_columns(
+                [
+                    "hmsdms",
+                    "absolute magnitude",
+                ]
+            )
         for device in FUNCTIONS:
             mqtt_device = {
                 "device_type": device,

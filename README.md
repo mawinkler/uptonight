@@ -5,25 +5,27 @@
 [![astropy](https://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat)](http://www.astropy.org/)
 [![skyfield](https://img.shields.io/badge/powered%20by-Skyfield-orange.svg?style=flat)](https://rhodesmill.org/skyfield/)
 
-
 UpTonight calculates the best astrophotography targets for the night at a given location. The default target list for deep sky objects is a merge of Gary Imm's [My Top 100 Astrophotography Targets](https://www.astrobin.com/uc8p37/) and the top 200 from his incredible [Deep Sky Compendium](http://www.garyimm.com/compendium). In addition, UpTonight calculates the observability of the solar system bodies. Finally, it can calculate the brightest visible comets based on the [Minor Planet Center](https://www.minorplanetcenter.net/data) database.
 
 ***UpTonight calculates Deep Sky Objects, Solar System Bodies and Comets!***
+
+***One more thing:*** You can easily integrate UpTonight with Home Assistant via MQTT!
 
 - [How it Works](#how-it-works)
   - [Deep Sky Objects](#deep-sky-objects)
   - [Solar System Bodies](#solar-system-bodies)
   - [Comets](#comets)
-  - [Altutide vs. Time Diagrams](#altutide-vs-time-diagrams)
-  - [MQTT Support](#mqtt-support)
-  - [Example for the Home Assistant Lovelace configuration](#example-for-the-home-assistant-lovelace-configuration)
+  - [Altitude vs. Time Diagrams](#altitude-vs-time-diagrams)
 - [How to Run](#how-to-run)
-  - [Configuration](#configuration)
   - [Python Script](#python-script)
   - [Container](#container)
-- [Adding Custom Objects](#adding-custom-objects)
+- [Configuration](#configuration)
+  - [Environment variables](#environment-variables)
+  - [Config file](#config-file)
+  - [Lovelace Configuration](#lovelace-configuration)
+  - [Automatic Daily Calculations](#automatic-daily-calculations)
 
-UpTonight generates a plot of the sky in addition to a report on today's destinations. Below is the year 2024 starting with September for Munich:
+UpTonight generates a plot of the sky in addition to a report on today's destinations. Below is the year 2025 starting with June for Munich:
 
 ![alt text](images/uptonight-video.gif "202409")
 
@@ -50,94 +52,10 @@ Altitude and Azimuth calculated for 09/07 21:33
     IC 63             Gamma Cassiopeia Nebula (IC 63, size: 20', mag: 0.0)     00h59m29s +60d54m42s            14.9        60.9     43.7    41.7 09/08/2024 03:04:19                        Emission Nebula     Cassiopeia  20.0  0.0  1.0
   LBN 438              Reaching Hand Nebula (LBN 438, size: 30', mag: 0.0)     22h41m17s +37d45m36s           340.2        37.8     53.8    88.1 09/08/2024 00:46:06                        Molecular Cloud        Lacerta  30.0  0.0  1.0
   LBN 468                 Loop of Darkness (LBN 468, size: 120', mag: 0.0)     20h42m29s +67d51m00s           310.5        67.9     68.1    18.6 09/07/2024 22:46:45                        Molecular Cloud        Cepheus 120.0  0.0  1.0
-     OU 4 Squid Nebula or Flying Bat (SH2-129) (OU 4, size: 60', mag: 0.0)     21h11m47s +59d57m01s           318.0        59.9     70.9    41.8 09/07/2024 23:16:21                        Emission Nebula        Cepheus  60.0  0.0  1.0
- NGC 7635                    Bubble Nebula (NGC 7635, size: 15', mag: 0.0)     23h20m45s +61d12m42s           350.2        61.2     55.3    45.7 09/08/2024 01:25:26                        Emission Nebula     Cassiopeia  15.0  0.0  1.0
- NGC 7380                    Wizard Nebula (NGC 7380, size: 25', mag: 0.0)     22h47m21s +58d07m54s           341.8        58.1     59.3    51.9 09/08/2024 00:52:01                        Emission Nebula        Cepheus  25.0  0.0  1.0
- NGC 7331           Deer Lick Galaxy Group (NGC 7331, size: 25', mag: 9.5)     22h37m04s +34d24m57s           339.2        34.4     52.7    93.6 09/08/2024 00:41:54                                 Galaxy        Pegasus  25.0  9.5  1.0
- NGC 6992              Eastern Veil Nebula (NGC 6992, size: 60', mag: 0.0)     20h56m19s +31d44m36s           314.0        31.8     66.7   126.2 09/07/2024 23:01:18                      Supernova Remnant         Cygnus  60.0  0.0  1.0
- NGC 6979             Pickering`s Triangle (NGC 6979, size: 60', mag: 0.0)     20h50m28s +32d01m36s           312.5        32.0     67.7   128.2 09/07/2024 22:55:28                      Supernova Remnant         Cygnus  60.0  0.0  1.0
- NGC 6960    Western Veil or Witch's Broom (NGC 6960, size: 70', mag: 0.0)     20h45m58s +30d35m42s           311.5        30.6     67.1   132.5 09/07/2024 22:50:59                      Supernova Remnant         Cygnus  70.0  0.0  1.0
- NGC 6946                 Fireworks Galaxy (NGC 6946, size: 11', mag: 9.0)     20h34m52s +60d09m14s           308.8        60.2     74.6    32.2 09/07/2024 22:39:26                                 Galaxy         Cygnus  11.0  9.0  1.0
- NGC 6888                 Crescent Nebula (NGC 6888, size: 20', mag: 10.0)     20h12m06s +38d21m17s           303.0        38.3     77.4   136.5 09/07/2024 22:17:06                      Wolf-Rayet Nebula         Cygnus  20.0 10.0  1.0
- LDN 1251               Angler Fish Nebula (LDN 1251, size: 90', mag: 0.0)     22h36m03s +75d15m35s           339.0        75.2     56.7    19.6 09/08/2024 00:40:18                            Dark Nebula        Cepheus  90.0  0.0  1.0
- NGC 6543                 Cat's Eye Nebula (NGC 6543, size: 8', mag: 11.3)     17h58m33s +66d37m59s           269.8        66.6     68.1   335.8                                           Planetary Nebula          Draco   8.0 11.3  1.0
-     M 33                    Triangulum Galaxy (M 33, size: 70', mag: 5.7)     01h33m51s +30d39m37s            23.5        30.7     21.5    67.3 09/08/2024 03:38:28                                 Galaxy            Tri  70.0  5.7  1.0
-     M 81                        Bode's Galaxy (M 81, size: 27', mag: 6.9)     09h55m33s +69d03m56s           148.9        69.1     30.3   345.5                      09/08/2024 00:01:18            Galaxy     Ursa Major  27.0  6.9  1.0
-     M 82                         Cigar Galaxy (M 82, size: 10', mag: 8.4)     09h55m53s +69d40m50s           149.0        69.7     30.8   345.8                      09/08/2024 00:01:40            Galaxy     Ursa Major  10.0  8.4  1.0
-  NGC 457    ET or Owl or Dragonfly Cluster (NGC 457, size: 13', mag: 6.4)     01h19m35s +58d17m12s            19.9        58.3     40.3    43.3 09/08/2024 03:24:24                           Open Cluster     Cassiopeia  13.0  6.4  1.0
- NGC 2146                         NGC 2146 (NGC 2146, size: 6', mag: 10.6)     06h18m38s +78d21m22s            94.7        78.4     36.9     4.1                                                     Galaxy Camelopardalis   6.0 10.6  1.0
-  Sh2-106                   Hourglass Nebula (Sh2-106, size: 3', mag: 0.0)     20h27m27s +37d22m49s           306.8        37.4     74.8   129.1 09/07/2024 22:32:25                        Emission Nebula         Cygnus   3.0  0.0  1.0
- NGC 7822                           Ced214 (NGC 7822, size: 60', mag: 0.0)     00h03m36s +67d09m00s             0.9        67.1     51.2    35.1 09/08/2024 02:08:22                        Emission Nebula        Cepheus  60.0  0.0  1.0
-  Sh2-157               Lobster Claw Nebula (Sh2-157, size: 70', mag: 0.0)     23h16m04s +60d02m06s           349.0        60.0     55.8    47.9 09/08/2024 01:20:45                      Wolf-Rayet Nebula     Cassiopeia  70.0  0.0  1.0
-   WR 134                             WR 134 (WR 134, size: 25', mag: 8.1)     20h10m00s +36d11m00s           302.5        36.2     75.8   143.1 09/07/2024 22:15:01                      Wolf-Rayet Nebula         Cygnus  25.0  8.1  1.0
-  vdB 141                     Ghost Nebula (vdB 141, size: 20', mag: 10.8)     21h16m27s +68d15m52s           319.0        68.2     65.8    24.0 09/07/2024 23:20:45                      Reflection Nebula        Cepheus  20.0 10.8  1.0
-  vdB 152                       Wolf's Cave (vdB 152, size: 60', mag: 9.3)     22h14m02s +69d56m00s           333.5        69.9     60.6    27.3 09/08/2024 00:18:24                      Reflection Nebula        Cepheus  60.0  9.3  1.0
-  Arp 319                 Stephan's Quintet (Arp 319, size: 5', mag: 13.6)     22h36m04s +33d56m00s           339.0        33.9     52.5    94.4 09/08/2024 00:40:54                           Galaxy Group        Pegasus   5.0 13.6  1.0
-  Sh2-200                              HDW 2 (Sh2-200, size: 6', mag: 0.0)     03h11m01s +62d47m45s            47.8        62.8     32.0    28.9                                           Planetary Nebula     Cassiopeia   6.0  0.0  1.0
- Abell 85           CTB 1 or Garlic Nebula (Abell 85, size: 35', mag: 0.0)     23h59m54s +62d26m51s           360.0        62.4     50.9    42.6 09/08/2024 02:04:39                      Supernova Remnant     Cassiopeia  35.0  0.0  1.0
-  Sh2-188                    Dolphin Nebula (Sh2-188, size: 9', mag: 17.4)     01h30m33s +58d24m51s            22.6        58.4     39.1    42.2 09/08/2024 03:35:23                       Planetary Nebula     Cassiopeia   9.0 17.4  1.0
-  Sh2-174            Valentine Rose Nebula (Sh2-174, size: 10', mag: 14.7)     23h47m08s +80d49m22s           356.8        80.8     51.3    13.1 09/08/2024 01:51:46                       Planetary Nebula        Cepheus  10.0 14.7  1.0
-  Sh2-158             Northern Lagoon Nebula (Sh2-158, size: 8', mag: 0.0)     23h13m37s +61d30m00s           348.5        61.5     56.2    45.3 09/08/2024 01:18:17                        Emission Nebula        Cepheus   8.0  0.0  1.0
-  Sh2-173       Phantom of the Opera Nebula (Sh2-173, size: 25', mag: 0.0)     00h21m16s +61d43m30s             5.3        61.7     48.3    42.8 09/08/2024 02:26:02                        Emission Nebula     Cassiopeia  25.0  0.0  1.0
-  Sh2-114              Flying Dragon Nebula (Sh2-114, size: 60', mag: 0.0)     21h21m12s +38d42m00s           320.2        38.7     67.6   104.1 09/07/2024 23:26:06                        Emission Nebula         Cygnus  60.0  0.0  0.9
- NGC 1491          Fossil Footprint Nebula (NGC 1491, size: 12', mag: 0.0)     04h03m14s +51d18m57s            60.8        51.3     18.7    30.8                                            Emission Nebula        Perseus  12.0  0.0  0.9
-     M 31                    Andromeda Galaxy (M 31, size: 189', mag: 3.4)     00h42m44s +41d16m08s            10.7        41.3     36.2    65.7 09/08/2024 02:47:27                                 Galaxy      Andromeda 189.0  3.4  0.9
-  Sh2-132                       Lion Nebula (Sh2-132, size: 60', mag: 0.0)     22h19m09s +56d04m45s           334.8        56.1     63.0    56.4 09/08/2024 00:23:50                      Wolf-Rayet Nebula        Cepheus  60.0  0.0  0.9
-Abell 426         Perseus Galaxy Cluster (Abell 426, size: 150', mag: 0.0)     03h18m36s +41d30m54s            49.7        41.5     15.2    43.2                                             Galaxy Cluster        Perseus 150.0  0.0  0.9
-     M 27        Dumbbell or Apple Core Nebula (M 27, size: 6', mag: 14.1)     19h59m36s +22d43m15s           300.0        22.7     63.9   163.2 09/07/2024 22:04:47                       Planetary Nebula      Vulpecula   6.0 14.1  0.9
-  NGC 891               Outer Limits Galaxy (NGC 891, size: 14', mag: 9.9)     02h22m33s +42d20m54s            35.6        42.3     22.7    50.9 09/08/2024 04:27:13                                 Galaxy      Andromeda  14.0  9.9  0.9
-  IC 1396                  Elephant's Trunk (IC 1396, size: 60', mag: 0.0)     21h38m58s +57d29m21s           324.8        57.5     68.4    51.8 09/07/2024 23:43:36                            Dark Nebula        Cepheus  60.0  0.0  0.9
-  NGC 281                     PacMan Nebula (NGC 281, size: 35', mag: 0.0)     00h52m54s +56d37m29s            13.2        56.6     42.7    47.5 09/08/2024 02:57:42                        Emission Nebula     Cassiopeia  35.0  0.0  0.9
-  NGC 869                Double Cluster Duo (NGC 869, size: 60', mag: 0.0)     02h19m00s +57d07m42s            34.8        57.1     33.1    39.0 09/08/2024 04:23:50                           Open Cluster        Perseus  60.0  0.0  0.9
-  LBN 105                            SH2-73 (LBN 105, size: 75', mag: 0.0) 16h11m07.6s +21d52m26.4s           242.8        21.9     43.0   253.9                                            Molecular Cloud       Hercules  75.0  0.0  0.3
-   IC 434         Horsehead and Flame Nebula (IC 434, size: 30', mag: 0.0)     05h41m00s -02d27m12s            85.2        -2.5    -38.8    35.2                                                Dark Nebula          Orion  30.0  0.0  0.1
- NGC 2359     Thor's Helmet or Duck Nebula (NGC 2359, size: 10', mag: 0.0)     07h18m30s -13d13m36s           109.6       -13.2    -55.0     4.0                                          Wolf-Rayet Nebula    Canis Major  10.0  0.0  0.0
+...
 ```
 
-Example report for the solar system bodies:
-
-```txt
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-UpTonight
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Observatory: Backyard
- - Location: 11.58 deg, 48.14 deg, 519.00 m
-
-Observation timespan: 09/07 21:33 to 09/08 04:50 in astronomical darkness
-Moon illumination: 19%
-Contraints: Altitude constraint minimum: 20°, maximum: 80°, Airmass constraint: 2.92, Moon separation constraint: 19°, Size constraint minimum: 3', maximum: 300'
-Altitude and Azimuth calculated for 09/07 21:33
-
-target name                                 hmsdms right ascension declination max altitude visual magnitude azimuth   max altitude time    meridian transit antimeridian transit   type foto
------------ -------------------------------------- --------------- ----------- ------------ ---------------- ------- ------------------- ------------------- -------------------- ------ ----
-    Neptune 23h56m42.08120164s -01d47m59.87121249s           359.2        -1.8         40.2              7.7   180.0 09/08/2024 02:01:25 09/08/2024 02:01:25                      Planet  1.0
-     Saturn 23h10m44.53934092s -07d39m44.90930519s           347.8        -7.7         34.3              0.6   180.0 09/08/2024 01:15:33 09/08/2024 01:15:33                      Planet  1.0
-     Uranus 03h38m39.35651794s +19d12m07.89874471s            54.7        19.2         59.2              5.7   155.1 09/08/2024 04:50:14                                          Planet  0.9
-    Jupiter 05h14m17.14417165s +22d18m54.46752709s            78.6        22.3         50.8             -2.3   117.9 09/08/2024 04:50:14                                          Planet  0.7
-       Mars 06h07m07.20314359s +23d27m53.92440815s            91.8        23.5         43.4              0.7   103.6 09/08/2024 04:50:14                                          Planet  0.6
-```
-
-And finally for the comets:
-
-```txt
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-UpTonight
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Observatory: Backyard
- - Location: 11.58 deg, 48.14 deg, 519.00 m
-
-Observation timespan: 09/07 21:33 to 09/08 04:50 in astronomical darkness
-Moon illumination: 19%
-Contraints: Altitude constraint minimum: 20°, maximum: 80°, Airmass constraint: 2.92, Moon separation constraint: 19°, Size constraint minimum: 3', maximum: 300'
-Altitude and Azimuth calculated for 09/07 21:33
-
-      target name distance earth au distance sun au absolute magnitude visual magnitude altitude azimuth           rise time            set time
------------------ ----------------- --------------- ------------------ ---------------- -------- ------- ------------------- -------------------
-       3D-A/Biela             0.843           1.524              11.00            10.80     7.86    50.6 2024-09-07 18:20:43 2024-09-08 12:16:48
-18D/Perrine-Mrkos             1.357           1.597               9.00            11.34    -31.4    34.9 2024-09-07 23:11:54 2024-09-08 11:57:59
-```
+UpTonight creates similar reports for the solar system bodies and comets.
 
 ## Table of Content<!-- omit in toc -->
 
@@ -145,14 +63,15 @@ Altitude and Azimuth calculated for 09/07 21:33
   - [Deep Sky Objects](#deep-sky-objects)
   - [Solar System Bodies](#solar-system-bodies)
   - [Comets](#comets)
-  - [Altutide vs. Time Diagrams](#altutide-vs-time-diagrams)
-  - [MQTT Support](#mqtt-support)
-  - [Example for the Home Assistant Lovelace configuration](#example-for-the-home-assistant-lovelace-configuration)
+  - [Altitude vs. Time Diagrams](#altitude-vs-time-diagrams)
 - [How to Run](#how-to-run)
-  - [Configuration](#configuration)
   - [Python Script](#python-script)
   - [Container](#container)
-- [Adding Custom Objects](#adding-custom-objects)
+- [Configuration](#configuration)
+  - [Environment variables](#environment-variables)
+  - [Config file](#config-file)
+  - [Lovelace Configuration](#lovelace-configuration)
+  - [Automatic Daily Calculations](#automatic-daily-calculations)
 
 ## How it Works
 
@@ -174,7 +93,7 @@ Logically, the calculation is done as follows:
    3. Filter for brightest and observable comets.
 7. Create plot and reports.
 
-The plot contains all objects within the given constraints during your possible observation period. The distance between the points represents 15 minutes of time.
+The plot contains all objects within the given constraints during your possible observation period.
 
 ### Deep Sky Objects
 
@@ -272,286 +191,15 @@ List | Description | Objects
 ---- | ----------- | -------
 CometsEls | The up to date comet database maintained by the [Minor Planet Center](https://www.minorplanetcenter.net/data). | 1168 (as of 09/18/24)
 
-### Altutide vs. Time Diagrams
+### Altitude vs. Time Diagrams
 
 If you enable the UpTonight feature `alttime` in your config file an altitude vs time diagram is created for each observable deep sky object, body, and comet. This is only supported if *not* running in live mode.
 
 ![alt text](images/uptonight-alttime-ic-63.png "IC 63")
 
-### MQTT Support
-
-UpTonight can now send the results and the plot to an MQTT broker. If you're using Home Assistant it does support auto configuration of the created UpTonight Sensor and Camera.
-
-**Configuration**
-
-```yaml
-mqtt:
-  host: 192.168.1.100
-  port: 1883
-  user:
-  password:
-  clientid: uptonight
-```
-
-### Example for the Home Assistant Lovelace configuration
-
-Camera (Plot):
-
-```yaml
-show_state: false
-show_name: false
-camera_view: live
-type: picture-entity
-entity: camera.uptonight_backyard_objects_garyimm_plot
-camera_image: camera.uptonight_backyard_objects_garyimm_plot
-aspect_ratio: 1.5:1
-tap_action:
-  action: fire-dom-event
-  browser_mod:
-    service: browser_mod.popup
-    data:
-      title: GaryImm
-      size: wide
-      content:
-        type: picture-entity
-        entity: camera.uptonight_backyard_objects_garyimm_plot
-        camera_image: camera.uptonight_backyard_objects_garyimm_plot
-        aspect_ratio: 1.5:1
-        show_state: true
-        show_name: false
-        camera_view: live
-        name: Live
-```
-
-Sensor (Report):
-
-```yaml
-type: markdown
-content: >-
-  <h2>
-    <ha-icon icon='mdi:creation-outline'></ha-icon>
-    UpTonight Bodies
-  </h2>
-  <hr>
-  {%- for item in state_attr("sensor.uptonight_backyard_bodies_garyimm",
-  "bodies") %}
-  {%- if loop.index <= 20 %}
-  <table><tr>
-  {{ loop.index }}. {{ item["target name"] }}, Alt: {{ item["max altitude"] |
-  round}}°, Az: {{ item.azimuth | round }}° at {{ item["max altitude time"]  }},
-  Mag: {{ item["visual magnitude"] | round(1) }}
-  {%- endif %}
-  {%- endfor %}
-```
-
-Check the other sensor attributes as well.
-
 ## How to Run
 
 There are two ways to run UpTonight. As a regular Python script or as a container.
-
-### Configuration
-
-Configuration is done via a yaml-based configuration file and/or environment variables.
-
-> ***Note:*** An environment variable overrides the config file setting.
-
-> ***Note:*** All settings are optional. If not set, defaults will be used. The only mandatory settings are the longitude and latitude of your location. Set them either via environment variables or in the config file.
-
-Examples of minimal configuration:
-
-```sh
-export LONGITUDE="11d34m51.50s"
-export LATITUDE="48d08m10.77s"
-```
-
-or in `config.yaml`
-
-```yaml
-location:
-  longitude: 11d34m51.50s
-  latitude: 48d08m10.77s
-```
-
-***Environment variables***
-
-Variable | Unit | Description | Example | Optional | Default
--------- | ---- | ----------- | ------- | -------- | -------
-LONGITUDE | dms | Longitude in degrees minutes seconds | 11d34m51.50s
-LATITUDE | dms | Latitude in degrees minutes seconds | 48d08m10.77s
-ELEVATION | m | Height above sea level in meters | 519
-TIMEZONE | tz | TZ timezone | "Europe/Berlin"
-PRESSURE | bar | The ambient pressure | 1.022 | yes | 0
-RELATIVE_HUMIDITY | percentage | The ambient relative humidity | 0.8| yes | 0
-TEMPERATURE | degrees centigrade | The ambient temperature | 12| yes | 0
-OBSERVATION_DATE | %m/$d/%y | Day of observation | 10/01/23 | yes | *Current day*
-TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Messier) | "targets/Messier" | yes | "targets/GaryImm"
-TYPE_FILTER | string | Filter on an object type | Nebula | yes | ""
-OUTPUT_DIR | string | Output directory for reports and the plot | "/tmp" | yes | "."
-LIVE_MODE | *bool* | Run in live mode, generate plot every five minutes.<br>Bash doesn't support boolean variables, but the code checks for the word 'true'. | true | yes | false
-TARGET | string | Calculate only the named deep sky object. This must be in the selected target list or in your custom targets. | "NGC 2359" | yes | not set
-
-UpTonight supports a ***live*** mode as well. Contrary to the normal mode where the calculations are done and the output is generated for the upcoming night you'll get a live plot. To enable this mode set `LIVE_MODE=true`. In this mode, UpTonight will create a file called `uptonight-liveplot.png` every five minutes but no `txt`, or `json`-reports.
-
-You can create a bucket list of objects which will allways show (if visible) ignoring the constraints. Similar is the done list, but in the opposite way. These targets are ignored.
-
-***Config file `config.yaml`***
-
-All keys besides `location.longitude` and `location.latitude` are optional.
-
-Optionally, you can plot a custom horizon for your location (white dotted line). For this, define the altitude / azimuth pairs as shown in the config example below.
-
-![alt text](images/uptonight-plot-horizon.png "09/07/24")
-
-Example:
-
-```yaml
-observation_date: # 01/27/25
-target_list: targets/GaryImm
-type_filter: # e.g. Galaxy, Nebula 
-output_dir: out
-live_mode: false
-
-# An optional prefix for the file names.
-# Example: uptonight-PREFIX-plot.png
-# prefix: PREFIX
-
-# Configure your mqtt broker for the reports and the plot.
-# Useful for an easy Home Assistant integration.
-# mqtt:
-#   host: 192.168.1.100
-#   port: 1883
-#   user:
-#   password:
-#   clientid: uptonight
-
-# Enable or disable festures
-features:
-  horizon: true
-  objects: true
-  bodies: true
-  comets: false
-  alttime: true
-
-# Layout of the plot.
-# Allowed values: landscape / portrait
-# layout: landscape
-
-location:
-  longitude: 11d34m51.50s
-  latitude: 48d08m10.77s
-  elevation: 519
-  timezone: Europe/Berlin
-
-environment:
-  pressure: 1.022
-  temperature: 18
-  relative_humidity: 0.7
-
-constraints:
-  altitude_constraint_min: 30  # in deg above horizon
-  altitude_constraint_max: 80  # in deg above horizon
-  airmass_constraint: 2  # 30° to 90°, 2 = 1/cos(60) 
-  size_constraint_min: 10  # in arc minutes
-  size_constraint_max: 300  # in arc minutes
-
-  moon_separation_min: 45  # in degrees
-
-  # If set to true, moon_separation_min is derived from the moon illumination
-  # Percentage and overwrites moon_separation_min. 1% corresponds 1°.
-  moon_separation_use_illumination: true
-
-  # Object needs to be within the constraints for at least 50% of darkness
-  fraction_of_time_observable_threshold: 0.5
-
-  # Maximum number of targets to calculate
-  max_number_within_threshold: 60
-
-  # true : Meaning that azimuth is shown increasing counter-clockwise (ccw), or with north
-  #        at top, east at left, etc.
-  # false: Show azimuth increasing clockwise (cw).
-  north_to_east_ccw: false
-
-output_datestamp: false
-
-# Personal bucket list to always include
-bucket_list:
-  - IC 434
-  - NGC 2359
-  - M 16
-
-done_list:
-  - IC 1795
-  - LBN 535
-
-custom_targets:
-  - name: NGC 4395
-    description: NGC 4395
-    type: Galaxy
-    constellation: Canes Venatici
-    size: 13
-    ra: 12 25 48
-    dec: +33 32 48
-    mag: 10.0
-  - name: NGC 3227
-    description: Galaxy duo NGC 3226
-    type: Galaxy
-    constellation: Leo
-    size: 4
-    ra: 10 23 30
-    dec: +19 51 54
-    mag: 10.4
-  - name: LBN 105
-    description: SH2-73
-    type: Molecular Cloud
-    constellation: Hercules
-    size: 75
-    ra: 16 11 7.6
-    dec: +21 52 26.4
-    mag: 0
-
-# Horizon
-horizon:
-  # Step size in degrees
-  step_size: 5
-  # Anchor points of the horizon
-  # Should start with an azimuth of 0 and end with 360 degrees
-  anchor_points:
-    - alt: 20
-      az: 0
-    - alt: 20
-      az: 52
-    - alt: 30
-      az: 60
-    - alt: 49
-      az: 90
-    - alt: 52
-      az: 135
-    - alt: 21
-      az: 150
-    - alt: 16
-      az: 176
-    - alt: 14
-      az: 222
-    - alt: 34
-      az: 241
-    - alt: 20
-      az: 267
-    - alt: 28
-      az: 330
-    - alt: 31
-      az: 343
-    - alt: 20
-      az: 360
-```
-
-You can enable or disable the following UpTonights features:
-
-- `horizon`: Plot the horizon baesd on `horizon.anchor_points`.
-- `objects`: Calculate and plot deep sky objects based on the chosen target list.
-- `bodies`: Calculate and plot solar sysstem bodies.
-- `comets`: Calculate and plot comets.
-- `alttime`: Calculate and plot altitude vs time diagrams for observable deep sky objects.
 
 ### Python Script
 
@@ -604,7 +252,7 @@ The plot and the report will be located in the `./out`-diretory.
 
 > ***Note:*** Running UpTonight as a container is my preferred way of using it.
 
-Alternative example for docker-compose, here writing to the `www`-directory of Home Assistant and using my published image on Docker Hub:
+***Docer Compose:*** Alternative example for docker-compose, here writing to the `www`-directory of Home Assistant and using my published image on Docker Hub:
 
 ```yaml
 services:
@@ -616,15 +264,11 @@ services:
       - LATITUDE=48d08m10.77s
       - ELEVATION=519
       - TIMEZONE=Europe/Berlin
-      - PRESSURE=1.022
-      - TEMPERATURE=18
-      - RELATIVE_HUMIDITY=0.7
-      # - TYPE_FILTER=Nebula
     volumes:
       - /home/smarthome/homeassistant/www:/app/out
 ```
 
-Alternative using the `config.yaml`:
+Alternative using the `config.yaml` (see below):
 
 ```yaml
 services:
@@ -636,24 +280,200 @@ services:
       - /home/smarthome/homeassistant/www:/app/out
 ```
 
-Simultaneously create live plots using the same config file:
+## Configuration
 
-```yaml
-...
-  uptonightlive:
-    image: mawinkler/uptonight:latest
-    container_name: uptonightlive
-    environment:
-      - LIVE_MODE=true
-    volumes:
-      - /home/smarthome/uptonight/config.yaml:/app/config.yaml
-      - /home/smarthome/homeassistant/www:/app/out
-    restart: always
+Configuration is done via a yaml-based configuration file and/or environment variables.
+
+> ***Note:*** An environment variable overrides the config file setting.
+
+> ***Note:*** All settings are optional. If not set, defaults will be used. The only mandatory settings are the longitude and latitude of your location. Set them either via environment variables or in the config file.
+
+Examples of minimal configuration:
+
+```sh
+export LONGITUDE="11d34m51.50s"
+export LATITUDE="48d08m10.77s"
 ```
 
-## Adding Custom Objects
+### Environment variables
 
-If you want to add your own objects to the calculation, just add them to the `config.yaml`. Example:
+Variable | Unit | Description | Example | Optional | Default
+-------- | ---- | ----------- | ------- | -------- | -------
+LONGITUDE | dms | Longitude in degrees minutes seconds | 11d34m51.50s
+LATITUDE | dms | Latitude in degrees minutes seconds | 48d08m10.77s
+ELEVATION | m | Height above sea level in meters | 519
+TIMEZONE | tz | TZ timezone | "Europe/Berlin"
+PRESSURE | bar | The ambient pressure | 1.022 | yes | 0
+RELATIVE_HUMIDITY | percentage | The ambient relative humidity | 0.8| yes | 0
+TEMPERATURE | degrees centigrade | The ambient temperature | 12| yes | 0
+OBSERVATION_DATE | %m/$d/%y | Day of observation | 10/01/23 | yes | *Current day*
+TARGET_LIST | string | Any of the provided target lists (GaryImm, Hershel400, Messier) | "targets/Messier" | yes | "targets/GaryImm"
+TYPE_FILTER | string | Filter on an object type | Nebula | yes | ""
+OUTPUT_DIR | string | Output directory for reports and the plot | "/tmp" | yes | "."
+LIVE_MODE | *bool* | Run in live mode, generate plot every five minutes.<br>Bash doesn't support boolean variables, but the code checks for the word 'true'. | true | yes | false
+TARGET | string | Calculate only the named deep sky object. This must be in the selected target list or in your custom targets. | "NGC 2359" | yes | not set
+
+UpTonight supports a ***live*** mode as well. Contrary to the normal mode where the calculations are done and the output is generated for the upcoming night you'll get a live plot. To enable this mode set `LIVE_MODE=true`. In this mode, UpTonight will create a file called `uptonight-liveplot.png` every five minutes but no `txt`, or `json`-reports.
+
+### Config file
+
+All keys besides `location.longitude` and `location.latitude` are optional.
+
+```yaml
+observation_date: # Date in the format MM/DD/YY (e.g. 01/27/25)
+target_list: targets/GaryImm
+type_filter: # e.g. Galaxy, Nebula 
+output_dir: out
+live_mode: false
+
+# An optional prefix for the file names.
+# Example: uptonight-PREFIX-plot.png
+# prefix: PREFIX
+
+# Include a datestamp in the output file names.
+# output_datestamp: false
+
+# Configure your mqtt broker for the reports and the plot.
+# Useful for an easy Home Assistant integration (see below).
+# mqtt:
+#   host: 192.168.1.100
+#   port: 1883
+#   user:
+#   password:
+#   clientid: uptonight
+
+# Enable or disable festures
+features:
+  # Plot the horizon baesd on `horizon.anchor_points`.
+  horizon: true  
+  # Calculate and plot deep sky objects based on the chosen target list.
+  objects: true  
+  # Calculate and plot solar sysstem bodies.
+  bodies: true  
+  # Calculate and plot comets.
+  comets: true  
+  # Calculate and plot altitude vs time diagrams.
+  alttime: true  
+
+# Layout of the plot.
+# Allowed values: landscape / portrait
+# layout: landscape
+
+# Set your location here. Longitude and latitude in DMS, elevation in metres.
+location:
+  longitude: 11d34m51.50s
+  latitude: 48d08m10.77s
+  elevation: 519
+  timezone: Europe/Berlin
+
+# Environmental conditions.
+environment:
+  pressure: 1.022
+  temperature: 18
+  relative_humidity: 0.7
+
+constraints:
+  altitude_constraint_min: 30  # in deg above horizon
+  altitude_constraint_max: 80  # in deg above horizon
+  airmass_constraint: 2  # 30° to 90°, 2 = 1/cos(60) 
+  size_constraint_min: 10  # in arc minutes
+  size_constraint_max: 300  # in arc minutes
+
+  # Fixed minimum moon separation in degrees
+  moon_separation_min: 45  # in degrees
+
+  # If set to true, moon_separation_min is derived from the moon illumination
+  # Percentage and overwrites moon_separation_min. 1% corresponds 1°.
+  moon_separation_use_illumination: true
+
+  # Object needs to be within the constraints for at least 50% of darkness
+  fraction_of_time_observable_threshold: 0.5
+
+  # Maximum number of targets to calculate
+  max_number_within_threshold: 60
+
+  # true : Meaning that azimuth is shown increasing counter-clockwise (ccw), or with north
+  #        at top, east at left, etc.
+  # false: Show azimuth increasing clockwise (cw).
+  north_to_east_ccw: false
+
+# Personal bucket list to always include. Use the name attribute for identification
+bucket_list:
+  - IC 434
+  - NGC 2359
+  - M 16
+
+done_list:
+  - IC 1795
+  - LBN 535
+
+# Custom Targets (see below)
+custom_targets:
+  - name: NGC 4395
+    description: NGC 4395
+    type: Galaxy
+    constellation: Canes Venatici
+    size: 13
+    ra: 12 25 48
+    dec: +33 32 48
+    mag: 10.0
+  - name: NGC 3227
+    description: Galaxy duo NGC 3226
+    type: Galaxy
+    constellation: Leo
+    size: 4
+    ra: 10 23 30
+    dec: +19 51 54
+    mag: 10.4
+  - name: LBN 105
+    description: SH2-73
+    type: Molecular Cloud
+    constellation: Hercules
+    size: 75
+    ra: 16 11 7.6
+    dec: +21 52 26.4
+    mag: 0
+
+# Horizon (see below)
+horizon:
+  # Step size in degrees
+  step_size: 5
+  # Anchor points of the horizon
+  # Should start with an azimuth of 0 and end with 360 degrees
+  anchor_points:
+    - alt: 20
+      az: 0
+    - alt: 20
+      az: 52
+    - alt: 30
+      az: 60
+    - alt: 49
+      az: 90
+    - alt: 52
+      az: 135
+    - alt: 21
+      az: 150
+    - alt: 16
+      az: 176
+    - alt: 14
+      az: 222
+    - alt: 34
+      az: 241
+    - alt: 20
+      az: 267
+    - alt: 28
+      az: 330
+    - alt: 31
+      az: 343
+    - alt: 20
+      az: 360
+```
+
+***MQTT:*** UpTonight can send the results and the plot to an MQTT broker. This covers everything except Altitude vs. Time diagrams. If you're using Home Assistant it does support auto configuration of the created UpTonight Sensor and Camera. Since the sensor attribute size is limited by Home Assistant, some attributes are removed before sending the data to the broker. Additionally, limit the total number of deep-sky objects to around 45, including those on your bucket list.
+
+***Bucket- and Done Lists:*** You can create a bucket list of objects which will allways show (if visible) ignoring the constraints. Similar is the done list, but in the opposite way. These targets are ignored. Use the `name` key for identification.
+
+***Custom Targets:*** If you want to add your own objects to the calculation. Example:
 
 ```yaml
 custom_targets:
@@ -674,3 +494,167 @@ custom_targets:
     dec: +19 51 54
     mag: 10.4
 ```
+
+***Horizon:*** Optionally, you can plot a custom horizon for your location (white dotted line). For this, define the altitude / azimuth pairs as shown in the config example below. I did use this [digital angle meter](https://amzn.eu/d/gE778vk) from Amazon which I placed on my tripod with a compass next to it.
+
+![alt text](images/uptonight-plot-horizon.png "09/07/24")
+
+### Lovelace Configuration
+
+Below is my current Lovelace configuration to achieve this:
+
+![alt text](images/uptonight-lovelace.png "Lovelace")
+
+I'm currently doing the calculation based on the two target lists *GaryImm* and *Herschel400*.
+
+Camera (Plot) for GaryImm:
+
+```yaml
+show_state: false
+show_name: false
+camera_view: live
+type: picture-entity
+entity: camera.uptonight_backyard_objects_garyimm_plot
+camera_image: camera.uptonight_backyard_objects_garyimm_plot
+aspect_ratio: 1.5:1
+tap_action:
+  action: fire-dom-event
+  browser_mod:
+    service: browser_mod.popup
+    data:
+      title: GaryImm
+      size: wide
+      content:
+        type: picture-entity
+        entity: camera.uptonight_backyard_objects_garyimm_plot
+        camera_image: camera.uptonight_backyard_objects_garyimm_plot
+        aspect_ratio: 1.5:1
+        show_state: true
+        show_name: false
+        camera_view: live
+```
+
+Sensor (Report):
+
+```yaml
+type: markdown
+content: >
+  {%- if states('sensor.uptonight_backyard_objects_garyimm')|is_number %}
+  {%- for item in state_attr("sensor.uptonight_backyard_objects_garyimm",
+  "objects") %}
+  <table><tr>
+  {%- set astrobin = '%22' + item.id | regex_replace('\s', '%20') + '%22' %}
+  {%- set alttime = item.id | regex_replace('\s', '-') | lower %}
+  {{ loop.index }}: <a href="https://astrobin.com/search/?q={{ astrobin }}">{{
+  item["target name"] }}</a><br>{{ item.type }} in {{ item.constellation }},
+  <a href="https://astrobin.com/search/?q={{ astrobin
+  }}&d=i&subject=&telescope=&camera=&integration_time_min=0&integration_time_max=16&telescope_focal_length_min=600&telescope_focal_length_max=850&color_or_mono=C&telescope_diameter_min=100&telescope_diameter_max=130&sort=-likes">Esprit</a>,
+  <a href="http://192.168.1.129:8123/local/uptonight-garyimm/uptonight-alttime-{{
+  alttime }}.png" target="_blank" rel="noopener noreferrer">Graph</a>
+  </tr></table>
+  {%- endfor %}
+  {%- else %}
+  Waiting for UpTonight
+  {%- endif %}
+```
+
+Below a more advanced variant (which I am using) with support for Dropdown List Helpers:
+
+```yaml
+type: markdown
+content: >
+  {%- if states('sensor.uptonight_backyard_objects_garyimm')|is_number %}
+  {%- for item in state_attr("sensor.uptonight_backyard_objects_garyimm",
+  "objects") %}
+  {%- if item.size >= states('input_select.uptonight_filter_min_size')|float %}
+  {%- if states('input_select.uptonight_filter_type') == "All" or item.type is
+  search(states('input_select.uptonight_filter_type'), ignorecase=True) %}
+  {%- if item.mag <= states('input_select.uptonight_filter_max_magnitude')|float
+  %}
+  {%- if item.foto >= states('input_select.uptonight_filter_min_foto')|float %}
+  <table><tr>
+  {%- set astrobin = '%22' + item.id | regex_replace('\s', '%20') + '%22' %}
+  {%- set alttime = item.id | regex_replace('\s', '-') | lower %}
+  {{ loop.index }}: <a href="https://astrobin.com/search/?q={{ astrobin }}">{{
+  item["target name"] }}</a><br>{{ item.type }} in {{ item.constellation }},
+  <a href="https://astrobin.com/search/?q={{ astrobin
+  }}&d=i&subject=&telescope=&camera=&integration_time_min=0&integration_time_max=16&telescope_focal_length_min=600&telescope_focal_length_max=850&color_or_mono=C&telescope_diameter_min=100&telescope_diameter_max=130&sort=-likes">Esprit</a>,
+  <a href="http://192.168.1.129:8123/local/uptonight-garyimm/uptonight-alttime-{{
+  alttime }}.png" target="_blank" rel="noopener noreferrer">Graph</a>
+  </tr></table>
+  {%- endif %}
+  {%- endif %}
+  {%- endif %}
+  {%- endif %}
+  {%- endfor %}
+  {%- else %}
+  Waiting for UpTonight
+  {%- endif %}
+```
+
+Input selects:
+
+```yaml
+type: entities
+entities:
+  - entity: input_select.uptonight_filter_min_size
+  - entity: input_select.uptonight_filter_type
+  - entity: input_select.uptonight_filter_max_magnitude
+  - entity: input_select.uptonight_filter_min_foto
+```
+
+I defined the input selects as helpers using the below options:
+
+Types | Min Size | Min Foto | Max Magnitude
+----- | -------- | -------- | -------------
+Asterism | 3 | 0.5 | 0
+Dark Nebula | 10 | 0.6 | 6
+Emission Nebula | 30 | 0.7 | 10
+Galaxy | 60 | 0.8 | 18
+Galaxy Cluster | | 0.9
+Galaxy Duo | | 1.0
+Galaxy Group
+Globular Cluster
+Molecular Cloud
+Nova
+Open Cluster
+Planetary Nebula
+Preplanetary Nebula
+Reflection Nebula
+Supernova Remnant
+Variable Star
+Wolf-Rayet Nebula
+All
+
+### Automatic Daily Calculations
+
+I recommend crontab and docker-compose for this:
+
+```crontab
+0 12 * * * /usr/bin/docker compose -f /home/smarthome/docker-compose.yaml up uptonight-garyimm
+5 12 * * * /usr/bin/docker compose -f /home/smarthome/docker-compose.yaml up uptonight-herschel400
+```
+
+My `docker-compose.yaml`:
+
+```yaml
+  uptonight-garyimm:
+    image: mawinkler/uptonight:dev
+    container_name: uptonight-garyimm
+    environment:
+      - TARGET_LIST=targets/GaryImm
+    volumes:
+      - /home/smarthome/uptonight/config.yaml:/app/config.yaml
+      - /home/smarthome/homeassistant/www/uptonight-garyimm:/app/out
+
+  uptonight-herschel400:
+    image: mawinkler/uptonight:dev
+    container_name: uptonight-herschel400
+    environment:
+      - TARGET_LIST=targets/Herschel400
+    volumes:
+      - /home/smarthome/uptonight/config.yaml:/app/config.yaml
+      - /home/smarthome/homeassistant/www/uptonight-herschel400:/app/out
+```
+
+Clear Skies!
