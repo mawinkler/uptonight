@@ -1,6 +1,6 @@
 # UpTonight<!-- omit in toc -->
 
-![GitHub release](https://img.shields.io/badge/Release-2.0-blue)
+![GitHub release](https://img.shields.io/badge/Release-2.5-blue)
 ![Docker](https://img.shields.io/docker/pulls/mawinkler/uptonight)
 [![astropy](https://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat)](http://www.astropy.org/)
 [![skyfield](https://img.shields.io/badge/powered%20by-Skyfield-orange.svg?style=flat)](https://rhodesmill.org/skyfield/)
@@ -9,53 +9,13 @@ UpTonight calculates the best astrophotography targets for the night at a given 
 
 ***UpTonight calculates Deep Sky Objects, Solar System Bodies and Comets!***
 
-***One more thing:*** You can easily integrate UpTonight with Home Assistant via MQTT!
-
-- [How it Works](#how-it-works)
-  - [Deep Sky Objects](#deep-sky-objects)
-  - [Solar System Bodies](#solar-system-bodies)
-  - [Comets](#comets)
-  - [Altitude vs. Time Diagrams](#altitude-vs-time-diagrams)
-- [How to Run](#how-to-run)
-  - [Python Script](#python-script)
-  - [Container](#container)
-- [Configuration](#configuration)
-  - [Environment variables](#environment-variables)
-  - [Config file](#config-file)
-  - [Lovelace Configuration](#lovelace-configuration)
-  - [Automatic Daily Calculations](#automatic-daily-calculations)
-
 UpTonight generates a plot of the sky in addition to a report on today's destinations. Below is the year 2025 starting with June for Munich:
 
 ![alt text](images/uptonight-video.gif "202409")
 
-Example report for 09/07/24:
+***One more thing:*** You can easily integrate UpTonight with Home Assistant via MQTT!
 
-```txt
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-UpTonight
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Observatory: Backyard
- - Location: 11.58 deg, 48.14 deg, 519.00 m
-
-Observation timespan: 09/07 21:33 to 09/08 04:50 in astronomical darkness
-Moon illumination: 19%
-Contraints: Altitude constraint minimum: 20°, maximum: 80°, Airmass constraint: 2.92, Moon separation constraint: 19°, Size constraint minimum: 3', maximum: 300'
-Altitude and Azimuth calculated for 09/07 21:33
-
-       id                                                      target name                   hmsdms right ascension declination altitude azimuth    meridian transit antimeridian transit              type  constellation  size  mag foto
---------- ---------------------------------------------------------------- ------------------------ --------------- ----------- -------- ------- ------------------- -------------------- ----------------- -------------- ----- ---- ----
-  Sh2-155                       Cave Nebula (Sh2-155, size: 40', mag: 0.0)     22h57m54s +62d31m06s           344.5        62.5     58.0    43.5 09/08/2024 01:02:32                            Dark Nebula        Cepheus  40.0  0.0  1.0
-  Sh2-103                      Cygnus Loop (Sh2-103, size: 180', mag: 0.0)     20h51m21s +31d10m00s           312.8        31.2     66.9   129.2 09/07/2024 22:56:22                      Supernova Remnant         Cygnus 180.0  0.0  1.0
-  Sh2-101                      Tulip Nebula (Sh2-101, size: 20', mag: 0.0)     19h59m55s +35d16m36s           300.0        35.3     75.9   152.2 09/07/2024 22:04:58                        Emission Nebula         Cygnus  20.0  0.0  1.0
-    IC 63             Gamma Cassiopeia Nebula (IC 63, size: 20', mag: 0.0)     00h59m29s +60d54m42s            14.9        60.9     43.7    41.7 09/08/2024 03:04:19                        Emission Nebula     Cassiopeia  20.0  0.0  1.0
-  LBN 438              Reaching Hand Nebula (LBN 438, size: 30', mag: 0.0)     22h41m17s +37d45m36s           340.2        37.8     53.8    88.1 09/08/2024 00:46:06                        Molecular Cloud        Lacerta  30.0  0.0  1.0
-  LBN 468                 Loop of Darkness (LBN 468, size: 120', mag: 0.0)     20h42m29s +67d51m00s           310.5        67.9     68.1    18.6 09/07/2024 22:46:45                        Molecular Cloud        Cepheus 120.0  0.0  1.0
-...
-```
-
-UpTonight creates similar reports for the solar system bodies and comets.
+If you want, you can [buy me a coffee](https://buymeacoffee.com/markus_winkler), I would really appreciate it!
 
 ## Table of Content<!-- omit in toc -->
 
