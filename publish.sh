@@ -2,18 +2,29 @@
 
 set -e
 
-# export PATH=/usr/local/bin/:${PATH}
 which docker
 VERSION=$(cat .VERSION)
 
 printf '%s\n' "Building uptonight version ${VERSION}"
 
-# docker run --privileged multiarch/qemu-user-static:latest --reset -p yes --credential yes 
+# # Install Docker Buildx
+# ARCH=arm64
+# VERSION=v0.24.0
+# curl -LO https://github.com/docker/buildx/releases/download/${VERSION}/buildx-${VERSION}.darwin-${ARCH}
+# mkdir -p ~/.docker/cli-plugins
+# mv buildx-${VERSION}.darwin-${ARCH} ~/.docker/cli-plugins/docker-buildx
+# chmod +x ~/.docker/cli-plugins/docker-buildx
+
+# # Create a new Buildx builder instance with the name "multiplatform-builder":
+# docker buildx create --name multiplatform-builder
+
+# # Use the new builder instance by running: 
+# docker buildx use multiplatform-builder
+
+# # Verify that the builder instance is configured for multi-platform builds: 
+# docker buildx inspect --bootstrap
 
 if [[ "${VERSION}" == "dev" ]]; then
-        # --platform linux/amd64,linux/arm64/v8 \
-        #--no-cache \
-    #,linux/arm64/v8
     printf '%s\n' "Building development version"
     docker buildx build --progress=plain \
         -t mawinkler/uptonight:${VERSION} \
