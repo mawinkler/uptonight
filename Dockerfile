@@ -1,5 +1,5 @@
 # Compile image
-FROM ubuntu:noble AS compile-image
+FROM ubuntu:24.10 AS compile-image
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -28,7 +28,7 @@ COPY main.py .
 RUN venv/bin/pyinstaller --recursive-copy-metadata matplotlib --collect-all dateutil --onefile main.py 
 
 # Run image
-FROM ubuntu:noble AS runtime-image
+FROM ubuntu:24.10 AS runtime-image
 
 WORKDIR /app
 
