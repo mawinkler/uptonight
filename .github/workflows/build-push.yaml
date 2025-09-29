@@ -1,66 +1,40 @@
-name: ci
+name: Build and Push Docker Image
 
 on:
   push:
     branches:
       - "main"
+  workflow_dispatch:
 
 jobs:
   docker:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx  
         uses: docker/setup-buildx-action@v3
-      - name: Login to Docker Hub
+
+      - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push multi-arch image
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: mawinkler/uptonight:latest
-
-      - name: Vision One Container Security Scan Action
-        uses: trendmicro/tmas-scan-action@1.0.11
-        with:
-            # Mandatory
-            TMAS_API_KEY: ${{ secrets.TMAS_API_KEY }}
-            REGION: us-east-1
-            VULNERABILITY_SCAN: true
-            
-            # Optional
-            SBOM: true # Saves SBOM to SBOM.json so you can export it as an artifact later.
-            MALWARE_SCAN: true # Enable malware scan.
-            IMAGE: mawinkler/uptonight:latest # The image need to be public or the pipeline need to have access to the private image of choice.
-            # LOCAL_IMAGE_TARBALL: image.tar
-            # For each threshold below, select the maximum number of vulnerabilities that are acceptable.
-            MAX_TOTAL: 1000
-            MAX_CRITICAL: 1000
-            MAX_HIGH: 1000
-            MAX_MEDIUM: 1000
-            MAX_LOW: 1000
-            MAX_NEGLIGIBLE: 1000
-            MAX_UNKNOWN: 1000
-            SCAN_RESULT_ARTIFACT: result.json
-
-      - name: Upload Scan Result Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: scan-result
-          path: result.json
-          retention-days: 30
-
-      - name: Upload SBOM Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: sbom
-          path: SBOM.json
-          retention-days: 30
+          tags: ghcr.io/${{ github.repository }}:latest
