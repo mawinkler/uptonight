@@ -14,3 +14,4 @@ paho-mqtt==2.1.0
 # matplotlib==3.9.2
 # numpy==2.1.1
 # pytz==2024.1
+urllib3>=2.6.0 # not directly required, pinned by Snyk to avoid a vulnerability
