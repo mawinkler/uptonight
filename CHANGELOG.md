@@ -19,6 +19,15 @@
 
 ### Fixed
 
+- **comets.py** — `_compute_visual_magnitude` had two errors in the standard comet magnitude
+  formula (`T = g + 5·log10(Δ) + k·log10(r)`): the geocentric (Δ) and heliocentric (r)
+  distances were swapped, and `magnitude_k` was multiplied by an extra 2.5. Because the
+  distances swap roles rather than shift the result by a constant, the error scrambled the
+  comet ranking — comets closer to Earth were penalised and those farther from the Sun
+  rewarded — so both the magnitude filter and the "brightest comet" selection operated on
+  wrong data. Note: corrected magnitudes are still indicative; MPC g/k parameters can diverge
+  significantly from JPL Horizons and from observer reports.
+
 - **objects.py** — Polaris and custom targets were plotted on a new figure instead of the main
   sky map because `ax=ax` was missing from the `plot_sky` call.
 - **bodies.py** — `_max_altitude` raised `UnboundLocalError` when a planet's meridian transit

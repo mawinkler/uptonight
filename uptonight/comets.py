@@ -287,8 +287,8 @@ class UpTonightComets:
         """Calculate visual magnitude using the standard comet magnitude formula."""
         return (
             comet["magnitude_g"]
-            + 5 * np.log10(comet["distance_au_sun"])
-            + 2.5 * comet["magnitude_k"] * np.log10(comet["distance_au_earth"])
+            + 5 * np.log10(comet["distance_au_earth"])
+            + comet["magnitude_k"] * np.log10(comet["distance_au_sun"])
         )
 
     def _comet_observable(self, comet):
